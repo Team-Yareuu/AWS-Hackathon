@@ -1,0 +1,19 @@
+# Core Framework
+fastapi
+uvicorn[standard]
+pydantic
+pydantic-settings
+
+# AI & AWS
+boto3
+strands-agents
+
+# Database (Knowledge Graph) - Ganti sesuai pilihan Anda (neo4j/gremlinpython)
+neo4j
+
+# Security
+python-jose[cryptography]
+passlib[bcrypt]
+
+# Utilities
+python-dotenv

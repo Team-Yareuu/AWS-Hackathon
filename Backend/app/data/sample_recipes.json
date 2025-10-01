@@ -1,0 +1,52 @@
+[
+    {
+        "id": "1", "name": "Nasi Goreng", "description": "Nasi goreng klasik Indonesia, cepat dan lezat.",
+        "image": "nasi_goreng.jpg", "difficulty": "Mudah", "cookingTime": 20, "servings": 2, "estimatedCost": 30000, "region": "Indonesia",
+        "ingredients": [
+            {"name": "Nasi Putih", "quantity": "2 piring"}, {"name": "Telur", "quantity": "2 butir"},
+            {"name": "Bawang Merah", "quantity": "3 siung"}, {"name": "Bawang Putih", "quantity": "2 siung"},
+            {"name": "Kecap Manis", "quantity": "3 sdm"}, {"name": "Daging Ayam", "quantity": "100g"}
+        ],
+        "cuisine": "Jawa", "techniques": ["Menumis"], "dietary": ["Halal"]
+    },
+    {
+        "id": "2", "name": "Rendang Daging", "description": "Rendang daging sapi khas Padang yang kaya rempah.",
+        "image": "rendang.jpg", "difficulty": "Sulit", "cookingTime": 240, "servings": 8, "estimatedCost": 150000, "region": "Sumatera",
+        "ingredients": [
+            {"name": "Daging Sapi", "quantity": "1 kg"}, {"name": "Santan Kelapa", "quantity": "1.5 liter"},
+            {"name": "Cabai Merah", "quantity": "100g"}, {"name": "Bawang Merah", "quantity": "10 siung"},
+            {"name": "Serai", "quantity": "3 batang"}, {"name": "Daun Kunyit", "quantity": "1 lembar"}
+        ],
+        "cuisine": "Sumatera", "techniques": ["Ungkep", "Menggulai"], "dietary": ["Halal"]
+    },
+    {
+        "id": "3", "name": "Sate Ayam Madura", "description": "Sate ayam dengan bumbu kacang khas Madura.",
+        "image": "sate_ayam.jpg", "difficulty": "Sedang", "cookingTime": 60, "servings": 4, "estimatedCost": 50000, "region": "Jawa Timur",
+        "ingredients": [
+            {"name": "Daging Ayam", "quantity": "500g"}, {"name": "Kacang Tanah", "quantity": "200g"},
+            {"name": "Kecap Manis", "quantity": "5 sdm"}, {"name": "Bawang Merah", "quantity": "5 siung"},
+            {"name": "Jeruk Nipis", "quantity": "1 buah"}
+        ],
+        "cuisine": "Jawa", "techniques": ["Membakar", "Menumis"], "dietary": ["Halal"]
+    },
+    {
+        "id": "4", "name": "Gado-Gado", "description": "Salad sayuran dengan saus kacang khas Indonesia.",
+        "image": "gado_gado.jpg", "difficulty": "Mudah", "cookingTime": 30, "servings": 4, "estimatedCost": 25000, "region": "Jakarta",
+        "ingredients": [
+            {"name": "Lontong", "quantity": "4 buah"}, {"name": "Tahu", "quantity": "2 buah"},
+            {"name": "Tempe", "quantity": "1 papan"}, {"name": "Kangkung", "quantity": "1 ikat"},
+            {"name": "Tauge", "quantity": "100g"}, {"name": "Kacang Tanah", "quantity": "150g"}
+        ],
+        "cuisine": "Jawa", "techniques": ["Merebus", "Menggoreng"], "dietary": ["Vegetarian", "Halal"]
+    },
+    {
+        "id": "5", "name": "Soto Ayam Lamongan", "description": "Soto ayam bening dengan koya khas Lamongan.",
+        "image": "soto_lamongan.jpg", "difficulty": "Sedang", "cookingTime": 90, "servings": 6, "estimatedCost": 60000, "region": "Jawa Timur",
+        "ingredients": [
+            {"name": "Ayam Kampung", "quantity": "1 ekor"}, {"name": "Soun", "quantity": "50g"},
+            {"name": "Telur Rebus", "quantity": "3 butir"}, {"name": "Serai", "quantity": "2 batang"},
+            {"name": "Daun Jeruk", "quantity": "5 lembar"}, {"name": "Kunyit", "quantity": "2 cm"}
+        ],
+        "cuisine": "Jawa", "techniques": ["Merebus", "Menumis"], "dietary": ["Halal"]
+    }
+]
