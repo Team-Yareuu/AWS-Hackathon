@@ -8,7 +8,7 @@ pydantic-settings
 boto3
 strands-agents
 
-# Database (Knowledge Graph) - Ganti sesuai pilihan Anda (neo4j/gremlinpython)
+# Database (Knowledge Graph)
 neo4j
 
 # Security
