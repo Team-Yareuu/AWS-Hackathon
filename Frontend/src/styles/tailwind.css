@@ -1,0 +1,222 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Crimson+Text:wght@400;600&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Background Colors */
+    --color-background: #FEFEFE; /* pure-white */
+    --color-foreground: #1A1A1A; /* rich-black */
+    --color-card: #F8F9FA; /* subtle-gray */
+    --color-card-foreground: #1A1A1A; /* rich-black */
+    --color-popover: #FFFFFF; /* white */
+    --color-popover-foreground: #1A1A1A; /* rich-black */
+    --color-muted: #F8F9FA; /* subtle-gray */
+    --color-muted-foreground: #6B7280; /* balanced-gray */
+    
+    /* Primary Colors */
+    --color-primary: #2D5A27; /* deep-forest-green */
+    --color-primary-foreground: #FFFFFF; /* white */
+    
+    /* Secondary Colors */
+    --color-secondary: #8B4513; /* warm-cinnamon-brown */
+    --color-secondary-foreground: #FFFFFF; /* white */
+    
+    /* Accent Colors */
+    --color-accent: #FF6B35; /* vibrant-chili-orange */
+    --color-accent-foreground: #FFFFFF; /* white */
+    
+    /* State Colors */
+    --color-success: #059669; /* fresh-herb-green */
+    --color-success-foreground: #FFFFFF; /* white */
+    --color-warning: #D97706; /* turmeric-yellow */
+    --color-warning-foreground: #FFFFFF; /* white */
+    --color-error: #DC2626; /* gentle-red-chili */
+    --color-error-foreground: #FFFFFF; /* white */
+    --color-destructive: #DC2626; /* gentle-red-chili */
+    --color-destructive-foreground: #FFFFFF; /* white */
+    
+    /* UI Elements */
+    --color-border: #E5E7EB; /* light-gray */
+    --color-input: #FFFFFF; /* white */
+    --color-ring: #2D5A27; /* deep-forest-green */
+    
+    /* Cultural Brand Colors */
+    --color-turmeric: #D2691E; /* turmeric-orange */
+    --color-turmeric-foreground: #FFFFFF; /* white */
+    --color-cinnamon: #8B4513; /* cinnamon-brown */
+    --color-cinnamon-foreground: #FFFFFF; /* white */
+    --color-pandan: #228B22; /* pandan-green */
+    --color-pandan-foreground: #FFFFFF; /* white */
+    --color-chili: #C62828; /* chili-red */
+    --color-chili-foreground: #FFFFFF; /* white */
+  }
+
+  * {
+    @apply border-border;
+  }
+  
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Inter', sans-serif;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+  }
+  
+  .font-accent {
+    font-family: 'Crimson Text', serif;
+  }
+  
+  .font-cta {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-weight: 600;
+  }
+}
+
+@layer components {
+  /* Cultural Animation Classes */
+  .batik-reveal {
+    stroke-dasharray: 1000;
+    stroke-dashoffset: 1000;
+    animation: batik-draw 2s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+  }
+  
+  @keyframes batik-draw {
+    to {
+      stroke-dashoffset: 0;
+    }
+  }
+  
+  /* Spice Gradient Backgrounds */
+  .spice-gradient {
+    background: linear-gradient(135deg, var(--color-turmeric), var(--color-cinnamon), var(--color-pandan));
+    background-size: 400% 400%;
+    animation: spice-shift 4s ease-in-out infinite;
+  }
+  
+  @keyframes spice-shift {
+    0%, 100% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+  }
+  
+  /* Cultural Card Elevation */
+  .cultural-card {
+    @apply bg-card rounded-lg transition-all duration-300 ease-out;
+    box-shadow: 0 1px 3px rgba(210, 105, 30, 0.1);
+  }
+  
+  .cultural-card:hover {
+    @apply transform -translate-y-2;
+    box-shadow: 0 12px 24px rgba(210, 105, 30, 0.15);
+  }
+  
+  /* AI Chat Bubble */
+  .ai-chat-bubble {
+    @apply rounded-3xl rounded-bl-sm p-4;
+    box-shadow: 0 2px 12px rgba(210, 105, 30, 0.15);
+  }
+  
+  /* Indonesian Prosperity Gold Accent */
+  .prosperity-accent {
+    color: #FFD700;
+    border-color: #FFD700;
+  }
+  
+  /* Traditional Indonesian Spacing */
+  .indonesian-spacing {
+    @apply space-y-5;
+  }
+  
+  /* Cultural Trust Signal */
+  .trust-signal {
+    @apply flex items-center space-x-2 text-sm text-muted-foreground;
+  }
+  
+  /* Recipe Card Animation */
+  .recipe-card {
+    @apply transition-transform duration-300 ease-out cursor-pointer;
+  }
+  
+  .recipe-card:hover {
+    @apply transform scale-105;
+  }
+  
+  /* Mobile Touch Optimization */
+  .touch-target {
+    @apply min-h-[44px] min-w-[44px] flex items-center justify-center;
+  }
+  
+  /* Cultural Pattern Overlay */
+  .batik-pattern {
+    background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23D2691E' fill-opacity='0.05'%3E%3Cpath d='M30 30c0-11.046-8.954-20-20-20s-20 8.954-20 20 8.954 20 20 20 20-8.954 20-20zm0 0c0 11.046 8.954 20 20 20s20-8.954 20-20-8.954-20-20-20-20 8.954-20 20z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  }
+}
+
+@layer utilities {
+  /* Cultural Color Utilities */
+  .text-turmeric { color: var(--color-turmeric); }
+  .text-cinnamon { color: var(--color-cinnamon); }
+  .text-pandan { color: var(--color-pandan); }
+  .text-chili { color: var(--color-chili); }
+  
+  .bg-turmeric { background-color: var(--color-turmeric); }
+  .bg-cinnamon { background-color: var(--color-cinnamon); }
+  .bg-pandan { background-color: var(--color-pandan); }
+  .bg-chili { background-color: var(--color-chili); }
+  
+  .border-turmeric { border-color: var(--color-turmeric); }
+  .border-cinnamon { border-color: var(--color-cinnamon); }
+  .border-pandan { border-color: var(--color-pandan); }
+  .border-chili { border-color: var(--color-chili); }
+  
+  /* Indonesian Golden Ratio Spacing */
+  .space-indonesian > * + * {
+    margin-top: 1.618rem;
+  }
+  
+  /* Cultural Shadow Utilities */
+  .shadow-cultural {
+    box-shadow: 0 2px 8px rgba(210, 105, 30, 0.12);
+  }
+  
+  .shadow-cultural-lg {
+    box-shadow: 0 8px 24px rgba(210, 105, 30, 0.15);
+  }
+  
+  /* Warm Animation Easing */
+  .ease-cultural {
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  
+  /* Mobile-First Cultural Animations */
+  @media (prefers-reduced-motion: no-preference) {
+    .animate-fade-in {
+      animation: fadeIn 0.6s ease-out forwards;
+    }
+    
+    .animate-slide-up {
+      animation: slideUp 0.4s ease-out forwards;
+    }
+  }
+  
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+  
+  @keyframes slideUp {
+    from { 
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to { 
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+}

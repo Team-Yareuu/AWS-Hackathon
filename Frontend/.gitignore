@@ -1,0 +1,20 @@
+# Folder node_modules
+node_modules/
+
+# File log
+*.log
+
+# File environment
+.env
+
+# Folder build/output
+dist/
+build/
+
+# File dari OS
+.DS_Store
+Thumbs.db
+
+# Folder IDE/editor
+.vscode/
+.idea/

@@ -1,0 +1,230 @@
+[
+  {
+    "id": "rendang",
+    "label": "Resep Rendang & Masakan Padang",
+    "matchTerms": ["rendang", "padang", "minang"],
+    "searchAnalysis": {
+      "intent": "Mencari resep tradisional Sumatera dengan cita rasa autentik",
+      "confidence": 94,
+      "suggestions": [
+        "Eksplorasi variasi rendang menggunakan daging ayam atau bebek",
+        "Padukan dengan lauk pendamping seperti sambalado atau daun singkong",
+        "Gunakan teknik slow-cooking untuk hasil yang lebih empuk"
+      ]
+    },
+    "nutritionalTrends": {
+      "avgCalories": 680,
+      "healthScore": 72,
+      "commonIngredients": ["Daging sapi", "Santan", "Serai", "Daun jeruk", "Cabai merah"]
+    },
+    "budgetAnalysis": {
+      "avgCost": 85000,
+      "costRange": { "min": 70000, "max": 110000 },
+      "budgetTips": [
+        "Gunakan bagian daging sapi yang memiliki sedikit lemak untuk harga lebih terjangkau",
+        "Beli santan dalam kemasan besar untuk beberapa kali masak",
+        "Simak promo pasar untuk rempah segar di akhir pekan"
+      ]
+    },
+    "culturalContext": {
+      "region": "Sumatera Barat",
+      "tradition": "Rendang disajikan dalam perayaan adat Minangkabau sebagai simbol kesabaran",
+      "modernAdaptation": "Versi modern menggunakan panci presto untuk mempercepat proses memasak"
+    },
+    "personalizedRecommendations": [
+      "Coba juga: Rendang Itik Lado Mudo",
+      "Pendamping favorit: Sambal Ijo Padang",
+      "Eksperimen rasa: Rendang Jamur untuk alternatif vegetarian"
+    ]
+  },
+  {
+    "id": "vegetarian",
+    "label": "Pilihan Vegetarian Nusantara",
+    "matchTerms": ["vegetarian", "nabati", "tanpa daging"],
+    "searchAnalysis": {
+      "intent": "Fokus pada resep berbasis tanaman dengan rasa kaya",
+      "confidence": 91,
+      "suggestions": [
+        "Tambahkan sumber protein seperti tempe atau tahu agar lebih seimbang",
+        "Gunakan jamur tiram sebagai pengganti tekstur daging",
+        "Pertimbangkan bumbu kacang untuk rasa gurih yang khas"
+      ]
+    },
+    "nutritionalTrends": {
+      "avgCalories": 320,
+      "healthScore": 88,
+      "commonIngredients": ["Tempe", "Tahu", "Sayur hijau", "Kacang tanah", "Jamur"]
+    },
+    "budgetAnalysis": {
+      "avgCost": 28000,
+      "costRange": { "min": 20000, "max": 40000 },
+      "budgetTips": [
+        "Beli sayuran daun di pagi hari agar harga lebih miring",
+        "Gunakan kacang-kacangan kering yang bisa disimpan lama",
+        "Fermentasi tempe sendiri untuk menekan biaya"
+      ]
+    },
+    "culturalContext": {
+      "region": "Nusantara",
+      "tradition": "Masakan vegetarian terinspirasi dari budaya peranakan dan komunitas Tionghoa",
+      "modernAdaptation": "Plant-based rendang dan sate menjadi tren di kafe urban"
+    },
+    "personalizedRecommendations": [
+      "Coba juga: Pecel Madiun Vegan",
+      "Rekomendasi protein nabati: Sate Tempe Bacem",
+      "Eksplorasi rasa: Tongseng Jamur Hijau"
+    ]
+  },
+  {
+    "id": "cepat",
+    "label": "Masakan Praktis & Cepat",
+    "matchTerms": ["cepat", "praktis", "kilat", "15 menit"],
+    "searchAnalysis": {
+      "intent": "Mencari resep harian dengan waktu memasak singkat",
+      "confidence": 90,
+      "suggestions": [
+        "Siapkan bahan dasar seperti bumbu halus di awal minggu",
+        "Gunakan wajan anti lengket agar proses memasak lebih cepat",
+        "Pilih bahan yang mudah matang seperti sayuran hijau dan telur"
+      ]
+    },
+    "nutritionalTrends": {
+      "avgCalories": 420,
+      "healthScore": 81,
+      "commonIngredients": ["Telur", "Sayur daun", "Mi", "Cabai rawit", "Bawang putih"]
+    },
+    "budgetAnalysis": {
+      "avgCost": 23000,
+      "costRange": { "min": 15000, "max": 35000 },
+      "budgetTips": [
+        "Masak dalam porsi besar untuk bekal keesokan hari",
+        "Gunakan bahan beku siap pakai untuk menghemat waktu",
+        "Manfaatkan sisa lauk untuk menu baru yang cepat"
+      ]
+    },
+    "culturalContext": {
+      "region": "Perkotaan",
+      "tradition": "Menu kilat populer di kalangan pekerja urban Indonesia",
+      "modernAdaptation": "Teknik meal-prep mingguan dengan rasa lokal"
+    },
+    "personalizedRecommendations": [
+      "Menu cepat: Nasi Goreng 10 Menit",
+      "Opsi sehat: Capcay Kuah Instan",
+      "Sarapan praktis: Telur Dadar Gulung Isi"
+    ]
+  },
+  {
+    "id": "sehat",
+    "label": "Pilihan Nutrisi Seimbang",
+    "matchTerms": ["sehat", "kesehatan", "bergizi", "low-fat"],
+    "searchAnalysis": {
+      "intent": "Mengutamakan resep rendah lemak dengan nutrisi lengkap",
+      "confidence": 92,
+      "suggestions": [
+        "Pilih teknik memasak seperti kukus atau panggang",
+        "Gunakan rempah alami untuk memperkaya rasa tanpa MSG",
+        "Padukan karbohidrat kompleks dengan protein tanpa lemak"
+      ]
+    },
+    "nutritionalTrends": {
+      "avgCalories": 280,
+      "healthScore": 93,
+      "commonIngredients": ["Oat", "Ikan", "Sayur hijau", "Rempah segar", "Kacang merah"]
+    },
+    "budgetAnalysis": {
+      "avgCost": 36000,
+      "costRange": { "min": 25000, "max": 52000 },
+      "budgetTips": [
+        "Belanja bahan organik di pasar petani lokal",
+        "Gunakan ikan air tawar sebagai sumber protein ekonomis",
+        "Tanam sendiri rempah daun di rumah"
+      ]
+    },
+    "culturalContext": {
+      "region": "Nusantara Modern",
+      "tradition": "Menu sehat terinspirasi dari jamu dan masakan rumahan",
+      "modernAdaptation": "Fusion bowl dengan bumbu Indonesia untuk generasi milenial"
+    },
+    "personalizedRecommendations": [
+      "Direkomendasikan: Sup Ikan Jahe Hangat",
+      "Camilan sehat: Lumpia Sayur Kukus",
+      "Menu seimbang: Nasi Merah dengan Tumis Brokoli Teri"
+    ]
+  },
+  {
+    "id": "budget",
+    "label": "Masakan Ramah Kantong",
+    "matchTerms": ["budget", "hemat", "murah", "ekonomis"],
+    "searchAnalysis": {
+      "intent": "Menekan biaya masak tanpa mengurangi rasa",
+      "confidence": 89,
+      "suggestions": [
+        "Gunakan bahan musiman yang cenderung lebih murah",
+        "Masak dalam jumlah besar lalu simpan untuk beberapa hari",
+        "Manfaatkan rempah kering yang tahan lama"
+      ]
+    },
+    "nutritionalTrends": {
+      "avgCalories": 390,
+      "healthScore": 76,
+      "commonIngredients": ["Telur", "Sayuran lokal", "Tahu", "Tempe", "Cabai"]
+    },
+    "budgetAnalysis": {
+      "avgCost": 20000,
+      "costRange": { "min": 12000, "max": 32000 },
+      "budgetTips": [
+        "Buat daftar belanja mingguan agar fokus pada kebutuhan",
+        "Beli bahan pokok dalam kemasan besar untuk diskon",
+        "Manfaatkan sisa nasi untuk menu baru seperti lontong atau arem-arem"
+      ]
+    },
+    "culturalContext": {
+      "region": "Seluruh Indonesia",
+      "tradition": "Tradisi hemat terlihat dari olahan nasi sisa dan sayur bening",
+      "modernAdaptation": "Menu hemat ala anak kos dengan cita rasa lokal"
+    },
+    "personalizedRecommendations": [
+      "Alternatif murah: Sayur Lodeh Ekonomis",
+      "Menu rumahan: Tumis Kol Sosis Pedas",
+      "Kreasi kreatif: Frittata Nasi Sisa"
+    ]
+  },
+  {
+    "id": "default",
+    "label": "Eksplorasi Kuliner Indonesia",
+    "matchTerms": [],
+    "searchAnalysis": {
+      "intent": "Eksplorasi resep Nusantara dari berbagai daerah",
+      "confidence": 87,
+      "suggestions": [
+        "Gunakan filter daerah untuk menemukan cita rasa lokal",
+        "Eksplorasi teknik memasak khas seperti pepes atau asap",
+        "Padukan resep klasik dengan presentasi modern"
+      ]
+    },
+    "nutritionalTrends": {
+      "avgCalories": 450,
+      "healthScore": 80,
+      "commonIngredients": ["Cabai", "Bawang merah", "Bawang putih", "Santan", "Daun salam"]
+    },
+    "budgetAnalysis": {
+      "avgCost": 32000,
+      "costRange": { "min": 20000, "max": 60000 },
+      "budgetTips": [
+        "Siapkan bumbu dasar merah, putih, dan kuning untuk stok satu minggu",
+        "Belanja di pasar tradisional untuk bahan segar",
+        "Gunakan bahan lokal untuk mengganti bahan impor"
+      ]
+    },
+    "culturalContext": {
+      "region": "Nusantara",
+      "tradition": "Kuliner Indonesia kaya akan filosofi gotong royong dalam memasak",
+      "modernAdaptation": "Chef muda menggabungkan teknik molekular dengan bumbu Nusantara"
+    },
+    "personalizedRecommendations": [
+      "Eksplorasi: Sop Konro Makassar",
+      "Kedai populer: Lontong Balap Surabaya",
+      "Kreasi fusi: Pizza Rendang Rumahan"
+    ]
+  }
+]
