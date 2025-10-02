@@ -5,7 +5,7 @@ class BedrockAgent:
     def __init__(self):
         self.client = boto3.client(
             'bedrock-runtime',
-            region_name='us-east-1' # ganti dengan region Anda
+            region_name=settings.AWS_REGION # ganti dengan region Anda
         )
 
     def invoke_claude(self, prompt: str) -> str:
