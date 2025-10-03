@@ -1,6 +1,6 @@
 [
   {
-    "id": "rendang",
+    "id": 1,
     "label": "Resep Rendang & Masakan Padang",
     "matchTerms": ["rendang", "padang", "minang"],
     "searchAnalysis": {

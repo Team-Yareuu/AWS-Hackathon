@@ -61,10 +61,10 @@ const Header = ({ className = '' }) => {
             ))}
             
             {/* More Menu for Secondary Items */}
-            <div className="relative group">
+            {/* <div className="relative group">
               <button className="flex items-center space-x-2 px-4 py-2 rounded-lg text-sm font-medium text-foreground hover:bg-muted hover:text-primary transition-all duration-200 ease-cultural">
                 <Icon name="MoreHorizontal" size={16} />
-                <span>Lainnya</span>
+               
               </button>
               
               <div className="absolute right-0 top-full mt-2 w-48 bg-popover border border-border rounded-lg shadow-cultural-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 ease-cultural">
@@ -85,22 +85,22 @@ const Header = ({ className = '' }) => {
                   ))}
                 </div>
               </div>
-            </div>
+            </div> */}
           </nav>
 
           {/* User Actions */}
           <div className="hidden lg:flex items-center space-x-3">
-            <Button variant="ghost" size="sm" iconName="Bell" className="relative">
+            {/* <Button variant="ghost" size="sm" iconName="Bell" className="relative">
               <span className="absolute -top-1 -right-1 w-2 h-2 bg-accent rounded-full"></span>
-            </Button>
+            </Button> */}
 {/*             
             <Button variant="outline" size="sm" iconName="User">
               Profil
-            </Button>
+            </Button>*/}
             
-            <Button variant="default" size="sm" iconName="Plus" iconPosition="left">
-              Tambah Resep
-            </Button> */}
+            <Button variant="default" size="sm">
+              Sign up
+            </Button> 
           </div>
 
           {/* Mobile Menu Button */}

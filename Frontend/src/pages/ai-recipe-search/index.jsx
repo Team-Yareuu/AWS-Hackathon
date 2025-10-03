@@ -1,5 +1,6 @@
-import React, { useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { Helmet } from 'react-helmet';
+import { useLocation, useNavigate } from 'react-router-dom';
 import Header from '../../components/ui/Header';
 import Icon from '../../components/AppIcon';
 import SearchInterface from './components/SearchInterface';
@@ -7,12 +8,18 @@ import SearchResults from './components/SearchResults';
 import AIInsights from './components/AIInsights';
 
 const AIRecipeSearchPage = () => {
+  const location = useLocation();
+  const navigate = useNavigate();
   const [searchQuery, setSearchQuery] = useState('');
   const [searchResults, setSearchResults] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
   const [sortBy, setSortBy] = useState('relevance');
   const [searchMode, setSearchMode] = useState('search');
   const [hasSearched, setHasSearched] = useState(false);
+  const handleSearchRef = useRef(null);
+  const consumedQueryRef = useRef('');
+  const locationStateQuery = location?.state?.searchQuery;
+  const locationPathname = location?.pathname;
 
   // Mock recipe data
   const mockRecipes = [
@@ -369,6 +376,24 @@ const AIRecipeSearchPage = () => {
     setSearchResults((previousResults) => applySort(previousResults, newSortBy));
   };
 
+  useEffect(() => {
+    handleSearchRef.current = handleSearch;
+  }, [handleSearch]);
+
+  useEffect(() => {
+    const normalizedQuery = locationStateQuery?.trim();
+    if (!normalizedQuery || consumedQueryRef.current === normalizedQuery) {
+      return;
+    }
+
+    consumedQueryRef.current = normalizedQuery;
+    if (searchMode !== 'search') {
+      setSearchMode('search');
+    }
+    handleSearchRef.current?.(normalizedQuery);
+    navigate(locationPathname, { replace: true, state: {} });
+  }, [locationStateQuery, locationPathname, navigate, searchMode]);
+
   return (
     <>
       <Helmet>
@@ -413,6 +438,7 @@ const AIRecipeSearchPage = () => {
                   onModeChange={handleModeChange}
                   onSearch={handleSearch}
                   isLoading={isLoading}
+                  initialQuery={searchQuery}
                 />
 
 

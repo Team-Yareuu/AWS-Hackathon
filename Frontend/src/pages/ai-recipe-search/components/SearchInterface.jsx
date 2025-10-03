@@ -4,7 +4,7 @@ import Icon from '../../../components/AppIcon';
 import Button from '../../../components/ui/Button';
 import Input from '../../../components/ui/Input';
 
-const SearchInterface = ({ mode = 'search', hasSearched, onModeChange, onSearch, isLoading }) => {
+const SearchInterface = ({ mode = 'search', hasSearched, onModeChange, onSearch, isLoading, initialQuery }) => {
   const [searchQuery, setSearchQuery] = useState('');
   const [isVoiceActive, setIsVoiceActive] = useState(false);
   const [isImageSearch, setIsImageSearch] = useState(false);
@@ -74,12 +74,25 @@ const SearchInterface = ({ mode = 'search', hasSearched, onModeChange, onSearch,
     }
   }, [chatMessages]);
 
+  useEffect(() => {
+    const injectedQuery = initialQuery?.trim();
+    if (!injectedQuery || lastInjectedQueryRef.current === injectedQuery) {
+      return;
+    }
+
+    lastInjectedQueryRef.current = injectedQuery;
+    setSearchQuery(injectedQuery);
+  }, [initialQuery]);
+
   const handleSearch = (query = searchQuery) => {
     if (mode !== 'search') {
       return;
     }
-    if (query?.trim()) {
-      onSearch?.(query.trim());
+
+    const trimmedQuery = query?.trim();
+    if (trimmedQuery) {
+      lastInjectedQueryRef.current = trimmedQuery;
+      onSearch?.(trimmedQuery);
     }
   };
 

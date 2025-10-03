@@ -34,14 +34,20 @@ const RecipeDetail = () => {
   const [activeTab, setActiveTab] = useState('ingredients');
 
   useEffect(() => {
-    if (stateRecipe) {
-      setRecipe({ ...stateRecipe, id: resolvedRecipeId });
-      setServings(stateRecipe?.servings ?? 4);
-      return;
-    }
     const foundRecipe = mockRecipeData.find(
       (r) => String(r.id) === String(resolvedRecipeId)
     );
+
+    if (stateRecipe) {
+      // merge search result data with the full recipe template when possible
+      const mergedRecipe = foundRecipe
+        ? { ...foundRecipe, ...stateRecipe, id: resolvedRecipeId }
+        : { ...stateRecipe, id: resolvedRecipeId };
+
+      setRecipe(mergedRecipe);
+      setServings(stateRecipe?.servings ?? foundRecipe?.servings ?? 4);
+      return;
+    }
     if (foundRecipe) {
       setRecipe(foundRecipe);
       setServings(foundRecipe?.servings ?? 4);
@@ -71,6 +77,7 @@ const RecipeDetail = () => {
   const handleServingsChange = (newServings) => {
     setServings(newServings);
   };
+
 
   const handleSubstitute = (ingredientIndex) => {
     // Handle ingredient substitution
