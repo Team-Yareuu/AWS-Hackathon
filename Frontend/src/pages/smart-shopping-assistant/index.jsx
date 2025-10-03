@@ -189,7 +189,7 @@ const SmartShoppingAssistant = () => {
 
   const handleViewDetails = (recipe) => {
     // Navigate to recipe detail page
-    window.location.href = '/recipe-detail';
+    window.location.href = `/recipe-detail/${recipe?.id ?? '1'}`;
   };
 
   const handleSelectStore = (marketplace, ingredients) => {

@@ -1,0 +1,351 @@
+[
+  {
+    "id": "1",
+    "name": "Rendang Daging Sapi Padang",
+    "shortDescription": "Rendang daging sapi autentik dengan bumbu rempah tradisional Minangkabau yang kaya cita rasa",
+    "image": "https://api.meatguy.id/admin/image/blogs/6cfa140f-ccbc-4580-a4a0-9261b7af9aa9",
+    "region": "Sumatera Barat",
+    "difficulty": "Sedang",
+    "cookingTimeMinutes": 180,
+    "servings": 4,
+    "estimatedCost": 85000,
+    "isTraditional": true,
+    "isNew": false,
+    "culturalStory": {
+      "shortStory": "Rendang adalah masakan tradisional Minangkabau yang telah diakui UNESCO sebagai warisan budaya dunia. Hidangan ini melambangkan filosofi kehidupan masyarakat Minang.",
+      "fullStory": "Rendang adalah masakan tradisional Minangkabau yang telah diakui UNESCO sebagai warisan budaya dunia. Hidangan ini melambangkan filosofi kehidupan masyarakat Minang yang penuh makna.\n\nDalam tradisi Minangkabau, rendang bukan sekadar makanan, tetapi simbol ketahanan dan kesabaran. Proses memasak yang memakan waktu berjam-jam mencerminkan nilai kesabaran dalam menghadapi kehidupan.\n\nSetiap bumbu dalam rendang memiliki makna filosofis. Daging melambangkan niniak mamak (pemimpin adat), santan adalah bundo kanduang (ibu), cabai adalah alim ulama, dan rempah-rempah lainnya mewakili cerdik pandai dan masyarakat biasa.\n\nRendang biasanya disajikan dalam acara-acara penting seperti pernikahan, batagak penghulu, dan hari raya. Kemampuan membuat rendang yang lezat menjadi kebanggaan tersendiri bagi perempuan Minang.",
+      "regionalVariations": [
+        {
+          "region": "Padang",
+          "province": "Sumatera Barat",
+          "difference": "Menggunakan santan kental dan dimasak hingga kering sempurna"
+        },
+        {
+          "region": "Payakumbuh",
+          "province": "Sumatera Barat",
+          "difference": "Ditambahkan daun kunyit untuk aroma yang lebih harum"
+        },
+        {
+          "region": "Bukittinggi",
+          "province": "Sumatera Barat",
+          "difference": "Menggunakan cabai yang lebih banyak untuk rasa pedas yang kuat"
+        }
+      ]
+    },
+    "budgetData": {
+      "offlineStores": [
+        {
+          "name": "Pasar Raya Padang",
+          "address": "Jl. Pasar Raya No. 1, Padang",
+          "openingHours": "05.00 - 18.00",
+          "estimatedDistance": 2.5,
+          "location": {
+            "lat": -0.9501,
+            "lng": 100.3531
+          },
+          "rincianBahan": [
+            {
+              "name": "Daging sapi",
+              "quantity": {
+                "value": 1,
+                "unit": "kg"
+              },
+              "estimatedPrice": 67000
+            },
+            {
+              "name": "Santan kental",
+              "quantity": {
+                "value": 1,
+                "unit": "liter"
+              },
+              "estimatedPrice": 15000
+            },
+            {
+              "name": "Rempah-rempah",
+              "quantity": {
+                "value": null,
+                "unit": "secukupnya"
+              },
+              "estimatedPrice": 10000,
+              "note": "Cabai, bawang, lengkuas, serai, daun jeruk"
+            }
+          ]
+        },
+        {
+          "name": "Pasar Lubuk Buaya",
+          "address": "Jl. Adinegoro, Lubuk Buaya",
+          "openingHours": "06.00 - 17.00",
+          "estimatedDistance": 6.1,
+          "location": {
+            "lat": -0.8932,
+            "lng": 100.3501
+          },
+          "rincianBahan": [
+            {
+              "name": "Daging sapi",
+              "quantity": {
+                "value": 1,
+                "unit": "kg"
+              },
+              "estimatedPrice": 67000
+            },
+            {
+              "name": "Santan kental",
+              "quantity": {
+                "value": 1,
+                "unit": "liter"
+              },
+              "estimatedPrice": 15000
+            },
+            {
+              "name": "Rempah-rempah",
+              "quantity": {
+                "value": null,
+                "unit": "secukupnya"
+              },
+              "estimatedPrice": 10000,
+              "note": "Cabai, bawang, lengkuas, serai, daun jeruk"
+            }
+          ]
+        }
+      ]
+    },
+    "ingredients": [
+      {
+        "bahan_utama": [
+          {
+            "name": "Daging sapi paha atas",
+            "quantity": {
+              "value": 1000,
+              "unit": "gram"
+            },
+            "notes": "Potong dadu besar",
+            "substitutes": [
+              "Daging sapi sengkel",
+              "Daging sapi sandung lamur"
+            ]
+          },
+          {
+            "name": "Santan kental",
+            "quantity": {
+              "value": 1000,
+              "unit": "ml"
+            },
+            "notes": "Dari 2 butir kelapa parut segar",
+            "substitutes": [
+              "Santan instan premium"
+            ]
+          },
+          {
+            "name": "Daun kunyit",
+            "quantity": {
+              "value": 1,
+              "unit": "lembar"
+            },
+            "notes": "Simpulkan"
+          },
+          {
+            "name": "Daun salam",
+            "quantity": {
+              "value": 3,
+              "unit": "lembar"
+            }
+          },
+          {
+            "name": "Serai",
+            "quantity": {
+              "value": 2,
+              "unit": "batang"
+            },
+            "notes": "Memarkan"
+          },
+          {
+            "name": "Asam kandis",
+            "quantity": {
+              "value": 2,
+              "unit": "buah"
+            }
+          },
+          {
+            "name": "Nasi putih hangat",
+            "quantity": {
+              "value": 4,
+              "unit": "porsi"
+            }
+          }
+        ],
+        "bumbu": [
+          {
+            "name": "Cabai merah keriting",
+            "quantity": {
+              "value": 15,
+              "unit": "buah"
+            },
+            "notes": "Sesuai selera"
+          },
+          {
+            "name": "Bawang merah",
+            "quantity": {
+              "value": 10,
+              "unit": "siung"
+            }
+          },
+          {
+            "name": "Bawang putih",
+            "quantity": {
+              "value": 6,
+              "unit": "siung"
+            }
+          },
+          {
+            "name": "Lengkuas",
+            "quantity": {
+              "value": 50,
+              "unit": "gram"
+            }
+          },
+          {
+            "name": "Jahe",
+            "quantity": {
+              "value": 30,
+              "unit": "gram"
+            }
+          },
+          {
+            "name": "Kunyit",
+            "quantity": {
+              "value": 20,
+              "unit": "gram"
+            }
+          },
+          {
+            "name": "Kemiri",
+            "quantity": {
+              "value": 6,
+              "unit": "butir"
+            },
+            "notes": "Sangrai terlebih dahulu"
+          },
+          {
+            "name": "Ketumbar",
+            "quantity": {
+              "value": 1,
+              "unit": "sdm"
+            },
+            "notes": "Sangrai dan haluskan"
+          },
+          {
+            "name": "Jintan",
+            "quantity": {
+              "value": 0.5,
+              "unit": "sdm"
+            }
+          },
+          {
+            "name": "Pala",
+            "quantity": {
+              "value": 0.25,
+              "unit": "butir"
+            }
+          },
+          {
+            "name": "Garam",
+            "quantity": {
+              "value": 2,
+              "unit": "sdm"
+            },
+            "notes": "Sesuai selera"
+          },
+          {
+            "name": "Gula merah",
+            "quantity": {
+              "value": 1,
+              "unit": "sdm"
+            },
+            "notes": "Sisir halus"
+          }
+        ]
+      }
+    ],
+    "cookingSteps": [
+      {
+        "step": 1,
+        "title": "Persiapan Bahan",
+        "description": "Siapkan semua bahan. Potong daging sapi sesuai selera, bersihkan daun-daunan, dan haluskan bumbu dengan blender atau ulekan.",
+        "duration": "20 menit",
+        "difficulty": "mudah",
+        "image": "https://images.unsplash.com",
+        "tips": [
+          "Gunakan daging berkualitas baik agar hasil empuk",
+          "Potong daging melawan serat supaya lunak",
+          "Haluskan bumbu hingga benar-benar lembut"
+        ]
+      },
+      {
+        "step": 2,
+        "title": "Menumis Bumbu",
+        "description": "Panaskan wajan besar, tumis bumbu halus bersama daun salam, daun kunyit, dan serai hingga harum dan matang.",
+        "duration": "15 menit",
+        "difficulty": "sedang",
+        "image": "https://images.unsplash.com",
+        "tips": [
+          "Gunakan api sedang dan aduk terus",
+          "Pastikan bumbu benar-benar matang agar tidak langu",
+          "Tambahkan sedikit minyak jika terlalu kering"
+        ]
+      },
+      {
+        "step": 3,
+        "title": "Memasak Daging",
+        "description": "Masukkan daging sapi ke dalam tumisan bumbu, aduk hingga semua daging terbalut bumbu. Masak hingga daging berubah warna.",
+        "duration": "10 menit",
+        "difficulty": "sedang",
+        "image": "https://images.unsplash.com",
+        "tips": [
+          "Gunakan api sedang cenderung besar",
+          "Aduk agar bumbu merata",
+          "Pastikan tidak ada cairan berlebih sebelum menambahkan santan"
+        ]
+      },
+      {
+        "step": 4,
+        "title": "Menambahkan Santan",
+        "description": "Tuang santan kental, masak dengan api kecil sambil terus diaduk perlahan agar santan tidak pecah. Masak hingga santan mendidih.",
+        "duration": "15 menit",
+        "difficulty": "sedang",
+        "image": "https://images.unsplash.com",
+        "tips": [
+          "Aduk perlahan agar santan tidak pecah",
+          "Gunakan spatula kayu saat mengaduk",
+          "Masak dengan api kecil"
+        ]
+      },
+      {
+        "step": 5,
+        "title": "Mengentalkan Bumbu",
+        "description": "Masak rendang dengan api kecil selama 2-3 jam hingga santan menyusut dan bumbu mengental. Aduk sesekali agar tidak gosong.",
+        "duration": "120 menit",
+        "difficulty": "sulit",
+        "image": "https://images.unsplash.com",
+        "tips": [
+          "Gunakan wajan tebal agar panas merata",
+          "Aduk dari bawah ke atas agar tidak gosong",
+          "Jika bumbu terlalu kering, tambahkan sedikit air panas"
+        ]
+      },
+      {
+        "step": 6,
+        "title": "Penyelesaian",
+        "description": "Ketika rendang sudah kering dan berwarna cokelat kehitaman, angkat dari api. Koreksi rasa terakhir kali. Sajikan rendang dengan nasi putih hangat.",
+        "duration": "10 menit",
+        "difficulty": "mudah",
+        "image": "https://images.unsplash.com",
+        "tips": [
+          "Rendang yang baik berwarna cokelat kehitaman",
+          "Daging harus empuk dan bumbu meresap sempurna",
+          "Sajikan dalam keadaan hangat untuk cita rasa terbaik"
+        ]
+      }
+    ]
+  }
+]

@@ -25,14 +25,66 @@ const calculateDistance = (from, to) => {
   const a =
     Math.sin(dLat / 2) * Math.sin(dLat / 2) +
     Math.cos(toRad(lat1)) *
-      Math.cos(toRad(lat2)) *
-      Math.sin(dLng / 2) *
-      Math.sin(dLng / 2);
+    Math.cos(toRad(lat2)) *
+    Math.sin(dLng / 2) *
+    Math.sin(dLng / 2);
 
   const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
 
   return R * c;
 };
+
+const formatCurrency = (amount) => {
+  const numericAmount =
+    typeof amount === 'number' ? amount : Number(amount);
+
+  if (!Number.isFinite(numericAmount)) {
+    return '-';
+  }
+
+  return new Intl.NumberFormat('id-ID', {
+    style: 'currency',
+    currency: 'IDR',
+    minimumFractionDigits: 0,
+    maximumFractionDigits: 0
+  })
+    ?.format(numericAmount)
+    ?.replace('IDR', 'Rp');
+};
+
+const formatIngredientQuantity = (quantity) => {
+  if (!quantity) {
+    return '';
+  }
+
+  if (typeof quantity === 'string') {
+    return quantity;
+  }
+
+  if (typeof quantity === 'number') {
+    return Number.isInteger(quantity) ? String(quantity) : quantity.toFixed(1);
+  }
+
+  if (typeof quantity === 'object') {
+    const { value, unit } = quantity || {};
+    if (value == null) {
+      return unit || '';
+    }
+    const numericValue = typeof value === 'number' ? value : Number(value);
+    if (!Number.isFinite(numericValue)) {
+      return unit || '';
+    }
+    const displayValue = Number.isInteger(numericValue)
+      ? numericValue
+      : parseFloat(numericValue.toFixed(1));
+    return `${displayValue}${unit ? ` ${unit}` : ''}`;
+  }
+
+  return String(quantity);
+};
+
+const normalizeIngredientKey = (name) =>
+  typeof name === 'string' ? name.trim().toLowerCase() : null;
 
 const BudgetBreakdown = ({ budgetData, onShopNow }) => {
   const [userLocation, setUserLocation] = useState(null);
@@ -41,31 +93,6 @@ const BudgetBreakdown = ({ budgetData, onShopNow }) => {
 
   const totalBudget =
     typeof budgetData?.total === 'number' ? budgetData.total : null;
-
-  const formatCurrency = (amount) => {
-    const numericAmount =
-      typeof amount === 'number' ? amount : Number(amount);
-
-    if (!Number.isFinite(numericAmount)) {
-      return '-';
-    }
-
-    return new Intl.NumberFormat('id-ID', {
-      style: 'currency',
-      currency: 'IDR',
-      minimumFractionDigits: 0,
-      maximumFractionDigits: 0
-    })
-      ?.format(numericAmount)
-      ?.replace('IDR', 'Rp');
-  };
-
-  const getMarketplaceIcon = (marketplace) => {
-    const icons = {
-      shopee: 'ShoppingCart'
-    };
-    return icons?.[marketplace] || 'ShoppingBag';
-  };
 
   const getBudgetColor = (percentage) => {
     if (percentage <= 50) return 'text-success bg-success/10';
@@ -81,49 +108,159 @@ const BudgetBreakdown = ({ budgetData, onShopNow }) => {
     [budgetData]
   );
 
-  const offlineStores = useMemo(() => {
+  const ingredientBreakdown = useMemo(() => {
+    if (Array.isArray(budgetData?.ingredients) && budgetData.ingredients.length) {
+      return budgetData.ingredients;
+    }
+
+    const storeWithBreakdown =
+      budgetData?.offlineStores?.find(
+        (store) => Array.isArray(store?.rincianBahan) && store.rincianBahan.length
+      ) ?? null;
+
+    if (!storeWithBreakdown) {
+      return [];
+    }
+
+    return storeWithBreakdown.rincianBahan.map((item) => ({
+      name: item?.name,
+      quantity: item?.quantity,
+      price: typeof item?.estimatedPrice === 'number' ? item.estimatedPrice : undefined,
+      estimatedPrice: item?.estimatedPrice,
+      notes: item?.note ?? item?.notes
+    }));
+  }, [budgetData]);
+
+  const { stores: offlineStores, ingredientStats } = useMemo(() => {
     const stores = budgetData?.offlineStores ?? [];
-    return stores
-      ?.map((store) => {
-        const hasCoordinates =
-          typeof store?.location?.lat === 'number' &&
-          typeof store?.location?.lng === 'number';
+    const stats = new Map();
 
-        const computedDistance =
-          userLocation && hasCoordinates
-            ? calculateDistance(userLocation, store?.location)
+    const baseStores = stores.map((store) => {
+      const storeDetails = Array.isArray(store?.rincianBahan)
+        ? store.rincianBahan.map((item) => {
+          const key = normalizeIngredientKey(item?.name);
+          const priceValue =
+            typeof item?.estimatedPrice === 'number'
+              ? item.estimatedPrice
+              : null;
+
+          if (key && Number.isFinite(priceValue)) {
+            const current = stats.get(key) || { min: Number.POSITIVE_INFINITY, max: 0 };
+            current.min = Math.min(current.min, priceValue);
+            current.max = Math.max(current.max, priceValue);
+            stats.set(key, current);
+          }
+
+          return {
+            name: item?.name,
+            quantity: item?.quantity,
+            notes: item?.note ?? item?.notes,
+            priceValue,
+            key
+          };
+        })
+        : [];
+
+      const hasPricing = storeDetails.some((detail) => Number.isFinite(detail.priceValue));
+      const totalPrice = hasPricing
+        ? storeDetails.reduce(
+          (sum, detail) => sum + (Number.isFinite(detail.priceValue) ? detail.priceValue : 0),
+          0
+        )
+        : null;
+
+      const hasCoordinates =
+        typeof store?.location?.lat === 'number' &&
+        typeof store?.location?.lng === 'number';
+
+      const computedDistance =
+        userLocation && hasCoordinates
+          ? calculateDistance(userLocation, store?.location)
+          : null;
+
+      const estimatedDistance =
+        typeof store?.estimatedDistance === 'number'
+          ? store?.estimatedDistance
+          : null;
+
+      const distanceToShow = computedDistance ?? estimatedDistance;
+
+      return {
+        ...store,
+        details: storeDetails,
+        hasPricing,
+        totalPrice,
+        distanceToShow,
+        distanceLabel:
+          distanceToShow != null
+            ? `${distanceToShow.toFixed(1)} km`
+            : 'Jarak belum tersedia',
+        distanceSource:
+          computedDistance != null ? 'Berdasarkan lokasi Anda' : 'Perkiraan jarak'
+      };
+    });
+
+    const validTotals = baseStores
+      .filter((store) => store.hasPricing && Number.isFinite(store.totalPrice))
+      .map((store) => store.totalPrice);
+    const minTotalPrice = validTotals.length
+      ? Math.min(...validTotals)
+      : null;
+
+    const validDistances = baseStores
+      .map((store) => store.distanceToShow)
+      .filter((distance) => Number.isFinite(distance));
+    const minDistance = validDistances.length
+      ? Math.min(...validDistances)
+      : null;
+
+    const enrichedStores = baseStores
+      .map((store) => {
+        const cheapestItemCount = store.details.reduce((count, detail) => {
+          const stat = detail.key ? stats.get(detail.key) : null;
+          if (
+            stat &&
+            Number.isFinite(detail.priceValue) &&
+            Number.isFinite(stat?.min) &&
+            detail.priceValue === stat.min
+          ) {
+            return count + 1;
+          }
+          return count;
+        }, 0);
+
+        const priceDiff =
+          minTotalPrice != null && Number.isFinite(store.totalPrice)
+            ? store.totalPrice - minTotalPrice
             : null;
 
-        const estimatedDistance =
-          typeof store?.estimatedDistance === 'number'
-            ? store?.estimatedDistance
+        const distanceDiff =
+          minDistance != null && Number.isFinite(store.distanceToShow)
+            ? store.distanceToShow - minDistance
             : null;
-
-        const distanceToShow = computedDistance ?? estimatedDistance;
 
         return {
           ...store,
-          distanceToShow,
-          distanceLabel:
-            distanceToShow != null
-              ? `${distanceToShow.toFixed(1)} km`
-              : 'Jarak belum tersedia',
-          distanceSource:
-            computedDistance != null ? 'Berdasarkan lokasi Anda' : 'Perkiraan jarak'
+          cheapestItemCount,
+          totalItems: store.details.length,
+          isCheapest: store.hasPricing && priceDiff === 0,
+          priceDiff: priceDiff && priceDiff > 0 ? priceDiff : 0,
+          isNearest: Number.isFinite(store.distanceToShow) && distanceDiff === 0,
+          distanceDiff: distanceDiff && distanceDiff > 0 ? distanceDiff : 0
         };
       })
       ?.sort((a, b) => {
-        const distA =
-          typeof a?.distanceToShow === 'number'
-            ? a?.distanceToShow
-            : Number.POSITIVE_INFINITY;
-        const distB =
-          typeof b?.distanceToShow === 'number'
-            ? b?.distanceToShow
-            : Number.POSITIVE_INFINITY;
+        const distA = Number.isFinite(a?.distanceToShow)
+          ? a?.distanceToShow
+          : Number.POSITIVE_INFINITY;
+        const distB = Number.isFinite(b?.distanceToShow)
+          ? b?.distanceToShow
+          : Number.POSITIVE_INFINITY;
 
         return distA - distB;
       });
+
+    return { stores: enrichedStores, ingredientStats: stats };
   }, [budgetData, userLocation]);
 
   const handleUseLocation = () => {
@@ -176,147 +313,9 @@ const BudgetBreakdown = ({ budgetData, onShopNow }) => {
   const locationButtonVariant = userLocation ? 'success' : 'outline';
   const locationButtonIcon = userLocation ? 'RefreshCw' : 'MapPin';
 
-  const shopeeMarketplaceName = shopeeMarketplace?.name ?? 'shopee';
-  const shopeeLabel =
-    shopeeMarketplaceName.charAt(0).toUpperCase() + shopeeMarketplaceName.slice(1);
-
   return (
     <div className="bg-card rounded-xl p-6 border border-border">
-      <div className="flex items-center justify-between mb-6">
-        <h3 className="text-xl font-heading font-bold text-foreground flex items-center">
-          <Icon name="Calculator" size={24} className="text-success mr-3" />
-          Rincian Biaya
-        </h3>
-        
-        <div className="flex items-center space-x-2">
-          <span className="text-sm text-muted-foreground">Total:</span>
-          <span className="text-xl font-bold text-success">
-            {typeof budgetData?.total === 'number' ? formatCurrency(budgetData.total) : '-'}
-          </span>
-        </div>
-      </div>
-      {/* Budget Summary */}
-      <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-6">
-        <div className="bg-success/5 rounded-lg p-4 text-center">
-          <Icon name="TrendingDown" size={20} className="text-success mx-auto mb-2" />
-          <p className="text-xs text-muted-foreground">Hemat</p>
-          <p className="font-semibold text-success">
-            {typeof budgetData?.savings === 'number' ? formatCurrency(budgetData.savings) : '-'}
-          </p>
-        </div>
-        
-        <div className="bg-primary/5 rounded-lg p-4 text-center">
-          <Icon name="Users" size={20} className="text-primary mx-auto mb-2" />
-          <p className="text-xs text-muted-foreground">Per Porsi</p>
-          <p className="font-semibold text-primary">
-            {typeof budgetData?.perServing === 'number' ? formatCurrency(budgetData.perServing) : '-'}
-          </p>
-        </div>
-        
-        <div className="bg-accent/5 rounded-lg p-4 text-center">
-          <Icon name="Percent" size={20} className="text-accent mx-auto mb-2" />
-          <p className="text-xs text-muted-foreground">vs Restoran</p>
-          <p className="font-semibold text-accent">
-            {typeof budgetData?.restaurantSavings === 'number'
-              ? `-${budgetData.restaurantSavings}%`
-              : '-'}
-          </p>
-        </div>
-      </div>
-      {/* Marketplace Selector */}
-      <div className="mb-6">
-        <h4 className="font-semibold text-foreground mb-3">Pilih Marketplace</h4>
-        {shopeeMarketplace ? (
-          <div className="space-y-3">
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
-              <div className="p-3 rounded-lg border border-primary bg-primary/10 text-primary">
-                <Icon
-                  name={getMarketplaceIcon(shopeeMarketplace?.name)}
-                  size={20}
-                  className="mx-auto mb-1"
-                />
-                <p className="text-xs font-medium capitalize text-center">{shopeeLabel}</p>
-                <p className="text-xs text-center text-foreground">
-                  {typeof shopeeMarketplace?.total === 'number'
-                    ? formatCurrency(shopeeMarketplace.total)
-                    : '-'}
-                </p>
-              </div>
-            </div>
-            {onShopNow && (
-              <Button
-                variant="default"
-                fullWidth
-                iconName="ShoppingCart"
-                iconPosition="left"
-                onClick={() => onShopNow(shopeeMarketplaceName)}
-              >
-                Belanja Sekarang di {shopeeLabel}
-              </Button>
-            )}
-          </div>
-        ) : (
-          <p className="text-sm text-muted-foreground">
-            Data marketplace {shopeeLabel} belum tersedia untuk resep ini.
-          </p>
-        )}
-      </div>
-      {/* Ingredient Breakdown */}
       <div className="space-y-4 mb-6">
-        <div>
-          <h4 className="font-semibold text-foreground">Rincian Bahan</h4>
-          <div className="space-y-3 mt-3">
-            {budgetData?.ingredients?.length ? (
-              budgetData.ingredients.map((ingredient, index) => {
-                const marketplacePrice =
-                  shopeeMarketplace?.ingredients?.[index]?.price;
-                const fallbackPrice =
-                  typeof ingredient?.price === 'number' ? ingredient.price : 0;
-                const priceValue =
-                  typeof marketplacePrice === 'number' ? marketplacePrice : fallbackPrice;
-                const budgetPercentage =
-                  totalBudget && totalBudget > 0 ? (priceValue / totalBudget) * 100 : 0;
-                const percentageLabel = Number.isFinite(budgetPercentage)
-                  ? `${Math.round(budgetPercentage)}%`
-                  : '0%';
-
-                return (
-                  <div
-                    key={index}
-                    className="flex items-center justify-between p-3 bg-muted/30 rounded-lg"
-                  >
-                    <div className="flex-1">
-                      <div className="flex items-center space-x-3">
-                        <div className="w-8 h-8 bg-primary/10 rounded-lg flex items-center justify-center">
-                          <Icon name="Package" size={16} className="text-primary" />
-                        </div>
-                        <div>
-                          <p className="font-medium text-foreground text-sm">{ingredient?.name}</p>
-                          <p className="text-xs text-muted-foreground">{ingredient?.quantity}</p>
-                        </div>
-                      </div>
-                    </div>
-                    <div className="text-right">
-                      <p className="font-semibold text-foreground">
-                        {formatCurrency(priceValue)}
-                      </p>
-                      <span
-                        className={`text-xs px-2 py-1 rounded-full ${getBudgetColor(budgetPercentage)}`}
-                      >
-                        {percentageLabel}
-                      </span>
-                    </div>
-                  </div>
-                );
-              })
-            ) : (
-              <p className="text-sm text-muted-foreground">
-                Belum ada data rincian bahan untuk resep ini.
-              </p>
-            )}
-          </div>
-        </div>
-        {/* Offline Stores Integrated */}
         <div className="pt-4 border-t border-border/50 space-y-3">
           <div className="flex items-center justify-between">
             <div>
@@ -345,7 +344,12 @@ const BudgetBreakdown = ({ budgetData, onShopNow }) => {
               offlineStores.map((store, index) => (
                 <div
                   key={`${store?.name}-${index}`}
-                  className="p-3 bg-muted/30 rounded-lg border border-border/60"
+                  className={`p-4 rounded-lg border transition-colors ${store.isCheapest
+                      ? 'border-success/60 bg-success/5'
+                      : store.isNearest
+                        ? 'border-primary/40 bg-primary/5'
+                        : 'bg-muted/30 border-border/60'
+                    }`}
                 >
                   <div className="flex items-start justify-between gap-3">
                     <div>
@@ -362,16 +366,114 @@ const BudgetBreakdown = ({ budgetData, onShopNow }) => {
                         </p>
                       ) : null}
                     </div>
-                    <div className="text-right">
+                    <div className="text-right space-y-1">
                       <span className="inline-flex items-center px-2 py-1 text-xs rounded-full bg-primary/10 text-primary font-medium">
                         {store?.distanceLabel}
                       </span>
-                      <p className="text-[10px] text-muted-foreground mt-1">
+                      <p className="text-[10px] text-muted-foreground">
                         {store?.distanceSource}
                       </p>
                     </div>
                   </div>
-                  <div className="flex items-center justify-between mt-3">
+
+                  <div className="flex flex-wrap items-center gap-2 mt-3">
+                    {store.isCheapest && (
+                      <span className="text-xs px-2 py-1 rounded-full bg-success/10 text-success font-medium">
+                        Termurah
+                      </span>
+                    )}
+                    {store.priceDiff > 0 && (
+                      <span className="text-xs px-2 py-1 rounded-full bg-muted text-muted-foreground">
+                        +{formatCurrency(store.priceDiff)} vs termurah
+                      </span>
+                    )}
+                    {store.isNearest && (
+                      <span className="text-xs px-2 py-1 rounded-full bg-primary/10 text-primary font-medium">
+                        Terdekat
+                      </span>
+                    )}
+                    {store.distanceDiff > 0 && (
+                      <span className="text-xs px-2 py-1 rounded-full bg-muted text-muted-foreground">
+                        +{store.distanceDiff.toFixed(1)} km
+                      </span>
+                    )}
+                  </div>
+
+                  <div className="mt-3 flex items-center justify-between text-sm">
+                    <span className="text-muted-foreground">Perkiraan total belanja</span>
+                    <span className="font-semibold text-foreground">
+                      {store.hasPricing ? formatCurrency(store.totalPrice) : 'Data belum tersedia'}
+                    </span>
+                  </div>
+                  {store.hasPricing && (
+                    <p className="text-xs text-muted-foreground mt-1">
+                      {store.isCheapest
+                        ? 'Sebagian besar harga bahan paling murah ada di toko ini.'
+                        : `${store.cheapestItemCount}/${store.totalItems} bahan dengan harga termurah`}
+                    </p>
+                  )}
+
+                  <div className="mt-4 space-y-2 bg-background/60 rounded-lg border border-border/60 p-3">
+                    {store.details.length ? (
+                      store.details.map((detail, detailIndex) => {
+                        const stat = detail.key ? ingredientStats.get(detail.key) : null;
+                        const isCheapest =
+                          stat &&
+                          Number.isFinite(detail.priceValue) &&
+                          Number.isFinite(stat?.min) &&
+                          detail.priceValue === stat.min;
+                        const moreExpensiveBy =
+                          stat &&
+                            Number.isFinite(detail.priceValue) &&
+                            Number.isFinite(stat?.min) &&
+                            detail.priceValue !== stat.min
+                            ? detail.priceValue - stat.min
+                            : null;
+
+                        return (
+                          <div
+                            key={`${detail?.name ?? 'detail'}-${detailIndex}`}
+                            className="flex items-center justify-between"
+                          >
+                            <div>
+                              <p className="text-sm font-medium text-foreground">{detail?.name}</p>
+                              <p className="text-xs text-muted-foreground">
+                                {formatIngredientQuantity(detail?.quantity)}
+                              </p>
+                              {detail?.notes && (
+                                <p className="text-xs text-muted-foreground">{detail.notes}</p>
+                              )}
+                            </div>
+                            <div className="text-right">
+                              <p className="text-sm font-semibold text-foreground">
+                                {Number.isFinite(detail.priceValue)
+                                  ? formatCurrency(detail.priceValue)
+                                  : '-'}
+                              </p>
+                              <span
+                                className={`inline-flex items-center px-2 py-1 text-[11px] rounded-full ${isCheapest
+                                    ? 'bg-success/10 text-success'
+                                    : 'bg-muted text-muted-foreground'
+                                  }`}
+                              >
+                                {isCheapest
+                                  ? 'Termurah'
+                                  : moreExpensiveBy != null
+                                    ? `+${formatCurrency(moreExpensiveBy)}`
+                                    : 'Harga belum pasti'}
+                              </span>
+                            </div>
+                          </div>
+                        );
+                      })
+                    ) : (
+                      <p className="text-xs text-muted-foreground">
+                        Belum ada rincian harga bahan untuk toko ini.
+                      </p>
+                    )}
+                  </div>
+
+                  <div className="flex items-center justify-between mt-4 pt-3 border-t border-border/60">
                     <div className="flex items-center text-xs text-muted-foreground">
                       <Icon name="Navigation" size={14} className="mr-2 text-primary" />
                       <span>Buka rute di Google Maps</span>
@@ -407,15 +509,3 @@ const BudgetBreakdown = ({ budgetData, onShopNow }) => {
 };
 
 export default BudgetBreakdown;
-
-
-
-
-
-
-
-
-
-
-
-

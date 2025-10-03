@@ -141,16 +141,7 @@ const CookingSteps = ({ steps, onAIHelp }) => {
             }`}
           >
             <div className="flex items-start space-x-4">
-              <div className={`flex-shrink-0 w-12 h-12 rounded-full border-2 flex items-center justify-center font-bold text-lg ${
-                completedSteps?.has(index)
-                  ? 'bg-success border-success text-white' :'border-primary text-primary bg-primary/10'
-              }`}>
-                {completedSteps?.has(index) ? (
-                  <Icon name="Check" size={20} />
-                ) : (
-                  index + 1
-                )}
-              </div>
+             
 
               <div className="flex-1">
                 <div className="flex items-center space-x-3 mb-3">

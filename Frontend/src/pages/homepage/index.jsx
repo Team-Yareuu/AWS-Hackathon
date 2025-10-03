@@ -8,6 +8,7 @@ import BudgetFriendlySection from './components/BudgetFriendlySection';
 import AIFeaturesShowcase from './components/AIFeaturesShowcase';
 import TestimonialsSection from './components/TestimonialsSection';
 import Footer from './components/Footer';
+import Icon from '../../components/AppIcon';
 
 const Homepage = () => {
   useEffect(() => {
@@ -51,10 +52,35 @@ const Homepage = () => {
         <CulturalStories />
 
 
-        {/* Testimonials */}
-        <TestimonialsSection />
+      
       </main>
-
+       {/* Bottom CTA */}
+        <div className="text-center bg-white rounded-2xl shadow-cultural p-8">
+          <div className="max-w-2xl mx-auto space-y-4">
+            <h3 className="text-2xl font-heading font-bold text-foreground">
+              Bergabunglah dengan Keluarga Bahagia Lainnya
+            </h3>
+            <p className="text-muted-foreground">
+              Mulai perjalanan kuliner Anda bersama AI Resepku. 
+              Gratis untuk semua keluarga Indonesia.
+            </p>
+            
+            <div className="flex flex-col sm:flex-row gap-3 justify-center pt-4">
+              <div className="flex items-center space-x-2 text-sm text-success">
+                <Icon name="Check" size={16} />
+                <span>100% Gratis</span>
+              </div>
+              <div className="flex items-center space-x-2 text-sm text-primary">
+                <Icon name="Check" size={16} />
+                <span>Tanpa Iklan</span>
+              </div>
+              <div className="flex items-center space-x-2 text-sm text-turmeric">
+                <Icon name="Check" size={16} />
+                <span>Resep Unlimited</span>
+              </div>
+            </div>
+          </div>
+        </div>
       {/* Footer */}
       <Footer />
     </div>

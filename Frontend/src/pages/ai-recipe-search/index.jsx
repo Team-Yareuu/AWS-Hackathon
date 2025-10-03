@@ -1,21 +1,17 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { Helmet } from 'react-helmet';
 import Header from '../../components/ui/Header';
 import Icon from '../../components/AppIcon';
-import Button from '../../components/ui/Button';
 import SearchInterface from './components/SearchInterface';
-import FilterSidebar from './components/FilterSidebar';
 import SearchResults from './components/SearchResults';
-import SavedSearches from './components/SavedSearches';
 import AIInsights from './components/AIInsights';
 
 const AIRecipeSearchPage = () => {
   const [searchQuery, setSearchQuery] = useState('');
   const [searchResults, setSearchResults] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
-  const [isFilterOpen, setIsFilterOpen] = useState(false);
   const [sortBy, setSortBy] = useState('relevance');
-  const [filters, setFilters] = useState({});
+  const [searchMode, setSearchMode] = useState('search');
   const [hasSearched, setHasSearched] = useState(false);
 
   // Mock recipe data
@@ -112,113 +108,265 @@ const AIRecipeSearchPage = () => {
     }
   ];
 
+  const normalizeText = (value) => value?.toString()?.toLowerCase() ?? '';
+
+  const parseBudgetFromQuery = (query) => {
+    if (!query) {
+      return null;
+    }
+    const normalized = query.toLowerCase();
+    const match = normalized.match(/(\d{1,3}(?:[.,]\d{3})+|\d+)\s*(rb|ribu|k)?/);
+    if (!match) {
+      return null;
+    }
+    const numericValue = Number(match[1].replace(/[^\d]/g, ''));
+    if (!Number.isFinite(numericValue)) {
+      return null;
+    }
+    const suffix = match[2];
+    if (suffix === 'rb' || suffix === 'ribu' || suffix === 'k') {
+      return numericValue * 1000;
+    }
+    if (normalized.includes('rb') && numericValue < 1000) {
+      return numericValue * 1000;
+    }
+    return numericValue;
+  };
+
+  const parseTimeFromQuery = (query) => {
+    if (!query) {
+      return null;
+    }
+    const normalized = query.toLowerCase();
+    const match = normalized.match(/(\d+(?:[.,]\d+)?)\s*(menit|mnt|minute|jam|hours?)/);
+    if (!match) {
+      return null;
+    }
+    const numericValue = Number(match[1].replace(',', '.'));
+    if (!Number.isFinite(numericValue)) {
+      return null;
+    }
+    const unit = match[2];
+    return unit?.includes('jam') || unit?.includes('hour')
+      ? Math.round(numericValue * 60)
+      : Math.round(numericValue);
+  };
+
+  const getCookingTimeInMinutes = (timeLabel = '') => {
+    const normalized = timeLabel.toLowerCase();
+    const match = normalized.match(/(\d+(?:[.,]\d+)?)\s*(jam|menit)/);
+    if (!match) {
+      return Number.MAX_SAFE_INTEGER;
+    }
+    const numericValue = Number(match[1].replace(',', '.'));
+    if (!Number.isFinite(numericValue)) {
+      return Number.MAX_SAFE_INTEGER;
+    }
+    const unit = match[2];
+    return unit === 'jam'
+      ? Math.round(numericValue * 60)
+      : Math.round(numericValue);
+  };
+
+  const difficultyOrder = ['very-easy', 'easy', 'medium', 'hard', 'very-hard'];
+
+  const runAISearchAgent = (query) => {
+    if (!query) {
+      return [];
+    }
+
+    const normalizedQuery = query.toLowerCase();
+    const tokens = normalizedQuery
+      .replace(/[-_]/g, ' ')
+      .split(/[\s,]+/)
+      .filter(Boolean);
+
+    const synonymsDictionary = {
+      pedas: ['spicy', 'cabai', 'cabe', 'rawit'],
+      spicy: ['pedas', 'cabai', 'rawit'],
+      sehat: ['healthy', 'bergizi', 'diet'],
+      healthy: ['sehat', 'bergizi'],
+      cepat: ['kilat', 'praktis', 'quick', 'simple'],
+      praktis: ['cepat', 'simple', 'kilat'],
+      murah: ['budget', 'hemat', 'ekonomis'],
+      budget: ['murah', 'hemat', 'ekonomis'],
+      tradisional: ['heritage', 'otentik', 'klasik'],
+      vegetarian: ['nabati', 'plant based', 'sayuran'],
+      sayur: ['vegetarian', 'nabati'],
+      rendang: ['padang', 'daging'],
+      gado: ['salad', 'sayur'],
+      soto: ['kuah', 'soup', 'kaldu'],
+      gudeg: ['nangka', 'yogyakarta'],
+      nasi: ['rice'],
+      goreng: ['fried'],
+      ayam: ['chicken', 'poultry'],
+      sup: ['soup', 'kuah'],
+      manis: ['sweet', 'dessert'],
+      sarapan: ['pagi', 'breakfast']
+    };
+
+    const expandedTerms = new Set(tokens);
+    tokens.forEach((token) => {
+      Object.entries(synonymsDictionary).forEach(([key, values]) => {
+        if (token.includes(key) || key.includes(token)) {
+          values.forEach((value) => expandedTerms.add(value));
+        }
+      });
+    });
+
+    const budgetLimit = parseBudgetFromQuery(query);
+    const timeLimit = parseTimeFromQuery(query);
+
+    const scoredResults = mockRecipes.map((recipe) => {
+      const name = normalizeText(recipe?.name);
+      const description = normalizeText(recipe?.description);
+      const cultural = normalizeText(recipe?.cultural);
+      const tags = (recipe?.tags || []).map((tag) => normalizeText(tag));
+      const timeInMinutes = getCookingTimeInMinutes(recipe?.cookingTime);
+      let score = 0;
+
+      if (name.includes(normalizedQuery)) {
+        score += 8;
+      }
+
+      expandedTerms.forEach((term) => {
+        if (!term) {
+          return;
+        }
+        if (name.includes(term)) {
+          score += 6;
+        } else if (tags.some((tag) => tag.includes(term))) {
+          score += 4;
+        } else if (description.includes(term)) {
+          score += 3;
+        } else if (cultural.includes(term)) {
+          score += 2;
+        }
+      });
+
+      if (budgetLimit !== null) {
+        if ((recipe?.estimatedCost || 0) <= budgetLimit) {
+          score += 5;
+        } else {
+          score -= 3;
+        }
+      }
+
+      if (timeLimit !== null) {
+        if (timeInMinutes <= timeLimit) {
+          score += 4;
+        } else {
+          score -= 2;
+        }
+      }
+
+      if (normalizedQuery.includes('ai') && recipe?.aiGenerated) {
+        score += 2;
+      }
+
+      score += recipe?.rating || 0;
+
+      return { recipe, score };
+    });
+
+    const highestScore = Math.max(...scoredResults.map((item) => item.score));
+    const relevantResults =
+      highestScore > 0
+        ? scoredResults.filter((item) => item.score > 0)
+        : scoredResults;
+
+    return relevantResults
+      .sort((a, b) => {
+        if (b.score !== a.score) {
+          return b.score - a.score;
+        }
+        return (b.recipe?.rating || 0) - (a.recipe?.rating || 0);
+      })
+      .map((item) => item.recipe);
+  };
+
+  const applySort = (results = [], sortKey = 'relevance') => {
+    if (!Array.isArray(results)) {
+      return [];
+    }
+
+    const nextResults = [...results];
+
+    switch (sortKey) {
+      case 'rating':
+        nextResults.sort((a, b) => (b?.rating || 0) - (a?.rating || 0));
+        break;
+      case 'time':
+        nextResults.sort(
+          (a, b) =>
+            getCookingTimeInMinutes(a?.cookingTime) - getCookingTimeInMinutes(b?.cookingTime)
+        );
+        break;
+      case 'budget':
+        nextResults.sort(
+          (a, b) => (a?.estimatedCost || 0) - (b?.estimatedCost || 0)
+        );
+        break;
+      case 'difficulty':
+        nextResults.sort(
+          (a, b) =>
+            difficultyOrder.indexOf(a?.difficulty) - difficultyOrder.indexOf(b?.difficulty)
+        );
+        break;
+      case 'recent':
+        nextResults.sort((a, b) => (b?.id || 0) - (a?.id || 0));
+        break;
+      default:
+        break;
+    }
+
+    return nextResults;
+  };
+
   const handleSearch = (query) => {
-    setSearchQuery(query);
+    if (searchMode !== 'search') {
+      return;
+    }
+
+    const trimmedQuery = query?.trim();
+
+    if (!trimmedQuery) {
+      setSearchQuery('');
+      setSearchResults([]);
+      setHasSearched(false);
+      setSearchMode('search');
+      return;
+    }
+
+    setSearchQuery(trimmedQuery);
     setIsLoading(true);
     setHasSearched(true);
 
-    // Simulate API call
     setTimeout(() => {
-      // Filter recipes based on query and filters
-      let filteredResults = mockRecipes?.filter(recipe => 
-        recipe?.name?.toLowerCase()?.includes(query?.toLowerCase()) ||
-        recipe?.description?.toLowerCase()?.includes(query?.toLowerCase()) ||
-        recipe?.tags?.some(tag => tag?.toLowerCase()?.includes(query?.toLowerCase())) ||
-        recipe?.cultural?.toLowerCase()?.includes(query?.toLowerCase())
-      );
-
-      // Apply additional filters
-      if (filters?.budget?.length) {
-        filteredResults = filteredResults?.filter(recipe => {
-          return filters?.budget?.some(budgetRange => {
-            const [min, max] = budgetRange?.split('-')?.map(Number);
-            if (budgetRange?.includes('+')) {
-              return recipe?.estimatedCost >= min;
-            }
-            return recipe?.estimatedCost >= min && recipe?.estimatedCost <= max;
-          });
-        });
-      }
-
-      if (filters?.difficulty?.length) {
-        filteredResults = filteredResults?.filter(recipe => 
-          filters?.difficulty?.includes(recipe?.difficulty)
-        );
-      }
-
-      if (filters?.cuisine?.length) {
-        filteredResults = filteredResults?.filter(recipe => 
-          filters?.cuisine?.some(cuisine => 
-            recipe?.cultural?.toLowerCase()?.includes(cuisine) ||
-            recipe?.tags?.some(tag => tag?.toLowerCase()?.includes(cuisine))
-          )
-        );
-      }
-
-      switch (sortBy) {
-        case 'rating':
-          filteredResults?.sort((a, b) => b?.rating - a?.rating);
-          break;
-        case 'time':
-          filteredResults?.sort((a, b) => {
-            const timeA = parseInt(a?.cookingTime);
-            const timeB = parseInt(b?.cookingTime);
-            return timeA - timeB;
-          });
-          break;
-        case 'budget':
-          filteredResults?.sort((a, b) => a?.estimatedCost - b?.estimatedCost);
-          break;
-        case 'difficulty':
-          const difficultyOrder = ['very-easy', 'easy', 'medium', 'hard', 'very-hard'];
-          filteredResults?.sort((a, b) => 
-            difficultyOrder?.indexOf(a?.difficulty) - difficultyOrder?.indexOf(b?.difficulty)
-          );
-          break;
-        default:
-          break;
-      }
-
-      setSearchResults(filteredResults);
+      const agentResults = runAISearchAgent(trimmedQuery);
+      const sortedResults = sortBy === 'relevance' ? agentResults : applySort(agentResults, sortBy);
+      setSearchResults(sortedResults);
       setIsLoading(false);
-    }, 1500);
+    }, 900);
   };
 
-  const handleFiltersChange = (newFilters) => {
-    setFilters(newFilters);
-    if (hasSearched) {
-      handleSearch(searchQuery);
+  const handleModeChange = (nextMode) => {
+    if (nextMode === 'chat' && !hasSearched) {
+      return;
+    }
+
+    setSearchMode(nextMode);
+
+    if (nextMode === 'chat') {
+      setIsLoading(false);
     }
   };
-
-  const handleClearFilters = () => {
-    setFilters({});
-    if (hasSearched) {
-      handleSearch(searchQuery);
-    }
-  };
-
   const handleSortChange = (newSortBy) => {
     setSortBy(newSortBy);
-    if (hasSearched) {
-      handleSearch(searchQuery);
+    if (!hasSearched) {
+      return;
     }
-  };
-
-  const handleSavedSearchSelect = (query, savedFilters) => {
-    setFilters(savedFilters);
-    handleSearch(query);
-  };
-
-  const getActiveFilterCount = () => {
-    return Object.values(filters)?.reduce((count, filterArray) => {
-      if (Array.isArray(filterArray)) {
-        return count + filterArray?.length;
-      } else if (typeof filterArray === 'object' && filterArray !== null) {
-        return count + Object.values(filterArray)?.filter(Boolean)?.length;
-      }
-      return count;
-    }, 0);
+    setSearchResults((previousResults) => applySort(previousResults, newSortBy));
   };
 
   return (
@@ -255,62 +403,29 @@ const AIRecipeSearchPage = () => {
               </p>
             </div>
 
-            <div className="flex flex-col lg:flex-row gap-8">
-              {/* Filter Sidebar */}
-              <div className="lg:w-80 flex-shrink-0">
-                {/* Mobile Filter Toggle */}
-                <div className="lg:hidden mb-4">
-                  <Button
-                    variant="outline"
-                    fullWidth
-                    iconName="Filter"
-                    iconPosition="left"
-                    onClick={() => setIsFilterOpen(true)}
-                  >
-                    Filter Pencarian
-                    {getActiveFilterCount() > 0 && (
-                      <span className="ml-2 px-2 py-1 bg-primary text-primary-foreground rounded-full text-xs">
-                        {getActiveFilterCount()}
-                      </span>
-                    )}
-                  </Button>
-                </div>
-
-                <FilterSidebar
-                  isOpen={isFilterOpen}
-                  onClose={() => setIsFilterOpen(false)}
-                  filters={filters}
-                  onFiltersChange={handleFiltersChange}
-                  onClearFilters={handleClearFilters}
-                />
-              </div>
-
+            <div className="space-y-8">
               {/* Main Content */}
-              <div className="flex-1 space-y-8">
+              <div className="space-y-2">
                 {/* Search Interface */}
                 <SearchInterface
+                  mode={searchMode}
+                  hasSearched={hasSearched}
+                  onModeChange={handleModeChange}
                   onSearch={handleSearch}
                   isLoading={isLoading}
                 />
 
-                {/* Saved Searches - Show when no search has been performed */}
-                {!hasSearched && (
-                  <SavedSearches
-                    onSearchSelect={handleSavedSearchSelect}
-                  />
-                )}
 
                 {/* AI Insights - Show after search */}
-                {hasSearched && searchResults?.length > 0 && (
+                {searchMode === 'search' && hasSearched && searchResults?.length > 0 && (
                   <AIInsights
                     searchQuery={searchQuery}
                     results={searchResults}
-                    filters={filters}
                   />
                 )}
 
                 {/* Search Results */}
-                {hasSearched && (
+                {searchMode === 'search' && hasSearched && (
                   <SearchResults
                     results={searchResults}
                     isLoading={isLoading}
@@ -321,7 +436,7 @@ const AIRecipeSearchPage = () => {
                 )}
 
                 {/* Getting Started Guide - Show when no search performed */}
-                {!hasSearched && (
+                {searchMode === 'search' && !hasSearched && (
                   <div className="bg-card rounded-xl p-8 border border-border">
                     <div className="text-center mb-6">
                       <Icon name="Compass" size={48} className="text-primary mx-auto mb-4" />
@@ -374,7 +489,7 @@ const AIRecipeSearchPage = () => {
                             <li>• Sebutkan jumlah porsi untuk rekomendasi yang lebih akurat</li>
                             <li>• Tambahkan preferensi diet (vegetarian, halal, keto) dalam pencarian</li>
                             <li>• Gunakan nama daerah untuk resep tradisional (Padang, Jawa, Bali)</li>
-                            <li>• Kombinasikan filter untuk hasil yang lebih spesifik</li>
+                            <li>• Eksperimen dengan kata kunci detail (misal "budget 50rb", "tanpa santan")</li>
                           </ul>
                         </div>
                       </div>

@@ -41,27 +41,6 @@ const CulturalStory = ({ story }) => {
           </button>
         </div>
       </div>
-      {/* Cultural Elements */}
-      {story?.culturalElements && (
-        <div className="mt-6 pt-6 border-t border-turmeric/20">
-          <h4 className="font-semibold text-foreground mb-4 flex items-center">
-            <Icon name="Sparkles" size={18} className="text-turmeric mr-2" />
-            Elemen Budaya
-          </h4>
-          
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-            {story?.culturalElements?.map((element, index) => (
-              <div key={index} className="flex items-start space-x-3">
-                <div className="w-2 h-2 bg-turmeric rounded-full mt-2 flex-shrink-0" />
-                <div>
-                  <p className="font-medium text-foreground text-sm">{element?.title}</p>
-                  <p className="text-muted-foreground text-xs mt-1">{element?.description}</p>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      )}
       {/* Regional Variations */}
       {story?.regionalVariations && (
         <div className="mt-6 pt-6 border-t border-turmeric/20">

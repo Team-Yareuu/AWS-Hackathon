@@ -9,7 +9,7 @@ const RelatedRecipes = ({ recipes, currentRecipeId }) => {
 
   const handleRecipeClick = (recipeId) => {
     // In a real app, this would navigate to the specific recipe
-    navigate(`/recipe-detail?id=${recipeId}`);
+    navigate(`/recipe-detail/${recipeId}`);
     window.scrollTo(0, 0);
   };
 

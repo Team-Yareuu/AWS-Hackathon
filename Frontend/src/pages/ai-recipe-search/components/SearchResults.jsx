@@ -30,7 +30,7 @@ const SearchResults = ({ results, isLoading, searchQuery, sortBy, onSortChange }
   };
 
   const handleRecipeClick = (recipe) => {
-    navigate('/recipe-detail', { state: { recipe } });
+    navigate(`/recipe-detail/${recipe?.id || recipe?.slug || '1'}`, { state: { recipe } });
   };
 
   const getDifficultyColor = (difficulty) => {
@@ -103,7 +103,7 @@ const SearchResults = ({ results, isLoading, searchQuery, sortBy, onSortChange }
           </h3>
           <p className="text-muted-foreground mb-6">
             {searchQuery 
-              ? `Tidak ada resep yang cocok dengan "${searchQuery}". Coba kata kunci lain atau ubah filter pencarian.`
+              ? `Tidak ada resep yang cocok dengan "${searchQuery}". Coba kata kunci lain atau tambahkan detail seperti bahan, budget, atau daerah.`
               : 'Gunakan kotak pencarian di atas untuk menemukan resep yang sempurna untuk Anda.'
             }
           </p>
@@ -113,8 +113,8 @@ const SearchResults = ({ results, isLoading, searchQuery, sortBy, onSortChange }
               <ul className="text-sm text-muted-foreground space-y-1">
                 <li>• Coba kata kunci yang lebih umum</li>
                 <li>• Periksa ejaan kata kunci</li>
-                <li>• Gunakan nama bahan atau jenis masakan</li>
-                <li>• Hapus beberapa filter untuk hasil lebih luas</li>
+                <li>• Gunakan nama bahan, rasa, atau daerah masakan</li>
+                <li>• Tambahkan konteks ekstra (misal "tanpa santan", "budget 50rb")</li>
               </ul>
             </div>
           )}
@@ -281,16 +281,7 @@ const SearchResults = ({ results, isLoading, searchQuery, sortBy, onSortChange }
                 >
                   Lihat Resep
                 </Button>
-                <Button
-                  variant="outline"
-                  size="sm"
-                  iconName="ShoppingCart"
-                  onClick={(e) => {
-                    e?.stopPropagation();
-                    navigate('/smart-shopping-assistant', { state: { recipe } });
-                  }}
-                  title="Belanja bahan"
-                />
+          
               </div>
             </div>
           </div>

@@ -4,7 +4,6 @@ import Icon from '../../components/AppIcon';
 import Image from '../../components/AppImage';
 import RegionalMap from './components/RegionalMap';
 import CulturalTimeline from './components/CulturalTimeline';
-import FestivalCalendar from './components/FestivalCalendar';
 import IngredientEncyclopedia from './components/IngredientEncyclopedia';
 import CookingTechniqueLibrary from './components/CookingTechniqueLibrary';
 import CulturalStoryCard from './components/CulturalStoryCard';
@@ -18,7 +17,6 @@ const CulturalHeritageExplorer = () => {
     { id: 'overview', name: 'Ringkasan', icon: 'Home' },
     { id: 'regions', name: 'Peta Daerah', icon: 'Map' },
     { id: 'timeline', name: 'Sejarah', icon: 'Clock' },
-    { id: 'festivals', name: 'Perayaan', icon: 'Calendar' },
     { id: 'ingredients', name: 'Bahan', icon: 'Leaf' },
     { id: 'techniques', name: 'Teknik', icon: 'ChefHat' }
   ];
@@ -195,7 +193,6 @@ const CulturalHeritageExplorer = () => {
                     <p className="text-sm text-muted-foreground">
                       {tab?.id === 'regions' && 'Jelajahi kuliner dari berbagai daerah'}
                       {tab?.id === 'timeline' && 'Perjalanan sejarah kuliner Indonesia'}
-                      {tab?.id === 'festivals' && 'Hidangan khas perayaan tradisional'}
                       {tab?.id === 'ingredients' && 'Ensiklopedia bahan makanan tradisional'}
                       {tab?.id === 'techniques' && 'Teknik memasak warisan nenek moyang'}
                     </p>
@@ -270,8 +267,6 @@ const CulturalHeritageExplorer = () => {
         );
       case 'timeline':
         return <CulturalTimeline />;
-      case 'festivals':
-        return <FestivalCalendar />;
       case 'ingredients':
         return <IngredientEncyclopedia />;
       case 'techniques':

@@ -107,7 +107,7 @@ const FeaturedRecipes = () => {
 
 
   const handleRecipeClick = (recipe) => {
-    navigate('/recipe-detail', { state: { recipeId: recipe?.id, recipe } });
+    navigate(`/recipe-detail/${recipe?.id}`, { state: { recipeId: recipe?.id, recipe } });
   };
 
   const handleViewAll = () => {

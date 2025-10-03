@@ -39,7 +39,7 @@ const HeroSection = () => {
       title: "Soto Betawi Khas Jakarta",
       subtitle: "Kehangatan Tradisi Betawi",
       description: "Kuah santan gurih dengan daging sapi dan jeroan, dilengkapi kerupuk dan emping untuk kelezatan maksimal",
-      image: "https://images.pixabay.com/photo/2019/11/20/08/31/soup-4639743_1280.jpg?w=800&h=600&fit=crop",
+      image: "https://img-global.cpcdn.com/recipes/9d3c4827e205db74/1200x630cq80/photo.jpg",
       region: "DKI Jakarta",
       cookingTime: "3 jam",
       difficulty: "Mudah",
@@ -134,7 +134,7 @@ const HeroSection = () => {
                   value={searchQuery}
                   onChange={handleSearchChange}
                   onKeyPress={(e) => e?.key === 'Enter' && handleSearchSubmit()}
-                  placeholder="Coba: 'Rendang untuk 4 orang budget 50rb' atau 'Masakan pedas dengan ayam'"
+                  placeholder="Coba: 'Rendang untuk 4 orang budget 50rb' "
                   className="w-full pl-12 pr-4 py-4 text-base bg-white border-2 border-border rounded-2xl focus:border-primary focus:ring-4 focus:ring-primary/10 transition-all duration-200 shadow-cultural"
                 />
                 <div className="absolute inset-y-0 right-0 pr-2 flex items-center">
@@ -293,7 +293,7 @@ const HeroSection = () => {
                 <Button
                   variant="default"
                   fullWidth
-                  onClick={() => navigate('/recipe-detail', { state: { recipeId: currentRecipe?.id } })}
+                  onClick={() => navigate(`/recipe-detail/${currentRecipe?.id}`, { state: { recipeId: currentRecipe?.id } })}
                   iconName="ChefHat"
                   iconPosition="left"
                   className="mt-4"

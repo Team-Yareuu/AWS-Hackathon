@@ -13,7 +13,6 @@ const Header = ({ className = '' }) => {
     { path: '/ai-recipe-search', label: 'Cari Resep AI', icon: 'Search' },
     { path: '/cultural-heritage-explorer', label: 'Warisan Budaya', icon: 'BookOpen' },
     { path: '/smart-shopping-assistant', label: 'Belanja Pintar', icon: 'ShoppingCart' },
-    { path: '/personal-kitchen-dashboard', label: 'Dapur Saya', icon: 'ChefHat' }
   ];
 
   const isActivePath = (path) => location?.pathname === path;
@@ -94,14 +93,14 @@ const Header = ({ className = '' }) => {
             <Button variant="ghost" size="sm" iconName="Bell" className="relative">
               <span className="absolute -top-1 -right-1 w-2 h-2 bg-accent rounded-full"></span>
             </Button>
-            
+{/*             
             <Button variant="outline" size="sm" iconName="User">
               Profil
             </Button>
             
             <Button variant="default" size="sm" iconName="Plus" iconPosition="left">
               Tambah Resep
-            </Button>
+            </Button> */}
           </div>
 
           {/* Mobile Menu Button */}
@@ -139,12 +138,12 @@ const Header = ({ className = '' }) => {
             </div>
             {/* Mobile User Actions */}
             <div className="pt-4 border-t border-border space-y-2">
-              <Button variant="outline" fullWidth iconName="User" iconPosition="left">
+              {/* <Button variant="outline" fullWidth iconName="User" iconPosition="left">
                 Profil Saya
               </Button>
               <Button variant="default" fullWidth iconName="Plus" iconPosition="left">
                 Tambah Resep
-              </Button>
+              </Button> */}
             </div>
 
             {/* Cultural Trust Signal */}

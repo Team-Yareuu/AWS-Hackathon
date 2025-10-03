@@ -18,7 +18,7 @@ const Routes = () => {
       <RouterRoutes>
         {/* Define your route here */}
         <Route path="/" element={<Homepage />} />
-        <Route path="/recipe-detail" element={<RecipeDetail />} />
+        <Route path="/recipe-detail/:id" element={<RecipeDetail />} />
         <Route path="/ai-recipe-search" element={<AIRecipeSearchPage />} />
         <Route path="/cultural-heritage-explorer" element={<CulturalHeritageExplorer />} />
         <Route path="/smart-shopping-assistant" element={<SmartShoppingAssistant />} />

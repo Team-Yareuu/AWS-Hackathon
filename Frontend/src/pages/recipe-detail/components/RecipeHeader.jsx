@@ -105,13 +105,13 @@ const RecipeHeader = ({ recipe, onSave, onShare, isSaved }) => {
       </div>
       {/* Quick Stats */}
       <div className="bg-background border border-border rounded-xl p-4 -mt-8 mx-4 relative z-10 shadow-cultural">
-        <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
+        <div className="grid grid-cols-2 sm:grid-cols-3 gap-4">
           <div className="text-center">
             <div className="flex items-center justify-center w-10 h-10 bg-primary/10 rounded-lg mb-2 mx-auto">
               <Icon name="Clock" size={20} className="text-primary" />
             </div>
             <p className="text-xs text-muted-foreground">Waktu Masak</p>
-            <p className="font-semibold text-sm">{recipe?.cookingTime}</p>
+            <p className="font-semibold text-sm">{recipe?.cookingTimeMinutes} menit</p>
           </div>
           
           <div className="text-center">
@@ -128,14 +128,6 @@ const RecipeHeader = ({ recipe, onSave, onShare, isSaved }) => {
             </div>
             <p className="text-xs text-muted-foreground">Estimasi Biaya</p>
             <p className="font-semibold text-sm">{recipe?.estimatedCost}</p>
-          </div>
-          
-          <div className="text-center">
-            <div className="flex items-center justify-center w-10 h-10 bg-warning/10 rounded-lg mb-2 mx-auto">
-              <Icon name="Star" size={20} className="text-warning" />
-            </div>
-            <p className="text-xs text-muted-foreground">Rating</p>
-            <p className="font-semibold text-sm">{recipe?.rating}/5</p>
           </div>
         </div>
       </div>
