@@ -1,19 +1,22 @@
 # Core Framework
-fastapi
-uvicorn[standard]
-pydantic
-pydantic-settings
-
-# AI & AWS
-boto3
-strands-agents
+fastapi>=0.104.0
+uvicorn[standard]>=0.24.0
+pydantic>=2.0.0
+pydantic-settings>=2.0.0
 
 # Database (Knowledge Graph)
-neo4j
+neo4j>=5.14.0
 
-# Security
-python-jose[cryptography]
-passlib[bcrypt]
+# AI & AWS
+boto3>=1.28.0
+botocore>=1.31.0
+
+# Security & Authentication
+python-jose[cryptography]>=3.3.0
+passlib[bcrypt]>=1.7.4
 
 # Utilities
-python-dotenv
+python-dotenv>=1.0.0
+
+# HTTP Client (for testing)
+httpx>=0.25.0
