@@ -1,0 +1,93 @@
+{
+  "id": "2",
+  "name": "Nama Resep Baru",
+  "shortDescription": "Deskripsi singkat resep",
+  "description": "Deskripsi lengkap resep",
+  "image": "https://example.com/image.jpg",
+  "region": "Nama Daerah",
+  "difficulty": "Mudah",
+  "cookingTimeMinutes": 60,
+  "servings": 4,
+  "estimatedCost": 50000,
+  "isTraditional": true,
+  "isNew": false,
+  "culturalStory": {
+    "shortStory": "Cerita singkat budaya",
+    "fullStory": "Cerita lengkap tentang sejarah dan budaya resep ini",
+    "regionalVariations": [
+      {
+        "region": "Nama Daerah",
+        "province": "Nama Provinsi",
+        "difference": "Perbedaan cara memasak"
+      }
+    ]
+  },
+  "budgetData": {
+    "offlineStores": [
+      {
+        "name": "Nama Pasar/Toko",
+        "address": "Alamat lengkap",
+        "openingHours": "08.00 - 17.00",
+        "estimatedDistance": 2.5,
+        "location": {
+          "lat": -6.2088,
+          "lng": 106.8456
+        },
+        "rincianBahan": [
+          {
+            "name": "Nama Bahan",
+            "quantity": {
+              "value": 500,
+              "unit": "gram"
+            },
+            "estimatedPrice": 25000,
+            "note": "Catatan tambahan (opsional)"
+          }
+        ]
+      }
+    ]
+  },
+  "ingredients": [
+    {
+      "bahan_utama": [
+        {
+          "name": "Nama Bahan Utama",
+          "quantity": {
+            "value": 500,
+            "unit": "gram"
+          },
+          "notes": "Catatan cara memotong/mempersiapkan",
+          "substitutes": [
+            "Bahan Pengganti 1",
+            "Bahan Pengganti 2"
+          ]
+        }
+      ],
+      "bumbu": [
+        {
+          "name": "Nama Bumbu",
+          "quantity": {
+            "value": 5,
+            "unit": "siung"
+          },
+          "notes": "Catatan (opsional)"
+        }
+      ]
+    }
+  ],
+  "cookingSteps": [
+    {
+      "step": 1,
+      "title": "Judul Langkah",
+      "description": "Deskripsi detail cara memasak",
+      "duration": "15 menit",
+      "difficulty": "mudah",
+      "image": "https://example.com/step1.jpg",
+      "tips": [
+        "Tips 1",
+        "Tips 2"
+      ]
+    }
+  ]
+}
+

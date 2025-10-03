@@ -1,52 +1,352 @@
 [
-    {
-        "id": "1", "name": "Nasi Goreng", "description": "Nasi goreng klasik Indonesia, cepat dan lezat.",
-        "image": "nasi_goreng.jpg", "difficulty": "Mudah", "cookingTime": 20, "servings": 2, "estimatedCost": 30000, "region": "Indonesia",
-        "ingredients": [
-            {"name": "Nasi Putih", "quantity": "2 piring"}, {"name": "Telur", "quantity": "2 butir"},
-            {"name": "Bawang Merah", "quantity": "3 siung"}, {"name": "Bawang Putih", "quantity": "2 siung"},
-            {"name": "Kecap Manis", "quantity": "3 sdm"}, {"name": "Daging Ayam", "quantity": "100g"}
-        ],
-        "cuisine": "Jawa", "techniques": ["Menumis"], "dietary": ["Halal"]
+  {
+    "id": "1",
+    "name": "Rendang Daging Sapi Padang",
+    "shortDescription": "Rendang daging sapi autentik dengan bumbu rempah tradisional Minangkabau yang kaya cita rasa",
+    "description": "Rendang daging sapi autentik dengan bumbu rempah tradisional Minangkabau yang kaya cita rasa",
+    "image": "https://api.meatguy.id/admin/image/blogs/6cfa140f-ccbc-4580-a4a0-9261b7af9aa9",
+    "region": "Sumatera Barat",
+    "difficulty": "Sedang",
+    "cookingTimeMinutes": 180,
+    "servings": 4,
+    "estimatedCost": 85000,
+    "isTraditional": true,
+    "isNew": false,
+    "culturalStory": {
+      "shortStory": "Rendang adalah masakan tradisional Minangkabau yang telah diakui UNESCO sebagai warisan budaya dunia. Hidangan ini melambangkan filosofi kehidupan masyarakat Minang.",
+      "fullStory": "Rendang adalah masakan tradisional Minangkabau yang telah diakui UNESCO sebagai warisan budaya dunia. Hidangan ini melambangkan filosofi kehidupan masyarakat Minang yang penuh makna.\n\nDalam tradisi Minangkabau, rendang bukan sekadar makanan, tetapi simbol ketahanan dan kesabaran. Proses memasak yang memakan waktu berjam-jam mencerminkan nilai kesabaran dalam menghadapi kehidupan.\n\nSetiap bumbu dalam rendang memiliki makna filosofis. Daging melambangkan niniak mamak (pemimpin adat), santan adalah bundo kanduang (ibu), cabai adalah alim ulama, dan rempah-rempah lainnya mewakili cerdik pandai dan masyarakat biasa.\n\nRendang biasanya disajikan dalam acara-acara penting seperti pernikahan, batagak penghulu, dan hari raya. Kemampuan membuat rendang yang lezat menjadi kebanggaan tersendiri bagi perempuan Minang.",
+      "regionalVariations": [
+        {
+          "region": "Padang",
+          "province": "Sumatera Barat",
+          "difference": "Menggunakan santan kental dan dimasak hingga kering sempurna"
+        },
+        {
+          "region": "Payakumbuh",
+          "province": "Sumatera Barat",
+          "difference": "Ditambahkan daun kunyit untuk aroma yang lebih harum"
+        },
+        {
+          "region": "Bukittinggi",
+          "province": "Sumatera Barat",
+          "difference": "Menggunakan cabai yang lebih banyak untuk rasa pedas yang kuat"
+        }
+      ]
     },
-    {
-        "id": "2", "name": "Rendang Daging", "description": "Rendang daging sapi khas Padang yang kaya rempah.",
-        "image": "rendang.jpg", "difficulty": "Sulit", "cookingTime": 240, "servings": 8, "estimatedCost": 150000, "region": "Sumatera",
-        "ingredients": [
-            {"name": "Daging Sapi", "quantity": "1 kg"}, {"name": "Santan Kelapa", "quantity": "1.5 liter"},
-            {"name": "Cabai Merah", "quantity": "100g"}, {"name": "Bawang Merah", "quantity": "10 siung"},
-            {"name": "Serai", "quantity": "3 batang"}, {"name": "Daun Kunyit", "quantity": "1 lembar"}
-        ],
-        "cuisine": "Sumatera", "techniques": ["Ungkep", "Menggulai"], "dietary": ["Halal"]
+    "budgetData": {
+      "offlineStores": [
+        {
+          "name": "Pasar Raya Padang",
+          "address": "Jl. Pasar Raya No. 1, Padang",
+          "openingHours": "05.00 - 18.00",
+          "estimatedDistance": 2.5,
+          "location": {
+            "lat": -0.9501,
+            "lng": 100.3531
+          },
+          "rincianBahan": [
+            {
+              "name": "Daging sapi",
+              "quantity": {
+                "value": 1,
+                "unit": "kg"
+              },
+              "estimatedPrice": 67000
+            },
+            {
+              "name": "Santan kental",
+              "quantity": {
+                "value": 1,
+                "unit": "liter"
+              },
+              "estimatedPrice": 15000
+            },
+            {
+              "name": "Rempah-rempah",
+              "quantity": {
+                "value": null,
+                "unit": "secukupnya"
+              },
+              "estimatedPrice": 10000,
+              "note": "Cabai, bawang, lengkuas, serai, daun jeruk"
+            }
+          ]
+        },
+        {
+          "name": "Pasar Lubuk Buaya",
+          "address": "Jl. Adinegoro, Lubuk Buaya",
+          "openingHours": "06.00 - 17.00",
+          "estimatedDistance": 6.1,
+          "location": {
+            "lat": -0.8932,
+            "lng": 100.3501
+          },
+          "rincianBahan": [
+            {
+              "name": "Daging sapi",
+              "quantity": {
+                "value": 1,
+                "unit": "kg"
+              },
+              "estimatedPrice": 67000
+            },
+            {
+              "name": "Santan kental",
+              "quantity": {
+                "value": 1,
+                "unit": "liter"
+              },
+              "estimatedPrice": 15000
+            },
+            {
+              "name": "Rempah-rempah",
+              "quantity": {
+                "value": null,
+                "unit": "secukupnya"
+              },
+              "estimatedPrice": 10000,
+              "note": "Cabai, bawang, lengkuas, serai, daun jeruk"
+            }
+          ]
+        }
+      ]
     },
-    {
-        "id": "3", "name": "Sate Ayam Madura", "description": "Sate ayam dengan bumbu kacang khas Madura.",
-        "image": "sate_ayam.jpg", "difficulty": "Sedang", "cookingTime": 60, "servings": 4, "estimatedCost": 50000, "region": "Jawa Timur",
-        "ingredients": [
-            {"name": "Daging Ayam", "quantity": "500g"}, {"name": "Kacang Tanah", "quantity": "200g"},
-            {"name": "Kecap Manis", "quantity": "5 sdm"}, {"name": "Bawang Merah", "quantity": "5 siung"},
-            {"name": "Jeruk Nipis", "quantity": "1 buah"}
+    "ingredients": [
+      {
+        "bahan_utama": [
+          {
+            "name": "Daging sapi paha atas",
+            "quantity": {
+              "value": 1000,
+              "unit": "gram"
+            },
+            "notes": "Potong dadu besar",
+            "substitutes": [
+              "Daging sapi sengkel",
+              "Daging sapi sandung lamur"
+            ]
+          },
+          {
+            "name": "Santan kental",
+            "quantity": {
+              "value": 1000,
+              "unit": "ml"
+            },
+            "notes": "Dari 2 butir kelapa parut segar",
+            "substitutes": [
+              "Santan instan premium"
+            ]
+          },
+          {
+            "name": "Daun kunyit",
+            "quantity": {
+              "value": 1,
+              "unit": "lembar"
+            },
+            "notes": "Simpulkan"
+          },
+          {
+            "name": "Daun salam",
+            "quantity": {
+              "value": 3,
+              "unit": "lembar"
+            }
+          },
+          {
+            "name": "Serai",
+            "quantity": {
+              "value": 2,
+              "unit": "batang"
+            },
+            "notes": "Memarkan"
+          },
+          {
+            "name": "Asam kandis",
+            "quantity": {
+              "value": 2,
+              "unit": "buah"
+            }
+          },
+          {
+            "name": "Nasi putih hangat",
+            "quantity": {
+              "value": 4,
+              "unit": "porsi"
+            }
+          }
         ],
-        "cuisine": "Jawa", "techniques": ["Membakar", "Menumis"], "dietary": ["Halal"]
-    },
-    {
-        "id": "4", "name": "Gado-Gado", "description": "Salad sayuran dengan saus kacang khas Indonesia.",
-        "image": "gado_gado.jpg", "difficulty": "Mudah", "cookingTime": 30, "servings": 4, "estimatedCost": 25000, "region": "Jakarta",
-        "ingredients": [
-            {"name": "Lontong", "quantity": "4 buah"}, {"name": "Tahu", "quantity": "2 buah"},
-            {"name": "Tempe", "quantity": "1 papan"}, {"name": "Kangkung", "quantity": "1 ikat"},
-            {"name": "Tauge", "quantity": "100g"}, {"name": "Kacang Tanah", "quantity": "150g"}
-        ],
-        "cuisine": "Jawa", "techniques": ["Merebus", "Menggoreng"], "dietary": ["Vegetarian", "Halal"]
-    },
-    {
-        "id": "5", "name": "Soto Ayam Lamongan", "description": "Soto ayam bening dengan koya khas Lamongan.",
-        "image": "soto_lamongan.jpg", "difficulty": "Sedang", "cookingTime": 90, "servings": 6, "estimatedCost": 60000, "region": "Jawa Timur",
-        "ingredients": [
-            {"name": "Ayam Kampung", "quantity": "1 ekor"}, {"name": "Soun", "quantity": "50g"},
-            {"name": "Telur Rebus", "quantity": "3 butir"}, {"name": "Serai", "quantity": "2 batang"},
-            {"name": "Daun Jeruk", "quantity": "5 lembar"}, {"name": "Kunyit", "quantity": "2 cm"}
-        ],
-        "cuisine": "Jawa", "techniques": ["Merebus", "Menumis"], "dietary": ["Halal"]
-    }
+        "bumbu": [
+          {
+            "name": "Cabai merah keriting",
+            "quantity": {
+              "value": 15,
+              "unit": "buah"
+            },
+            "notes": "Sesuai selera"
+          },
+          {
+            "name": "Bawang merah",
+            "quantity": {
+              "value": 10,
+              "unit": "siung"
+            }
+          },
+          {
+            "name": "Bawang putih",
+            "quantity": {
+              "value": 6,
+              "unit": "siung"
+            }
+          },
+          {
+            "name": "Lengkuas",
+            "quantity": {
+              "value": 50,
+              "unit": "gram"
+            }
+          },
+          {
+            "name": "Jahe",
+            "quantity": {
+              "value": 30,
+              "unit": "gram"
+            }
+          },
+          {
+            "name": "Kunyit",
+            "quantity": {
+              "value": 20,
+              "unit": "gram"
+            }
+          },
+          {
+            "name": "Kemiri",
+            "quantity": {
+              "value": 6,
+              "unit": "butir"
+            },
+            "notes": "Sangrai terlebih dahulu"
+          },
+          {
+            "name": "Ketumbar",
+            "quantity": {
+              "value": 1,
+              "unit": "sdm"
+            },
+            "notes": "Sangrai dan haluskan"
+          },
+          {
+            "name": "Jintan",
+            "quantity": {
+              "value": 0.5,
+              "unit": "sdm"
+            }
+          },
+          {
+            "name": "Pala",
+            "quantity": {
+              "value": 0.25,
+              "unit": "butir"
+            }
+          },
+          {
+            "name": "Garam",
+            "quantity": {
+              "value": 2,
+              "unit": "sdm"
+            },
+            "notes": "Sesuai selera"
+          },
+          {
+            "name": "Gula merah",
+            "quantity": {
+              "value": 1,
+              "unit": "sdm"
+            },
+            "notes": "Sisir halus"
+          }
+        ]
+      }
+    ],
+    "cookingSteps": [
+      {
+        "step": 1,
+        "title": "Persiapan Bahan",
+        "description": "Siapkan semua bahan. Potong daging sapi sesuai selera, bersihkan daun-daunan, dan haluskan bumbu dengan blender atau ulekan.",
+        "duration": "20 menit",
+        "difficulty": "mudah",
+        "image": "https://images.unsplash.com",
+        "tips": [
+          "Gunakan daging berkualitas baik agar hasil empuk",
+          "Potong daging melawan serat supaya lunak",
+          "Haluskan bumbu hingga benar-benar lembut"
+        ]
+      },
+      {
+        "step": 2,
+        "title": "Menumis Bumbu",
+        "description": "Panaskan wajan besar, tumis bumbu halus bersama daun salam, daun kunyit, dan serai hingga harum dan matang.",
+        "duration": "15 menit",
+        "difficulty": "sedang",
+        "image": "https://images.unsplash.com",
+        "tips": [
+          "Gunakan api sedang dan aduk terus",
+          "Pastikan bumbu benar-benar matang agar tidak langu",
+          "Tambahkan sedikit minyak jika terlalu kering"
+        ]
+      },
+      {
+        "step": 3,
+        "title": "Memasak Daging",
+        "description": "Masukkan daging sapi ke dalam tumisan bumbu, aduk hingga semua daging terbalut bumbu. Masak hingga daging berubah warna.",
+        "duration": "10 menit",
+        "difficulty": "sedang",
+        "image": "https://images.unsplash.com",
+        "tips": [
+          "Gunakan api sedang cenderung besar",
+          "Aduk agar bumbu merata",
+          "Pastikan tidak ada cairan berlebih sebelum menambahkan santan"
+        ]
+      },
+      {
+        "step": 4,
+        "title": "Menambahkan Santan",
+        "description": "Tuang santan kental, masak dengan api kecil sambil terus diaduk perlahan agar santan tidak pecah. Masak hingga santan mendidih.",
+        "duration": "15 menit",
+        "difficulty": "sedang",
+        "image": "https://images.unsplash.com",
+        "tips": [
+          "Aduk perlahan agar santan tidak pecah",
+          "Gunakan spatula kayu saat mengaduk",
+          "Masak dengan api kecil"
+        ]
+      },
+      {
+        "step": 5,
+        "title": "Mengentalkan Bumbu",
+        "description": "Masak rendang dengan api kecil selama 2-3 jam hingga santan menyusut dan bumbu mengental. Aduk sesekali agar tidak gosong.",
+        "duration": "120 menit",
+        "difficulty": "sulit",
+        "image": "https://images.unsplash.com",
+        "tips": [
+          "Gunakan wajan tebal agar panas merata",
+          "Aduk dari bawah ke atas agar tidak gosong",
+          "Jika bumbu terlalu kering, tambahkan sedikit air panas"
+        ]
+      },
+      {
+        "step": 6,
+        "title": "Penyelesaian",
+        "description": "Ketika rendang sudah kering dan berwarna cokelat kehitaman, angkat dari api. Koreksi rasa terakhir kali. Sajikan rendang dengan nasi putih hangat.",
+        "duration": "10 menit",
+        "difficulty": "mudah",
+        "image": "https://images.unsplash.com",
+        "tips": [
+          "Rendang yang baik berwarna cokelat kehitaman",
+          "Daging harus empuk dan bumbu meresap sempurna",
+          "Sajikan dalam keadaan hangat untuk cita rasa terbaik"
+        ]
+      }
+    ]
+  }
 ]
