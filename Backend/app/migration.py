@@ -28,58 +28,180 @@ async def migrate_data():
         print("Creating constraints...")
         await session.run("CREATE CONSTRAINT IF NOT EXISTS FOR (r:Recipe) REQUIRE r.id IS UNIQUE")
         await session.run("CREATE CONSTRAINT IF NOT EXISTS FOR (i:Ingredient) REQUIRE i.name IS UNIQUE")
-        await session.run("CREATE CONSTRAINT IF NOT EXISTS FOR (c:Cuisine) REQUIRE c.name IS UNIQUE")
-        await session.run("CREATE CONSTRAINT IF NOT EXISTS FOR (u:User) REQUIRE u.id IS UNIQUE")
-        await session.run("CREATE CONSTRAINT IF NOT EXISTS FOR (dp:DietaryPreference) REQUIRE dp.name IS UNIQUE")
-        await session.run("CREATE CONSTRAINT IF NOT EXISTS FOR (ct:CookingTechnique) REQUIRE ct.name IS UNIQUE")
+        await session.run("CREATE CONSTRAINT IF NOT EXISTS FOR (s:Store) REQUIRE s.name IS UNIQUE")
 
         print(f"Starting to migrate {len(recipes)} recipes...")
         for recipe_data in recipes:
-            # 1. Create Recipe Node
-            await session.run("""
+            recipe_props = {
+                "id": recipe_data.get("id"),
+                "name": recipe_data.get("name"),
+                "shortDescription": recipe_data.get("shortDescription"),
+                "description": recipe_data.get("shortDescription"),
+                "image": recipe_data.get("image"),
+                "difficulty": recipe_data.get("difficulty"),
+                "cookingTimeMinutes": recipe_data.get("cookingTimeMinutes"),
+                "servings": recipe_data.get("servings"),
+                "estimatedCost": recipe_data.get("estimatedCost"),
+                "region": recipe_data.get("region"),
+                "isTraditional": recipe_data.get("isTraditional"),
+                "isNew": recipe_data.get("isNew")
+            }
+
+            await session.run(
+                """
                 CREATE (r:Recipe {
-                    id: $id, name: $name, description: $description, image: $image,
-                    difficulty: $difficulty, cookingTime: $cookingTime, servings: $servings,
-                    estimatedCost: $estimatedCost, region: $region
+                    id: $id,
+                    name: $name,
+                    shortDescription: $shortDescription,
+                    description: $description,
+                    image: $image,
+                    difficulty: $difficulty,
+                    cookingTimeMinutes: $cookingTimeMinutes,
+                    servings: $servings,
+                    estimatedCost: $estimatedCost,
+                    region: $region,
+                    isTraditional: $isTraditional,
+                    isNew: $isNew
                 })
-            """, **recipe_data)
+                """,
+                **recipe_props
+            )
 
-            # 2. Create and Link Cuisine
-            await session.run("""
-                MERGE (c:Cuisine {name: $cuisine_name})
-                WITH c
-                MATCH (r:Recipe {id: $recipe_id})
-                MERGE (r)-[:BELONGS_TO_CUISINE]->(c)
-            """, cuisine_name=recipe_data["cuisine"], recipe_id=recipe_data["id"])
-
-            # 3. Create and Link Ingredients
-            for ingredient in recipe_data["ingredients"]:
-                await session.run("""
-                    MERGE (i:Ingredient {name: $name})
-                    WITH i
+            cultural_story = recipe_data.get("culturalStory") or {}
+            if cultural_story:
+                await session.run(
+                    """
                     MATCH (r:Recipe {id: $recipe_id})
-                    MERGE (r)-[:HAS_INGREDIENT {quantity: $quantity}]->(i)
-                """, name=ingredient["name"], recipe_id=recipe_data["id"], quantity=ingredient["quantity"])
+                    SET r.fullStory = $fullStory,
+                        r.shortStory = $shortStory
+                    """,
+                    recipe_id=recipe_data.get("id"),
+                    fullStory=cultural_story.get("fullStory"),
+                    shortStory=cultural_story.get("shortStory")
+                )
 
-            # 4. Create and Link Cooking Techniques
-            for technique in recipe_data["techniques"]:
-                await session.run("""
-                    MERGE (ct:CookingTechnique {name: $technique_name})
-                    WITH ct
+                for variation in cultural_story.get("regionalVariations", []):
+                    await session.run(
+                        """
+                        MATCH (r:Recipe {id: $recipe_id})
+                        MERGE (rv:RegionalVariation {region: $region, province: $province})
+                        SET rv.difference = $difference
+                        MERGE (r)-[:HAS_VARIATION]->(rv)
+                        """,
+                        recipe_id=recipe_data.get("id"),
+                        region=variation.get("region"),
+                        province=variation.get("province"),
+                        difference=variation.get("difference")
+                    )
+
+            # Ingredients (flatten grouped structure)
+            for group in recipe_data.get("ingredients", []):
+                for category, items in group.items():
+                    for item in items:
+                        quantity = item.get("quantity", {})
+                        quantity_value = quantity.get("value")
+                        unit = quantity.get("unit")
+
+                        await session.run(
+                            """
+                            MERGE (i:Ingredient {name: $name})
+                            SET i.category = $category
+                            WITH i
+                            MATCH (r:Recipe {id: $recipe_id})
+                            MERGE (r)-[rel:HAS_INGREDIENT]->(i)
+                            SET rel.quantityValue = $quantity_value,
+                                rel.quantityUnit = $quantity_unit,
+                                rel.notes = $notes
+                            """,
+                            name=item.get("name"),
+                            category=category,
+                            recipe_id=recipe_data.get("id"),
+                            quantity_value=quantity_value,
+                            quantity_unit=unit,
+                            notes=item.get("notes")
+                        )
+
+                        for substitute in item.get("substitutes", []):
+                            await session.run(
+                                """
+                                MERGE (s:IngredientSubstitute {name: $substitute})
+                                WITH s
+                                MATCH (i:Ingredient {name: $ingredient_name})
+                                MERGE (i)-[:HAS_SUBSTITUTE]->(s)
+                                """,
+                                substitute=substitute,
+                                ingredient_name=item.get("name")
+                            )
+
+            # Budget data
+            budget_data = (recipe_data.get("budgetData") or {}).get("offlineStores", [])
+            for store in budget_data:
+                await session.run(
+                    """
+                    MERGE (s:Store {name: $name})
+                    SET s.address = $address,
+                        s.openingHours = $openingHours,
+                        s.estimatedDistance = $estimatedDistance,
+                        s.latitude = $lat,
+                        s.longitude = $lng
+                    WITH s
                     MATCH (r:Recipe {id: $recipe_id})
-                    MERGE (r)-[:USES_TECHNIQUE]->(ct)
-                """, technique_name=technique, recipe_id=recipe_data["id"])
+                    MERGE (r)-[:AVAILABLE_AT]->(s)
+                    """,
+                    name=store.get("name"),
+                    address=store.get("address"),
+                    openingHours=store.get("openingHours"),
+                    estimatedDistance=store.get("estimatedDistance"),
+                    lat=((store.get("location") or {}).get("lat")),
+                    lng=((store.get("location") or {}).get("lng")),
+                    recipe_id=recipe_data.get("id")
+                )
 
-            # 5. Create and Link Dietary Preferences
-            for dietary_pref in recipe_data["dietary"]:
-                await session.run("""
-                    MERGE (dp:DietaryPreference {name: $dietary_name})
-                    WITH dp
+                for detail in store.get("rincianBahan", []):
+                    quantity = detail.get("quantity", {})
+                    await session.run(
+                        """
+                        MATCH (s:Store {name: $store_name})
+                        MERGE (i:Ingredient {name: $ingredient_name})
+                        MERGE (s)-[rel:SELLS]->(i)
+                        SET rel.estimatedPrice = $estimatedPrice,
+                            rel.quantityValue = $quantity_value,
+                            rel.quantityUnit = $quantity_unit,
+                            rel.note = $note
+                        """,
+                        store_name=store.get("name"),
+                        ingredient_name=detail.get("name"),
+                        estimatedPrice=detail.get("estimatedPrice"),
+                        quantity_value=quantity.get("value"),
+                        quantity_unit=quantity.get("unit"),
+                        note=detail.get("note")
+                    )
+
+            # Cooking steps
+            for step in recipe_data.get("cookingSteps", []):
+                await session.run(
+                    """
                     MATCH (r:Recipe {id: $recipe_id})
-                    MERGE (r)-[:SUITABLE_FOR]->(dp)
-                """, dietary_name=dietary_pref, recipe_id=recipe_data["id"])
+                    MERGE (cs:CookingStep {recipeId: $recipe_id, step: $step})
+                    SET cs.title = $title,
+                        cs.description = $description,
+                        cs.duration = $duration,
+                        cs.difficulty = $difficulty,
+                        cs.image = $image,
+                        cs.tips = $tips
+                    MERGE (r)-[:HAS_STEP]->(cs)
+                    """,
+                    recipe_id=recipe_data.get("id"),
+                    step=step.get("step"),
+                    title=step.get("title"),
+                    description=step.get("description"),
+                    duration=step.get("duration"),
+                    difficulty=step.get("difficulty"),
+                    image=step.get("image"),
+                    tips=step.get("tips")
+                )
 
-            print(f"  - Migrated recipe: {recipe_data['name']}")
+            print(f"  - Migrated recipe: {recipe_data.get('name')}")
 
     await driver.close()
     print("Migration completed successfully!")

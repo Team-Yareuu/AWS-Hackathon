@@ -9,6 +9,7 @@ import CulturalHeritageExplorer from './pages/cultural-heritage-explorer';
 import SmartShoppingAssistant from './pages/smart-shopping-assistant';
 import PersonalKitchenDashboard from './pages/personal-kitchen-dashboard';
 import Homepage from './pages/homepage';
+import APITestPage from './pages/api-test';
 
 const Routes = () => {
   return (
@@ -24,6 +25,7 @@ const Routes = () => {
         <Route path="/smart-shopping-assistant" element={<SmartShoppingAssistant />} />
         <Route path="/personal-kitchen-dashboard" element={<PersonalKitchenDashboard />} />
         <Route path="/homepage" element={<Homepage />} />
+        <Route path="/api-test" element={<APITestPage />} />
         <Route path="*" element={<NotFound />} />
       </RouterRoutes>
       </ErrorBoundary>

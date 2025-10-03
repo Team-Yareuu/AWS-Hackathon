@@ -12,6 +12,8 @@ import RelatedRecipes from './components/RelatedRecipes';
 import Icon from '../../components/AppIcon';
 import Button from '../../components/ui/Button';
 
+// Import real API instead of mock data
+import { recipeAPI } from '../../services/api';
 import mockRecipeData from '../../data/mockRecipe.json';
 import mockRelatedRecipesData from '../../data/mockRelatedRecipes.json';
 
@@ -32,30 +34,51 @@ const RecipeDetail = () => {
   const [isSaved, setIsSaved] = useState(false);
   const [showAIAssistant, setShowAIAssistant] = useState(false);
   const [activeTab, setActiveTab] = useState('ingredients');
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
 
   useEffect(() => {
-    const foundRecipe = mockRecipeData.find(
-      (r) => String(r.id) === String(resolvedRecipeId)
-    );
+    const fetchRecipe = async () => {
+      // If recipe is passed via state, use it
+      if (stateRecipe) {
+        setRecipe({ ...stateRecipe, id: resolvedRecipeId });
+        setServings(stateRecipe?.servings ?? 4);
+        setLoading(false);
+        return;
+      }
 
-    if (stateRecipe) {
-      // merge search result data with the full recipe template when possible
-      const mergedRecipe = foundRecipe
-        ? { ...foundRecipe, ...stateRecipe, id: resolvedRecipeId }
-        : { ...stateRecipe, id: resolvedRecipeId };
+      // Otherwise, fetch from API
+      setLoading(true);
+      setError(null);
+      
+      try {
+        console.log('🔍 Fetching recipe from API:', resolvedRecipeId);
+        const data = await recipeAPI.getById(resolvedRecipeId);
+        console.log('✅ Recipe fetched:', data);
+        setRecipe(data);
+        setServings(data?.servings ?? 4);
+      } catch (err) {
+        console.error('❌ Failed to fetch recipe from API:', err);
+        setError('Failed to load recipe from database');
+        
+        // Fallback to mock data if API fails
+        const foundRecipe = mockRecipeData.find(
+          (r) => String(r.id) === String(resolvedRecipeId)
+        );
+        if (foundRecipe) {
+          console.log('📦 Using mock data as fallback');
+          setRecipe(foundRecipe);
+          setServings(foundRecipe?.servings ?? 4);
+        } else {
+          setRecipe(mockRecipeData[0]);
+          setServings(mockRecipeData[0]?.servings ?? 4);
+        }
+      } finally {
+        setLoading(false);
+      }
+    };
 
-      setRecipe(mergedRecipe);
-      setServings(stateRecipe?.servings ?? foundRecipe?.servings ?? 4);
-      return;
-    }
-    if (foundRecipe) {
-      setRecipe(foundRecipe);
-      setServings(foundRecipe?.servings ?? 4);
-    } else {
-      // fallback kalau id ga ketemu -> ambil resep pertama
-      setRecipe(mockRecipeData[0]);
-      setServings(mockRecipeData[0]?.servings ?? 4);
-    }
+    fetchRecipe();
   }, [stateRecipe, resolvedRecipeId]);
 
   const handleSave = () => {
@@ -97,14 +120,31 @@ const RecipeDetail = () => {
     console.log('Add new review');
   };
 
-  if (!recipe) {
+  // Show loading state
+  if (loading) {
     return (
       <div className="min-h-screen bg-background">
         <Header />
         <div className="pt-16 flex items-center justify-center min-h-screen">
           <div className="text-center">
             <Icon name="Loader2" size={48} className="text-primary animate-spin mx-auto mb-4" />
-            <p className="text-muted-foreground">Memuat resep...</p>
+            <p className="text-muted-foreground">Memuat resep dari database...</p>
+          </div>
+        </div>
+      </div>
+    );
+  }
+
+  // Show error if fetching failed but no fallback data
+  if (!recipe) {
+    return (
+      <div className="min-h-screen bg-background">
+        <Header />
+        <div className="pt-16 flex items-center justify-center min-h-screen">
+          <div className="text-center">
+            <Icon name="AlertCircle" size={48} className="text-destructive mx-auto mb-4" />
+            <p className="text-muted-foreground mb-4">{error || 'Resep tidak ditemukan'}</p>
+            <Button onClick={() => window.location.href = '/'}>Kembali ke Beranda</Button>
           </div>
         </div>
       </div>
