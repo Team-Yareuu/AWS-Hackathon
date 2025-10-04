@@ -1,0 +1,122 @@
+Analisis Resep Masakan Indonesia Berdasarkan Daerah:
+
+Jumlah Resep per Daerah:
+==================================================
+Sumatera Barat: 129 resep
+Contoh resep:
+- ayam saos padang
+- ayam goreng padang
+- gulai ayam bumbu padang
+- ayam saus padang
+- ayam saus pedas padang
+--------------------------------------------------
+Bali: 96 resep
+Contoh resep:
+- ayam suir bali ( bemesere bali )
+- ayam suwir ala bali / ayam sisit
+- ayam suwir bali
+- ayam sisit khas bali
+- ayam suwir ( versi non pedas/ balita )
+--------------------------------------------------
+Jawa Tengah: 41 resep
+Contoh resep:
+- mie ayam solo
+- tengkleng ayam khas solo
+- tengkleng ayam khas solo
+- ayam bakar solo
+- ayam bakar solo
+--------------------------------------------------
+Sumatera Utara: 28 resep
+Contoh resep:
+- soto ayam medan simple
+- soto ayam bihun medan
+- kari kambing medan
+- soto medan asli ( daging sapi )
+- tumis tahu tauge teri medan
+--------------------------------------------------
+Jawa Timur: 26 resep
+Contoh resep:
+- soto ayam surabaya
+- ayam bumbu madura
+- ayam bumbu hitam madura ( bumbu bebek madura )
+- ayam bumbu madura
+- soto babat kambing madura
+--------------------------------------------------
+Nusa Tenggara Barat: 23 resep
+Contoh resep:
+- ayam suwir khas lombok
+- plecing ayam khas lombok
+- tongkol lombok ijo
+- cakalang lombok ijo
+- jeroan kambing/sapi lombok ijo
+--------------------------------------------------
+DKI Jakarta: 23 resep
+Contoh resep:
+- soto betawi ayam
+- nila pecak betawi by dapoer linggar
+- pecak mujair ala betawi
+- pecak ikan mujaer/mujair ala betawi
+- gorengan kambing betawi
+--------------------------------------------------
+Jawa: 22 resep
+Contoh resep:
+- opor ayam ( jawa timur )
+- opor ayam jawa
+- tomyam ( jawa ) ikan patin sederhana praktis
+- krengsengan kambing ala jawa timuran
+- gulai kambing khas trenggalek jawatimur
+--------------------------------------------------
+Aceh: 18 resep
+Contoh resep:
+- kanji rumbi ( bubur ayam aceh )
+- camcrung ayam merah khas aceh
+- pepes aceh ikan tongkol
+- sambalado aceh ikan kembung
+- gulai aceh ikan tongkol
+--------------------------------------------------
+Jawa Barat: 12 resep
+Contoh resep:
+- ikan tongkol bumbu kuning sunda
+- siomay bandung ikan tenggiri
+- soto sapi bandung
+- soto bandung ( daging sapi & lobak )
+- tumis kikil / kulit / kaki sapi `` sunda ''
+--------------------------------------------------
+Sumatera Selatan: 8 resep
+Contoh resep:
+- pempek lembut iwak tenggiri khas palembang
+- pindang patin palembang
+- pempek palembang ikan tenggiri
+- ikan patin palembang seger
+- pindang daging kambing khas palembang
+--------------------------------------------------
+Sulawesi Utara: 7 resep
+Contoh resep:
+- ayam woku manado
+- ayam woku manado
+- mie cakalang asli manado
+- steam saos tiram ikan deho asli manado
+- cakalang sous manado ala dapurgiok
+--------------------------------------------------
+Yogyakarta: 7 resep
+Contoh resep:
+- tongseng kambing jogja ( otentik warisan mertua )
+- sate kambing/sapi spesial daun jeruk dijamin jogja banget
+- tongseng kambing jogja
+- tongseng kambing khas yogya
+- steak sapi waroeng steak jogja kw
+--------------------------------------------------
+Bangka Belitung: 2 resep
+Contoh resep:
+- lempah kuning ikan darat bangka
+- lempah kuning ikan kakap khas bangka
+--------------------------------------------------
+Sulawesi Selatan: 2 resep
+Contoh resep:
+- ikan patin bumbu kuning ( nasu daun ecceng bugis )
+- gulai kambing makassar
+--------------------------------------------------
+Papua: 1 resep
+Contoh resep:
+- ceplok telur balado papua
+--------------------------------------------------
