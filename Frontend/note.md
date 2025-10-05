@@ -1,3 +1,0 @@
- "cookingTimeMinutes"
-rating
-element budaya

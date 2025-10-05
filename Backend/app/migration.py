@@ -1,19 +1,50 @@
 import asyncio
 import json
+import sys
 from pathlib import Path
 from neo4j import AsyncGraphDatabase
-from app.config.settings import settings
+
+# Handle imports when run as module or script
+try:
+    from app.config.settings import settings
+    from app.validate_recipes import RecipeValidator
+except ImportError:
+    # If running as script directly, add parent to path
+    sys.path.insert(0, str(Path(__file__).parent.parent))
+    from app.config.settings import settings
+    from app.validate_recipes import RecipeValidator
 
 async def migrate_data():
     """
     Connects to Neo4j, cleans the database, and populates it with a rich set of
     Indonesian culinary data including recipes, ingredients, cuisines, techniques,
     and dietary preferences from a JSON file.
+    
+    Validates the JSON data before migration to ensure data integrity.
     """
+    # Validate data before migration
+    print("\n" + "="*80)
+    print("STEP 1: VALIDATING RECIPE DATA")
+    print("="*80 + "\n")
+    
+    data_path = Path(__file__).parent / "data" / "sample_recipes.json"
+    schema_path = Path(__file__).parent / "data" / "recipe_schema.json"
+    
+    validator = RecipeValidator(schema_path, data_path)
+    validation_success = validator.run()
+    
+    if not validation_success:
+        print("\n❌ Validation failed! Please fix the errors before migration.")
+        print("Check validation_report.json for details.")
+        sys.exit(1)
+    
+    print("\n" + "="*80)
+    print("STEP 2: CONNECTING TO NEO4J AND MIGRATING DATA")
+    print("="*80 + "\n")
+    
     driver = AsyncGraphDatabase.driver(settings.NEO4J_URI, auth=(settings.NEO4J_USER, settings.NEO4J_PASSWORD))
     
-    # Load data from JSON file
-    data_path = Path(__file__).parent / "data" / "sample_recipes.json"
+    # Load validated data from JSON file
     try:
         with open(data_path, 'r', encoding='utf-8') as f:
             recipes = json.load(f)

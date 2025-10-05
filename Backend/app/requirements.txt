@@ -17,6 +17,7 @@ passlib[bcrypt]>=1.7.4
 
 # Utilities
 python-dotenv>=1.0.0
+jsonschema>=4.19.0
 
 # HTTP Client (for testing)
 httpx>=0.25.0
