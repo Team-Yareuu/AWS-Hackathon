@@ -1,6 +1,7 @@
-import React, { useState, useRef, useEffect } from 'react';
-import Icon from '../../../components/AppIcon';
-import Button from '../../../components/ui/Button';
+import { useState, useRef, useEffect } from 'react';
+import Icon from '../../../components/AppIcon.jsx';
+import Button from '../../../components/ui/Button.jsx';
+import { aiAPI } from '../../../services/api.js';
 
 const AIAssistant = ({ isOpen, onClose, recipe }) => {
   const [messages, setMessages] = useState([
@@ -46,51 +47,42 @@ const AIAssistant = ({ isOpen, onClose, recipe }) => {
     setInputMessage('');
     setIsTyping(true);
 
-    // Simulate AI response
-    setTimeout(() => {
-      const aiResponse = generateAIResponse(message);
+    try {
+      // Create recipe context for the AI
+      const recipeContext = JSON.stringify({
+        name: recipe?.name,
+        ingredients: recipe?.ingredients,
+        steps: recipe?.cookingSteps,
+        description: recipe?.description,
+        estimatedCost: recipe?.estimatedCost,
+        cookingTime: recipe?.cookingTime,
+        servings: recipe?.servings,
+        difficulty: recipe?.difficulty
+      });
+      
+      // Call real AWS Bedrock API
+      const response = await aiAPI.assistant(message, recipeContext);
+      
       const aiMessage = {
         id: Date.now() + 1,
         type: 'ai',
-        content: aiResponse,
+        content: response.answer,
         timestamp: new Date()
       };
       setMessages(prev => [...prev, aiMessage]);
+    } catch (error) {
+      console.error('❌ AI Assistant API Error:', error);
+      
+      // Show error message to user
+      const errorMessage = {
+        id: Date.now() + 1,
+        type: 'ai',
+        content: '⚠️ Maaf, terjadi kesalahan saat menghubungi AI Assistant. Silakan coba lagi atau pastikan backend server sedang berjalan.',
+        timestamp: new Date()
+      };
+      setMessages(prev => [...prev, errorMessage]);
+    } finally {
       setIsTyping(false);
-    }, 1500);
-  };
-
-  const generateAIResponse = (question) => {
-    const responses = {
-      substitusi: `Untuk substitusi bahan dalam ${recipe?.name || 'resep ini'}, berikut beberapa alternatif:\n\n• Jika tidak ada santan, gunakan susu full cream + 1 sdm mentega\n• Ganti cabai merah dengan paprika + sedikit cabai bubuk\n• Daun jeruk bisa diganti dengan kulit jeruk nipis parut\n• Lengkuas dapat diganti dengan jahe (porsi lebih sedikit)\n\nApakah ada bahan khusus yang ingin Anda ganti?`,
-      
-      gurih: `Tips membuat ${recipe?.name || 'masakan ini'} lebih gurih:\n\n• Tumis bumbu hingga harum dan matang sempurna\n• Gunakan kaldu ayam/sapi sebagai pengganti air\n• Tambahkan sedikit terasi untuk umami alami\n• Masak dengan api sedang agar bumbu meresap\n• Koreksi rasa di akhir dengan garam dan gula\n\nJangan lupa mencicipi selama proses memasak!`,
-      
-      penyimpanan: `Cara menyimpan ${recipe?.name || 'masakan ini'}:\n\n• Di kulkas: 2-3 hari dalam wadah tertutup\n• Di freezer: hingga 1 bulan (bekukan dalam porsi kecil)\n• Panaskan kembali dengan api kecil, tambah sedikit air jika perlu\n• Jangan simpan terlalu lama di suhu ruang (max 2 jam)\n\nUntuk hasil terbaik, konsumsi dalam 24 jam setelah dimasak.`,
-      
-      diet: `Modifikasi untuk diet khusus:\n\n**Diet Rendah Garam:** Kurangi garam, tambah rempah dan herbs\n**Vegetarian:** Ganti protein hewani dengan tahu/tempe/jamur\n**Keto:** Kurangi bahan berkarbohidrat, tambah lemak sehat\n**Diabetes:** Ganti gula dengan stevia, kurangi santan\n\nSaya bisa memberikan panduan lebih detail untuk diet tertentu. Diet apa yang Anda jalani?`,
-      
-      teknik: `Teknik memasak yang benar untuk ${recipe?.name || 'resep ini'}:\n\n• Siapkan semua bahan sebelum mulai memasak\n• Panaskan wajan/panci dengan api sedang\n• Tumis bumbu halus hingga harum (3-5 menit)\n• Masukkan bahan sesuai urutan tingkat kematangan\n• Aduk perlahan agar tidak hancur\n• Tes rasa secara berkala\n\nIngat: kesabaran adalah kunci masakan yang lezat!`,
-      
-      variasi: `Variasi menarik dari ${recipe?.name || 'resep ini'}:\n\n• Versi pedas: tambah cabai rawit dan sambal\n• Versi manis: tambah sedikit gula merah\n• Versi kaya protein: tambah telur rebus atau ayam suwir\n• Versi sayuran: tambah wortel, buncis, atau kacang panjang\n• Versi praktis: gunakan bumbu instan berkualitas\n\nMau coba variasi yang mana?`
-    };
-
-    const lowerQuestion = question?.toLowerCase();
-    
-    if (lowerQuestion?.includes('ganti') || lowerQuestion?.includes('substitusi') || lowerQuestion?.includes('tidak ada')) {
-      return responses?.substitusi;
-    } else if (lowerQuestion?.includes('gurih') || lowerQuestion?.includes('enak') || lowerQuestion?.includes('sedap')) {
-      return responses?.gurih;
-    } else if (lowerQuestion?.includes('simpan') || lowerQuestion?.includes('tahan') || lowerQuestion?.includes('awet')) {
-      return responses?.penyimpanan;
-    } else if (lowerQuestion?.includes('diet') || lowerQuestion?.includes('sehat') || lowerQuestion?.includes('kalori')) {
-      return responses?.diet;
-    } else if (lowerQuestion?.includes('teknik') || lowerQuestion?.includes('cara') || lowerQuestion?.includes('memasak')) {
-      return responses?.teknik;
-    } else if (lowerQuestion?.includes('variasi') || lowerQuestion?.includes('modifikasi') || lowerQuestion?.includes('ubah')) {
-      return responses?.variasi;
-    } else {
-      return `Terima kasih atas pertanyaan Anda tentang ${recipe?.name || 'resep ini'}. Saya akan membantu Anda dengan informasi yang relevan.\n\nUntuk mendapatkan jawaban yang lebih spesifik, Anda bisa menanyakan tentang:\n• Substitusi bahan\n• Tips memasak\n• Penyimpanan makanan\n• Modifikasi untuk diet khusus\n• Teknik memasak\n• Variasi resep\n\nApa yang ingin Anda ketahui lebih lanjut?`;
     }
   };
 
@@ -179,6 +171,7 @@ const AIAssistant = ({ isOpen, onClose, recipe }) => {
             <div className="flex flex-wrap gap-2">
               {quickQuestions?.slice(0, 3)?.map((question, index) => (
                 <button
+                  type="button"
                   key={index}
                   onClick={() => handleSendMessage(question)}
                   className="px-3 py-1 bg-muted hover:bg-muted/80 text-muted-foreground hover:text-foreground rounded-full text-xs transition-colors"

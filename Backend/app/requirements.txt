@@ -10,6 +10,7 @@ neo4j>=5.14.0
 # AI & AWS
 boto3>=1.28.0
 botocore>=1.31.0
+strands-agents
 
 # Security & Authentication
 python-jose[cryptography]>=3.3.0

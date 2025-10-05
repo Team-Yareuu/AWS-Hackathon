@@ -1,28 +1,43 @@
 import boto3
+import os
+from strands.models import BedrockModel
+from strands import Agent
 from app.config.settings import settings
 
 class BedrockAgent:
     def __init__(self):
-        self.client = boto3.client(
-            'bedrock-runtime',
-            region_name=settings.AWS_REGION # ganti dengan region Anda
+        # Force set AWS region environment variable to override any defaults
+        os.environ['AWS_DEFAULT_REGION'] = settings.AWS_REGION
+        
+        # Create a custom boto3 session with credentials from .env
+        session = boto3.Session(
+            aws_access_key_id=settings.AWS_ACCESS_KEY_ID,
+            aws_secret_access_key=settings.AWS_SECRET_ACCESS_KEY,
+            region_name=settings.AWS_REGION
         )
+
+        # Create a Bedrock model with the custom session
+        bedrock_model = BedrockModel(
+            model_id="amazon.nova-micro-v1:0",
+            boto_session=session
+        )
+
+        # Pass the configured model to the Agent
+        self.agent = Agent(model=bedrock_model)
 
     def invoke_claude(self, prompt: str) -> str:
-        body = {
-            "prompt": f"\n\nHuman: {prompt}\n\nAssistant:",
-            "max_tokens_to_sample": 300,
-            "temperature": 0.1,
-            "top_p": 0.9,
-        }
-
-        response = self.client.invoke_model(
-            body=str.encode(str(body)), 
-            modelId='anthropic.claude-v2',
-            accept='application/json', 
-            contentType='application/json'
-        )
-        
-        response_body = eval(response.get('body').read())
-        return response_body.get('completion')
+        """
+        Invoke Amazon Nova Micro model for text generation using strands Agent
+        Model: amazon.nova-micro-v1:0
+        """
+        try:
+            # Use strands Agent to handle the request
+            response = self.agent(prompt)
+            
+            # Convert AgentResult to string
+            return str(response)
+            
+        except Exception as e:
+            print(f"❌ Bedrock API Error: {e}")
+            raise
 
