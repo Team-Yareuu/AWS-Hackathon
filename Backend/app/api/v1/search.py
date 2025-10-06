@@ -456,6 +456,20 @@ def score_search_results(
     return scored_results
 
 
+def normalize_difficulty(difficulty_id: str) -> str:
+    """
+    Convert Indonesian difficulty to frontend-compatible format
+    """
+    difficulty_map = {
+        'sangat mudah': 'very-easy',
+        'mudah': 'easy',
+        'sedang': 'medium',
+        'sulit': 'hard',
+        'sangat sulit': 'very-hard'
+    }
+    return difficulty_map.get(difficulty_id.lower(), 'medium')
+
+
 def apply_sorting(results: List[dict], sort_by: str) -> List[dict]:
     """
     Sort results based on criteria
@@ -471,6 +485,12 @@ def apply_sorting(results: List[dict], sort_by: str) -> List[dict]:
         results.sort(key=lambda x: x['recipe'].get('cookingTimeMinutes', 999999))
     elif sort_by == 'recent':
         results.sort(key=lambda x: x['recipe'].get('id', 0), reverse=True)
+    
+    # Normalize difficulty field for frontend compatibility
+    for item in results:
+        recipe = item['recipe']
+        if 'difficulty' in recipe:
+            recipe['difficulty'] = normalize_difficulty(recipe['difficulty'])
     
     # Return only recipes (remove scoring metadata for client)
     return [item['recipe'] for item in results]

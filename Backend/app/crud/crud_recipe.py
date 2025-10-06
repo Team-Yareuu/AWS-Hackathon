@@ -5,6 +5,23 @@ from app.schemas.recipe import Recipe, RecipeCreate
 from app.utils.retry import async_retry
 
 
+def normalize_difficulty(difficulty_id: str) -> str:
+    """
+    Convert Indonesian difficulty to frontend-compatible format
+    """
+    if not difficulty_id:
+        return 'medium'
+    
+    difficulty_map = {
+        'sangat mudah': 'very-easy',
+        'mudah': 'easy',
+        'sedang': 'medium',
+        'sulit': 'hard',
+        'sangat sulit': 'very-hard'
+    }
+    return difficulty_map.get(difficulty_id.lower(), 'medium')
+
+
 async def create(recipe: RecipeCreate, session: AsyncSession) -> Recipe:
     """Create a new recipe in Neo4j database"""
     # Check if recipe with this ID already exists
@@ -181,6 +198,10 @@ async def get(recipe_id: str, session: AsyncSession) -> Optional[Recipe]:
     # Set description fallback
     recipe_data.setdefault('description', recipe_data.get('shortDescription', ''))
     
+    # Normalize difficulty for frontend
+    if 'difficulty' in recipe_data:
+        recipe_data['difficulty'] = normalize_difficulty(recipe_data['difficulty'])
+    
     return Recipe(**recipe_data)
 
 
@@ -209,6 +230,10 @@ async def get_multi(session: AsyncSession, skip: int = 0, limit: int = 10) -> Li
         recipe_data.setdefault('ingredients', [])
         recipe_data.setdefault('cookingSteps', [])
         recipe_data.setdefault('description', recipe_data.get('shortDescription', ''))
+        
+        # Normalize difficulty for frontend
+        if 'difficulty' in recipe_data:
+            recipe_data['difficulty'] = normalize_difficulty(recipe_data['difficulty'])
         
         recipes.append(Recipe(**recipe_data))
     
@@ -241,6 +266,10 @@ async def get_spotlight(session: AsyncSession, limit: int = 3) -> List[Recipe]:
         recipe_data.setdefault('cookingSteps', [])
         recipe_data.setdefault('description', recipe_data.get('shortDescription', ''))
         
+        # Normalize difficulty for frontend
+        if 'difficulty' in recipe_data:
+            recipe_data['difficulty'] = normalize_difficulty(recipe_data['difficulty'])
+        
         recipes.append(Recipe(**recipe_data))
     
     return recipes
@@ -272,6 +301,10 @@ async def get_by_budget(session: AsyncSession, max_cost: int, limit: int = 6) ->
         recipe_data.setdefault('ingredients', [])
         recipe_data.setdefault('cookingSteps', [])
         recipe_data.setdefault('description', recipe_data.get('shortDescription', ''))
+        
+        # Normalize difficulty for frontend
+        if 'difficulty' in recipe_data:
+            recipe_data['difficulty'] = normalize_difficulty(recipe_data['difficulty'])
         
         recipes.append(Recipe(**recipe_data))
     
