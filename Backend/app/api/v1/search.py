@@ -26,7 +26,7 @@ class SearchResult(BaseModel):
     match_reasons: List[str]
 
 
-@router.post("/search", response_model=List[dict])
+@router.post("/", response_model=List[dict])
 async def ai_search_recipes(search_query: SearchQuery):
     """
     AI-powered recipe search with multi-criteria matching
