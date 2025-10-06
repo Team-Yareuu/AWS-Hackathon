@@ -4,7 +4,7 @@
     "name": "Rendang Daging Sapi Padang",
     "shortDescription": "Rendang daging sapi autentik dengan bumbu rempah tradisional Minangkabau yang kaya cita rasa",
     "description": "Rendang daging sapi autentik dengan bumbu rempah tradisional Minangkabau yang kaya cita rasa",
-    "image": "https://api.meatguy.id/admin/image/blogs/6cfa140f-ccbc-4580-a4a0-9261b7af9aa9",
+    "image": "https://urrecipe.s3.ap-southeast-2.amazonaws.com/rendang-padang/1-main.png",
     "region": "Sumatera Barat",
     "difficulty": "Sedang",
     "cookingTimeMinutes": 180,
@@ -275,7 +275,7 @@
         "description": "Siapkan semua bahan. Potong daging sapi sesuai selera, bersihkan daun-daunan, dan haluskan bumbu dengan blender atau ulekan.",
         "duration": "20 menit",
         "difficulty": "mudah",
-        "image": "https://images.unsplash.com",
+        "image": "https://urrecipe.s3.ap-southeast-2.amazonaws.com/rendang-padang/2-persiapan-bahan.png",
         "tips": [
           "Gunakan daging berkualitas baik agar hasil empuk",
           "Potong daging melawan serat supaya lunak",
@@ -288,7 +288,7 @@
         "description": "Panaskan wajan besar, tumis bumbu halus bersama daun salam, daun kunyit, dan serai hingga harum dan matang.",
         "duration": "15 menit",
         "difficulty": "sedang",
-        "image": "https://images.unsplash.com",
+        "image": "https://urrecipe.s3.ap-southeast-2.amazonaws.com/rendang-padang/3-menumis-bumbu.png",
         "tips": [
           "Gunakan api sedang dan aduk terus",
           "Pastikan bumbu benar-benar matang agar tidak langu",
@@ -301,7 +301,7 @@
         "description": "Masukkan daging sapi ke dalam tumisan bumbu, aduk hingga semua daging terbalut bumbu. Masak hingga daging berubah warna.",
         "duration": "10 menit",
         "difficulty": "sedang",
-        "image": "https://images.unsplash.com",
+        "image": "https://urrecipe.s3.ap-southeast-2.amazonaws.com/rendang-padang/4-memasak-bahan.png",
         "tips": [
           "Gunakan api sedang cenderung besar",
           "Aduk agar bumbu merata",
@@ -314,7 +314,7 @@
         "description": "Tuang santan kental, masak dengan api kecil sambil terus diaduk perlahan agar santan tidak pecah. Masak hingga santan mendidih.",
         "duration": "15 menit",
         "difficulty": "sedang",
-        "image": "https://images.unsplash.com",
+        "image": "https://urrecipe.s3.ap-southeast-2.amazonaws.com/rendang-padang/5-menambahkan-santan.png",
         "tips": [
           "Aduk perlahan agar santan tidak pecah",
           "Gunakan spatula kayu saat mengaduk",
@@ -327,7 +327,7 @@
         "description": "Masak rendang dengan api kecil selama 2-3 jam hingga santan menyusut dan bumbu mengental. Aduk sesekali agar tidak gosong.",
         "duration": "120 menit",
         "difficulty": "sulit",
-        "image": "https://images.unsplash.com",
+        "image": "https://urrecipe.s3.ap-southeast-2.amazonaws.com/rendang-padang/6-mengentalkan-bumbu.png",
         "tips": [
           "Gunakan wajan tebal agar panas merata",
           "Aduk dari bawah ke atas agar tidak gosong",
@@ -340,7 +340,7 @@
         "description": "Ketika rendang sudah kering dan berwarna cokelat kehitaman, angkat dari api. Koreksi rasa terakhir kali. Sajikan rendang dengan nasi putih hangat.",
         "duration": "10 menit",
         "difficulty": "mudah",
-        "image": "https://images.unsplash.com",
+        "image": "https://urrecipe.s3.ap-southeast-2.amazonaws.com/rendang-padang/7-penyelesaian.png",
         "tips": [
           "Rendang yang baik berwarna cokelat kehitaman",
           "Daging harus empuk dan bumbu meresap sempurna",
@@ -354,7 +354,7 @@
     "name": "Ayam Woku Manado",
     "shortDescription": "Ayam woku adalah hidangan ayam khas Manado yang pedas dan kaya akan bumbu rempah.",
     "description": "Ayam woku adalah hidangan ayam khas Manado, Sulawesi Utara, yang terkenal dengan cita rasanya yang pedas, segar, dan kaya akan aroma rempah. Nama 'woku' merujuk pada daun woka, sejenis daun lontar yang secara tradisional digunakan untuk membungkus makanan. Bumbu woku sendiri merupakan perpaduan dari berbagai rempah seperti kunyit, jahe, serai, daun jeruk, dan yang paling khas adalah daun kemangi yang memberikan aroma segar yang kuat.",
-    "image": "/Asset/ayam-woku/3-menumis-bumbu.png",
+    "image": "https://urrecipe.s3.ap-southeast-2.amazonaws.com/ayam-woku/step-1.png",
     "region": "Sulawesi Utara",
     "difficulty": "Sedang",
     "cookingTimeMinutes": 60,
@@ -540,7 +540,7 @@
         "description": "Cuci bersih ayam, lumuri dengan perasan jeruk nipis dan garam. Diamkan selama 15 menit untuk menghilangkan bau amis.",
         "duration": "15 menit",
         "difficulty": "mudah",
-        "image": "https://images.unsplash.com/photo-1588195538326-c5b1e9f80a1b",
+        "image": "https://urrecipe.s3.ap-southeast-2.amazonaws.com/ayam-woku/step-2.png",
         "tips": [
           "Gunakan ayam kampung untuk rasa yang lebih gurih.",
           "Pastikan semua bagian ayam terlumuri bumbu."
@@ -552,7 +552,7 @@
         "description": "Haluskan bawang merah, bawang putih, cabai merah, cabai rawit, kemiri, dan kunyit menggunakan blender atau ulekan. Tambahkan sedikit minyak agar lebih mudah dihaluskan.",
         "duration": "10 menit",
         "difficulty": "mudah",
-        "image": "https://images.unsplash.com/photo-1615385549299-a838584a6874",
+        "image": "https://urrecipe.s3.ap-southeast-2.amazonaws.com/ayam-woku/step-3.png",
         "tips": [
           "Sangrai kemiri terlebih dahulu untuk aroma yang lebih kuat."
         ]
@@ -563,7 +563,7 @@
         "description": "Panaskan minyak di wajan, tumis bumbu halus hingga harum. Masukkan serai yang sudah dimemarkan dan daun salam, tumis hingga bumbu matang dan warnanya sedikit lebih gelap.",
         "duration": "10 menit",
         "difficulty": "sedang",
-        "image": "https://images.unsplash.com/photo-1551690348-1343e0a95b99",
+        "image": "https://urrecipe.s3.ap-southeast-2.amazonaws.com/ayam-woku/step-4.png",
         "tips": [
           "Gunakan api sedang agar bumbu tidak gosong.",
           "Pastikan bumbu benar-benar matang agar tidak langu."
@@ -575,7 +575,7 @@
         "description": "Masukkan potongan ayam ke dalam tumisan bumbu. Aduk hingga ayam terbalut rata dengan bumbu. Masak hingga ayam berubah warna.",
         "duration": "10 menit",
         "difficulty": "sedang",
-        "image": "https://images.unsplash.com/photo-1604537466108-7a9fa89a3a32",
+        "image": "https://urrecipe.s3.ap-southeast-2.amazonaws.com/ayam-woku/step-5.png",
         "tips": [
           "Aduk sesekali agar ayam tidak lengket di wajan."
         ]
@@ -586,7 +586,7 @@
         "description": "Tuangkan air, lalu tambahkan penyedap rasa dan garam. Aduk rata, koreksi rasa. Masak dan biarkan hingga bumbu meresap dan kuah sedikit mengental.",
         "duration": "10 menit",
         "difficulty": "sedang",
-        "image": "https://images.unsplash.com/photo-1555939594-58d7cb561ad1",
+        "image": "https://urrecipe.s3.ap-southeast-2.amazonaws.com/ayam-woku/step-6.png",
         "tips": [
           "Masak dengan api kecil-sedang agar bumbu meresap sempurna."
         ]
@@ -597,7 +597,7 @@
         "description": "Setelah kuah mengental dan ayam matang, masukkan daun kemangi. Masak sebentar sekitar 2-3 menit hingga daun kemangi layu. Angkat dan Ayam Woku Manado siap disajikan.",
         "duration": "5 menit",
         "difficulty": "mudah",
-        "image": "https://images.unsplash.com/photo-1604537466528-61a59a5a3fba",
+        "image": "https://urrecipe.s3.ap-southeast-2.amazonaws.com/ayam-woku/step-7.png",
         "tips": [
           "Jangan memasak kemangi terlalu lama agar aromanya tetap segar.",
           "Sajikan selagi hangat dengan nasi putih."
@@ -610,7 +610,7 @@
     "name": "Soto Ayam Lamongan",
     "shortDescription": "Soto ayam bening khas Lamongan dengan kuah kuning gurih dan taburan koya yang khas.",
     "description": "Soto Ayam Lamongan adalah salah satu ikon kuliner dari Jawa Timur. Berbeda dengan soto dari daerah lain, soto ini memiliki kuah bening kekuningan yang gurih dari kaldu ayam kampung dan rempah-rempah. Ciri khas utamanya adalah taburan koya, yaitu bubuk kerupuk udang yang dicampur dengan bawang putih goreng, yang memberikan tekstur dan rasa unik pada soto ini.",
-    "image": "https://images.unsplash.com/photo-1584238334428-e0a762b15afa",
+    "image": "https://urrecipe.s3.ap-southeast-2.amazonaws.com/soto-lamongan/step-1.png",
     "region": "Jawa Timur",
     "difficulty": "Sedang",
     "cookingTimeMinutes": 45,
@@ -863,7 +863,7 @@
         "description": "Rebus ayam dalam 1 liter air hingga empuk. Angkat ayam, saring kaldunya. Sisihkan.",
         "duration": "25 menit",
         "difficulty": "mudah",
-        "image": "https://images.unsplash.com/photo-1625650523349-3a3b3a3b3a3b",
+        "image": "https://urrecipe.s3.ap-southeast-2.amazonaws.com/soto-lamongan/step-2.png",
         "tips": [
           "Gunakan api kecil saat merebus agar kaldu bening.",
           "Buang buih yang muncul di permukaan kaldu."
@@ -875,7 +875,7 @@
         "description": "Goreng ayam yang sudah direbus hingga kecoklatan, lalu suwir-suwir dagingnya. Untuk koya, haluskan kerupuk udang dan bawang putih goreng hingga menjadi bubuk.",
         "duration": "10 menit",
         "difficulty": "sedang",
-        "image": "https://images.unsplash.com/photo-1625650523349-3a3b3a3b3a3b",
+        "image": "https://urrecipe.s3.ap-southeast-2.amazonaws.com/soto-lamongan/step-3.png",
         "tips": [
           "Jangan menggoreng ayam terlalu kering agar tidak keras.",
           "Gunakan blender atau ulekan untuk menghaluskan koya."
@@ -887,7 +887,7 @@
         "description": "Panaskan sedikit minyak, tumis bumbu halus hingga harum. Masukkan serai, daun jeruk, dan lengkuas, aduk hingga matang.",
         "duration": "5 menit",
         "difficulty": "mudah",
-        "image": "https://images.unsplash.com/photo-1551690348-1343e0a95b99",
+        "image": "https://urrecipe.s3.ap-southeast-2.amazonaws.com/soto-lamongan/step-4.png",
         "tips": [
           "Pastikan bumbu benar-benar matang agar aroma soto lebih keluar."
         ]
@@ -898,7 +898,7 @@
         "description": "Masukkan tumisan bumbu ke dalam panci kaldu. Masak kembali hingga mendidih. Tambahkan garam dan gula, koreksi rasa.",
         "duration": "10 menit",
         "difficulty": "mudah",
-        "image": "https://images.unsplash.com/photo-1555939594-58d7cb561ad1",
+        "image": "https://urrecipe.s3.ap-southeast-2.amazonaws.com/soto-lamongan/step-5.png",
         "tips": [
           "Didihkan kuah beberapa saat agar bumbu meresap."
         ]
