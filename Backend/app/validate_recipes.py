@@ -79,7 +79,9 @@ class RecipeValidator:
             print("❌ Data not loaded")
             return False, []
         
-        validator = Draft7Validator(self.schema)
+        # Get the schema for individual items (recipes)
+        item_schema = self.schema.get('items', self.schema)
+        validator = Draft7Validator(item_schema)
         all_valid = True
         validation_results = []
         

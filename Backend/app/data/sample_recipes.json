@@ -349,7 +349,7 @@
       }
     ]
   },
-    {
+  {
     "id": "2",
     "name": "Ayam Woku Manado",
     "shortDescription": "Ayam woku adalah hidangan ayam khas Manado yang pedas dan kaya akan bumbu rempah.",
@@ -605,7 +605,7 @@
       }
     ]
   },
-    {
+  {
     "id": "3",
     "name": "Soto Ayam Lamongan",
     "shortDescription": "Soto ayam bening khas Lamongan dengan kuah kuning gurih dan taburan koya yang khas.",
@@ -916,7 +916,7 @@
       }
     ]
   },
-    {
+  {
     "id": "4",
     "name": "Gulai Ikan Patin",
     "shortDescription": "Gulai ikan patin khas Jambi dengan kuah kuning kental, rasa asam pedas yang segar dari tempoyak.",
@@ -1382,12 +1382,14 @@
         {
           "region": "Surabaya",
           "description": "Versi asli menggunakan petis udang dalam saus kacangnya",
-          "difference": "Penggunaan petis udang dan tauge yang masih mentah"
+          "difference": "Penggunaan petis udang dan tauge yang masih mentah",
+          "province": "Jawa Timur"
         },
         {
           "region": "Malang",
           "description": "Menggunakan saus kacang tanpa petis",
-          "difference": "Saus lebih manis dan tidak menggunakan petis"
+          "difference": "Saus lebih manis dan tidak menggunakan petis",
+          "province": "Jawa Timur"
         }
       ]
     },
@@ -1395,21 +1397,35 @@
       "offlineStores": [
         {
           "name": "Pasar Wonokromo",
-          "location": "Surabaya",
+          "location": {
+            "lat": -7.2575,
+            "lng": 112.7521
+          },
           "priceRange": {
             "min": 20000,
             "max": 25000
           },
-          "bestTimeToVisit": "Pagi hari, 06.00-10.00"
+          "bestTimeToVisit": "Pagi hari, 06.00-10.00",
+          "address": "Pasar Wonokromo, {'lat': -7.2575, 'lng': 112.7521}",
+          "openingHours": "06.00 - 18.00",
+          "estimatedDistance": 2.0,
+          "rincianBahan": []
         },
         {
           "name": "Pasar Keputran",
-          "location": "Surabaya",
+          "location": {
+            "lat": -7.2575,
+            "lng": 112.7521
+          },
           "priceRange": {
             "min": 18000,
             "max": 23000
           },
-          "bestTimeToVisit": "Pagi hari, 05.00-09.00"
+          "bestTimeToVisit": "Pagi hari, 05.00-09.00",
+          "address": "Pasar Keputran, {'lat': -7.2575, 'lng': 112.7521}",
+          "openingHours": "06.00 - 18.00",
+          "estimatedDistance": 2.0,
+          "rincianBahan": []
         }
       ]
     },
@@ -1417,65 +1433,85 @@
       {
         "bahan_utama": [
           {
-            "item": "tahu putih",
-            "amount": 2,
-            "unit": "potong",
+            "name": "tahu putih",
+            "quantity": {
+              "value": 2,
+              "unit": "potong"
+            },
             "notes": "Pilih tahu yang padat dan segar"
           },
           {
-            "item": "telur ayam",
-            "amount": 2,
-            "unit": "butir",
+            "name": "telur ayam",
+            "quantity": {
+              "value": 2,
+              "unit": "butir"
+            },
             "notes": "Ukuran sedang"
           },
           {
-            "item": "tauge",
-            "amount": 100,
-            "unit": "gram",
+            "name": "tauge",
+            "quantity": {
+              "value": 100,
+              "unit": "gram"
+            },
             "notes": "Pilih yang segar dan bersih"
           }
         ],
         "bumbu": [
           {
-            "item": "kacang tanah",
-            "amount": 100,
-            "unit": "gram",
+            "name": "kacang tanah",
+            "quantity": {
+              "value": 100,
+              "unit": "gram"
+            },
             "notes": "Goreng hingga matang"
           },
           {
-            "item": "bawang putih",
-            "amount": 2,
-            "unit": "siung",
+            "name": "bawang putih",
+            "quantity": {
+              "value": 2,
+              "unit": "siung"
+            },
             "notes": "Goreng"
           },
           {
-            "item": "petis udang",
-            "amount": 1,
-            "unit": "sdm",
+            "name": "petis udang",
+            "quantity": {
+              "value": 1,
+              "unit": "sdm"
+            },
             "notes": "Khas Surabaya"
           },
           {
-            "item": "cabai rawit",
-            "amount": 4,
-            "unit": "buah",
+            "name": "cabai rawit",
+            "quantity": {
+              "value": 4,
+              "unit": "buah"
+            },
             "notes": "Sesuai selera"
           },
           {
-            "item": "gula merah",
-            "amount": 1,
-            "unit": "sdm",
+            "name": "gula merah",
+            "quantity": {
+              "value": 1,
+              "unit": "sdm"
+            },
             "notes": "Sisir halus"
           },
           {
-            "item": "kecap manis",
-            "amount": 2,
-            "unit": "sdm",
+            "name": "kecap manis",
+            "quantity": {
+              "value": 2,
+              "unit": "sdm"
+            },
             "notes": "Sesuai selera"
           },
           {
-            "item": "garam",
-            "amount": 1,
-            "unit": "sdt",
+            "name": "garam",
+            "quantity": {
+              "value": 1,
+              "unit": "sdt"
+            },
             "notes": "Sesuai selera"
           }
         ]
@@ -1540,12 +1576,14 @@
         {
           "region": "Purwokerto",
           "description": "Versi asli yang digoreng setengah matang",
-          "difference": "Tekstur lembut dan basah di dalam"
+          "difference": "Tekstur lembut dan basah di dalam",
+          "province": "Jawa Tengah"
         },
         {
           "region": "Yogyakarta",
           "description": "Digoreng hingga lebih kering",
-          "difference": "Tekstur lebih renyah dan kering"
+          "difference": "Tekstur lebih renyah dan kering",
+          "province": "Jawa Tengah"
         }
       ]
     },
@@ -1553,21 +1591,35 @@
       "offlineStores": [
         {
           "name": "Pasar Wage",
-          "location": "Purwokerto",
+          "location": {
+            "lat": -7.428,
+            "lng": 109.235
+          },
           "priceRange": {
             "min": 15000,
             "max": 20000
           },
-          "bestTimeToVisit": "Pagi hari, 06.00-10.00"
+          "bestTimeToVisit": "Pagi hari, 06.00-10.00",
+          "address": "Pasar Wage, {'lat': -7.428, 'lng': 109.235}",
+          "openingHours": "06.00 - 18.00",
+          "estimatedDistance": 2.0,
+          "rincianBahan": []
         },
         {
           "name": "Pasar Manis",
-          "location": "Purwokerto",
+          "location": {
+            "lat": -7.428,
+            "lng": 109.235
+          },
           "priceRange": {
             "min": 15000,
             "max": 18000
           },
-          "bestTimeToVisit": "Pagi hari, 05.00-09.00"
+          "bestTimeToVisit": "Pagi hari, 05.00-09.00",
+          "address": "Pasar Manis, {'lat': -7.428, 'lng': 109.235}",
+          "openingHours": "06.00 - 18.00",
+          "estimatedDistance": 2.0,
+          "rincianBahan": []
         }
       ]
     },
@@ -1575,47 +1627,61 @@
       {
         "bahan_utama": [
           {
-            "item": "tempe",
-            "amount": 2,
-            "unit": "papan",
+            "name": "tempe",
+            "quantity": {
+              "value": 2,
+              "unit": "papan"
+            },
             "notes": "Iris tipis sekitar 1 cm"
           }
         ],
         "bumbu": [
           {
-            "item": "tepung terigu",
-            "amount": 250,
-            "unit": "gram",
+            "name": "tepung terigu",
+            "quantity": {
+              "value": 250,
+              "unit": "gram"
+            },
             "notes": "Protein sedang"
           },
           {
-            "item": "daun bawang",
-            "amount": 2,
-            "unit": "batang",
+            "name": "daun bawang",
+            "quantity": {
+              "value": 2,
+              "unit": "batang"
+            },
             "notes": "Iris halus"
           },
           {
-            "item": "ketumbar",
-            "amount": 1,
-            "unit": "sdt",
+            "name": "ketumbar",
+            "quantity": {
+              "value": 1,
+              "unit": "sdt"
+            },
             "notes": "Haluskan"
           },
           {
-            "item": "bawang putih",
-            "amount": 3,
-            "unit": "siung",
+            "name": "bawang putih",
+            "quantity": {
+              "value": 3,
+              "unit": "siung"
+            },
             "notes": "Haluskan"
           },
           {
-            "item": "garam",
-            "amount": 1,
-            "unit": "sdt",
+            "name": "garam",
+            "quantity": {
+              "value": 1,
+              "unit": "sdt"
+            },
             "notes": "Sesuai selera"
           },
           {
-            "item": "air",
-            "amount": 300,
-            "unit": "ml",
+            "name": "air",
+            "quantity": {
+              "value": 300,
+              "unit": "ml"
+            },
             "notes": "Secukupnya hingga adonan tepung cukup encer"
           }
         ]
@@ -1680,12 +1746,14 @@
         {
           "region": "Padang",
           "description": "Versi asli yang tebal dengan kelapa sangrai",
-          "difference": "Menggunakan kelapa sangrai dan rempah lengkap"
+          "difference": "Menggunakan kelapa sangrai dan rempah lengkap",
+          "province": "Sumatera Barat"
         },
         {
           "region": "Bukittinggi",
           "description": "Lebih tipis dengan bumbu yang lebih pedas",
-          "difference": "Lebih pedas dan tidak menggunakan kelapa sangrai"
+          "difference": "Lebih pedas dan tidak menggunakan kelapa sangrai",
+          "province": "Sumatera Barat"
         }
       ]
     },
@@ -1693,21 +1761,35 @@
       "offlineStores": [
         {
           "name": "Pasar Raya Padang",
-          "location": "Padang",
+          "location": {
+            "lat": -0.9471,
+            "lng": 100.4172
+          },
           "priceRange": {
             "min": 12000,
             "max": 15000
           },
-          "bestTimeToVisit": "Pagi hari, 06.00-10.00"
+          "bestTimeToVisit": "Pagi hari, 06.00-10.00",
+          "address": "Pasar Raya Padang, {'lat': -0.9471, 'lng': 100.4172}",
+          "openingHours": "06.00 - 18.00",
+          "estimatedDistance": 2.0,
+          "rincianBahan": []
         },
         {
           "name": "Pasar Pagi Bukittinggi",
-          "location": "Bukittinggi",
+          "location": {
+            "lat": -0.3059,
+            "lng": 100.3692
+          },
           "priceRange": {
             "min": 10000,
             "max": 13000
           },
-          "bestTimeToVisit": "Pagi hari, 05.00-09.00"
+          "bestTimeToVisit": "Pagi hari, 05.00-09.00",
+          "address": "Pasar Pagi Bukittinggi, {'lat': -0.3059, 'lng': 100.3692}",
+          "openingHours": "06.00 - 18.00",
+          "estimatedDistance": 2.0,
+          "rincianBahan": []
         }
       ]
     },
@@ -1715,71 +1797,93 @@
       {
         "bahan_utama": [
           {
-            "item": "telur ayam",
-            "amount": 3,
-            "unit": "butir",
+            "name": "telur ayam",
+            "quantity": {
+              "value": 3,
+              "unit": "butir"
+            },
             "notes": "Ukuran sedang"
           },
           {
-            "item": "kelapa parut",
-            "amount": 4,
-            "unit": "sdm",
+            "name": "kelapa parut",
+            "quantity": {
+              "value": 4,
+              "unit": "sdm"
+            },
             "notes": "Sangrai hingga kecokelatan"
           }
         ],
         "bumbu": [
           {
-            "item": "bawang merah",
-            "amount": 5,
-            "unit": "siung",
+            "name": "bawang merah",
+            "quantity": {
+              "value": 5,
+              "unit": "siung"
+            },
             "notes": "Iris halus"
           },
           {
-            "item": "bawang putih",
-            "amount": 3,
-            "unit": "siung",
+            "name": "bawang putih",
+            "quantity": {
+              "value": 3,
+              "unit": "siung"
+            },
             "notes": "Haluskan"
           },
           {
-            "item": "cabai merah",
-            "amount": 3,
-            "unit": "buah",
+            "name": "cabai merah",
+            "quantity": {
+              "value": 3,
+              "unit": "buah"
+            },
             "notes": "Haluskan"
           },
           {
-            "item": "kunyit",
-            "amount": 1,
-            "unit": "ruas",
+            "name": "kunyit",
+            "quantity": {
+              "value": 1,
+              "unit": "ruas"
+            },
             "notes": "Haluskan"
           },
           {
-            "item": "daun bawang",
-            "amount": 2,
-            "unit": "batang",
+            "name": "daun bawang",
+            "quantity": {
+              "value": 2,
+              "unit": "batang"
+            },
             "notes": "Iris halus"
           },
           {
-            "item": "daun kunyit",
-            "amount": 1,
-            "unit": "lembar",
+            "name": "daun kunyit",
+            "quantity": {
+              "value": 1,
+              "unit": "lembar"
+            },
             "notes": "Iris halus (optional)"
           },
           {
-            "item": "tepung beras",
-            "amount": 1,
-            "unit": "sdm",
+            "name": "tepung beras",
+            "quantity": {
+              "value": 1,
+              "unit": "sdm"
+            },
             "notes": "Larutkan dengan sedikit air"
           },
           {
-            "item": "garam",
-            "amount": 1,
-            "unit": "sdt",
+            "name": "garam",
+            "quantity": {
+              "value": 1,
+              "unit": "sdt"
+            },
             "notes": "Sesuai selera"
           },
           {
-            "item": "kaldu bubuk",
-            "amount": 1,
-            "unit": "sdt",
+            "name": "kaldu bubuk",
+            "quantity": {
+              "value": 1,
+              "unit": "sdt"
+            },
             "notes": "Optional"
           }
         ]
@@ -1844,12 +1948,14 @@
         {
           "region": "Cirebon",
           "description": "Versi asli dengan kuah cuka bawang merah",
-          "difference": "Menggunakan cuka aren dan bawang merah mentah"
+          "difference": "Menggunakan cuka aren dan bawang merah mentah",
+          "province": "Jawa Barat"
         },
         {
           "region": "Jakarta",
           "description": "Adaptasi dengan kuah yang lebih manis",
-          "difference": "Kuah lebih manis dan tidak terlalu asam"
+          "difference": "Kuah lebih manis dan tidak terlalu asam",
+          "province": "DKI Jakarta"
         }
       ]
     },
@@ -1857,21 +1963,35 @@
       "offlineStores": [
         {
           "name": "Pasar Kanoman",
-          "location": "Cirebon",
+          "location": {
+            "lat": -6.7063,
+            "lng": 108.5571
+          },
           "priceRange": {
             "min": 10000,
             "max": 15000
           },
-          "bestTimeToVisit": "Sore hari, 15.00-18.00"
+          "bestTimeToVisit": "Sore hari, 15.00-18.00",
+          "address": "Pasar Kanoman, {'lat': -6.7063, 'lng': 108.5571}",
+          "openingHours": "06.00 - 18.00",
+          "estimatedDistance": 2.0,
+          "rincianBahan": []
         },
         {
           "name": "Pasar Pagi",
-          "location": "Cirebon",
+          "location": {
+            "lat": -6.7063,
+            "lng": 108.5571
+          },
           "priceRange": {
             "min": 8000,
             "max": 12000
           },
-          "bestTimeToVisit": "Pagi hari, 06.00-10.00"
+          "bestTimeToVisit": "Pagi hari, 06.00-10.00",
+          "address": "Pasar Pagi, {'lat': -6.7063, 'lng': 108.5571}",
+          "openingHours": "06.00 - 18.00",
+          "estimatedDistance": 2.0,
+          "rincianBahan": []
         }
       ]
     },
@@ -1879,47 +1999,61 @@
       {
         "bahan_utama": [
           {
-            "item": "tahu putih",
-            "amount": 5,
-            "unit": "potong",
+            "name": "tahu putih",
+            "quantity": {
+              "value": 5,
+              "unit": "potong"
+            },
             "notes": "Ukuran sedang"
           }
         ],
         "bumbu": [
           {
-            "item": "bawang merah",
-            "amount": 5,
-            "unit": "siung",
+            "name": "bawang merah",
+            "quantity": {
+              "value": 5,
+              "unit": "siung"
+            },
             "notes": "Iris tipis"
           },
           {
-            "item": "cabai rawit",
-            "amount": 10,
-            "unit": "buah",
+            "name": "cabai rawit",
+            "quantity": {
+              "value": 10,
+              "unit": "buah"
+            },
             "notes": "Sesuai selera"
           },
           {
-            "item": "kecap manis",
-            "amount": 2,
-            "unit": "sdm",
+            "name": "kecap manis",
+            "quantity": {
+              "value": 2,
+              "unit": "sdm"
+            },
             "notes": "Sesuai selera"
           },
           {
-            "item": "cuka",
-            "amount": 2,
-            "unit": "sdm",
+            "name": "cuka",
+            "quantity": {
+              "value": 2,
+              "unit": "sdm"
+            },
             "notes": "Cuka aren lebih autentik"
           },
           {
-            "item": "garam",
-            "amount": 1,
-            "unit": "sdt",
+            "name": "garam",
+            "quantity": {
+              "value": 1,
+              "unit": "sdt"
+            },
             "notes": "Sesuai selera"
           },
           {
-            "item": "gula pasir",
-            "amount": 1,
-            "unit": "sdm",
+            "name": "gula pasir",
+            "quantity": {
+              "value": 1,
+              "unit": "sdm"
+            },
             "notes": "Sesuai selera"
           }
         ]
@@ -1984,12 +2118,14 @@
         {
           "region": "Solo",
           "description": "Versi dengan tambahan pete dan udang rebon",
-          "difference": "Menggunakan pete dan lebih banyak udang rebon"
+          "difference": "Menggunakan pete dan lebih banyak udang rebon",
+          "province": "Jawa Tengah"
         },
         {
           "region": "Yogyakarta",
           "description": "Versi dengan tambahan daun melinjo",
-          "difference": "Menggunakan daun melinjo dan lebih pedas"
+          "difference": "Menggunakan daun melinjo dan lebih pedas",
+          "province": "Jawa Tengah"
         }
       ]
     },
@@ -1997,21 +2133,35 @@
       "offlineStores": [
         {
           "name": "Pasar Gede",
-          "location": "Solo",
+          "location": {
+            "lat": -7.5755,
+            "lng": 110.8243
+          },
           "priceRange": {
             "min": 20000,
             "max": 25000
           },
-          "bestTimeToVisit": "Pagi hari, 06.00-10.00"
+          "bestTimeToVisit": "Pagi hari, 06.00-10.00",
+          "address": "Pasar Gede, {'lat': -7.5755, 'lng': 110.8243}",
+          "openingHours": "06.00 - 18.00",
+          "estimatedDistance": 2.0,
+          "rincianBahan": []
         },
         {
           "name": "Pasar Beringharjo",
-          "location": "Yogyakarta",
+          "location": {
+            "lat": -7.7956,
+            "lng": 110.3695
+          },
           "priceRange": {
             "min": 18000,
             "max": 22000
           },
-          "bestTimeToVisit": "Pagi hari, 05.00-09.00"
+          "bestTimeToVisit": "Pagi hari, 05.00-09.00",
+          "address": "Pasar Beringharjo, {'lat': -7.7956, 'lng': 110.3695}",
+          "openingHours": "06.00 - 18.00",
+          "estimatedDistance": 2.0,
+          "rincianBahan": []
         }
       ]
     },
@@ -2019,77 +2169,101 @@
       {
         "bahan_utama": [
           {
-            "item": "tempe",
-            "amount": 2,
-            "unit": "papan",
+            "name": "tempe",
+            "quantity": {
+              "value": 2,
+              "unit": "papan"
+            },
             "notes": "Potong dadu kecil"
           },
           {
-            "item": "lamtoro",
-            "amount": 100,
-            "unit": "gram",
+            "name": "lamtoro",
+            "quantity": {
+              "value": 100,
+              "unit": "gram"
+            },
             "notes": "Kupas"
           },
           {
-            "item": "teri",
-            "amount": 50,
-            "unit": "gram",
+            "name": "teri",
+            "quantity": {
+              "value": 50,
+              "unit": "gram"
+            },
             "notes": "Rendam air panas"
           },
           {
-            "item": "kelapa parut",
-            "amount": 200,
-            "unit": "gram",
+            "name": "kelapa parut",
+            "quantity": {
+              "value": 200,
+              "unit": "gram"
+            },
             "notes": "Setengah tua"
           }
         ],
         "bumbu": [
           {
-            "item": "bawang merah",
-            "amount": 6,
-            "unit": "siung",
+            "name": "bawang merah",
+            "quantity": {
+              "value": 6,
+              "unit": "siung"
+            },
             "notes": "Iris halus"
           },
           {
-            "item": "bawang putih",
-            "amount": 4,
-            "unit": "siung",
+            "name": "bawang putih",
+            "quantity": {
+              "value": 4,
+              "unit": "siung"
+            },
             "notes": "Haluskan"
           },
           {
-            "item": "cabai merah",
-            "amount": 4,
-            "unit": "buah",
+            "name": "cabai merah",
+            "quantity": {
+              "value": 4,
+              "unit": "buah"
+            },
             "notes": "Iris serong"
           },
           {
-            "item": "cabai rawit",
-            "amount": 5,
-            "unit": "buah",
+            "name": "cabai rawit",
+            "quantity": {
+              "value": 5,
+              "unit": "buah"
+            },
             "notes": "Sesuai selera"
           },
           {
-            "item": "daun salam",
-            "amount": 4,
-            "unit": "lembar",
+            "name": "daun salam",
+            "quantity": {
+              "value": 4,
+              "unit": "lembar"
+            },
             "notes": "Sobek kasar"
           },
           {
-            "item": "daun jeruk",
-            "amount": 3,
-            "unit": "lembar",
+            "name": "daun jeruk",
+            "quantity": {
+              "value": 3,
+              "unit": "lembar"
+            },
             "notes": "Sobek kasar"
           },
           {
-            "item": "lengkuas",
-            "amount": 2,
-            "unit": "ruas",
+            "name": "lengkuas",
+            "quantity": {
+              "value": 2,
+              "unit": "ruas"
+            },
             "notes": "Geprek"
           },
           {
-            "item": "garam",
-            "amount": 1,
-            "unit": "sdt",
+            "name": "garam",
+            "quantity": {
+              "value": 1,
+              "unit": "sdt"
+            },
             "notes": "Sesuai selera"
           }
         ]
@@ -2154,12 +2328,14 @@
         {
           "region": "Padang",
           "description": "Versi asli dengan sambal merah pekat",
-          "difference": "Sambal lebih berminyak dan pedas"
+          "difference": "Sambal lebih berminyak dan pedas",
+          "province": "Sumatera Barat"
         },
         {
           "region": "Pariaman",
           "description": "Dengan tambahan pete atau jengkol",
-          "difference": "Ditambah pete atau jengkol untuk aroma khas"
+          "difference": "Ditambah pete atau jengkol untuk aroma khas",
+          "province": "Indonesia"
         }
       ]
     },
@@ -2167,21 +2343,35 @@
       "offlineStores": [
         {
           "name": "Pasar Raya",
-          "location": "Padang",
+          "location": {
+            "lat": -0.9471,
+            "lng": 100.4172
+          },
           "priceRange": {
             "min": 20000,
             "max": 25000
           },
-          "bestTimeToVisit": "Pagi hari, 06.00-10.00"
+          "bestTimeToVisit": "Pagi hari, 06.00-10.00",
+          "address": "Pasar Raya, {'lat': -0.9471, 'lng': 100.4172}",
+          "openingHours": "06.00 - 18.00",
+          "estimatedDistance": 2.0,
+          "rincianBahan": []
         },
         {
           "name": "Pasar Pagi",
-          "location": "Bukittinggi",
+          "location": {
+            "lat": -0.3059,
+            "lng": 100.3692
+          },
           "priceRange": {
             "min": 18000,
             "max": 22000
           },
-          "bestTimeToVisit": "Pagi hari, 05.00-09.00"
+          "bestTimeToVisit": "Pagi hari, 05.00-09.00",
+          "address": "Pasar Pagi, {'lat': -0.3059, 'lng': 100.3692}",
+          "openingHours": "06.00 - 18.00",
+          "estimatedDistance": 2.0,
+          "rincianBahan": []
         }
       ]
     },
@@ -2189,65 +2379,85 @@
       {
         "bahan_utama": [
           {
-            "item": "telur ayam",
-            "amount": 8,
-            "unit": "butir",
+            "name": "telur ayam",
+            "quantity": {
+              "value": 8,
+              "unit": "butir"
+            },
             "notes": "Rebus hingga matang"
           }
         ],
         "bumbu": [
           {
-            "item": "cabai merah keriting",
-            "amount": 15,
-            "unit": "buah",
+            "name": "cabai merah keriting",
+            "quantity": {
+              "value": 15,
+              "unit": "buah"
+            },
             "notes": "Haluskan"
           },
           {
-            "item": "cabai rawit merah",
-            "amount": 5,
-            "unit": "buah",
+            "name": "cabai rawit merah",
+            "quantity": {
+              "value": 5,
+              "unit": "buah"
+            },
             "notes": "Sesuai selera"
           },
           {
-            "item": "bawang merah",
-            "amount": 8,
-            "unit": "siung",
+            "name": "bawang merah",
+            "quantity": {
+              "value": 8,
+              "unit": "siung"
+            },
             "notes": "Haluskan"
           },
           {
-            "item": "bawang putih",
-            "amount": 4,
-            "unit": "siung",
+            "name": "bawang putih",
+            "quantity": {
+              "value": 4,
+              "unit": "siung"
+            },
             "notes": "Haluskan"
           },
           {
-            "item": "tomat",
-            "amount": 2,
-            "unit": "buah",
+            "name": "tomat",
+            "quantity": {
+              "value": 2,
+              "unit": "buah"
+            },
             "notes": "Potong kasar"
           },
           {
-            "item": "daun jeruk",
-            "amount": 3,
-            "unit": "lembar",
+            "name": "daun jeruk",
+            "quantity": {
+              "value": 3,
+              "unit": "lembar"
+            },
             "notes": "Buang tulang daunnya"
           },
           {
-            "item": "serai",
-            "amount": 1,
-            "unit": "batang",
+            "name": "serai",
+            "quantity": {
+              "value": 1,
+              "unit": "batang"
+            },
             "notes": "Geprek"
           },
           {
-            "item": "garam",
-            "amount": 1,
-            "unit": "sdt",
+            "name": "garam",
+            "quantity": {
+              "value": 1,
+              "unit": "sdt"
+            },
             "notes": "Sesuai selera"
           },
           {
-            "item": "gula",
-            "amount": 1,
-            "unit": "sdt",
+            "name": "gula",
+            "quantity": {
+              "value": 1,
+              "unit": "sdt"
+            },
             "notes": "Sesuai selera"
           }
         ]
@@ -2326,7 +2536,7 @@
           "location": {
             "lat": -6.3985,
             "lng": 106.8123
-        },
+          },
           "rincianBahan": [
             {
               "name": "Nasi Putih Pera",
@@ -2346,97 +2556,97 @@
               "estimatedPrice": 3000,
               "note": "Pilih yang benar-benar muda agar tidak terlalu pahit"
             },
-            { 
-              "name": "Telur Ayam", 
-              "quantity": { 
-                "value": 2, 
-                "unit": "butir" 
-              }, 
-              "estimatedPrice": 4000 
-            },
-            { 
-              "name": "Ebi Kering", 
-              "quantity": { 
-                "value": 1, 
-                "unit": "sdm"
-              }, 
-              "estimatedPrice": 3000, 
-              "note": "Rendam air panas sebentar lalu tiriskan." 
-            },
-            { 
-              "name": "Bawang Merah", 
-              "quantity": { 
-                "value": 5, 
-                "unit": "siung" 
-              }, 
-              "estimatedPrice": 2500 
-            },
-            { 
-              "name": "Bawang Putih", 
+            {
+              "name": "Telur Ayam",
               "quantity": {
-                "value": 3, 
-                "unit": "siung" 
-              }, 
-              "estimatedPrice": 1500 
+                "value": 2,
+                "unit": "butir"
+              },
+              "estimatedPrice": 4000
             },
-            { 
+            {
+              "name": "Ebi Kering",
+              "quantity": {
+                "value": 1,
+                "unit": "sdm"
+              },
+              "estimatedPrice": 3000,
+              "note": "Rendam air panas sebentar lalu tiriskan."
+            },
+            {
+              "name": "Bawang Merah",
+              "quantity": {
+                "value": 5,
+                "unit": "siung"
+              },
+              "estimatedPrice": 2500
+            },
+            {
+              "name": "Bawang Putih",
+              "quantity": {
+                "value": 3,
+                "unit": "siung"
+              },
+              "estimatedPrice": 1500
+            },
+            {
               "name": "Cabai Rawit Merah",
-              "quantity": { 
-                "value": 5, 
-                "unit": "buah" 
+              "quantity": {
+                "value": 5,
+                "unit": "buah"
               },
               "estimatedPrice": 2000,
-              "note": "Jumlah sesuai selera pedas." 
+              "note": "Jumlah sesuai selera pedas."
             },
-            { 
-              "name": "Kencur", 
-              "quantity": { 
-                "value": 2, 
-                "unit": "cm" 
-              }, 
+            {
+              "name": "Kencur",
+              "quantity": {
+                "value": 2,
+                "unit": "cm"
+              },
               "estimatedPrice": 1000
             },
-            { 
-              "name": "Kunyit Bakar", 
-              "quantity": { 
-                "value": 2, 
+            {
+              "name": "Kunyit Bakar",
+              "quantity": {
+                "value": 2,
                 "unit": "cm"
-              }, 
-              "estimatedPrice": 1000 
+              },
+              "estimatedPrice": 1000
             },
-            { 
-              "name": "Terasi Bakar", 
-              "quantity": { 
-                "value": 0.5, 
-                "unit": "sdt" 
-              }, 
-              "estimatedPrice": 1000 
+            {
+              "name": "Terasi Bakar",
+              "quantity": {
+                "value": 0.5,
+                "unit": "sdt"
+              },
+              "estimatedPrice": 1000
             },
-            { 
-              "name": "Garam, Gula Pasir, Merica Bubuk", 
-              "quantity": { 
-                "value": 1, 
-                "unit": "paket kecil" 
-              }, 
-              "estimatedPrice": 2000, 
-              "note": "Estimasi untuk pemakaian secukupnya" 
+            {
+              "name": "Garam, Gula Pasir, Merica Bubuk",
+              "quantity": {
+                "value": 1,
+                "unit": "paket kecil"
+              },
+              "estimatedPrice": 2000,
+              "note": "Estimasi untuk pemakaian secukupnya"
             },
-            { 
-              "name": "Minyak Goreng", 
-              "quantity": { 
-                "value": 3, 
-                "unit": "sdm" 
-              }, 
-              "estimatedPrice": 2000, 
-              "note": "Estimasi pemakaian" 
+            {
+              "name": "Minyak Goreng",
+              "quantity": {
+                "value": 3,
+                "unit": "sdm"
+              },
+              "estimatedPrice": 2000,
+              "note": "Estimasi pemakaian"
             },
-            { 
-              "name": "Bahan Pelengkap (Bawang Goreng, Acar)", 
-              "quantity": { 
-                "value": 1, 
-                "unit": "paket" 
-              }, 
-              "estimatedPrice": 6000 
+            {
+              "name": "Bahan Pelengkap (Bawang Goreng, Acar)",
+              "quantity": {
+                "value": 1,
+                "unit": "paket"
+              },
+              "estimatedPrice": 6000
             }
           ]
         }
@@ -2604,7 +2814,7 @@
         ]
       }
     ],
-      "cookingSteps": [
+    "cookingSteps": [
       {
         "step": 1,
         "title": "Persiapan Bahan dan Bumbu",
