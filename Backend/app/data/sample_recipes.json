@@ -921,7 +921,7 @@
     "name": "Gulai Ikan Patin",
     "shortDescription": "Gulai ikan patin khas Jambi dengan kuah kuning kental, rasa asam pedas yang segar dari tempoyak.",
     "description": "Gulai Ikan Patin adalah masakan berkuah santan yang populer di Jambi dan daerah Melayu lainnya. Keunikan gulai ini adalah penggunaan tempoyak, yaitu fermentasi durian, yang memberikan rasa asam yang khas dan aroma yang unik. Daging ikan patin yang lembut dan berlemak sangat cocok dipadukan dengan kuah gulai yang pedas, gurih, dan asam, menciptakan harmoni rasa yang kompleks dan menggugah selera.",
-    "image": "https://images.unsplash.com/photo-1579584425555-c3ce17fd4351",
+    "image": "https://urrecipe.s3.ap-southeast-2.amazonaws.com/gulai-patin/step-1.png",
     "region": "Jambi",
     "difficulty": "Sedang",
     "cookingTimeMinutes": 45,
@@ -1094,7 +1094,7 @@
         "description": "Cuci bersih potongan ikan patin, lumuri dengan air perasan jeruk nipis dan sedikit garam untuk menghilangkan bau amis. Diamkan selama 15 menit, lalu bilas.",
         "duration": "10 menit",
         "difficulty": "mudah",
-        "image": "https://images.unsplash.com/photo-1580982327502-37551bae3c99",
+        "image": "https://urrecipe.s3.ap-southeast-2.amazonaws.com/gulai-patin/step-2.png",
         "tips": [
           "Pastikan ikan benar-benar segar untuk hasil terbaik."
         ]
@@ -1105,7 +1105,7 @@
         "description": "Haluskan semua bahan 'bumbu halus'. Tumis bumbu halus di wajan dengan sedikit minyak hingga harum. Masukkan serai dan daun kunyit, aduk hingga matang.",
         "duration": "5 menit",
         "difficulty": "mudah",
-        "image": "https://images.unsplash.com/photo-1551690348-1343e0a95b99",
+        "image": "https://urrecipe.s3.ap-southeast-2.amazonaws.com/gulai-patin/step-3.png",
         "tips": [
           "Menumis bumbu hingga matang akan membuat gulai lebih awet dan tidak langu."
         ]
@@ -1116,7 +1116,7 @@
         "description": "Masukkan santan ke dalam tumisan bumbu, aduk perlahan. Tambahkan tempoyak, aduk hingga larut. Masak hingga kuah mendidih sambil terus diaduk agar santan tidak pecah.",
         "duration": "10 menit",
         "difficulty": "sedang",
-        "image": "https://images.unsplash.com/photo-1555939594-58d7cb561ad1",
+        "image": "https://urrecipe.s3.ap-southeast-2.amazonaws.com/gulai-patin/step-4.png",
         "tips": [
           "Gunakan api sedang dan jangan berhenti mengaduk saat santan mulai panas."
         ]
@@ -1127,7 +1127,7 @@
         "description": "Setelah kuah mendidih, masukkan potongan ikan patin. Tambahkan garam dan gula. Masak dengan api kecil hingga ikan matang dan bumbu meresap. Koreksi rasa.",
         "duration": "15 menit",
         "difficulty": "sedang",
-        "image": "https://images.unsplash.com/photo-1579584425555-c3ce17fd4351",
+        "image": "https://urrecipe.s3.ap-southeast-2.amazonaws.com/gulai-patin/step-5.png",
         "tips": [
           "Jangan terlalu sering mengaduk setelah ikan masuk agar tidak hancur.",
           "Rasa gulai harus seimbang antara pedas, asam, dan gurih."
@@ -1139,7 +1139,7 @@
         "description": "Angkat gulai ikan patin dan sajikan selagi hangat. Hidangan ini sangat nikmat disantap dengan nasi putih.",
         "duration": "5 menit",
         "difficulty": "mudah",
-        "image": "https://images.unsplash.com/photo-1579584425555-c3ce17fd4351",
+        "image": "https://urrecipe.s3.ap-southeast-2.amazonaws.com/gulai-patin/step-6.png",
         "tips": [
           "Taburi dengan bawang goreng jika suka untuk menambah aroma."
         ]
@@ -1151,7 +1151,7 @@
     "name": "Asam Padeh Ikan Tongkol",
     "shortDescription": "Asam padeh (asam pedas) adalah masakan khas Minangkabau yang segar, pedas, dan tanpa santan.",
     "description": "Asam Padeh merupakan salah satu hidangan andalan dari Sumatera Barat. Berbeda dari gulai yang kental dengan santan, asam padeh memiliki kuah merah yang encer namun kaya rasa. Rasa asamnya berasal dari asam kandis, sementara rasa pedasnya dari gilingan cabai merah. Ikan tongkol yang padat dagingnya sangat cocok untuk masakan ini karena tidak mudah hancur saat dimasak.",
-    "image": "https://images.unsplash.com/photo-1598511829644-3c60b73b3374",
+    "image": "https://urrecipe.s3.ap-southeast-2.amazonaws.com/asam-padeh-tongkol/step-1.png",
     "region": "Sumatera Barat",
     "difficulty": "Sedang",
     "cookingTimeMinutes": 35,
@@ -1353,7 +1353,7 @@
         "description": "Setelah kuah bumbu mendidih dan harum, masukkan potongan ikan tongkol. Pastikan semua ikan terendam kuah.",
         "duration": "5 menit",
         "difficulty": "mudah",
-        "image": "https://images.unsplash.com/photo-1598511829644-3c60b73b3374",
+        "image": "https://urrecipe.s3.ap-southeast-2.amazonaws.com/asam-padeh-tongkol/step-4.png",
         "tips": [
           "Jangan mengaduk terlalu kasar agar ikan tidak hancur."
         ]
@@ -1364,7 +1364,7 @@
         "description": "Tambahkan garam. Masak dengan api sedang hingga ikan matang dan kuah sedikit menyusut serta mengental. Koreksi rasa asam dan pedasnya.",
         "duration": "15 menit",
         "difficulty": "sedang",
-        "image": "https://images.unsplash.com/photo-1598511829644-3c60b73b3374",
+        "image": "https://urrecipe.s3.ap-southeast-2.amazonaws.com/asam-padeh-tongkol/step-5.png",
         "tips": [
           "Rasa asam padeh yang baik adalah yang seimbang antara asam, pedas, dan gurih.",
           "Hidangan ini akan lebih sedap jika dipanaskan kembali keesokan harinya."
