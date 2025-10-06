@@ -135,6 +135,36 @@ export const recipeAPI = {
       throw error;
     }
   },
+
+  /**
+   * AI-powered recipe search with advanced filtering
+   * @param {Object} searchParams - Search parameters
+   * @param {string} searchParams.query - Natural language search query
+   * @param {number} [searchParams.budget] - Maximum budget in Rupiah
+   * @param {number} [searchParams.maxTime] - Maximum cooking time in minutes
+   * @param {number} [searchParams.servings] - Number of servings
+   * @param {string[]} [searchParams.dietary] - Dietary preferences (e.g., ['vegetarian', 'halal'])
+   * @param {string} [searchParams.difficulty] - Difficulty level
+   * @param {string} [searchParams.sortBy] - Sort by (relevance, rating, time, budget)
+   * @returns {Promise} Array of matching recipes
+   */
+  aiSearch: async (searchParams) => {
+    try {
+      const response = await apiClient.post('/search', {
+        query: searchParams.query,
+        budget: searchParams.budget,
+        max_time: searchParams.maxTime,
+        servings: searchParams.servings,
+        dietary: searchParams.dietary,
+        difficulty: searchParams.difficulty,
+        sort_by: searchParams.sortBy || 'relevance'
+      });
+      return response.data;
+    } catch (error) {
+      console.error('AI search failed:', error);
+      throw error;
+    }
+  },
 };
 
 /**
