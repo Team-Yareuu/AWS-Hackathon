@@ -1,0 +1,40 @@
+# Git
+.git
+.gitignore
+
+# Documentation
+README.md
+HOW_TO_ADD_RECIPES.md
+
+# Test files
+test_*.py
+tests/
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Development files
+.env
+.env.local
+.env.development
+.env.test
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+logs/
+
+# Temporary files
+tmp/
+temp/

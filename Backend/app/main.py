@@ -19,14 +19,20 @@ app = FastAPI(
 )
 
 # Configure CORS
+allowed_origins = [
+    "http://localhost:4028",
+    "http://127.0.0.1:4028",
+    "http://localhost:3000",  # In case you use different port
+    "http://127.0.0.1:3000",
+]
+
+# Add production frontend URL if specified
+if hasattr(settings, 'FRONTEND_URL') and settings.FRONTEND_URL:
+    allowed_origins.append(settings.FRONTEND_URL)
+
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=[
-        "http://localhost:4028",
-        "http://127.0.0.1:4028",
-        "http://localhost:3000",  # In case you use different port
-        "http://127.0.0.1:3000",
-    ],
+    allow_origins=allowed_origins,
     allow_credentials=True,
     allow_methods=["*"],  # Allows all methods
     allow_headers=["*"],  # Allows all headers

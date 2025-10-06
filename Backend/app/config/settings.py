@@ -18,6 +18,9 @@ class Settings(BaseSettings):
     ALGORITHM: str = "HS256"
     ACCESS_TOKEN_EXPIRE_MINUTES: int = 30
     API_V1_STR: str = "/api/v1"
+    
+    # Frontend Configuration (optional for production)
+    FRONTEND_URL: Optional[str] = None
 
     class Config:
         env_file = ".env"
