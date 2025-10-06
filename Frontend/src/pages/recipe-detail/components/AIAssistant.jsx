@@ -1,4 +1,6 @@
 import { useState, useRef, useEffect } from 'react';
+import ReactMarkdown from 'react-markdown';
+import remarkGfm from 'remark-gfm';
 import Icon from '../../../components/AppIcon.jsx';
 import Button from '../../../components/ui/Button.jsx';
 import { aiAPI } from '../../../services/api.js';
@@ -17,7 +19,7 @@ const AIAssistant = ({ isOpen, onClose, recipe }) => {
   const messagesEndRef = useRef(null);
 
   const scrollToBottom = () => {
-    messagesEndRef?.current?.scrollIntoView({ behavior: "smooth" });
+    messagesEndRef?.current?.scrollIntoView({ behavior: 'smooth' });
   };
 
   useEffect(() => {
@@ -25,22 +27,23 @@ const AIAssistant = ({ isOpen, onClose, recipe }) => {
   }, [messages]);
 
   const quickQuestions = [
-    "Bagaimana cara mengganti bahan yang tidak ada?",
-    "Tips agar masakan lebih gurih?",
-    "Berapa lama bisa disimpan?",
-    "Cara menyesuaikan untuk diet khusus?",
-    "Teknik memasak yang benar?",
-    "Variasi resep ini?"
+    'Bagaimana cara mengganti bahan yang tidak ada?',
+    'Tips agar masakan lebih gurih?',
+    'Berapa lama bisa disimpan?',
+    'Cara menyesuaikan untuk diet khusus?',
+    'Teknik memasak yang benar?',
+    'Variasi resep ini?'
   ];
 
   const handleSendMessage = async (message = inputMessage) => {
     if (!message?.trim()) return;
 
+    const timestamp = new Date();
     const userMessage = {
-      id: Date.now(),
+      id: timestamp.getTime(),
       type: 'user',
-      content: message,
-      timestamp: new Date()
+      content: message.trim(),
+      timestamp
     };
 
     setMessages(prev => [...prev, userMessage]);
@@ -48,7 +51,6 @@ const AIAssistant = ({ isOpen, onClose, recipe }) => {
     setIsTyping(true);
 
     try {
-      // Create recipe context for the AI
       const recipeContext = JSON.stringify({
         name: recipe?.name,
         ingredients: recipe?.ingredients,
@@ -59,26 +61,26 @@ const AIAssistant = ({ isOpen, onClose, recipe }) => {
         servings: recipe?.servings,
         difficulty: recipe?.difficulty
       });
-      
-      // Call real AWS Bedrock API
+
       const response = await aiAPI.assistant(message, recipeContext);
-      
+
+      const aiTimestamp = new Date();
       const aiMessage = {
-        id: Date.now() + 1,
+        id: aiTimestamp.getTime(),
         type: 'ai',
-        content: response.answer,
-        timestamp: new Date()
+        content: response?.answer || 'Maaf, saya belum memiliki jawaban untuk itu.',
+        timestamp: aiTimestamp
       };
       setMessages(prev => [...prev, aiMessage]);
     } catch (error) {
-      console.error('❌ AI Assistant API Error:', error);
-      
-      // Show error message to user
+      console.error('AI Assistant API Error:', error);
+
+      const errorTimestamp = new Date();
       const errorMessage = {
-        id: Date.now() + 1,
+        id: errorTimestamp.getTime(),
         type: 'ai',
-        content: '⚠️ Maaf, terjadi kesalahan saat menghubungi AI Assistant. Silakan coba lagi atau pastikan backend server sedang berjalan.',
-        timestamp: new Date()
+        content: 'Maaf, terjadi kesalahan saat menghubungi AI Assistant. Silakan coba lagi dan pastikan backend sedang berjalan.',
+        timestamp: errorTimestamp
       };
       setMessages(prev => [...prev, errorMessage]);
     } finally {
@@ -86,95 +88,130 @@ const AIAssistant = ({ isOpen, onClose, recipe }) => {
     }
   };
 
-  const formatTime = (date) => {
-    return date?.toLocaleTimeString('id-ID', { 
-      hour: '2-digit', 
-      minute: '2-digit' 
+  const formatTime = date => {
+    if (!date) return '';
+    const parsedDate = date instanceof Date ? date : new Date(date);
+    return parsedDate.toLocaleTimeString('id-ID', {
+      hour: '2-digit',
+      minute: '2-digit'
     });
   };
 
   if (!isOpen) return null;
 
   return (
-    <div className="fixed inset-0 bg-black/50 flex items-end sm:items-center justify-center p-4 z-50">
-      <div className="bg-background rounded-t-xl sm:rounded-xl w-full max-w-2xl h-[80vh] sm:h-[70vh] flex flex-col">
+    <div className="fixed inset-0 bg-black/60 backdrop-blur-sm flex items-center justify-center p-0 sm:p-4 z-50">
+      <div className="bg-background sm:bg-background/95 border-none sm:border border-border shadow-none sm:shadow-2xl rounded-none sm:rounded-xl w-full max-w-none sm:max-w-2xl h-screen sm:h-[70vh] flex flex-col overflow-hidden">
         {/* Header */}
-        <div className="flex items-center justify-between p-4 border-b border-border">
+        <div className="sticky top-0 z-10 flex items-center justify-between p-4 border-b border-border bg-card">
           <div className="flex items-center space-x-3">
-            <div className="w-10 h-10 bg-primary/20 rounded-full flex items-center justify-center">
+            <div className="w-10 h-10 bg-primary/15 rounded-full flex items-center justify-center">
               <Icon name="Bot" size={20} className="text-primary" />
             </div>
             <div>
               <h3 className="font-semibold text-foreground">Asisten AI Masak</h3>
-              <p className="text-sm text-muted-foreground">Siap membantu Anda memasak</p>
+              <p className="text-sm text-muted-foreground">Sampaikan pertanyaan Anda tentang resep ini</p>
             </div>
           </div>
-          
+
           <Button variant="ghost" size="icon" onClick={onClose}>
             <Icon name="X" size={20} />
           </Button>
         </div>
 
         {/* Messages */}
-        <div className="flex-1 overflow-y-auto p-4 space-y-4">
-          {messages?.map((message) => (
-            <div
-              key={message?.id}
-              className={`flex ${message?.type === 'user' ? 'justify-end' : 'justify-start'}`}
-            >
-              <div className={`max-w-[80%] ${message?.type === 'user' ? 'order-2' : 'order-1'}`}>
-                <div
-                  className={`p-3 rounded-2xl ${
-                    message?.type === 'user' ?'bg-primary text-primary-foreground rounded-br-sm' :'bg-muted text-foreground rounded-bl-sm ai-chat-bubble'
-                  }`}
-                >
-                  <p className="text-sm leading-relaxed whitespace-pre-line">
-                    {message?.content}
+        <div className="flex-1 overflow-y-auto p-4 space-y-5 bg-muted/30">
+          {messages?.map(message => {
+            const isUser = message?.type === 'user';
+            const bubbleBase = isUser
+              ? 'bg-primary text-primary-foreground rounded-br-sm'
+              : 'bg-card text-foreground border border-border rounded-bl-sm shadow-sm';
+
+            return (
+              <div key={message?.id} className={`flex ${isUser ? 'justify-end' : 'justify-start'} gap-3`}>
+                {!isUser && (
+                  <div className="w-8 h-8 bg-primary/15 rounded-full flex items-center justify-center flex-shrink-0">
+                    <Icon name="Bot" size={16} className="text-primary" />
+                  </div>
+                )}
+
+                <div className={`max-w-[80%] ${isUser ? 'order-2' : 'order-1'} space-y-1`}>
+                  <div className={`p-3 rounded-2xl leading-relaxed text-sm ${bubbleBase}`}>
+                    {isUser ? (
+                      <p className="whitespace-pre-line">{message?.content}</p>
+                    ) : (
+                      <div className="prose prose-sm max-w-none ai-markdown">
+                        <ReactMarkdown
+                          remarkPlugins={[remarkGfm]}
+                          components={{
+                            ul: ({ children }) => (
+                              <ul className="list-disc pl-5 space-y-1">{children}</ul>
+                            ),
+                            ol: ({ children }) => (
+                              <ol className="list-decimal pl-5 space-y-1">{children}</ol>
+                            ),
+                            li: ({ children }) => <li className="pl-1">{children}</li>,
+                            a: ({ href, children }) => (
+                              <a
+                                href={href}
+                                className="text-primary underline underline-offset-2"
+                                target="_blank"
+                                rel="noreferrer"
+                              >
+                                {children}
+                              </a>
+                            ),
+                            code: ({ children }) => (
+                              <code className="rounded bg-primary/10 px-1 py-0.5 text-xs">{children}</code>
+                            ),
+                            pre: ({ children }) => (
+                              <pre className="overflow-x-auto rounded-md bg-primary/10 p-3 text-xs">{children}</pre>
+                            )
+                          }}
+                        >
+                          {message?.content || ''}
+                        </ReactMarkdown>
+                      </div>
+                    )}
+                  </div>
+                  <p className="text-xs text-muted-foreground/80 px-1">
+                    {formatTime(message?.timestamp)}
                   </p>
                 </div>
-                <p className="text-xs text-muted-foreground mt-1 px-3">
-                  {formatTime(message?.timestamp)}
-                </p>
               </div>
-              
-              {message?.type === 'ai' && (
-                <div className="w-8 h-8 bg-primary/20 rounded-full flex items-center justify-center mr-3 order-0 flex-shrink-0">
-                  <Icon name="Bot" size={16} className="text-primary" />
-                </div>
-              )}
-            </div>
-          ))}
+            );
+          })}
 
           {/* Typing Indicator */}
           {isTyping && (
-            <div className="flex justify-start">
-              <div className="w-8 h-8 bg-primary/20 rounded-full flex items-center justify-center mr-3 flex-shrink-0">
+            <div className="flex items-center gap-3">
+              <div className="w-8 h-8 bg-primary/15 rounded-full flex items-center justify-center flex-shrink-0">
                 <Icon name="Bot" size={16} className="text-primary" />
               </div>
-              <div className="bg-muted p-3 rounded-2xl rounded-bl-sm">
-                <div className="flex space-x-1">
-                  <div className="w-2 h-2 bg-muted-foreground rounded-full animate-bounce"></div>
-                  <div className="w-2 h-2 bg-muted-foreground rounded-full animate-bounce" style={{ animationDelay: '0.1s' }}></div>
-                  <div className="w-2 h-2 bg-muted-foreground rounded-full animate-bounce" style={{ animationDelay: '0.2s' }}></div>
+              <div className="bg-card border border-border p-3 rounded-2xl rounded-bl-sm">
+                <div className="flex items-center space-x-1">
+                  <span className="w-2 h-2 bg-muted-foreground rounded-full animate-bounce" />
+                  <span className="w-2 h-2 bg-muted-foreground rounded-full animate-bounce" style={{ animationDelay: '0.12s' }} />
+                  <span className="w-2 h-2 bg-muted-foreground rounded-full animate-bounce" style={{ animationDelay: '0.24s' }} />
                 </div>
               </div>
             </div>
           )}
-          
+
           <div ref={messagesEndRef} />
         </div>
 
         {/* Quick Questions */}
-        <div className="p-4 border-t border-border">
+        <div className="p-4 border-t border-border bg-card/70">
           <div className="mb-3">
-            <p className="text-sm font-medium text-foreground mb-2">Pertanyaan Cepat:</p>
+            <p className="text-sm font-medium text-foreground mb-2">Pertanyaan cepat</p>
             <div className="flex flex-wrap gap-2">
-              {quickQuestions?.slice(0, 3)?.map((question, index) => (
+              {quickQuestions?.slice(0, 4)?.map((question, index) => (
                 <button
                   type="button"
                   key={index}
                   onClick={() => handleSendMessage(question)}
-                  className="px-3 py-1 bg-muted hover:bg-muted/80 text-muted-foreground hover:text-foreground rounded-full text-xs transition-colors"
+                  className="px-3 py-1.5 bg-muted text-muted-foreground hover:bg-primary/10 hover:text-primary border border-border/60 rounded-full text-xs transition-colors"
                 >
                   {question}
                 </button>
@@ -188,15 +225,21 @@ const AIAssistant = ({ isOpen, onClose, recipe }) => {
               <input
                 type="text"
                 value={inputMessage}
-                onChange={(e) => setInputMessage(e?.target?.value)}
-                onKeyPress={(e) => e?.key === 'Enter' && handleSendMessage()}
+                onChange={event => setInputMessage(event?.target?.value)}
+                onKeyDown={event => {
+                  if (event?.key === 'Enter' && !event.shiftKey) {
+                    event.preventDefault();
+                    handleSendMessage();
+                  }
+                }}
                 placeholder="Tanyakan sesuatu tentang resep ini..."
-                className="w-full px-4 py-2 pr-12 border border-border rounded-full focus:outline-none focus:ring-2 focus:ring-primary text-sm"
+                className="w-full px-4 py-2.5 pr-12 border border-border rounded-full focus:outline-none focus:ring-2 focus:ring-primary text-sm bg-card"
               />
               <Button
+                type="button"
                 variant="ghost"
                 size="icon"
-                className="absolute right-1 top-1/2 -translate-y-1/2 h-8 w-8"
+                className="absolute right-1 top-1/2 -translate-y-1/2 h-9 w-9"
                 onClick={() => handleSendMessage()}
                 disabled={!inputMessage?.trim()}
               >

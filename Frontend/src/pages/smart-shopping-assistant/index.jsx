@@ -4,6 +4,7 @@ import Icon from '../../components/AppIcon';
 import Button from '../../components/ui/Button';
 import BudgetCalculator from './components/BudgetCalculator';
 import RecipeCard from './components/RecipeCard';
+import GroceryToDoList from './components/GroceryToDoList';
 import MarketplaceComparison from './components/MarketplaceComparison';
 import ShoppingList from './components/ShoppingList';
 import PriceTracker from './components/PriceTracker';
@@ -149,9 +150,9 @@ const SmartShoppingAssistant = () => {
 
   const tabs = [
     { id: 'budget', label: 'Budget Calculator', icon: 'Calculator' },
+    { id: 'recipes', label: 'Belanja Pasar', icon: 'ShoppingBasket' },
     { id: 'shopping', label: 'Daftar Belanja', icon: 'ShoppingCart' },
     { id: 'tracker', label: 'Pelacak Harga', icon: 'TrendingUp' },
-    { id: 'budget-tracker', label: 'Budget Tracker', icon: 'PiggyBank' }
   ];
 
   useEffect(() => {
@@ -182,6 +183,11 @@ const SmartShoppingAssistant = () => {
     }));
     
     setShoppingList(prev => [...prev, ...newItems]);
+    setActiveTab('shopping');
+  };
+
+  const handleAddCommoditiesToShopping = (items) => {
+    setShoppingList(prev => [...prev, ...items]);
     setActiveTab('shopping');
   };
 
@@ -331,16 +337,7 @@ const SmartShoppingAssistant = () => {
                       </div>
                     </div>
                     
-                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                      {recommendedRecipes?.map((recipe) => (
-                        <RecipeCard
-                          key={recipe?.id}
-                          recipe={recipe}
-                          onAddToCart={handleAddToCart}
-                          onViewDetails={handleViewDetails}
-                        />
-                      ))}
-                    </div>
+                    <GroceryToDoList onAddItems={handleAddCommoditiesToShopping} />
                   </div>
                 ) : (
                   <div className="text-center py-12">
@@ -375,20 +372,6 @@ const SmartShoppingAssistant = () => {
               </div>
             )}
 
-            {activeTab === 'tracker' && (
-              <div>
-                <PriceTracker onSetAlert={handleSetPriceAlert} />
-              </div>
-            )}
-
-            {activeTab === 'budget-tracker' && (
-              <div>
-                <BudgetTracker 
-                  monthlyBudget={monthlyBudget}
-                  onSetBudget={handleSetMonthlyBudget}
-                />
-              </div>
-            )}
           </div>
         </section>
 

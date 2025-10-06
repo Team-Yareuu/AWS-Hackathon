@@ -71,6 +71,7 @@ const ShoppingList = ({ items, onUpdateQuantity, onRemoveItem, onAddCustomItem, 
     'spice': 'Bumbu & Rempah',
     'grain': 'Biji-bijian',
     'dairy': 'Susu & Olahan',
+    'commodity': 'Komoditas',
     'custom': 'Item Tambahan'
   };
 
