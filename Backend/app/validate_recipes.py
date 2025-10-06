@@ -7,13 +7,13 @@ import sys
 from pathlib import Path
 from typing import List, Dict, Any, Tuple
 try:
-    from jsonschema import validate, ValidationError, Draft7Validator
+    from jsonschema import Draft7Validator
     from jsonschema.exceptions import SchemaError
 except ImportError:
     print("⚠️  jsonschema not installed. Installing...")
     import subprocess
     subprocess.check_call([sys.executable, "-m", "pip", "install", "jsonschema"])
-    from jsonschema import validate, ValidationError, Draft7Validator
+    from jsonschema import Draft7Validator
     from jsonschema.exceptions import SchemaError
 
 
@@ -59,6 +59,9 @@ class RecipeValidator:
     
     def validate_schema_itself(self) -> bool:
         """Validate that the schema itself is valid"""
+        if self.schema is None:
+            print("❌ Schema not loaded")
+            return False
         try:
             Draft7Validator.check_schema(self.schema)
             print("✅ Schema structure is valid")
@@ -69,6 +72,13 @@ class RecipeValidator:
     
     def validate_recipes(self) -> Tuple[bool, List[Dict[str, Any]]]:
         """Validate all recipes against schema"""
+        if self.schema is None:
+            print("❌ Schema not loaded")
+            return False, []
+        if self.data is None:
+            print("❌ Data not loaded")
+            return False, []
+        
         validator = Draft7Validator(self.schema)
         all_valid = True
         validation_results = []
@@ -109,6 +119,10 @@ class RecipeValidator:
     
     def check_data_quality(self) -> List[Dict[str, Any]]:
         """Additional data quality checks beyond schema validation"""
+        if self.data is None:
+            print("❌ Data not loaded")
+            return []
+        
         quality_issues = []
         
         print("\n" + "="*80)
@@ -199,6 +213,10 @@ class RecipeValidator:
     
     def generate_report(self, validation_results: List[Dict], quality_issues: List[Dict]):
         """Generate validation report"""
+        if self.data is None:
+            print("❌ Data not loaded")
+            return False
+        
         print("\n" + "="*80)
         print("VALIDATION REPORT")
         print("="*80 + "\n")
