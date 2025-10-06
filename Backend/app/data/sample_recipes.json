@@ -719,69 +719,7 @@
               "unit": "cm"
             },
             "notes": "Memarkan"
-          }
-        ],
-        "bumbu_halus": [
-          {
-            "name": "Bawang Merah",
-            "quantity": {
-              "value": 4,
-              "unit": "siung"
-            }
           },
-          {
-            "name": "Bawang Putih",
-            "quantity": {
-              "value": 2,
-              "unit": "siung"
-            }
-          },
-          {
-            "name": "Kemiri",
-            "quantity": {
-              "value": 2,
-              "unit": "butir"
-            },
-            "notes": "Sangrai"
-          },
-          {
-            "name": "Kunyit",
-            "quantity": {
-              "value": 1,
-              "unit": "cm"
-            },
-            "notes": "Bakar"
-          },
-          {
-            "name": "Jahe",
-            "quantity": {
-              "value": 1,
-              "unit": "cm"
-            }
-          },
-          {
-            "name": "Merica butiran",
-            "quantity": {
-              "value": 1,
-              "unit": "sdt"
-            }
-          },
-          {
-            "name": "Garam",
-            "quantity": {
-              "value": 1,
-              "unit": "sdt"
-            }
-          },
-          {
-            "name": "Gula Pasir",
-            "quantity": {
-              "value": 1,
-              "unit": "sdt"
-            }
-          }
-        ],
-        "pelengkap": [
           {
             "name": "Soun",
             "quantity": {
@@ -834,16 +772,32 @@
               "value": null,
               "unit": "secukupnya"
             }
-          }
-        ],
-        "koya": [
+          },
           {
-            "name": "Kerupuk Udang",
+            "name": "Kerupuk Udang (untuk koya)",
             "quantity": {
               "value": 50,
               "unit": "gram"
             },
-            "notes": "Goreng"
+            "notes": "Goreng, haluskan"
+          },
+          {
+            "name": "Bawang Putih (untuk koya)",
+            "quantity": {
+              "value": 2,
+              "unit": "siung"
+            },
+            "notes": "Iris tipis, goreng kering, haluskan"
+          }
+        ],
+        "bumbu": [
+          {
+            "name": "Bawang Merah",
+            "quantity": {
+              "value": 4,
+              "unit": "siung"
+            },
+            "notes": "Haluskan"
           },
           {
             "name": "Bawang Putih",
@@ -851,7 +805,53 @@
               "value": 2,
               "unit": "siung"
             },
-            "notes": "Iris tipis, goreng kering"
+            "notes": "Haluskan"
+          },
+          {
+            "name": "Kemiri",
+            "quantity": {
+              "value": 2,
+              "unit": "butir"
+            },
+            "notes": "Sangrai, haluskan"
+          },
+          {
+            "name": "Kunyit",
+            "quantity": {
+              "value": 1,
+              "unit": "cm"
+            },
+            "notes": "Bakar, haluskan"
+          },
+          {
+            "name": "Jahe",
+            "quantity": {
+              "value": 1,
+              "unit": "cm"
+            },
+            "notes": "Haluskan"
+          },
+          {
+            "name": "Merica butiran",
+            "quantity": {
+              "value": 1,
+              "unit": "sdt"
+            },
+            "notes": "Haluskan"
+          },
+          {
+            "name": "Garam",
+            "quantity": {
+              "value": 1,
+              "unit": "sdt"
+            }
+          },
+          {
+            "name": "Gula Pasir",
+            "quantity": {
+              "value": 1,
+              "unit": "sdt"
+            }
           }
         ]
       }
@@ -1029,13 +1029,14 @@
             "notes": "Simpulkan"
           }
         ],
-        "bumbu_halus": [
+        "bumbu": [
           {
             "name": "Cabai Merah Keriting",
             "quantity": {
               "value": 6,
               "unit": "buah"
-            }
+            },
+            "notes": "Haluskan"
           },
           {
             "name": "Cabai Rawit",
@@ -1043,28 +1044,31 @@
               "value": 4,
               "unit": "buah"
             },
-            "notes": "Sesuai selera"
+            "notes": "Haluskan, sesuai selera"
           },
           {
             "name": "Bawang Merah",
             "quantity": {
               "value": 4,
               "unit": "siung"
-            }
+            },
+            "notes": "Haluskan"
           },
           {
             "name": "Bawang Putih",
             "quantity": {
               "value": 3,
               "unit": "siung"
-            }
+            },
+            "notes": "Haluskan"
           },
           {
             "name": "Kunyit",
             "quantity": {
               "value": 2,
               "unit": "cm"
-            }
+            },
+            "notes": "Haluskan"
           },
           {
             "name": "Garam",
@@ -1261,48 +1265,54 @@
             }
           }
         ],
-        "bumbu_halus": [
+        "bumbu": [
           {
             "name": "Cabai Merah Giling",
             "quantity": {
               "value": 200,
               "unit": "gram"
-            }
+            },
+            "notes": "Haluskan"
           },
           {
             "name": "Bawang Merah",
             "quantity": {
               "value": 10,
               "unit": "siung"
-            }
+            },
+            "notes": "Haluskan"
           },
           {
             "name": "Bawang Putih",
             "quantity": {
               "value": 5,
               "unit": "siung"
-            }
+            },
+            "notes": "Haluskan"
           },
           {
             "name": "Jahe",
             "quantity": {
               "value": 2,
               "unit": "cm"
-            }
+            },
+            "notes": "Haluskan"
           },
           {
             "name": "Kunyit",
             "quantity": {
               "value": 2,
               "unit": "cm"
-            }
+            },
+            "notes": "Haluskan"
           },
           {
             "name": "Lengkuas",
             "quantity": {
               "value": 2,
               "unit": "cm"
-            }
+            },
+            "notes": "Haluskan"
           },
           {
             "name": "Garam",
@@ -3063,108 +3073,22 @@
             "substitutes": [
               "Telur Bebek"
             ]
-          }
-        ],
-        "bumbu_halus": [
-          {
-            "name": "Bawang Merah",
-            "quantity": {
-              "value": 5,
-              "unit": "siung"
-            }
           },
-          {
-            "name": "Bawang Putih",
-            "quantity": {
-              "value": 3,
-              "unit": "siung"
-            }
-          },
-          {
-            "name": "Cabai Rawit Merah",
-            "quantity": {
-              "value": 5,
-              "unit": "buah"
-            },
-            "notes": "Sesuaikan dengan tingkat kepedasan yang diinginkan."
-          },
-          {
-            "name": "Kencur",
-            "quantity": {
-              "value": 2,
-              "unit": "cm"
-            }
-          },
-          {
-            "name": "Kunyit",
-            "quantity": {
-              "value": 2,
-              "unit": "cm"
-            },
-            "notes": "Bakar sebentar untuk mengeluarkan aroma."
-          },
-          {
-            "name": "Terasi",
-            "quantity": {
-              "value": 0.5,
-              "unit": "sdt"
-            },
-            "notes": "Bakar atau sangrai sebentar."
-          },
-          {
-            "name": "Ebi Kering",
-            "quantity": {
-              "value": 1,
-              "unit": "sdm"
-            },
-            "notes": "Rendam air panas, tiriskan, lalu haluskan bersama bumbu lain."
-          }
-        ],
-        "bumbu_lain": [
-          {
-            "name": "Garam",
-            "quantity": {
-              "value": 1,
-              "unit": "sdt"
-            }
-          },
-          {
-            "name": "Gula Pasir",
-            "quantity": {
-              "value": 0.5,
-              "unit": "sdt"
-            },
-            "notes": "Sebagai penyeimbang rasa."
-          },
-          {
-            "name": "Merica Bubuk",
-            "quantity": {
-              "value": 0.25,
-              "unit": "sdt"
-            }
-          },
-          {
-            "name": "Minyak Goreng",
-            "quantity": {
-              "value": 3,
-              "unit": "sdm"
-            }
-          }
-        ],
-        "pelengkap": [
           {
             "name": "Bawang Goreng",
             "quantity": {
               "value": 2,
               "unit": "sdm"
-            }
+            },
+            "notes": "Untuk taburan"
           },
           {
             "name": "Timun",
             "quantity": {
               "value": 1,
               "unit": "buah"
-            }
+            },
+            "notes": "Potong sesuai selera, untuk pelengkap"
           },
           {
             "name": "Wortel",
@@ -3185,6 +3109,93 @@
             "quantity": {
               "value": 1,
               "unit": "secukupnya"
+            }
+          }
+        ],
+        "bumbu": [
+          {
+            "name": "Bawang Merah",
+            "quantity": {
+              "value": 5,
+              "unit": "siung"
+            },
+            "notes": "Haluskan"
+          },
+          {
+            "name": "Bawang Putih",
+            "quantity": {
+              "value": 3,
+              "unit": "siung"
+            },
+            "notes": "Haluskan"
+          },
+          {
+            "name": "Cabai Rawit Merah",
+            "quantity": {
+              "value": 5,
+              "unit": "buah"
+            },
+            "notes": "Haluskan, sesuaikan tingkat kepedasan"
+          },
+          {
+            "name": "Kencur",
+            "quantity": {
+              "value": 2,
+              "unit": "cm"
+            },
+            "notes": "Haluskan"
+          },
+          {
+            "name": "Kunyit",
+            "quantity": {
+              "value": 2,
+              "unit": "cm"
+            },
+            "notes": "Bakar, haluskan"
+          },
+          {
+            "name": "Terasi",
+            "quantity": {
+              "value": 0.5,
+              "unit": "sdt"
+            },
+            "notes": "Bakar/sangrai, haluskan"
+          },
+          {
+            "name": "Ebi Kering",
+            "quantity": {
+              "value": 1,
+              "unit": "sdm"
+            },
+            "notes": "Rendam air panas, haluskan"
+          },
+          {
+            "name": "Garam",
+            "quantity": {
+              "value": 1,
+              "unit": "sdt"
+            }
+          },
+          {
+            "name": "Gula Pasir",
+            "quantity": {
+              "value": 0.5,
+              "unit": "sdt"
+            },
+            "notes": "Penyeimbang rasa"
+          },
+          {
+            "name": "Merica Bubuk",
+            "quantity": {
+              "value": 0.25,
+              "unit": "sdt"
+            }
+          },
+          {
+            "name": "Minyak Goreng",
+            "quantity": {
+              "value": 3,
+              "unit": "sdm"
             }
           }
         ]
