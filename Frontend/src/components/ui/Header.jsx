@@ -34,7 +34,7 @@ const Header = ({ className = '' }) => {
           <div className="flex items-center space-x-3">
             <div className="flex items-center space-x-2 cursor-pointer" onClick={() => handleNavigation('/homepage')}>
               <div className="relative">
-             
+
               </div>
               <div className="flex flex-col">
                 <span className="font-heading font-bold text-lg text-primary">AI Resepku</span>
@@ -49,17 +49,16 @@ const Header = ({ className = '' }) => {
               <button
                 key={item?.path}
                 onClick={() => handleNavigation(item?.path)}
-                className={`flex items-center space-x-2 px-4 py-2 rounded-lg text-sm font-medium transition-all duration-200 ease-cultural ${
-                  isActivePath(item?.path)
+                className={`flex items-center space-x-2 px-4 py-2 rounded-lg text-sm font-medium transition-all duration-200 ease-cultural ${isActivePath(item?.path)
                     ? 'bg-primary text-primary-foreground shadow-cultural'
                     : 'text-foreground hover:bg-muted hover:text-primary'
-                }`}
+                  }`}
               >
                 <Icon name={item?.icon} size={16} />
                 <span>{item?.label}</span>
               </button>
             ))}
-            
+
             {/* More Menu for Secondary Items */}
             {/* <div className="relative group">
               <button className="flex items-center space-x-2 px-4 py-2 rounded-lg text-sm font-medium text-foreground hover:bg-muted hover:text-primary transition-all duration-200 ease-cultural">
@@ -93,14 +92,10 @@ const Header = ({ className = '' }) => {
             {/* <Button variant="ghost" size="sm" iconName="Bell" className="relative">
               <span className="absolute -top-1 -right-1 w-2 h-2 bg-accent rounded-full"></span>
             </Button> */}
-{/*             
+            {/*             
             <Button variant="outline" size="sm" iconName="User">
               Profil
             </Button>*/}
-            
-            <Button variant="default" size="sm">
-              Sign up
-            </Button> 
           </div>
 
           {/* Mobile Menu Button */}
@@ -125,11 +120,10 @@ const Header = ({ className = '' }) => {
                 <button
                   key={item?.path}
                   onClick={() => handleNavigation(item?.path)}
-                  className={`flex items-center space-x-3 w-full px-4 py-3 rounded-lg text-sm font-medium transition-all duration-200 ease-cultural touch-target ${
-                    isActivePath(item?.path)
+                  className={`flex items-center space-x-3 w-full px-4 py-3 rounded-lg text-sm font-medium transition-all duration-200 ease-cultural touch-target ${isActivePath(item?.path)
                       ? 'bg-primary text-primary-foreground shadow-cultural'
                       : 'text-foreground hover:bg-muted'
-                  }`}
+                    }`}
                 >
                   <Icon name={item?.icon} size={18} />
                   <span>{item?.label}</span>
