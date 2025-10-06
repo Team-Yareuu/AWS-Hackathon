@@ -1,168 +1,87 @@
-import React, { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-import Icon from '../../../components/AppIcon';
-import Image from '../../../components/AppImage';
-import Button from '../../../components/ui/Button';
+import Icon from '../../../components/AppIcon.jsx';
+import Image from '../../../components/AppImage.jsx';
+import Button from '../../../components/ui/Button.jsx';
+import { recipeAPI } from '../../../services/api.js';
 
 const BudgetFriendlySection = () => {
   const navigate = useNavigate();
-  const [selectedBudget, setSelectedBudget] = useState('25000');
+  const [selectedBudget, setSelectedBudget] = useState('40000');
+  const [budgetRecipes, setBudgetRecipes] = useState({});
+  const [_isLoading, setIsLoading] = useState(false);
+
+  // Fetch recipes when budget changes
+  useEffect(() => {
+    const fetchBudgetRecipes = async () => {
+      try {
+        setIsLoading(true);
+        const recipes = await recipeAPI.getByBudget(parseInt(selectedBudget), 3);
+        
+        // Transform API data
+        const transformedRecipes = recipes.map(recipe => {
+          const actualCost = recipe.estimatedCost || 0;
+          const budgetLimit = parseInt(selectedBudget);
+          const savings = budgetLimit - actualCost;
+          
+          // Extract ingredients from first group
+          const ingredients = [];
+          if (recipe.ingredients && recipe.ingredients.length > 0) {
+            const firstGroup = recipe.ingredients[0];
+            Object.values(firstGroup).forEach(items => {
+              if (Array.isArray(items)) {
+                items.forEach(item => ingredients.push(item.name));
+              }
+            });
+          }
+          
+          return {
+            id: recipe.id,
+            title: recipe.name,
+            description: recipe.shortDescription || recipe.description,
+            image: recipe.image,
+            actualCost: `Rp ${actualCost.toLocaleString('id-ID')}`,
+            servings: recipe.servings || 2,
+            cookingTime: recipe.cookingTimeMinutes ? `${recipe.cookingTimeMinutes} menit` : 'N/A',
+            ingredients: ingredients.slice(0, 5),
+            savings: savings > 0 ? `Rp ${savings.toLocaleString('id-ID')}` : 'Rp 0'
+          };
+        });
+        
+        setBudgetRecipes(prev => ({
+          ...prev,
+          [selectedBudget]: transformedRecipes
+        }));
+      } catch (error) {
+        console.error('Failed to fetch budget recipes:', error);
+        setBudgetRecipes(prev => ({
+          ...prev,
+          [selectedBudget]: []
+        }));
+      } finally {
+        setIsLoading(false);
+      }
+    };
+
+    // Only fetch if we don't have data for this budget yet
+    if (!budgetRecipes[selectedBudget]) {
+      fetchBudgetRecipes();
+    }
+  }, [selectedBudget, budgetRecipes]);
 
   const budgetRanges = [
-    { value: '15000', label: 'Rp 15.000', description: 'Hemat Maksimal' },
-    { value: '25000', label: 'Rp 25.000', description: 'Budget Keluarga' },
+    { value: '20000', label: 'Rp 20.000', description: 'Hemat Maksimal' },
+    { value: '40000', label: 'Rp 40.000', description: 'Budget Keluarga' },
     { value: '50000', label: 'Rp 50.000', description: 'Komfort Zone' },
-    { value: '75000', label: 'Rp 75.000', description: 'Premium Choice' }
+    { value: '85000', label: 'Rp 85.000', description: 'Premium Choice' }
   ];
 
-  const budgetRecipes = {
-    '15000': [
-      {
-        id: 1,
-        title: "Nasi Goreng Kampung",
-        description: "Nasi goreng sederhana dengan telur dan sayuran yang ada di rumah",
-        image: "https://images.pexels.com/photos/1640777/pexels-photo-1640777.jpeg?w=300&h=200&fit=crop",
-        actualCost: "Rp 12.500",
-        servings: 3,
-        cookingTime: "20 menit",
-        ingredients: ["Nasi sisa", "Telur", "Bawang merah", "Cabai", "Kecap manis"],
-        savings: "Rp 2.500"
-      },
-      {
-        id: 2,
-        title: "Sayur Bayam Bening",
-        description: "Sayur bayam segar dengan jagung manis yang bergizi tinggi",
-        image: "https://images.pixabay.com/photo/2019/11/20/08/31/soup-4639743_1280.jpg?w=300&h=200&fit=crop",
-        actualCost: "Rp 8.000",
-        servings: 4,
-        cookingTime: "15 menit",
-        ingredients: ["Bayam", "Jagung manis", "Bawang putih", "Garam"],
-        savings: "Rp 7.000"
-      },
-      {
-        id: 3,
-        title: "Tempe Goreng Krispy",
-        description: "Tempe goreng tepung yang renyah dan gurih untuk lauk sehari-hari",
-        image: "https://images.unsplash.com/photo-1598515214211-89d3c73ae83b?w=300&h=200&fit=crop",
-        actualCost: "Rp 10.000",
-        servings: 4,
-        cookingTime: "25 menit",
-        ingredients: ["Tempe", "Tepung terigu", "Bawang putih", "Garam"],
-        savings: "Rp 5.000"
-      }
-    ],
-    '25000': [
-      {
-        id: 4,
-        title: "Ayam Kecap Sederhana",
-        description: "Ayam kecap manis yang lezat dengan bumbu dapur yang mudah didapat",
-        image: "https://images.pexels.com/photos/4518843/pexels-photo-4518843.jpeg?w=300&h=200&fit=crop",
-        actualCost: "Rp 22.000",
-        servings: 4,
-        cookingTime: "45 menit",
-        ingredients: ["Ayam potong", "Kecap manis", "Bawang bombay", "Tomat"],
-        savings: "Rp 3.000"
-      },
-      {
-        id: 5,
-        title: "Gado-Gado Mini",
-        description: "Gado-gado porsi keluarga dengan bumbu kacang buatan sendiri",
-        image: "https://images.pexels.com/photos/1640777/pexels-photo-1640777.jpeg?w=300&h=200&fit=crop",
-        actualCost: "Rp 18.500",
-        servings: 4,
-        cookingTime: "30 menit",
-        ingredients: ["Sayuran rebus", "Tahu", "Tempe", "Kacang tanah"],
-        savings: "Rp 6.500"
-      },
-      {
-        id: 6,
-        title: "Soto Ayam Kampung",
-        description: "Soto ayam hangat dengan kuah bening yang menyegarkan",
-        image: "https://images.pixabay.com/photo/2019/11/20/08/31/soup-4639743_1280.jpg?w=300&h=200&fit=crop",
-        actualCost: "Rp 24.000",
-        servings: 5,
-        cookingTime: "1 jam",
-        ingredients: ["Ayam kampung", "Bumbu soto", "Mie soun", "Telur rebus"],
-        savings: "Rp 1.000"
-      }
-    ],
-    '50000': [
-      {
-        id: 7,
-        title: "Rendang Daging Mini",
-        description: "Rendang daging sapi porsi kecil dengan bumbu lengkap khas Padang",
-        image: "https://images.unsplash.com/photo-1565299624946-b28f40a0ca4b?w=300&h=200&fit=crop",
-        actualCost: "Rp 45.000",
-        servings: 6,
-        cookingTime: "3 jam",
-        ingredients: ["Daging sapi", "Santan", "Bumbu rendang", "Cabai merah"],
-        savings: "Rp 5.000"
-      },
-      {
-        id: 8,
-        title: "Ikan Bakar Kecap",
-        description: "Ikan bakar dengan bumbu kecap manis yang menggugah selera",
-        image: "https://images.pexels.com/photos/4518843/pexels-photo-4518843.jpeg?w=300&h=200&fit=crop",
-        actualCost: "Rp 38.000",
-        servings: 4,
-        cookingTime: "40 menit",
-        ingredients: ["Ikan bandeng", "Kecap manis", "Bumbu bakar", "Jeruk nipis"],
-        savings: "Rp 12.000"
-      },
-      {
-        id: 9,
-        title: "Gudeg Jogja Express",
-        description: "Gudeg khas Yogyakarta versi cepat dengan rasa autentik",
-        image: "https://images.pexels.com/photos/4518843/pexels-photo-4518843.jpeg?w=300&h=200&fit=crop",
-        actualCost: "Rp 42.500",
-        servings: 5,
-        cookingTime: "2 jam",
-        ingredients: ["Nangka muda", "Santan", "Gula jawa", "Bumbu gudeg"],
-        savings: "Rp 7.500"
-      }
-    ],
-    '75000': [
-      {
-        id: 10,
-        title: "Bebek Goreng Kremes",
-        description: "Bebek goreng dengan kremes renyah dan sambal yang pedas mantap",
-        image: "https://images.unsplash.com/photo-1598515214211-89d3c73ae83b?w=300&h=200&fit=crop",
-        actualCost: "Rp 68.000",
-        servings: 6,
-        cookingTime: "2.5 jam",
-        ingredients: ["Bebek muda", "Bumbu ungkep", "Tepung kremes", "Sambal"],
-        savings: "Rp 7.000"
-      },
-      {
-        id: 11,
-        title: "Seafood Asam Pedas",
-        description: "Seafood segar dengan kuah asam pedas yang menggugah selera",
-        image: "https://images.pexels.com/photos/4518843/pexels-photo-4518843.jpeg?w=300&h=200&fit=crop",
-        actualCost: "Rp 72.000",
-        servings: 5,
-        cookingTime: "1 jam",
-        ingredients: ["Udang", "Cumi", "Bumbu asam pedas", "Sayuran"],
-        savings: "Rp 3.000"
-      },
-      {
-        id: 12,
-        title: "Kambing Gulai Spesial",
-        description: "Gulai kambing dengan bumbu rempah lengkap dan santan kental",
-        image: "https://images.unsplash.com/photo-1565299624946-b28f40a0ca4b?w=300&h=200&fit=crop",
-        actualCost: "Rp 70.500",
-        servings: 8,
-        cookingTime: "3 jam",
-        ingredients: ["Daging kambing", "Santan kental", "Bumbu gulai", "Kentang"],
-        savings: "Rp 4.500"
-      }
-    ]
-  };
-
-  const currentRecipes = budgetRecipes?.[selectedBudget] || [];
-  const currentBudgetInfo = budgetRanges?.find(b => b?.value === selectedBudget);
+  // Get current recipes from state or empty array
+  const currentRecipes = budgetRecipes[selectedBudget] || [];
+  const currentBudgetInfo = budgetRanges.find(b => b.value === selectedBudget);
 
   const handleRecipeClick = (recipe) => {
-    navigate(`/recipe-detail/${recipe?.id}`, { state: { recipeId: recipe?.id, recipe } });
+    navigate(`/recipe-detail/${recipe.id}`, { state: { recipeId: recipe.id, recipe } });
   };
 
   const handleSmartShopping = () => {
@@ -170,8 +89,8 @@ const BudgetFriendlySection = () => {
   };
 
   const getTotalSavings = () => {
-    return currentRecipes?.reduce((total, recipe) => {
-      const savings = parseInt(recipe?.savings?.replace(/[^\d]/g, ''));
+    return currentRecipes.reduce((total, recipe) => {
+      const savings = parseInt(recipe.savings?.replace(/[^\d]/g, '') || '0');
       return total + savings;
     }, 0);
   };
@@ -199,19 +118,20 @@ const BudgetFriendlySection = () => {
         {/* Budget Selector */}
         <div className="mb-12">
           <div className="flex flex-wrap justify-center gap-4 mb-8">
-            {budgetRanges?.map((budget) => (
+            {budgetRanges.map((budget) => (
               <button
-                key={budget?.value}
-                onClick={() => setSelectedBudget(budget?.value)}
+                key={budget.value}
+                type="button"
+                onClick={() => setSelectedBudget(budget.value)}
                 className={`px-6 py-4 rounded-2xl border-2 transition-all duration-200 ${
-                  selectedBudget === budget?.value
+                  selectedBudget === budget.value
                     ? 'border-success bg-success text-white shadow-cultural'
                     : 'border-border bg-white hover:border-success/50 hover:shadow-cultural'
                 }`}
               >
                 <div className="text-center">
-                  <p className="font-bold text-lg">{budget?.label}</p>
-                  <p className="text-sm opacity-80">{budget?.description}</p>
+                  <p className="font-bold text-lg">{budget.label}</p>
+                  <p className="text-sm opacity-80">{budget.description}</p>
                 </div>
               </button>
             ))}
@@ -233,7 +153,7 @@ const BudgetFriendlySection = () => {
                   <Icon name="ChefHat" size={24} className="text-turmeric" />
                 </div>
                 <p className="text-sm text-muted-foreground">Resep Tersedia</p>
-                <p className="text-xl font-bold text-turmeric">{currentRecipes?.length} Resep</p>
+                <p className="text-xl font-bold text-turmeric">{currentRecipes.length} Resep</p>
               </div>
               
               <div className="space-y-2">
@@ -241,25 +161,31 @@ const BudgetFriendlySection = () => {
                   <Icon name="TrendingDown" size={24} className="text-primary" />
                 </div>
                 <p className="text-sm text-muted-foreground">Total Hemat</p>
-                <p className="text-xl font-bold text-primary">Rp {getTotalSavings()?.toLocaleString('id-ID')}</p>
+                <p className="text-xl font-bold text-primary">Rp {getTotalSavings().toLocaleString('id-ID')}</p>
               </div>
             </div>
           </div>
         </div>
 
         {/* Recipe Grid */}
+        {currentRecipes.length === 0 ? (
+          <div className="text-center py-12">
+            <Icon name="Search" size={48} className="text-muted-foreground mx-auto mb-4" />
+            <p className="text-muted-foreground">Memuat resep budget hemat...</p>
+          </div>
+        ) : (
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
-          {currentRecipes?.map((recipe) => (
+          {currentRecipes.map((recipe) => (
             <div
-              key={recipe?.id}
+              key={recipe.id}
               className="cultural-card cursor-pointer group"
               onClick={() => handleRecipeClick(recipe)}
             >
               {/* Recipe Image */}
               <div className="relative h-48 overflow-hidden rounded-t-lg">
                 <Image
-                  src={recipe?.image}
-                  alt={recipe?.title}
+                  src={recipe.image}
+                  alt={recipe.title}
                   className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
@@ -268,14 +194,14 @@ const BudgetFriendlySection = () => {
                 <div className="absolute top-3 left-3">
                   <div className="bg-success text-white px-3 py-1 rounded-full flex items-center space-x-1">
                     <Icon name="TrendingDown" size={12} />
-                    <span className="text-xs font-medium">Hemat {recipe?.savings}</span>
+                    <span className="text-xs font-medium">Hemat {recipe.savings}</span>
                   </div>
                 </div>
 
                 {/* Actual Cost */}
                 <div className="absolute bottom-3 right-3">
                   <div className="bg-white/90 backdrop-blur-sm px-3 py-1 rounded-full">
-                    <span className="text-sm font-bold text-success">{recipe?.actualCost}</span>
+                    <span className="text-sm font-bold text-success">{recipe.actualCost}</span>
                   </div>
                 </div>
               </div>
@@ -284,10 +210,10 @@ const BudgetFriendlySection = () => {
               <div className="p-4 space-y-3">
                 <div className="space-y-2">
                   <h3 className="font-heading font-bold text-lg text-foreground group-hover:text-primary transition-colors duration-200">
-                    {recipe?.title}
+                    {recipe.title}
                   </h3>
                   <p className="text-sm text-muted-foreground line-clamp-2">
-                    {recipe?.description}
+                    {recipe.description}
                   </p>
                 </div>
 
@@ -295,11 +221,11 @@ const BudgetFriendlySection = () => {
                 <div className="grid grid-cols-2 gap-4 pt-3 border-t border-border">
                   <div className="flex items-center space-x-2">
                     <Icon name="Users" size={14} className="text-primary" />
-                    <span className="text-sm text-muted-foreground">{recipe?.servings} porsi</span>
+                    <span className="text-sm text-muted-foreground">{recipe.servings} porsi</span>
                   </div>
                   <div className="flex items-center space-x-2">
                     <Icon name="Clock" size={14} className="text-turmeric" />
-                    <span className="text-sm text-muted-foreground">{recipe?.cookingTime}</span>
+                    <span className="text-sm text-muted-foreground">{recipe.cookingTime}</span>
                   </div>
                 </div>
 
@@ -309,7 +235,7 @@ const BudgetFriendlySection = () => {
                     Bahan Utama:
                   </p>
                   <div className="flex flex-wrap gap-1">
-                    {recipe?.ingredients?.slice(0, 3)?.map((ingredient, index) => (
+                    {recipe.ingredients.slice(0, 3).map((ingredient, index) => (
                       <span
                         key={index}
                         className="px-2 py-1 bg-muted text-muted-foreground text-xs rounded-full"
@@ -317,9 +243,9 @@ const BudgetFriendlySection = () => {
                         {ingredient}
                       </span>
                     ))}
-                    {recipe?.ingredients?.length > 3 && (
+                    {recipe.ingredients.length > 3 && (
                       <span className="px-2 py-1 bg-primary/10 text-primary text-xs rounded-full">
-                        +{recipe?.ingredients?.length - 3} lagi
+                        +{recipe.ingredients.length - 3} lagi
                       </span>
                     )}
                   </div>
@@ -328,6 +254,7 @@ const BudgetFriendlySection = () => {
             </div>
           ))}
         </div>
+        )}
 
         {/* Smart Shopping CTA */}
         <div className="bg-gradient-to-r from-success to-turmeric rounded-2xl p-8 text-center text-white">

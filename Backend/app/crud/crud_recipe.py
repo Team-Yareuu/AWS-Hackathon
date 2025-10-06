@@ -2,6 +2,7 @@ from typing import List, Optional
 from neo4j import AsyncSession
 
 from app.schemas.recipe import Recipe, RecipeCreate
+from app.utils.retry import async_retry
 
 
 async def create(recipe: RecipeCreate, session: AsyncSession) -> Recipe:
@@ -39,6 +40,7 @@ async def create(recipe: RecipeCreate, session: AsyncSession) -> Recipe:
     return Recipe(**recipe_dict)
 
 
+@async_retry(max_attempts=3, delay=0.5)
 async def get(recipe_id: str, session: AsyncSession) -> Optional[Recipe]:
     """Get a recipe by ID from Neo4j database with all related data"""
     # Fetch recipe with all related data
@@ -182,6 +184,7 @@ async def get(recipe_id: str, session: AsyncSession) -> Optional[Recipe]:
     return Recipe(**recipe_data)
 
 
+@async_retry(max_attempts=3, delay=0.5)
 async def get_multi(session: AsyncSession, skip: int = 0, limit: int = 10) -> List[Recipe]:
     """Get multiple recipes from Neo4j database with basic data"""
     result = await session.run(
@@ -201,6 +204,69 @@ async def get_multi(session: AsyncSession, skip: int = 0, limit: int = 10) -> Li
         recipe_data = dict(record["r"])
         
         # Set defaults for complex fields (list view doesn't need full details)
+        recipe_data.setdefault('culturalStory', None)
+        recipe_data.setdefault('budgetData', None)
+        recipe_data.setdefault('ingredients', [])
+        recipe_data.setdefault('cookingSteps', [])
+        recipe_data.setdefault('description', recipe_data.get('shortDescription', ''))
+        
+        recipes.append(Recipe(**recipe_data))
+    
+    return recipes
+
+
+@async_retry(max_attempts=3, delay=0.5)
+async def get_spotlight(session: AsyncSession, limit: int = 3) -> List[Recipe]:
+    """Get spotlight recipes (random traditional recipes) from Neo4j database"""
+    result = await session.run(
+        """
+        MATCH (r:Recipe)
+        WHERE r.isTraditional = true
+        WITH r, rand() as random
+        RETURN r
+        ORDER BY random
+        LIMIT $limit
+        """,
+        limit=limit
+    )
+    
+    recipes = []
+    async for record in result:
+        recipe_data = dict(record["r"])
+        
+        # Set defaults for complex fields
+        recipe_data.setdefault('culturalStory', None)
+        recipe_data.setdefault('budgetData', None)
+        recipe_data.setdefault('ingredients', [])
+        recipe_data.setdefault('cookingSteps', [])
+        recipe_data.setdefault('description', recipe_data.get('shortDescription', ''))
+        
+        recipes.append(Recipe(**recipe_data))
+    
+    return recipes
+
+
+@async_retry(max_attempts=3, delay=0.5)
+async def get_by_budget(session: AsyncSession, max_cost: int, limit: int = 6) -> List[Recipe]:
+    """Get recipes within a specific budget"""
+    result = await session.run(
+        """
+        MATCH (r:Recipe)
+        WHERE r.estimatedCost <= $max_cost
+        WITH r, rand() as random
+        RETURN r
+        ORDER BY random
+        LIMIT $limit
+        """,
+        max_cost=max_cost,
+        limit=limit
+    )
+    
+    recipes = []
+    async for record in result:
+        recipe_data = dict(record["r"])
+        
+        # Set defaults for complex fields
         recipe_data.setdefault('culturalStory', None)
         recipe_data.setdefault('budgetData', None)
         recipe_data.setdefault('ingredients', [])

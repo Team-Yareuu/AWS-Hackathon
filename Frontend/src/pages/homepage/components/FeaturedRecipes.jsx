@@ -1,109 +1,57 @@
-import React from 'react';
+import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-import Icon from '../../../components/AppIcon';
-import Image from '../../../components/AppImage';
-import Button from '../../../components/ui/Button';
+import Icon from '../../../components/AppIcon.jsx';
+import Image from '../../../components/AppImage.jsx';
+import Button from '../../../components/ui/Button.jsx';
+import { recipeAPI } from '../../../services/api.js';
 
 const FeaturedRecipes = () => {
   const navigate = useNavigate();
+  const [featuredRecipes, setFeaturedRecipes] = useState([]);
+  const [_isLoading, setIsLoading] = useState(true);
 
-  const featuredRecipes = [
-    {
-      id: 1,
-      title: "Nasi Goreng Telur Warkop",
-      description: "Nasi goreng simpel pakai telur dan daun bawang andalan anak kos saat tanggal tua",
-      image: "https://images.unsplash.com/photo-1604908554027-912f4c4bdcb4?w=400&h=300&fit=crop",
-      region: "Nusantara",
-      cookingTime: "15 menit",
-      difficulty: "Mudah",
-      budget: "Rp 12.000",
-      servings: 1,
-      rating: 4.7,
-      reviews: 120,
-      tags: ["Praktis", "Murah", "Telur"],
-      isPopular: true,
-      isBudgetFriendly: true
-    },
-    {
-      id: 2,
-      title: "Ayam Goreng Kecap Hemat",
-      description: "Potongan ayam kecil dimarinasi sederhana lalu ditumis kecap manis gurih, nasi nambah",
-      image: "https://images.unsplash.com/photo-1599120011070-16a9a8f2a5d3?w=400&h=300&fit=crop",
-      region: "Jawa",
-      cookingTime: "25 menit",
-      difficulty: "Mudah",
-      budget: "Rp 18.000",
-      servings: 2,
-      rating: 4.6,
-      reviews: 86,
-      tags: ["Rumahan", "Protein", "Kecap"],
-      isNew: true,
-      isBudgetFriendly: true
-    },
-    {
-      id: 3,
-      title: "Tumis Kangkung Bawang Putih",
-      description: "Sayur tumis 3 bahan: kangkung, bawang putih, cabai segar dan super cepat",
-      image: "https://images.unsplash.com/photo-1625944529558-7a6a2b0ca78d?w=400&h=300&fit=crop",
-      region: "Nusantara",
-      cookingTime: "10 menit",
-      difficulty: "Mudah",
-      budget: "Rp 8.000",
-      servings: 2,
-      rating: 4.5,
-      reviews: 64,
-      tags: ["Sehat", "Vegetarian", "Tumis"],
-      isHealthy: true,
-      isBudgetFriendly: true
-    },
-    {
-      id: 4,
-      title: "Sayur Sop Sederhana",
-      description: "Sop bening isi wortel, kentang, kol, dan sosis/bakso opsional hangat dan hemat",
-      image: "https://images.unsplash.com/photo-1617093727343-374698b1b08a?w=400&h=300&fit=crop",
-      region: "Nusantara",
-      cookingTime: "20 menit",
-      difficulty: "Mudah",
-      budget: "Rp 14.000",
-      servings: 2,
-      rating: 4.6,
-      reviews: 75,
-      tags: ["Berkuah", "Segar", "Rumahan"],
-      isBudgetFriendly: true
-    },
-    {
-      id: 5,
-      title: "Tahu Tempe Cabai Garam",
-      description: "Kriuk asin pedas modal tahu tempe lauk murah meriah favorit anak kos",
-      image: "https://images.unsplash.com/photo-1580740097994-8e1f2f2bd2c8?w=400&h=300&fit=crop",
-      region: "Nusantara",
-      cookingTime: "15 menit",
-      difficulty: "Mudah",
-      budget: "Rp 10.000",
-      servings: 2,
-      rating: 4.7,
-      reviews: 132,
-      tags: ["Murah", "Kriuk", "Pedas"],
-      isSpicy: true,
-      isBudgetFriendly: true
-    },
-    {
-      id: 6,
-      title: "Mie Goreng Telur + Sayur",
-      description: "Upgrade mie instan: tambah telur orak-arik dan sedikit sawi/kol biar lebih bergizi",
-      image: "https://images.unsplash.com/photo-1585238342028-4bbc1a39ec2a?w=400&h=300&fit=crop",
-      region: "Nusantara",
-      cookingTime: "12 menit",
-      difficulty: "Mudah",
-      budget: "Rp 9.000",
-      servings: 1,
-      rating: 4.4,
-      reviews: 58,
-      tags: ["Instan", "Praktis", "Murah"],
-      isSignature: true,
-      isBudgetFriendly: true
-    }
-  ];
+  // Fetch recipes from API
+  useEffect(() => {
+    const fetchRecipes = async () => {
+      try {
+        setIsLoading(true);
+        const recipes = await recipeAPI.getAll(0, 6); // Get first 6 recipes
+        
+        // Transform API data to match component format
+        const transformedRecipes = recipes.map((recipe, index) => ({
+          id: recipe.id,
+          title: recipe.name,
+          description: recipe.shortDescription || recipe.description,
+          image: recipe.image,
+          region: recipe.region,
+          cookingTime: recipe.cookingTimeMinutes 
+            ? `${recipe.cookingTimeMinutes} menit` 
+            : 'N/A',
+          difficulty: recipe.difficulty || 'Sedang',
+          budget: recipe.estimatedCost 
+            ? `Rp ${recipe.estimatedCost.toLocaleString('id-ID')}` 
+            : 'N/A',
+          servings: recipe.servings || 2,
+          rating: 4.5 + (Math.random() * 0.5), // Generate random rating 4.5-5.0
+          reviews: Math.floor(50 + Math.random() * 100), // Generate random reviews 50-150
+          tags: [recipe.difficulty, recipe.region, recipe.isTraditional ? 'Tradisional' : 'Modern'].filter(Boolean),
+          isPopular: index === 0,
+          isNew: recipe.isNew,
+          isBudgetFriendly: recipe.estimatedCost && recipe.estimatedCost < 50000,
+          isTraditional: recipe.isTraditional
+        }));
+        
+        setFeaturedRecipes(transformedRecipes);
+      } catch (error) {
+        console.error('Failed to fetch recipes:', error);
+        setFeaturedRecipes([]);
+      } finally {
+        setIsLoading(false);
+      }
+    };
+
+    fetchRecipes();
+  }, []);
 
 
   const handleRecipeClick = (recipe) => {
@@ -117,10 +65,10 @@ const FeaturedRecipes = () => {
   const getBadgeInfo = (recipe) => {
     if (recipe?.isPopular) return { text: "Populer", color: "bg-accent text-white", icon: "TrendingUp" };
     if (recipe?.isNew) return { text: "Baru", color: "bg-success text-white", icon: "Sparkles" };
+    if (recipe?.isTraditional) return { text: "Tradisional", color: "bg-primary text-white", icon: "Award" };
     if (recipe?.isBudgetFriendly) return { text: "Hemat", color: "bg-turmeric text-white", icon: "Wallet" };
     if (recipe?.isHealthy) return { text: "Sehat", color: "bg-pandan text-white", icon: "Heart" };
     if (recipe?.isSpicy) return { text: "Pedas", color: "bg-chili text-white", icon: "Flame" };
-    if (recipe?.isSignature) return { text: "Khas", color: "bg-primary text-white", icon: "Award" };
     return null;
   };
 
@@ -145,6 +93,12 @@ const FeaturedRecipes = () => {
         </div>
 
         {/* Recipe Grid */}
+        {featuredRecipes.length === 0 ? (
+          <div className="text-center py-12">
+            <Icon name="ChefHat" size={48} className="text-muted-foreground mx-auto mb-4" />
+            <p className="text-muted-foreground">Memuat resep pilihan...</p>
+          </div>
+        ) : (
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
           {featuredRecipes?.map((recipe) => {
             const badge = getBadgeInfo(recipe);
@@ -238,6 +192,7 @@ const FeaturedRecipes = () => {
             );
           })}
         </div>
+        )}
 
         {/* View All Button */}
         <div className="text-center">

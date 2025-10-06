@@ -1,8 +1,9 @@
 import  { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-import Icon from '../../../components/AppIcon';
-import Image from '../../../components/AppImage';
-import Button from '../../../components/ui/Button';
+import Icon from '../../../components/AppIcon.jsx';
+import Image from '../../../components/AppImage.jsx';
+import Button from '../../../components/ui/Button.jsx';
+import { recipeAPI } from '../../../services/api.js';
 
 const HeroSection = () => {
   const navigate = useNavigate();
@@ -10,42 +11,41 @@ const HeroSection = () => {
   const [searchQuery, setSearchQuery] = useState('');
   const [searchSuggestions, setSearchSuggestions] = useState([]);
   const [showSuggestions, setShowSuggestions] = useState(false);
+  const [culturalSpotlights, setCulturalSpotlights] = useState([]);
+  const [_isLoading, setIsLoading] = useState(true);
 
-  const culturalSpotlights = [
-    {
-      id: 1,
-      title: "Rendang Padang Autentik",
-      subtitle: "Warisan Kuliner Minangkabau",
-      description: "Resep turun temurun dengan bumbu rempah pilihan yang dimasak hingga 8 jam untuk cita rasa yang sempurna",
-      image: "https://api.meatguy.id/admin/image/blogs/6cfa140f-ccbc-4580-a4a0-9261b7af9aa9",
-      region: "Sumatera Barat",
-      cookingTime: "8 jam",
-      difficulty: "Menengah",
-      budget: "Rp 75.000"
-    },
-    {
-      id: 2,
-      title: "Gudeg Jogja Manis",
-      subtitle: "Kelezatan Istimewa Yogyakarta",
-      description: "Nangka muda yang dimasak dengan santan dan gula jawa, disajikan dengan ayam kampung dan sambal krecek",
-      image: "https://images.pexels.com/photos/4518843/pexels-photo-4518843.jpeg?w=800&h=600&fit=crop",
-      region: "Yogyakarta",
-      cookingTime: "6 jam",
-      difficulty: "Sulit",
-      budget: "Rp 65.000"
-    },
-    {
-      id: 3,
-      title: "Soto Betawi Khas Jakarta",
-      subtitle: "Kehangatan Tradisi Betawi",
-      description: "Kuah santan gurih dengan daging sapi dan jeroan, dilengkapi kerupuk dan emping untuk kelezatan maksimal",
-      image: "https://img-global.cpcdn.com/recipes/9d3c4827e205db74/1200x630cq80/photo.jpg",
-      region: "DKI Jakarta",
-      cookingTime: "3 jam",
-      difficulty: "Mudah",
-      budget: "Rp 45.000"
-    }
-  ];
+  // Fetch spotlight recipes from API
+  useEffect(() => {
+    const fetchSpotlightRecipes = async () => {
+      try {
+        setIsLoading(true);
+        const recipes = await recipeAPI.getSpotlight(3);
+        
+        // Transform API data to match component format
+        const transformedRecipes = recipes.map(recipe => ({
+          id: recipe.id,
+          title: recipe.name,
+          subtitle: recipe.culturalStory?.shortStory || `Hidangan Tradisional ${recipe.region}`,
+          description: recipe.shortDescription || recipe.description,
+          image: recipe.image,
+          region: recipe.region,
+          cookingTime: recipe.cookingTimeMinutes ? `${Math.floor(recipe.cookingTimeMinutes / 60)} jam ${recipe.cookingTimeMinutes % 60 > 0 ? `${recipe.cookingTimeMinutes % 60} menit` : ''}`.trim() : 'N/A',
+          difficulty: recipe.difficulty || 'Sedang',
+          budget: recipe.estimatedCost ? `Rp ${recipe.estimatedCost.toLocaleString('id-ID')}` : 'N/A'
+        }));
+        
+        setCulturalSpotlights(transformedRecipes);
+      } catch (error) {
+        console.error('Failed to fetch spotlight recipes:', error);
+        // Fallback to empty array, the carousel will handle it gracefully
+        setCulturalSpotlights([]);
+      } finally {
+        setIsLoading(false);
+      }
+    };
+
+    fetchSpotlightRecipes();
+  }, []);
 
   const searchSuggestionsList = [
     "Rendang daging sapi budget 50rb",
@@ -59,11 +59,13 @@ const HeroSection = () => {
   ];
 
   useEffect(() => {
+    if (culturalSpotlights.length === 0) return;
+    
     const interval = setInterval(() => {
-      setCurrentSpotlight((prev) => (prev + 1) % culturalSpotlights?.length);
+      setCurrentSpotlight((prev) => (prev + 1) % culturalSpotlights.length);
     }, 5000);
     return () => clearInterval(interval);
-  }, []);
+  }, [culturalSpotlights]);
 
   const handleSearchChange = (e) => {
     const value = e?.target?.value;
@@ -158,6 +160,7 @@ const HeroSection = () => {
                     {searchSuggestions?.map((suggestion, index) => (
                       <button
                         key={index}
+                        type="button"
                         onClick={() => handleSuggestionClick(suggestion)}
                         className="w-full px-4 py-3 text-left hover:bg-muted transition-colors duration-150 flex items-center space-x-3"
                       >
@@ -220,6 +223,7 @@ const HeroSection = () => {
 
           {/* Right Content - Cultural Spotlight */}
           <div className="relative animate-slide-up">
+            {culturalSpotlights.length > 0 ? (
             <div className="relative bg-white rounded-3xl shadow-cultural-lg overflow-hidden">
               {/* Recipe Image */}
               <div className="relative h-80 sm:h-96 overflow-hidden">
@@ -243,10 +247,12 @@ const HeroSection = () => {
                   {culturalSpotlights?.map((_, index) => (
                     <button
                       key={index}
+                      type="button"
                       onClick={() => setCurrentSpotlight(index)}
                       className={`w-2 h-2 rounded-full transition-all duration-200 ${
                         index === currentSpotlight ? 'bg-white' : 'bg-white/50'
                       }`}
+                      aria-label={`Go to slide ${index + 1}`}
                     />
                   ))}
                 </div>
@@ -302,6 +308,14 @@ const HeroSection = () => {
                 </Button>
               </div>
             </div>
+            ) : (
+              <div className="relative bg-white rounded-3xl shadow-cultural-lg overflow-hidden p-12 flex items-center justify-center min-h-[500px]">
+                <div className="text-center space-y-4">
+                  <Icon name="ChefHat" size={48} className="text-muted-foreground mx-auto" />
+                  <p className="text-muted-foreground">Memuat resep spesial untuk Anda...</p>
+                </div>
+              </div>
+            )}
           </div>
         </div>
       </div>

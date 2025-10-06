@@ -1,14 +1,55 @@
-import React, { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-import Icon from '../../../components/AppIcon';
-import Image from '../../../components/AppImage';
-import Button from '../../../components/ui/Button';
+import Icon from '../../../components/AppIcon.jsx';
+import Image from '../../../components/AppImage.jsx';
+import Button from '../../../components/ui/Button.jsx';
+import { recipeAPI } from '../../../services/api.js';
 
 const CulturalStories = () => {
   const navigate = useNavigate();
   const [activeStory, setActiveStory] = useState(0);
+  const [culturalStories, setCulturalStories] = useState([]);
+  const [isLoading, setIsLoading] = useState(true);
 
-  const culturalStories = [
+  // Fetch recipes with cultural stories
+  useEffect(() => {
+    const fetchCulturalStories = async () => {
+      try {
+        setIsLoading(true);
+        const recipes = await recipeAPI.getAll(0, 6); // Get first 6 recipes
+        
+        // Transform recipes to cultural stories - use recipes with descriptions
+        const transformedStories = recipes
+          .filter(recipe => recipe.description || recipe.shortDescription) // Only recipes with descriptions
+          .slice(0, 3) // Take only first 3
+          .map((recipe) => ({
+            id: recipe.id,
+            title: `Filosofi ${recipe.name}: Warisan Kuliner Nusantara`,
+            subtitle: `Kearifan Lokal ${recipe.region}`,
+            excerpt: recipe.shortDescription || recipe.description?.slice(0, 200) || `Resep tradisional ${recipe.name} dari ${recipe.region}`,
+            fullStory: recipe.description || recipe.shortDescription || '',
+            image: recipe.image,
+            region: recipe.region,
+            readTime: `${Math.ceil((recipe.description?.length || 500) / 200)} menit`,
+            category: 'Filosofi Kuliner',
+            author: 'Tim AI Resepku',
+            publishDate: new Date().toISOString().split('T')[0],
+            tags: [recipe.region, 'Tradisional', recipe.category, recipe.difficulty].filter(Boolean)
+          }));
+        
+        setCulturalStories(transformedStories);
+      } catch (error) {
+        console.error('Failed to fetch cultural stories:', error);
+        setCulturalStories([]);
+      } finally {
+        setIsLoading(false);
+      }
+    };
+
+    fetchCulturalStories();
+  }, []);
+
+  const _mockCulturalStories = [
     {
       id: 1,
       title: "Filosofi Rendang: Lebih dari Sekedar Masakan",
@@ -83,6 +124,17 @@ const CulturalStories = () => {
           </p>
         </div>
 
+        {isLoading ? (
+          <div className="text-center py-12">
+            <Icon name="BookOpen" size={48} className="text-muted-foreground mx-auto mb-4" />
+            <p className="text-muted-foreground">Memuat cerita budaya...</p>
+          </div>
+        ) : culturalStories.length === 0 ? (
+          <div className="text-center py-12">
+            <Icon name="BookOpen" size={48} className="text-muted-foreground mx-auto mb-4" />
+            <p className="text-muted-foreground">Tidak ada cerita budaya tersedia</p>
+          </div>
+        ) : (
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Featured Story */}
           <div className="space-y-6">
@@ -121,10 +173,12 @@ const CulturalStories = () => {
               {culturalStories?.map((_, index) => (
                 <button
                   key={index}
+                  type="button"
                   onClick={() => setActiveStory(index)}
                   className={`w-3 h-3 rounded-full transition-all duration-200 ${
                     index === activeStory ? 'bg-primary' : 'bg-border hover:bg-primary/50'
                   }`}
+                  aria-label={`View story ${index + 1}`}
                 />
               ))}
             </div>
@@ -211,8 +265,10 @@ const CulturalStories = () => {
             </div>
           </div>
         </div>
+        )}
 
         {/* Story List */}
+        {culturalStories.length > 0 && (
         <div className="mt-16">
           <h3 className="text-xl font-heading font-bold text-foreground mb-6 text-center">
             Cerita Budaya Lainnya
@@ -258,6 +314,7 @@ const CulturalStories = () => {
             ))}
           </div>
         </div>
+        )}
       </div>
     </section>
   );

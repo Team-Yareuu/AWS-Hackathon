@@ -16,6 +16,18 @@ async def create_recipe(recipe: RecipeCreate, session: AsyncSession = Depends(ge
     except ValueError as exc:
         raise HTTPException(status_code=400, detail=str(exc))
 
+@router.get("/spotlight", response_model=List[Recipe])
+async def get_spotlight_recipes(limit: int = 3, session: AsyncSession = Depends(get_session)):
+    """Get featured/spotlight recipes for the homepage hero section"""
+    recipes = await crud_recipe.get_spotlight(session=session, limit=limit)
+    return recipes
+
+@router.get("/budget/{max_cost}", response_model=List[Recipe])
+async def get_recipes_by_budget(max_cost: int, limit: int = 6, session: AsyncSession = Depends(get_session)):
+    """Get recipes within a specific budget range"""
+    recipes = await crud_recipe.get_by_budget(session=session, max_cost=max_cost, limit=limit)
+    return recipes
+
 @router.get("/{recipe_id}", response_model=Recipe)
 async def read_recipe(recipe_id: str, session: AsyncSession = Depends(get_session)):
     recipe = await crud_recipe.get(recipe_id=recipe_id, session=session)

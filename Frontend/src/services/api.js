@@ -72,6 +72,41 @@ export const recipeAPI = {
   },
 
   /**
+   * Get spotlight/featured recipes for homepage
+   * @param {number} limit - Number of recipes to return (default 3)
+   * @returns {Promise} Array of featured recipes
+   */
+  getSpotlight: async (limit = 3) => {
+    try {
+      const response = await apiClient.get('/recipes/spotlight', {
+        params: { limit }
+      });
+      return response.data;
+    } catch (error) {
+      console.error('Failed to fetch spotlight recipes:', error);
+      throw error;
+    }
+  },
+
+  /**
+   * Get recipes within a specific budget
+   * @param {number} maxCost - Maximum cost in Rupiah
+   * @param {number} limit - Number of recipes to return (default 6)
+   * @returns {Promise} Array of budget-friendly recipes
+   */
+  getByBudget: async (maxCost, limit = 6) => {
+    try {
+      const response = await apiClient.get(`/recipes/budget/${maxCost}`, {
+        params: { limit }
+      });
+      return response.data;
+    } catch (error) {
+      console.error(`Failed to fetch recipes with budget ${maxCost}:`, error);
+      throw error;
+    }
+  },
+
+  /**
    * Get a single recipe by ID
    * @param {string} id - Recipe ID
    * @returns {Promise} Recipe object
