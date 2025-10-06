@@ -1,5 +1,5 @@
 {
-  "timestamp": "2025-10-06T14:25:37.098891",
+  "timestamp": "2025-10-06T15:04:07.050720",
   "total_recipes": 12,
   "valid_recipes": 12,
   "invalid_recipes": 0,
@@ -65,84 +65,5 @@
       "status": "valid"
     }
   ],
-  "quality_issues": [
-    {
-      "recipe_id": "4",
-      "recipe_name": "Gulai Ikan Patin",
-      "type": "cost_mismatch",
-      "message": "Cost mismatch: recipe says 65000, store total is 39240"
-    },
-    {
-      "recipe_id": "6",
-      "recipe_name": "Tahu Telur Surabaya",
-      "type": "cost_mismatch",
-      "message": "Cost mismatch: recipe says 25000, store total is 0"
-    },
-    {
-      "recipe_id": "6",
-      "recipe_name": "Tahu Telur Surabaya",
-      "type": "cost_mismatch",
-      "message": "Cost mismatch: recipe says 25000, store total is 0"
-    },
-    {
-      "recipe_id": "7",
-      "recipe_name": "Tempe Mendoan",
-      "type": "cost_mismatch",
-      "message": "Cost mismatch: recipe says 20000, store total is 0"
-    },
-    {
-      "recipe_id": "7",
-      "recipe_name": "Tempe Mendoan",
-      "type": "cost_mismatch",
-      "message": "Cost mismatch: recipe says 20000, store total is 0"
-    },
-    {
-      "recipe_id": "8",
-      "recipe_name": "Telur Dadar Padang",
-      "type": "cost_mismatch",
-      "message": "Cost mismatch: recipe says 15000, store total is 0"
-    },
-    {
-      "recipe_id": "8",
-      "recipe_name": "Telur Dadar Padang",
-      "type": "cost_mismatch",
-      "message": "Cost mismatch: recipe says 15000, store total is 0"
-    },
-    {
-      "recipe_id": "9",
-      "recipe_name": "Tahu Gejrot",
-      "type": "cost_mismatch",
-      "message": "Cost mismatch: recipe says 15000, store total is 0"
-    },
-    {
-      "recipe_id": "9",
-      "recipe_name": "Tahu Gejrot",
-      "type": "cost_mismatch",
-      "message": "Cost mismatch: recipe says 15000, store total is 0"
-    },
-    {
-      "recipe_id": "10",
-      "recipe_name": "Botok Tempe Lamtoro",
-      "type": "cost_mismatch",
-      "message": "Cost mismatch: recipe says 25000, store total is 0"
-    },
-    {
-      "recipe_id": "10",
-      "recipe_name": "Botok Tempe Lamtoro",
-      "type": "cost_mismatch",
-      "message": "Cost mismatch: recipe says 25000, store total is 0"
-    },
-    {
-      "recipe_id": "11",
-      "recipe_name": "Telur Balado",
-      "type": "cost_mismatch",
-      "message": "Cost mismatch: recipe says 25000, store total is 0"
-    },
-    {
-      "recipe_id": "11",
-      "recipe_name": "Telur Balado",
-      "type": "cost_mismatch",
-      "message": "Cost mismatch: recipe says 25000, store total is 0"
-    }
-  ]
+  "quality_issues": []
 }

@@ -926,7 +926,7 @@
     "difficulty": "Sedang",
     "cookingTimeMinutes": 45,
     "servings": 4,
-    "estimatedCost": 65000,
+    "estimatedCost": 40000,
     "isTraditional": true,
     "isNew": false,
     "culturalStory": {
@@ -1409,7 +1409,49 @@
           "address": "Pasar Wonokromo, {'lat': -7.2575, 'lng': 112.7521}",
           "openingHours": "06.00 - 18.00",
           "estimatedDistance": 2.0,
-          "rincianBahan": []
+          "rincianBahan": [
+            {
+              "name": "Tahu putih",
+              "quantity": {
+                "value": 2,
+                "unit": "potong"
+              },
+              "estimatedPrice": 3000
+            },
+            {
+              "name": "Telur ayam",
+              "quantity": {
+                "value": 2,
+                "unit": "butir"
+              },
+              "estimatedPrice": 6000
+            },
+            {
+              "name": "Tauge",
+              "quantity": {
+                "value": 100,
+                "unit": "gram"
+              },
+              "estimatedPrice": 2000
+            },
+            {
+              "name": "Kacang tanah",
+              "quantity": {
+                "value": 100,
+                "unit": "gram"
+              },
+              "estimatedPrice": 5000
+            },
+            {
+              "name": "Bumbu dan rempah",
+              "quantity": {
+                "value": null,
+                "unit": "secukupnya"
+              },
+              "estimatedPrice": 8000,
+              "note": "Bawang putih, petis udang, cabai rawit, gula merah, kecap manis, garam"
+            }
+          ]
         },
         {
           "name": "Pasar Keputran",
@@ -1425,7 +1467,49 @@
           "address": "Pasar Keputran, {'lat': -7.2575, 'lng': 112.7521}",
           "openingHours": "06.00 - 18.00",
           "estimatedDistance": 2.0,
-          "rincianBahan": []
+          "rincianBahan": [
+            {
+              "name": "Tahu putih",
+              "quantity": {
+                "value": 2,
+                "unit": "potong"
+              },
+              "estimatedPrice": 2500
+            },
+            {
+              "name": "Telur ayam",
+              "quantity": {
+                "value": 2,
+                "unit": "butir"
+              },
+              "estimatedPrice": 5500
+            },
+            {
+              "name": "Tauge",
+              "quantity": {
+                "value": 100,
+                "unit": "gram"
+              },
+              "estimatedPrice": 1500
+            },
+            {
+              "name": "Kacang tanah",
+              "quantity": {
+                "value": 100,
+                "unit": "gram"
+              },
+              "estimatedPrice": 4500
+            },
+            {
+              "name": "Bumbu dan rempah",
+              "quantity": {
+                "value": null,
+                "unit": "secukupnya"
+              },
+              "estimatedPrice": 7500,
+              "note": "Bawang putih, petis udang, cabai rawit, gula merah, kecap manis, garam"
+            }
+          ]
         }
       ]
     },
@@ -1603,7 +1687,41 @@
           "address": "Pasar Wage, {'lat': -7.428, 'lng': 109.235}",
           "openingHours": "06.00 - 18.00",
           "estimatedDistance": 2.0,
-          "rincianBahan": []
+          "rincianBahan": [
+            {
+              "name": "Tempe",
+              "quantity": {
+                "value": 2,
+                "unit": "papan"
+              },
+              "estimatedPrice": 8000
+            },
+            {
+              "name": "Tepung terigu",
+              "quantity": {
+                "value": 250,
+                "unit": "gram"
+              },
+              "estimatedPrice": 4000
+            },
+            {
+              "name": "Daun bawang",
+              "quantity": {
+                "value": 2,
+                "unit": "batang"
+              },
+              "estimatedPrice": 2000
+            },
+            {
+              "name": "Bumbu dan rempah",
+              "quantity": {
+                "value": null,
+                "unit": "secukupnya"
+              },
+              "estimatedPrice": 5000,
+              "note": "Ketumbar, bawang putih, garam, minyak goreng"
+            }
+          ]
         },
         {
           "name": "Pasar Manis",
@@ -1619,7 +1737,41 @@
           "address": "Pasar Manis, {'lat': -7.428, 'lng': 109.235}",
           "openingHours": "06.00 - 18.00",
           "estimatedDistance": 2.0,
-          "rincianBahan": []
+          "rincianBahan": [
+            {
+              "name": "Tempe",
+              "quantity": {
+                "value": 2,
+                "unit": "papan"
+              },
+              "estimatedPrice": 7500
+            },
+            {
+              "name": "Tepung terigu",
+              "quantity": {
+                "value": 250,
+                "unit": "gram"
+              },
+              "estimatedPrice": 3500
+            },
+            {
+              "name": "Daun bawang",
+              "quantity": {
+                "value": 2,
+                "unit": "batang"
+              },
+              "estimatedPrice": 1500
+            },
+            {
+              "name": "Bumbu dan rempah",
+              "quantity": {
+                "value": null,
+                "unit": "secukupnya"
+              },
+              "estimatedPrice": 4500,
+              "note": "Ketumbar, bawang putih, garam, minyak goreng"
+            }
+          ]
         }
       ]
     },
@@ -1773,7 +1925,33 @@
           "address": "Pasar Raya Padang, {'lat': -0.9471, 'lng': 100.4172}",
           "openingHours": "06.00 - 18.00",
           "estimatedDistance": 2.0,
-          "rincianBahan": []
+          "rincianBahan": [
+            {
+              "name": "Telur ayam",
+              "quantity": {
+                "value": 3,
+                "unit": "butir"
+              },
+              "estimatedPrice": 9000
+            },
+            {
+              "name": "Kelapa parut",
+              "quantity": {
+                "value": 4,
+                "unit": "sdm"
+              },
+              "estimatedPrice": 3000
+            },
+            {
+              "name": "Bumbu dan rempah",
+              "quantity": {
+                "value": null,
+                "unit": "secukupnya"
+              },
+              "estimatedPrice": 6000,
+              "note": "Bawang merah, bawang putih, cabai merah, kunyit, daun bawang, tepung beras, garam"
+            }
+          ]
         },
         {
           "name": "Pasar Pagi Bukittinggi",
@@ -1789,7 +1967,33 @@
           "address": "Pasar Pagi Bukittinggi, {'lat': -0.3059, 'lng': 100.3692}",
           "openingHours": "06.00 - 18.00",
           "estimatedDistance": 2.0,
-          "rincianBahan": []
+          "rincianBahan": [
+            {
+              "name": "Telur ayam",
+              "quantity": {
+                "value": 3,
+                "unit": "butir"
+              },
+              "estimatedPrice": 8500
+            },
+            {
+              "name": "Kelapa parut",
+              "quantity": {
+                "value": 4,
+                "unit": "sdm"
+              },
+              "estimatedPrice": 2500
+            },
+            {
+              "name": "Bumbu dan rempah",
+              "quantity": {
+                "value": null,
+                "unit": "secukupnya"
+              },
+              "estimatedPrice": 5500,
+              "note": "Bawang merah, bawang putih, cabai merah, kunyit, daun bawang, tepung beras, garam"
+            }
+          ]
         }
       ]
     },
@@ -1938,7 +2142,7 @@
     "difficulty": "Mudah",
     "cookingTimeMinutes": 25,
     "servings": 3,
-    "estimatedCost": 15000,
+    "estimatedCost": 12000,
     "isTraditional": true,
     "isNew": false,
     "culturalStory": {
@@ -1975,7 +2179,25 @@
           "address": "Pasar Kanoman, {'lat': -6.7063, 'lng': 108.5571}",
           "openingHours": "06.00 - 18.00",
           "estimatedDistance": 2.0,
-          "rincianBahan": []
+          "rincianBahan": [
+            {
+              "name": "Tahu putih",
+              "quantity": {
+                "value": 5,
+                "unit": "potong"
+              },
+              "estimatedPrice": 5000
+            },
+            {
+              "name": "Bumbu dan rempah",
+              "quantity": {
+                "value": null,
+                "unit": "secukupnya"
+              },
+              "estimatedPrice": 7000,
+              "note": "Bawang merah, cabai rawit, kecap manis, cuka aren, garam, gula pasir, minyak goreng"
+            }
+          ]
         },
         {
           "name": "Pasar Pagi",
@@ -1991,7 +2213,25 @@
           "address": "Pasar Pagi, {'lat': -6.7063, 'lng': 108.5571}",
           "openingHours": "06.00 - 18.00",
           "estimatedDistance": 2.0,
-          "rincianBahan": []
+          "rincianBahan": [
+            {
+              "name": "Tahu putih",
+              "quantity": {
+                "value": 5,
+                "unit": "potong"
+              },
+              "estimatedPrice": 4500
+            },
+            {
+              "name": "Bumbu dan rempah",
+              "quantity": {
+                "value": null,
+                "unit": "secukupnya"
+              },
+              "estimatedPrice": 6500,
+              "note": "Bawang merah, cabai rawit, kecap manis, cuka aren, garam, gula pasir, minyak goreng"
+            }
+          ]
         }
       ]
     },
@@ -2145,7 +2385,49 @@
           "address": "Pasar Gede, {'lat': -7.5755, 'lng': 110.8243}",
           "openingHours": "06.00 - 18.00",
           "estimatedDistance": 2.0,
-          "rincianBahan": []
+          "rincianBahan": [
+            {
+              "name": "Tempe",
+              "quantity": {
+                "value": 2,
+                "unit": "papan"
+              },
+              "estimatedPrice": 8000
+            },
+            {
+              "name": "Lamtoro",
+              "quantity": {
+                "value": 100,
+                "unit": "gram"
+              },
+              "estimatedPrice": 3000
+            },
+            {
+              "name": "Teri",
+              "quantity": {
+                "value": 50,
+                "unit": "gram"
+              },
+              "estimatedPrice": 5000
+            },
+            {
+              "name": "Kelapa parut",
+              "quantity": {
+                "value": 200,
+                "unit": "gram"
+              },
+              "estimatedPrice": 4000
+            },
+            {
+              "name": "Bumbu dan rempah",
+              "quantity": {
+                "value": null,
+                "unit": "secukupnya"
+              },
+              "estimatedPrice": 8000,
+              "note": "Bawang merah, bawang putih, cabai merah, cabai rawit, daun salam, daun jeruk, lengkuas, garam"
+            }
+          ]
         },
         {
           "name": "Pasar Beringharjo",
@@ -2161,7 +2443,49 @@
           "address": "Pasar Beringharjo, {'lat': -7.7956, 'lng': 110.3695}",
           "openingHours": "06.00 - 18.00",
           "estimatedDistance": 2.0,
-          "rincianBahan": []
+          "rincianBahan": [
+            {
+              "name": "Tempe",
+              "quantity": {
+                "value": 2,
+                "unit": "papan"
+              },
+              "estimatedPrice": 7500
+            },
+            {
+              "name": "Lamtoro",
+              "quantity": {
+                "value": 100,
+                "unit": "gram"
+              },
+              "estimatedPrice": 2500
+            },
+            {
+              "name": "Teri",
+              "quantity": {
+                "value": 50,
+                "unit": "gram"
+              },
+              "estimatedPrice": 4500
+            },
+            {
+              "name": "Kelapa parut",
+              "quantity": {
+                "value": 200,
+                "unit": "gram"
+              },
+              "estimatedPrice": 3500
+            },
+            {
+              "name": "Bumbu dan rempah",
+              "quantity": {
+                "value": null,
+                "unit": "secukupnya"
+              },
+              "estimatedPrice": 7500,
+              "note": "Bawang merah, bawang putih, cabai merah, cabai rawit, daun salam, daun jeruk, lengkuas, garam"
+            }
+          ]
         }
       ]
     },
@@ -2318,7 +2642,7 @@
     "difficulty": "Mudah",
     "cookingTimeMinutes": 35,
     "servings": 4,
-    "estimatedCost": 25000,
+    "estimatedCost": 38000,
     "isTraditional": true,
     "isNew": false,
     "culturalStory": {
@@ -2355,7 +2679,33 @@
           "address": "Pasar Raya, {'lat': -0.9471, 'lng': 100.4172}",
           "openingHours": "06.00 - 18.00",
           "estimatedDistance": 2.0,
-          "rincianBahan": []
+          "rincianBahan": [
+            {
+              "name": "Telur ayam",
+              "quantity": {
+                "value": 8,
+                "unit": "butir"
+              },
+              "estimatedPrice": 24000
+            },
+            {
+              "name": "Cabai merah keriting",
+              "quantity": {
+                "value": 15,
+                "unit": "buah"
+              },
+              "estimatedPrice": 6000
+            },
+            {
+              "name": "Bumbu dan rempah",
+              "quantity": {
+                "value": null,
+                "unit": "secukupnya"
+              },
+              "estimatedPrice": 8000,
+              "note": "Cabai rawit, bawang merah, bawang putih, tomat, daun jeruk, serai, garam, gula"
+            }
+          ]
         },
         {
           "name": "Pasar Pagi",
@@ -2371,7 +2721,33 @@
           "address": "Pasar Pagi, {'lat': -0.3059, 'lng': 100.3692}",
           "openingHours": "06.00 - 18.00",
           "estimatedDistance": 2.0,
-          "rincianBahan": []
+          "rincianBahan": [
+            {
+              "name": "Telur ayam",
+              "quantity": {
+                "value": 8,
+                "unit": "butir"
+              },
+              "estimatedPrice": 22500
+            },
+            {
+              "name": "Cabai merah keriting",
+              "quantity": {
+                "value": 15,
+                "unit": "buah"
+              },
+              "estimatedPrice": 5500
+            },
+            {
+              "name": "Bumbu dan rempah",
+              "quantity": {
+                "value": null,
+                "unit": "secukupnya"
+              },
+              "estimatedPrice": 7500,
+              "note": "Cabai rawit, bawang merah, bawang putih, tomat, daun jeruk, serai, garam, gula"
+            }
+          ]
         }
       ]
     },
