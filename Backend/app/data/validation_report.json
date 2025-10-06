@@ -1,8 +1,8 @@
 {
-  "timestamp": "2025-10-06T15:04:07.050720",
+  "timestamp": "2025-10-06T23:03:23.232283",
   "total_recipes": 12,
-  "valid_recipes": 12,
-  "invalid_recipes": 0,
+  "valid_recipes": 6,
+  "invalid_recipes": 6,
   "validation_results": [
     {
       "recipe_id": "1",
@@ -32,32 +32,1304 @@
     {
       "recipe_id": "6",
       "recipe_name": "Tahu Telur Surabaya",
-      "status": "valid"
+      "path": "culturalStory -> regionalVariations -> 0",
+      "error": "'province' is a required property",
+      "status": "error"
+    },
+    {
+      "recipe_id": "6",
+      "recipe_name": "Tahu Telur Surabaya",
+      "path": "culturalStory -> regionalVariations -> 1",
+      "error": "'province' is a required property",
+      "status": "error"
+    },
+    {
+      "recipe_id": "6",
+      "recipe_name": "Tahu Telur Surabaya",
+      "path": "budgetData -> offlineStores -> 0",
+      "error": "'address' is a required property",
+      "status": "error"
+    },
+    {
+      "recipe_id": "6",
+      "recipe_name": "Tahu Telur Surabaya",
+      "path": "budgetData -> offlineStores -> 0",
+      "error": "'openingHours' is a required property",
+      "status": "error"
+    },
+    {
+      "recipe_id": "6",
+      "recipe_name": "Tahu Telur Surabaya",
+      "path": "budgetData -> offlineStores -> 0",
+      "error": "'estimatedDistance' is a required property",
+      "status": "error"
+    },
+    {
+      "recipe_id": "6",
+      "recipe_name": "Tahu Telur Surabaya",
+      "path": "budgetData -> offlineStores -> 0",
+      "error": "'rincianBahan' is a required property",
+      "status": "error"
+    },
+    {
+      "recipe_id": "6",
+      "recipe_name": "Tahu Telur Surabaya",
+      "path": "budgetData -> offlineStores -> 0 -> location",
+      "error": "'Surabaya' is not of type 'object'",
+      "status": "error"
+    },
+    {
+      "recipe_id": "6",
+      "recipe_name": "Tahu Telur Surabaya",
+      "path": "budgetData -> offlineStores -> 1",
+      "error": "'address' is a required property",
+      "status": "error"
+    },
+    {
+      "recipe_id": "6",
+      "recipe_name": "Tahu Telur Surabaya",
+      "path": "budgetData -> offlineStores -> 1",
+      "error": "'openingHours' is a required property",
+      "status": "error"
+    },
+    {
+      "recipe_id": "6",
+      "recipe_name": "Tahu Telur Surabaya",
+      "path": "budgetData -> offlineStores -> 1",
+      "error": "'estimatedDistance' is a required property",
+      "status": "error"
+    },
+    {
+      "recipe_id": "6",
+      "recipe_name": "Tahu Telur Surabaya",
+      "path": "budgetData -> offlineStores -> 1",
+      "error": "'rincianBahan' is a required property",
+      "status": "error"
+    },
+    {
+      "recipe_id": "6",
+      "recipe_name": "Tahu Telur Surabaya",
+      "path": "budgetData -> offlineStores -> 1 -> location",
+      "error": "'Surabaya' is not of type 'object'",
+      "status": "error"
+    },
+    {
+      "recipe_id": "6",
+      "recipe_name": "Tahu Telur Surabaya",
+      "path": "ingredients -> 0 -> bahan_utama -> 0",
+      "error": "'name' is a required property",
+      "status": "error"
+    },
+    {
+      "recipe_id": "6",
+      "recipe_name": "Tahu Telur Surabaya",
+      "path": "ingredients -> 0 -> bahan_utama -> 0",
+      "error": "'quantity' is a required property",
+      "status": "error"
+    },
+    {
+      "recipe_id": "6",
+      "recipe_name": "Tahu Telur Surabaya",
+      "path": "ingredients -> 0 -> bahan_utama -> 1",
+      "error": "'name' is a required property",
+      "status": "error"
+    },
+    {
+      "recipe_id": "6",
+      "recipe_name": "Tahu Telur Surabaya",
+      "path": "ingredients -> 0 -> bahan_utama -> 1",
+      "error": "'quantity' is a required property",
+      "status": "error"
+    },
+    {
+      "recipe_id": "6",
+      "recipe_name": "Tahu Telur Surabaya",
+      "path": "ingredients -> 0 -> bahan_utama -> 2",
+      "error": "'name' is a required property",
+      "status": "error"
+    },
+    {
+      "recipe_id": "6",
+      "recipe_name": "Tahu Telur Surabaya",
+      "path": "ingredients -> 0 -> bahan_utama -> 2",
+      "error": "'quantity' is a required property",
+      "status": "error"
+    },
+    {
+      "recipe_id": "6",
+      "recipe_name": "Tahu Telur Surabaya",
+      "path": "ingredients -> 0 -> bumbu -> 0",
+      "error": "'name' is a required property",
+      "status": "error"
+    },
+    {
+      "recipe_id": "6",
+      "recipe_name": "Tahu Telur Surabaya",
+      "path": "ingredients -> 0 -> bumbu -> 0",
+      "error": "'quantity' is a required property",
+      "status": "error"
+    },
+    {
+      "recipe_id": "6",
+      "recipe_name": "Tahu Telur Surabaya",
+      "path": "ingredients -> 0 -> bumbu -> 1",
+      "error": "'name' is a required property",
+      "status": "error"
+    },
+    {
+      "recipe_id": "6",
+      "recipe_name": "Tahu Telur Surabaya",
+      "path": "ingredients -> 0 -> bumbu -> 1",
+      "error": "'quantity' is a required property",
+      "status": "error"
+    },
+    {
+      "recipe_id": "6",
+      "recipe_name": "Tahu Telur Surabaya",
+      "path": "ingredients -> 0 -> bumbu -> 2",
+      "error": "'name' is a required property",
+      "status": "error"
+    },
+    {
+      "recipe_id": "6",
+      "recipe_name": "Tahu Telur Surabaya",
+      "path": "ingredients -> 0 -> bumbu -> 2",
+      "error": "'quantity' is a required property",
+      "status": "error"
+    },
+    {
+      "recipe_id": "6",
+      "recipe_name": "Tahu Telur Surabaya",
+      "path": "ingredients -> 0 -> bumbu -> 3",
+      "error": "'name' is a required property",
+      "status": "error"
+    },
+    {
+      "recipe_id": "6",
+      "recipe_name": "Tahu Telur Surabaya",
+      "path": "ingredients -> 0 -> bumbu -> 3",
+      "error": "'quantity' is a required property",
+      "status": "error"
+    },
+    {
+      "recipe_id": "6",
+      "recipe_name": "Tahu Telur Surabaya",
+      "path": "ingredients -> 0 -> bumbu -> 4",
+      "error": "'name' is a required property",
+      "status": "error"
+    },
+    {
+      "recipe_id": "6",
+      "recipe_name": "Tahu Telur Surabaya",
+      "path": "ingredients -> 0 -> bumbu -> 4",
+      "error": "'quantity' is a required property",
+      "status": "error"
+    },
+    {
+      "recipe_id": "6",
+      "recipe_name": "Tahu Telur Surabaya",
+      "path": "ingredients -> 0 -> bumbu -> 5",
+      "error": "'name' is a required property",
+      "status": "error"
+    },
+    {
+      "recipe_id": "6",
+      "recipe_name": "Tahu Telur Surabaya",
+      "path": "ingredients -> 0 -> bumbu -> 5",
+      "error": "'quantity' is a required property",
+      "status": "error"
+    },
+    {
+      "recipe_id": "6",
+      "recipe_name": "Tahu Telur Surabaya",
+      "path": "ingredients -> 0 -> bumbu -> 6",
+      "error": "'name' is a required property",
+      "status": "error"
+    },
+    {
+      "recipe_id": "6",
+      "recipe_name": "Tahu Telur Surabaya",
+      "path": "ingredients -> 0 -> bumbu -> 6",
+      "error": "'quantity' is a required property",
+      "status": "error"
     },
     {
       "recipe_id": "7",
       "recipe_name": "Tempe Mendoan",
-      "status": "valid"
+      "path": "culturalStory -> regionalVariations -> 0",
+      "error": "'province' is a required property",
+      "status": "error"
+    },
+    {
+      "recipe_id": "7",
+      "recipe_name": "Tempe Mendoan",
+      "path": "culturalStory -> regionalVariations -> 1",
+      "error": "'province' is a required property",
+      "status": "error"
+    },
+    {
+      "recipe_id": "7",
+      "recipe_name": "Tempe Mendoan",
+      "path": "budgetData -> offlineStores -> 0",
+      "error": "'address' is a required property",
+      "status": "error"
+    },
+    {
+      "recipe_id": "7",
+      "recipe_name": "Tempe Mendoan",
+      "path": "budgetData -> offlineStores -> 0",
+      "error": "'openingHours' is a required property",
+      "status": "error"
+    },
+    {
+      "recipe_id": "7",
+      "recipe_name": "Tempe Mendoan",
+      "path": "budgetData -> offlineStores -> 0",
+      "error": "'estimatedDistance' is a required property",
+      "status": "error"
+    },
+    {
+      "recipe_id": "7",
+      "recipe_name": "Tempe Mendoan",
+      "path": "budgetData -> offlineStores -> 0",
+      "error": "'rincianBahan' is a required property",
+      "status": "error"
+    },
+    {
+      "recipe_id": "7",
+      "recipe_name": "Tempe Mendoan",
+      "path": "budgetData -> offlineStores -> 0 -> location",
+      "error": "'Purwokerto' is not of type 'object'",
+      "status": "error"
+    },
+    {
+      "recipe_id": "7",
+      "recipe_name": "Tempe Mendoan",
+      "path": "budgetData -> offlineStores -> 1",
+      "error": "'address' is a required property",
+      "status": "error"
+    },
+    {
+      "recipe_id": "7",
+      "recipe_name": "Tempe Mendoan",
+      "path": "budgetData -> offlineStores -> 1",
+      "error": "'openingHours' is a required property",
+      "status": "error"
+    },
+    {
+      "recipe_id": "7",
+      "recipe_name": "Tempe Mendoan",
+      "path": "budgetData -> offlineStores -> 1",
+      "error": "'estimatedDistance' is a required property",
+      "status": "error"
+    },
+    {
+      "recipe_id": "7",
+      "recipe_name": "Tempe Mendoan",
+      "path": "budgetData -> offlineStores -> 1",
+      "error": "'rincianBahan' is a required property",
+      "status": "error"
+    },
+    {
+      "recipe_id": "7",
+      "recipe_name": "Tempe Mendoan",
+      "path": "budgetData -> offlineStores -> 1 -> location",
+      "error": "'Purwokerto' is not of type 'object'",
+      "status": "error"
+    },
+    {
+      "recipe_id": "7",
+      "recipe_name": "Tempe Mendoan",
+      "path": "ingredients -> 0 -> bahan_utama -> 0",
+      "error": "'name' is a required property",
+      "status": "error"
+    },
+    {
+      "recipe_id": "7",
+      "recipe_name": "Tempe Mendoan",
+      "path": "ingredients -> 0 -> bahan_utama -> 0",
+      "error": "'quantity' is a required property",
+      "status": "error"
+    },
+    {
+      "recipe_id": "7",
+      "recipe_name": "Tempe Mendoan",
+      "path": "ingredients -> 0 -> bumbu -> 0",
+      "error": "'name' is a required property",
+      "status": "error"
+    },
+    {
+      "recipe_id": "7",
+      "recipe_name": "Tempe Mendoan",
+      "path": "ingredients -> 0 -> bumbu -> 0",
+      "error": "'quantity' is a required property",
+      "status": "error"
+    },
+    {
+      "recipe_id": "7",
+      "recipe_name": "Tempe Mendoan",
+      "path": "ingredients -> 0 -> bumbu -> 1",
+      "error": "'name' is a required property",
+      "status": "error"
+    },
+    {
+      "recipe_id": "7",
+      "recipe_name": "Tempe Mendoan",
+      "path": "ingredients -> 0 -> bumbu -> 1",
+      "error": "'quantity' is a required property",
+      "status": "error"
+    },
+    {
+      "recipe_id": "7",
+      "recipe_name": "Tempe Mendoan",
+      "path": "ingredients -> 0 -> bumbu -> 2",
+      "error": "'name' is a required property",
+      "status": "error"
+    },
+    {
+      "recipe_id": "7",
+      "recipe_name": "Tempe Mendoan",
+      "path": "ingredients -> 0 -> bumbu -> 2",
+      "error": "'quantity' is a required property",
+      "status": "error"
+    },
+    {
+      "recipe_id": "7",
+      "recipe_name": "Tempe Mendoan",
+      "path": "ingredients -> 0 -> bumbu -> 3",
+      "error": "'name' is a required property",
+      "status": "error"
+    },
+    {
+      "recipe_id": "7",
+      "recipe_name": "Tempe Mendoan",
+      "path": "ingredients -> 0 -> bumbu -> 3",
+      "error": "'quantity' is a required property",
+      "status": "error"
+    },
+    {
+      "recipe_id": "7",
+      "recipe_name": "Tempe Mendoan",
+      "path": "ingredients -> 0 -> bumbu -> 4",
+      "error": "'name' is a required property",
+      "status": "error"
+    },
+    {
+      "recipe_id": "7",
+      "recipe_name": "Tempe Mendoan",
+      "path": "ingredients -> 0 -> bumbu -> 4",
+      "error": "'quantity' is a required property",
+      "status": "error"
+    },
+    {
+      "recipe_id": "7",
+      "recipe_name": "Tempe Mendoan",
+      "path": "ingredients -> 0 -> bumbu -> 5",
+      "error": "'name' is a required property",
+      "status": "error"
+    },
+    {
+      "recipe_id": "7",
+      "recipe_name": "Tempe Mendoan",
+      "path": "ingredients -> 0 -> bumbu -> 5",
+      "error": "'quantity' is a required property",
+      "status": "error"
     },
     {
       "recipe_id": "8",
       "recipe_name": "Telur Dadar Padang",
-      "status": "valid"
+      "path": "culturalStory -> regionalVariations -> 0",
+      "error": "'province' is a required property",
+      "status": "error"
+    },
+    {
+      "recipe_id": "8",
+      "recipe_name": "Telur Dadar Padang",
+      "path": "culturalStory -> regionalVariations -> 1",
+      "error": "'province' is a required property",
+      "status": "error"
+    },
+    {
+      "recipe_id": "8",
+      "recipe_name": "Telur Dadar Padang",
+      "path": "budgetData -> offlineStores -> 0",
+      "error": "'address' is a required property",
+      "status": "error"
+    },
+    {
+      "recipe_id": "8",
+      "recipe_name": "Telur Dadar Padang",
+      "path": "budgetData -> offlineStores -> 0",
+      "error": "'openingHours' is a required property",
+      "status": "error"
+    },
+    {
+      "recipe_id": "8",
+      "recipe_name": "Telur Dadar Padang",
+      "path": "budgetData -> offlineStores -> 0",
+      "error": "'estimatedDistance' is a required property",
+      "status": "error"
+    },
+    {
+      "recipe_id": "8",
+      "recipe_name": "Telur Dadar Padang",
+      "path": "budgetData -> offlineStores -> 0",
+      "error": "'rincianBahan' is a required property",
+      "status": "error"
+    },
+    {
+      "recipe_id": "8",
+      "recipe_name": "Telur Dadar Padang",
+      "path": "budgetData -> offlineStores -> 0 -> location",
+      "error": "'Padang' is not of type 'object'",
+      "status": "error"
+    },
+    {
+      "recipe_id": "8",
+      "recipe_name": "Telur Dadar Padang",
+      "path": "budgetData -> offlineStores -> 1",
+      "error": "'address' is a required property",
+      "status": "error"
+    },
+    {
+      "recipe_id": "8",
+      "recipe_name": "Telur Dadar Padang",
+      "path": "budgetData -> offlineStores -> 1",
+      "error": "'openingHours' is a required property",
+      "status": "error"
+    },
+    {
+      "recipe_id": "8",
+      "recipe_name": "Telur Dadar Padang",
+      "path": "budgetData -> offlineStores -> 1",
+      "error": "'estimatedDistance' is a required property",
+      "status": "error"
+    },
+    {
+      "recipe_id": "8",
+      "recipe_name": "Telur Dadar Padang",
+      "path": "budgetData -> offlineStores -> 1",
+      "error": "'rincianBahan' is a required property",
+      "status": "error"
+    },
+    {
+      "recipe_id": "8",
+      "recipe_name": "Telur Dadar Padang",
+      "path": "budgetData -> offlineStores -> 1 -> location",
+      "error": "'Bukittinggi' is not of type 'object'",
+      "status": "error"
+    },
+    {
+      "recipe_id": "8",
+      "recipe_name": "Telur Dadar Padang",
+      "path": "ingredients -> 0 -> bahan_utama -> 0",
+      "error": "'name' is a required property",
+      "status": "error"
+    },
+    {
+      "recipe_id": "8",
+      "recipe_name": "Telur Dadar Padang",
+      "path": "ingredients -> 0 -> bahan_utama -> 0",
+      "error": "'quantity' is a required property",
+      "status": "error"
+    },
+    {
+      "recipe_id": "8",
+      "recipe_name": "Telur Dadar Padang",
+      "path": "ingredients -> 0 -> bahan_utama -> 1",
+      "error": "'name' is a required property",
+      "status": "error"
+    },
+    {
+      "recipe_id": "8",
+      "recipe_name": "Telur Dadar Padang",
+      "path": "ingredients -> 0 -> bahan_utama -> 1",
+      "error": "'quantity' is a required property",
+      "status": "error"
+    },
+    {
+      "recipe_id": "8",
+      "recipe_name": "Telur Dadar Padang",
+      "path": "ingredients -> 0 -> bumbu -> 0",
+      "error": "'name' is a required property",
+      "status": "error"
+    },
+    {
+      "recipe_id": "8",
+      "recipe_name": "Telur Dadar Padang",
+      "path": "ingredients -> 0 -> bumbu -> 0",
+      "error": "'quantity' is a required property",
+      "status": "error"
+    },
+    {
+      "recipe_id": "8",
+      "recipe_name": "Telur Dadar Padang",
+      "path": "ingredients -> 0 -> bumbu -> 1",
+      "error": "'name' is a required property",
+      "status": "error"
+    },
+    {
+      "recipe_id": "8",
+      "recipe_name": "Telur Dadar Padang",
+      "path": "ingredients -> 0 -> bumbu -> 1",
+      "error": "'quantity' is a required property",
+      "status": "error"
+    },
+    {
+      "recipe_id": "8",
+      "recipe_name": "Telur Dadar Padang",
+      "path": "ingredients -> 0 -> bumbu -> 2",
+      "error": "'name' is a required property",
+      "status": "error"
+    },
+    {
+      "recipe_id": "8",
+      "recipe_name": "Telur Dadar Padang",
+      "path": "ingredients -> 0 -> bumbu -> 2",
+      "error": "'quantity' is a required property",
+      "status": "error"
+    },
+    {
+      "recipe_id": "8",
+      "recipe_name": "Telur Dadar Padang",
+      "path": "ingredients -> 0 -> bumbu -> 3",
+      "error": "'name' is a required property",
+      "status": "error"
+    },
+    {
+      "recipe_id": "8",
+      "recipe_name": "Telur Dadar Padang",
+      "path": "ingredients -> 0 -> bumbu -> 3",
+      "error": "'quantity' is a required property",
+      "status": "error"
+    },
+    {
+      "recipe_id": "8",
+      "recipe_name": "Telur Dadar Padang",
+      "path": "ingredients -> 0 -> bumbu -> 4",
+      "error": "'name' is a required property",
+      "status": "error"
+    },
+    {
+      "recipe_id": "8",
+      "recipe_name": "Telur Dadar Padang",
+      "path": "ingredients -> 0 -> bumbu -> 4",
+      "error": "'quantity' is a required property",
+      "status": "error"
+    },
+    {
+      "recipe_id": "8",
+      "recipe_name": "Telur Dadar Padang",
+      "path": "ingredients -> 0 -> bumbu -> 5",
+      "error": "'name' is a required property",
+      "status": "error"
+    },
+    {
+      "recipe_id": "8",
+      "recipe_name": "Telur Dadar Padang",
+      "path": "ingredients -> 0 -> bumbu -> 5",
+      "error": "'quantity' is a required property",
+      "status": "error"
+    },
+    {
+      "recipe_id": "8",
+      "recipe_name": "Telur Dadar Padang",
+      "path": "ingredients -> 0 -> bumbu -> 6",
+      "error": "'name' is a required property",
+      "status": "error"
+    },
+    {
+      "recipe_id": "8",
+      "recipe_name": "Telur Dadar Padang",
+      "path": "ingredients -> 0 -> bumbu -> 6",
+      "error": "'quantity' is a required property",
+      "status": "error"
+    },
+    {
+      "recipe_id": "8",
+      "recipe_name": "Telur Dadar Padang",
+      "path": "ingredients -> 0 -> bumbu -> 7",
+      "error": "'name' is a required property",
+      "status": "error"
+    },
+    {
+      "recipe_id": "8",
+      "recipe_name": "Telur Dadar Padang",
+      "path": "ingredients -> 0 -> bumbu -> 7",
+      "error": "'quantity' is a required property",
+      "status": "error"
+    },
+    {
+      "recipe_id": "8",
+      "recipe_name": "Telur Dadar Padang",
+      "path": "ingredients -> 0 -> bumbu -> 8",
+      "error": "'name' is a required property",
+      "status": "error"
+    },
+    {
+      "recipe_id": "8",
+      "recipe_name": "Telur Dadar Padang",
+      "path": "ingredients -> 0 -> bumbu -> 8",
+      "error": "'quantity' is a required property",
+      "status": "error"
     },
     {
       "recipe_id": "9",
       "recipe_name": "Tahu Gejrot",
-      "status": "valid"
+      "path": "culturalStory -> regionalVariations -> 0",
+      "error": "'province' is a required property",
+      "status": "error"
+    },
+    {
+      "recipe_id": "9",
+      "recipe_name": "Tahu Gejrot",
+      "path": "culturalStory -> regionalVariations -> 1",
+      "error": "'province' is a required property",
+      "status": "error"
+    },
+    {
+      "recipe_id": "9",
+      "recipe_name": "Tahu Gejrot",
+      "path": "budgetData -> offlineStores -> 0",
+      "error": "'address' is a required property",
+      "status": "error"
+    },
+    {
+      "recipe_id": "9",
+      "recipe_name": "Tahu Gejrot",
+      "path": "budgetData -> offlineStores -> 0",
+      "error": "'openingHours' is a required property",
+      "status": "error"
+    },
+    {
+      "recipe_id": "9",
+      "recipe_name": "Tahu Gejrot",
+      "path": "budgetData -> offlineStores -> 0",
+      "error": "'estimatedDistance' is a required property",
+      "status": "error"
+    },
+    {
+      "recipe_id": "9",
+      "recipe_name": "Tahu Gejrot",
+      "path": "budgetData -> offlineStores -> 0",
+      "error": "'rincianBahan' is a required property",
+      "status": "error"
+    },
+    {
+      "recipe_id": "9",
+      "recipe_name": "Tahu Gejrot",
+      "path": "budgetData -> offlineStores -> 0 -> location",
+      "error": "'Cirebon' is not of type 'object'",
+      "status": "error"
+    },
+    {
+      "recipe_id": "9",
+      "recipe_name": "Tahu Gejrot",
+      "path": "budgetData -> offlineStores -> 1",
+      "error": "'address' is a required property",
+      "status": "error"
+    },
+    {
+      "recipe_id": "9",
+      "recipe_name": "Tahu Gejrot",
+      "path": "budgetData -> offlineStores -> 1",
+      "error": "'openingHours' is a required property",
+      "status": "error"
+    },
+    {
+      "recipe_id": "9",
+      "recipe_name": "Tahu Gejrot",
+      "path": "budgetData -> offlineStores -> 1",
+      "error": "'estimatedDistance' is a required property",
+      "status": "error"
+    },
+    {
+      "recipe_id": "9",
+      "recipe_name": "Tahu Gejrot",
+      "path": "budgetData -> offlineStores -> 1",
+      "error": "'rincianBahan' is a required property",
+      "status": "error"
+    },
+    {
+      "recipe_id": "9",
+      "recipe_name": "Tahu Gejrot",
+      "path": "budgetData -> offlineStores -> 1 -> location",
+      "error": "'Cirebon' is not of type 'object'",
+      "status": "error"
+    },
+    {
+      "recipe_id": "9",
+      "recipe_name": "Tahu Gejrot",
+      "path": "ingredients -> 0 -> bahan_utama -> 0",
+      "error": "'name' is a required property",
+      "status": "error"
+    },
+    {
+      "recipe_id": "9",
+      "recipe_name": "Tahu Gejrot",
+      "path": "ingredients -> 0 -> bahan_utama -> 0",
+      "error": "'quantity' is a required property",
+      "status": "error"
+    },
+    {
+      "recipe_id": "9",
+      "recipe_name": "Tahu Gejrot",
+      "path": "ingredients -> 0 -> bumbu -> 0",
+      "error": "'name' is a required property",
+      "status": "error"
+    },
+    {
+      "recipe_id": "9",
+      "recipe_name": "Tahu Gejrot",
+      "path": "ingredients -> 0 -> bumbu -> 0",
+      "error": "'quantity' is a required property",
+      "status": "error"
+    },
+    {
+      "recipe_id": "9",
+      "recipe_name": "Tahu Gejrot",
+      "path": "ingredients -> 0 -> bumbu -> 1",
+      "error": "'name' is a required property",
+      "status": "error"
+    },
+    {
+      "recipe_id": "9",
+      "recipe_name": "Tahu Gejrot",
+      "path": "ingredients -> 0 -> bumbu -> 1",
+      "error": "'quantity' is a required property",
+      "status": "error"
+    },
+    {
+      "recipe_id": "9",
+      "recipe_name": "Tahu Gejrot",
+      "path": "ingredients -> 0 -> bumbu -> 2",
+      "error": "'name' is a required property",
+      "status": "error"
+    },
+    {
+      "recipe_id": "9",
+      "recipe_name": "Tahu Gejrot",
+      "path": "ingredients -> 0 -> bumbu -> 2",
+      "error": "'quantity' is a required property",
+      "status": "error"
+    },
+    {
+      "recipe_id": "9",
+      "recipe_name": "Tahu Gejrot",
+      "path": "ingredients -> 0 -> bumbu -> 3",
+      "error": "'name' is a required property",
+      "status": "error"
+    },
+    {
+      "recipe_id": "9",
+      "recipe_name": "Tahu Gejrot",
+      "path": "ingredients -> 0 -> bumbu -> 3",
+      "error": "'quantity' is a required property",
+      "status": "error"
+    },
+    {
+      "recipe_id": "9",
+      "recipe_name": "Tahu Gejrot",
+      "path": "ingredients -> 0 -> bumbu -> 4",
+      "error": "'name' is a required property",
+      "status": "error"
+    },
+    {
+      "recipe_id": "9",
+      "recipe_name": "Tahu Gejrot",
+      "path": "ingredients -> 0 -> bumbu -> 4",
+      "error": "'quantity' is a required property",
+      "status": "error"
+    },
+    {
+      "recipe_id": "9",
+      "recipe_name": "Tahu Gejrot",
+      "path": "ingredients -> 0 -> bumbu -> 5",
+      "error": "'name' is a required property",
+      "status": "error"
+    },
+    {
+      "recipe_id": "9",
+      "recipe_name": "Tahu Gejrot",
+      "path": "ingredients -> 0 -> bumbu -> 5",
+      "error": "'quantity' is a required property",
+      "status": "error"
     },
     {
       "recipe_id": "10",
       "recipe_name": "Botok Tempe Lamtoro",
-      "status": "valid"
+      "path": "culturalStory -> regionalVariations -> 0",
+      "error": "'province' is a required property",
+      "status": "error"
+    },
+    {
+      "recipe_id": "10",
+      "recipe_name": "Botok Tempe Lamtoro",
+      "path": "culturalStory -> regionalVariations -> 1",
+      "error": "'province' is a required property",
+      "status": "error"
+    },
+    {
+      "recipe_id": "10",
+      "recipe_name": "Botok Tempe Lamtoro",
+      "path": "budgetData -> offlineStores -> 0",
+      "error": "'address' is a required property",
+      "status": "error"
+    },
+    {
+      "recipe_id": "10",
+      "recipe_name": "Botok Tempe Lamtoro",
+      "path": "budgetData -> offlineStores -> 0",
+      "error": "'openingHours' is a required property",
+      "status": "error"
+    },
+    {
+      "recipe_id": "10",
+      "recipe_name": "Botok Tempe Lamtoro",
+      "path": "budgetData -> offlineStores -> 0",
+      "error": "'estimatedDistance' is a required property",
+      "status": "error"
+    },
+    {
+      "recipe_id": "10",
+      "recipe_name": "Botok Tempe Lamtoro",
+      "path": "budgetData -> offlineStores -> 0",
+      "error": "'rincianBahan' is a required property",
+      "status": "error"
+    },
+    {
+      "recipe_id": "10",
+      "recipe_name": "Botok Tempe Lamtoro",
+      "path": "budgetData -> offlineStores -> 0 -> location",
+      "error": "'Solo' is not of type 'object'",
+      "status": "error"
+    },
+    {
+      "recipe_id": "10",
+      "recipe_name": "Botok Tempe Lamtoro",
+      "path": "budgetData -> offlineStores -> 1",
+      "error": "'address' is a required property",
+      "status": "error"
+    },
+    {
+      "recipe_id": "10",
+      "recipe_name": "Botok Tempe Lamtoro",
+      "path": "budgetData -> offlineStores -> 1",
+      "error": "'openingHours' is a required property",
+      "status": "error"
+    },
+    {
+      "recipe_id": "10",
+      "recipe_name": "Botok Tempe Lamtoro",
+      "path": "budgetData -> offlineStores -> 1",
+      "error": "'estimatedDistance' is a required property",
+      "status": "error"
+    },
+    {
+      "recipe_id": "10",
+      "recipe_name": "Botok Tempe Lamtoro",
+      "path": "budgetData -> offlineStores -> 1",
+      "error": "'rincianBahan' is a required property",
+      "status": "error"
+    },
+    {
+      "recipe_id": "10",
+      "recipe_name": "Botok Tempe Lamtoro",
+      "path": "budgetData -> offlineStores -> 1 -> location",
+      "error": "'Yogyakarta' is not of type 'object'",
+      "status": "error"
+    },
+    {
+      "recipe_id": "10",
+      "recipe_name": "Botok Tempe Lamtoro",
+      "path": "ingredients -> 0 -> bahan_utama -> 0",
+      "error": "'name' is a required property",
+      "status": "error"
+    },
+    {
+      "recipe_id": "10",
+      "recipe_name": "Botok Tempe Lamtoro",
+      "path": "ingredients -> 0 -> bahan_utama -> 0",
+      "error": "'quantity' is a required property",
+      "status": "error"
+    },
+    {
+      "recipe_id": "10",
+      "recipe_name": "Botok Tempe Lamtoro",
+      "path": "ingredients -> 0 -> bahan_utama -> 1",
+      "error": "'name' is a required property",
+      "status": "error"
+    },
+    {
+      "recipe_id": "10",
+      "recipe_name": "Botok Tempe Lamtoro",
+      "path": "ingredients -> 0 -> bahan_utama -> 1",
+      "error": "'quantity' is a required property",
+      "status": "error"
+    },
+    {
+      "recipe_id": "10",
+      "recipe_name": "Botok Tempe Lamtoro",
+      "path": "ingredients -> 0 -> bahan_utama -> 2",
+      "error": "'name' is a required property",
+      "status": "error"
+    },
+    {
+      "recipe_id": "10",
+      "recipe_name": "Botok Tempe Lamtoro",
+      "path": "ingredients -> 0 -> bahan_utama -> 2",
+      "error": "'quantity' is a required property",
+      "status": "error"
+    },
+    {
+      "recipe_id": "10",
+      "recipe_name": "Botok Tempe Lamtoro",
+      "path": "ingredients -> 0 -> bahan_utama -> 3",
+      "error": "'name' is a required property",
+      "status": "error"
+    },
+    {
+      "recipe_id": "10",
+      "recipe_name": "Botok Tempe Lamtoro",
+      "path": "ingredients -> 0 -> bahan_utama -> 3",
+      "error": "'quantity' is a required property",
+      "status": "error"
+    },
+    {
+      "recipe_id": "10",
+      "recipe_name": "Botok Tempe Lamtoro",
+      "path": "ingredients -> 0 -> bumbu -> 0",
+      "error": "'name' is a required property",
+      "status": "error"
+    },
+    {
+      "recipe_id": "10",
+      "recipe_name": "Botok Tempe Lamtoro",
+      "path": "ingredients -> 0 -> bumbu -> 0",
+      "error": "'quantity' is a required property",
+      "status": "error"
+    },
+    {
+      "recipe_id": "10",
+      "recipe_name": "Botok Tempe Lamtoro",
+      "path": "ingredients -> 0 -> bumbu -> 1",
+      "error": "'name' is a required property",
+      "status": "error"
+    },
+    {
+      "recipe_id": "10",
+      "recipe_name": "Botok Tempe Lamtoro",
+      "path": "ingredients -> 0 -> bumbu -> 1",
+      "error": "'quantity' is a required property",
+      "status": "error"
+    },
+    {
+      "recipe_id": "10",
+      "recipe_name": "Botok Tempe Lamtoro",
+      "path": "ingredients -> 0 -> bumbu -> 2",
+      "error": "'name' is a required property",
+      "status": "error"
+    },
+    {
+      "recipe_id": "10",
+      "recipe_name": "Botok Tempe Lamtoro",
+      "path": "ingredients -> 0 -> bumbu -> 2",
+      "error": "'quantity' is a required property",
+      "status": "error"
+    },
+    {
+      "recipe_id": "10",
+      "recipe_name": "Botok Tempe Lamtoro",
+      "path": "ingredients -> 0 -> bumbu -> 3",
+      "error": "'name' is a required property",
+      "status": "error"
+    },
+    {
+      "recipe_id": "10",
+      "recipe_name": "Botok Tempe Lamtoro",
+      "path": "ingredients -> 0 -> bumbu -> 3",
+      "error": "'quantity' is a required property",
+      "status": "error"
+    },
+    {
+      "recipe_id": "10",
+      "recipe_name": "Botok Tempe Lamtoro",
+      "path": "ingredients -> 0 -> bumbu -> 4",
+      "error": "'name' is a required property",
+      "status": "error"
+    },
+    {
+      "recipe_id": "10",
+      "recipe_name": "Botok Tempe Lamtoro",
+      "path": "ingredients -> 0 -> bumbu -> 4",
+      "error": "'quantity' is a required property",
+      "status": "error"
+    },
+    {
+      "recipe_id": "10",
+      "recipe_name": "Botok Tempe Lamtoro",
+      "path": "ingredients -> 0 -> bumbu -> 5",
+      "error": "'name' is a required property",
+      "status": "error"
+    },
+    {
+      "recipe_id": "10",
+      "recipe_name": "Botok Tempe Lamtoro",
+      "path": "ingredients -> 0 -> bumbu -> 5",
+      "error": "'quantity' is a required property",
+      "status": "error"
+    },
+    {
+      "recipe_id": "10",
+      "recipe_name": "Botok Tempe Lamtoro",
+      "path": "ingredients -> 0 -> bumbu -> 6",
+      "error": "'name' is a required property",
+      "status": "error"
+    },
+    {
+      "recipe_id": "10",
+      "recipe_name": "Botok Tempe Lamtoro",
+      "path": "ingredients -> 0 -> bumbu -> 6",
+      "error": "'quantity' is a required property",
+      "status": "error"
+    },
+    {
+      "recipe_id": "10",
+      "recipe_name": "Botok Tempe Lamtoro",
+      "path": "ingredients -> 0 -> bumbu -> 7",
+      "error": "'name' is a required property",
+      "status": "error"
+    },
+    {
+      "recipe_id": "10",
+      "recipe_name": "Botok Tempe Lamtoro",
+      "path": "ingredients -> 0 -> bumbu -> 7",
+      "error": "'quantity' is a required property",
+      "status": "error"
     },
     {
       "recipe_id": "11",
       "recipe_name": "Telur Balado",
-      "status": "valid"
+      "path": "culturalStory -> regionalVariations -> 0",
+      "error": "'province' is a required property",
+      "status": "error"
+    },
+    {
+      "recipe_id": "11",
+      "recipe_name": "Telur Balado",
+      "path": "culturalStory -> regionalVariations -> 1",
+      "error": "'province' is a required property",
+      "status": "error"
+    },
+    {
+      "recipe_id": "11",
+      "recipe_name": "Telur Balado",
+      "path": "budgetData -> offlineStores -> 0",
+      "error": "'address' is a required property",
+      "status": "error"
+    },
+    {
+      "recipe_id": "11",
+      "recipe_name": "Telur Balado",
+      "path": "budgetData -> offlineStores -> 0",
+      "error": "'openingHours' is a required property",
+      "status": "error"
+    },
+    {
+      "recipe_id": "11",
+      "recipe_name": "Telur Balado",
+      "path": "budgetData -> offlineStores -> 0",
+      "error": "'estimatedDistance' is a required property",
+      "status": "error"
+    },
+    {
+      "recipe_id": "11",
+      "recipe_name": "Telur Balado",
+      "path": "budgetData -> offlineStores -> 0",
+      "error": "'rincianBahan' is a required property",
+      "status": "error"
+    },
+    {
+      "recipe_id": "11",
+      "recipe_name": "Telur Balado",
+      "path": "budgetData -> offlineStores -> 0 -> location",
+      "error": "'Padang' is not of type 'object'",
+      "status": "error"
+    },
+    {
+      "recipe_id": "11",
+      "recipe_name": "Telur Balado",
+      "path": "budgetData -> offlineStores -> 1",
+      "error": "'address' is a required property",
+      "status": "error"
+    },
+    {
+      "recipe_id": "11",
+      "recipe_name": "Telur Balado",
+      "path": "budgetData -> offlineStores -> 1",
+      "error": "'openingHours' is a required property",
+      "status": "error"
+    },
+    {
+      "recipe_id": "11",
+      "recipe_name": "Telur Balado",
+      "path": "budgetData -> offlineStores -> 1",
+      "error": "'estimatedDistance' is a required property",
+      "status": "error"
+    },
+    {
+      "recipe_id": "11",
+      "recipe_name": "Telur Balado",
+      "path": "budgetData -> offlineStores -> 1",
+      "error": "'rincianBahan' is a required property",
+      "status": "error"
+    },
+    {
+      "recipe_id": "11",
+      "recipe_name": "Telur Balado",
+      "path": "budgetData -> offlineStores -> 1 -> location",
+      "error": "'Bukittinggi' is not of type 'object'",
+      "status": "error"
+    },
+    {
+      "recipe_id": "11",
+      "recipe_name": "Telur Balado",
+      "path": "ingredients -> 0 -> bahan_utama -> 0",
+      "error": "'name' is a required property",
+      "status": "error"
+    },
+    {
+      "recipe_id": "11",
+      "recipe_name": "Telur Balado",
+      "path": "ingredients -> 0 -> bahan_utama -> 0",
+      "error": "'quantity' is a required property",
+      "status": "error"
+    },
+    {
+      "recipe_id": "11",
+      "recipe_name": "Telur Balado",
+      "path": "ingredients -> 0 -> bumbu -> 0",
+      "error": "'name' is a required property",
+      "status": "error"
+    },
+    {
+      "recipe_id": "11",
+      "recipe_name": "Telur Balado",
+      "path": "ingredients -> 0 -> bumbu -> 0",
+      "error": "'quantity' is a required property",
+      "status": "error"
+    },
+    {
+      "recipe_id": "11",
+      "recipe_name": "Telur Balado",
+      "path": "ingredients -> 0 -> bumbu -> 1",
+      "error": "'name' is a required property",
+      "status": "error"
+    },
+    {
+      "recipe_id": "11",
+      "recipe_name": "Telur Balado",
+      "path": "ingredients -> 0 -> bumbu -> 1",
+      "error": "'quantity' is a required property",
+      "status": "error"
+    },
+    {
+      "recipe_id": "11",
+      "recipe_name": "Telur Balado",
+      "path": "ingredients -> 0 -> bumbu -> 2",
+      "error": "'name' is a required property",
+      "status": "error"
+    },
+    {
+      "recipe_id": "11",
+      "recipe_name": "Telur Balado",
+      "path": "ingredients -> 0 -> bumbu -> 2",
+      "error": "'quantity' is a required property",
+      "status": "error"
+    },
+    {
+      "recipe_id": "11",
+      "recipe_name": "Telur Balado",
+      "path": "ingredients -> 0 -> bumbu -> 3",
+      "error": "'name' is a required property",
+      "status": "error"
+    },
+    {
+      "recipe_id": "11",
+      "recipe_name": "Telur Balado",
+      "path": "ingredients -> 0 -> bumbu -> 3",
+      "error": "'quantity' is a required property",
+      "status": "error"
+    },
+    {
+      "recipe_id": "11",
+      "recipe_name": "Telur Balado",
+      "path": "ingredients -> 0 -> bumbu -> 4",
+      "error": "'name' is a required property",
+      "status": "error"
+    },
+    {
+      "recipe_id": "11",
+      "recipe_name": "Telur Balado",
+      "path": "ingredients -> 0 -> bumbu -> 4",
+      "error": "'quantity' is a required property",
+      "status": "error"
+    },
+    {
+      "recipe_id": "11",
+      "recipe_name": "Telur Balado",
+      "path": "ingredients -> 0 -> bumbu -> 5",
+      "error": "'name' is a required property",
+      "status": "error"
+    },
+    {
+      "recipe_id": "11",
+      "recipe_name": "Telur Balado",
+      "path": "ingredients -> 0 -> bumbu -> 5",
+      "error": "'quantity' is a required property",
+      "status": "error"
+    },
+    {
+      "recipe_id": "11",
+      "recipe_name": "Telur Balado",
+      "path": "ingredients -> 0 -> bumbu -> 6",
+      "error": "'name' is a required property",
+      "status": "error"
+    },
+    {
+      "recipe_id": "11",
+      "recipe_name": "Telur Balado",
+      "path": "ingredients -> 0 -> bumbu -> 6",
+      "error": "'quantity' is a required property",
+      "status": "error"
+    },
+    {
+      "recipe_id": "11",
+      "recipe_name": "Telur Balado",
+      "path": "ingredients -> 0 -> bumbu -> 7",
+      "error": "'name' is a required property",
+      "status": "error"
+    },
+    {
+      "recipe_id": "11",
+      "recipe_name": "Telur Balado",
+      "path": "ingredients -> 0 -> bumbu -> 7",
+      "error": "'quantity' is a required property",
+      "status": "error"
+    },
+    {
+      "recipe_id": "11",
+      "recipe_name": "Telur Balado",
+      "path": "ingredients -> 0 -> bumbu -> 8",
+      "error": "'name' is a required property",
+      "status": "error"
+    },
+    {
+      "recipe_id": "11",
+      "recipe_name": "Telur Balado",
+      "path": "ingredients -> 0 -> bumbu -> 8",
+      "error": "'quantity' is a required property",
+      "status": "error"
     },
     {
       "recipe_id": "12",
@@ -65,5 +1337,78 @@
       "status": "valid"
     }
   ],
-  "quality_issues": []
+  "quality_issues": [
+    {
+      "recipe_id": "6",
+      "recipe_name": "Tahu Telur Surabaya",
+      "type": "cost_mismatch",
+      "message": "Cost mismatch: recipe says 25000, store total is 0"
+    },
+    {
+      "recipe_id": "6",
+      "recipe_name": "Tahu Telur Surabaya",
+      "type": "cost_mismatch",
+      "message": "Cost mismatch: recipe says 25000, store total is 0"
+    },
+    {
+      "recipe_id": "7",
+      "recipe_name": "Tempe Mendoan",
+      "type": "cost_mismatch",
+      "message": "Cost mismatch: recipe says 20000, store total is 0"
+    },
+    {
+      "recipe_id": "7",
+      "recipe_name": "Tempe Mendoan",
+      "type": "cost_mismatch",
+      "message": "Cost mismatch: recipe says 20000, store total is 0"
+    },
+    {
+      "recipe_id": "8",
+      "recipe_name": "Telur Dadar Padang",
+      "type": "cost_mismatch",
+      "message": "Cost mismatch: recipe says 15000, store total is 0"
+    },
+    {
+      "recipe_id": "8",
+      "recipe_name": "Telur Dadar Padang",
+      "type": "cost_mismatch",
+      "message": "Cost mismatch: recipe says 15000, store total is 0"
+    },
+    {
+      "recipe_id": "9",
+      "recipe_name": "Tahu Gejrot",
+      "type": "cost_mismatch",
+      "message": "Cost mismatch: recipe says 15000, store total is 0"
+    },
+    {
+      "recipe_id": "9",
+      "recipe_name": "Tahu Gejrot",
+      "type": "cost_mismatch",
+      "message": "Cost mismatch: recipe says 15000, store total is 0"
+    },
+    {
+      "recipe_id": "10",
+      "recipe_name": "Botok Tempe Lamtoro",
+      "type": "cost_mismatch",
+      "message": "Cost mismatch: recipe says 25000, store total is 0"
+    },
+    {
+      "recipe_id": "10",
+      "recipe_name": "Botok Tempe Lamtoro",
+      "type": "cost_mismatch",
+      "message": "Cost mismatch: recipe says 25000, store total is 0"
+    },
+    {
+      "recipe_id": "11",
+      "recipe_name": "Telur Balado",
+      "type": "cost_mismatch",
+      "message": "Cost mismatch: recipe says 25000, store total is 0"
+    },
+    {
+      "recipe_id": "11",
+      "recipe_name": "Telur Balado",
+      "type": "cost_mismatch",
+      "message": "Cost mismatch: recipe says 25000, store total is 0"
+    }
+  ]
 }

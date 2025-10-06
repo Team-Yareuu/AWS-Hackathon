@@ -4,7 +4,7 @@
     "name": "Rendang Daging Sapi Padang",
     "shortDescription": "Rendang daging sapi autentik dengan bumbu rempah tradisional Minangkabau yang kaya cita rasa",
     "description": "Rendang daging sapi autentik dengan bumbu rempah tradisional Minangkabau yang kaya cita rasa",
-    "image": "https://api.meatguy.id/admin/image/blogs/6cfa140f-ccbc-4580-a4a0-9261b7af9aa9",
+    "image": "https://urrecipe.s3.ap-southeast-2.amazonaws.com/rendang-padang/1-main.png",
     "region": "Sumatera Barat",
     "difficulty": "Sedang",
     "cookingTimeMinutes": 180,
@@ -275,7 +275,7 @@
         "description": "Siapkan semua bahan. Potong daging sapi sesuai selera, bersihkan daun-daunan, dan haluskan bumbu dengan blender atau ulekan.",
         "duration": "20 menit",
         "difficulty": "mudah",
-        "image": "https://images.unsplash.com",
+        "image": "https://urrecipe.s3.ap-southeast-2.amazonaws.com/rendang-padang/2-persiapan-bahan.png",
         "tips": [
           "Gunakan daging berkualitas baik agar hasil empuk",
           "Potong daging melawan serat supaya lunak",
@@ -288,7 +288,7 @@
         "description": "Panaskan wajan besar, tumis bumbu halus bersama daun salam, daun kunyit, dan serai hingga harum dan matang.",
         "duration": "15 menit",
         "difficulty": "sedang",
-        "image": "https://images.unsplash.com",
+        "image": "https://urrecipe.s3.ap-southeast-2.amazonaws.com/rendang-padang/3-menumis-bumbu.png",
         "tips": [
           "Gunakan api sedang dan aduk terus",
           "Pastikan bumbu benar-benar matang agar tidak langu",
@@ -301,7 +301,7 @@
         "description": "Masukkan daging sapi ke dalam tumisan bumbu, aduk hingga semua daging terbalut bumbu. Masak hingga daging berubah warna.",
         "duration": "10 menit",
         "difficulty": "sedang",
-        "image": "https://images.unsplash.com",
+        "image": "https://urrecipe.s3.ap-southeast-2.amazonaws.com/rendang-padang/4-memasak-bahan.png",
         "tips": [
           "Gunakan api sedang cenderung besar",
           "Aduk agar bumbu merata",
@@ -314,7 +314,7 @@
         "description": "Tuang santan kental, masak dengan api kecil sambil terus diaduk perlahan agar santan tidak pecah. Masak hingga santan mendidih.",
         "duration": "15 menit",
         "difficulty": "sedang",
-        "image": "https://images.unsplash.com",
+        "image": "https://urrecipe.s3.ap-southeast-2.amazonaws.com/rendang-padang/5-menambahkan-santan.png",
         "tips": [
           "Aduk perlahan agar santan tidak pecah",
           "Gunakan spatula kayu saat mengaduk",
@@ -327,7 +327,7 @@
         "description": "Masak rendang dengan api kecil selama 2-3 jam hingga santan menyusut dan bumbu mengental. Aduk sesekali agar tidak gosong.",
         "duration": "120 menit",
         "difficulty": "sulit",
-        "image": "https://images.unsplash.com",
+        "image": "https://urrecipe.s3.ap-southeast-2.amazonaws.com/rendang-padang/6-mengentalkan-bumbu.png",
         "tips": [
           "Gunakan wajan tebal agar panas merata",
           "Aduk dari bawah ke atas agar tidak gosong",
@@ -340,7 +340,7 @@
         "description": "Ketika rendang sudah kering dan berwarna cokelat kehitaman, angkat dari api. Koreksi rasa terakhir kali. Sajikan rendang dengan nasi putih hangat.",
         "duration": "10 menit",
         "difficulty": "mudah",
-        "image": "https://images.unsplash.com",
+        "image": "https://urrecipe.s3.ap-southeast-2.amazonaws.com/rendang-padang/7-penyelesaian.png",
         "tips": [
           "Rendang yang baik berwarna cokelat kehitaman",
           "Daging harus empuk dan bumbu meresap sempurna",
@@ -354,7 +354,7 @@
     "name": "Ayam Woku Manado",
     "shortDescription": "Ayam woku adalah hidangan ayam khas Manado yang pedas dan kaya akan bumbu rempah.",
     "description": "Ayam woku adalah hidangan ayam khas Manado, Sulawesi Utara, yang terkenal dengan cita rasanya yang pedas, segar, dan kaya akan aroma rempah. Nama 'woku' merujuk pada daun woka, sejenis daun lontar yang secara tradisional digunakan untuk membungkus makanan. Bumbu woku sendiri merupakan perpaduan dari berbagai rempah seperti kunyit, jahe, serai, daun jeruk, dan yang paling khas adalah daun kemangi yang memberikan aroma segar yang kuat.",
-    "image": "/Asset/ayam-woku/3-menumis-bumbu.png",
+    "image": "https://urrecipe.s3.ap-southeast-2.amazonaws.com/ayam-woku/step-1.png",
     "region": "Sulawesi Utara",
     "difficulty": "Sedang",
     "cookingTimeMinutes": 60,
@@ -540,7 +540,7 @@
         "description": "Cuci bersih ayam, lumuri dengan perasan jeruk nipis dan garam. Diamkan selama 15 menit untuk menghilangkan bau amis.",
         "duration": "15 menit",
         "difficulty": "mudah",
-        "image": "https://images.unsplash.com/photo-1588195538326-c5b1e9f80a1b",
+        "image": "https://urrecipe.s3.ap-southeast-2.amazonaws.com/ayam-woku/step-2.png",
         "tips": [
           "Gunakan ayam kampung untuk rasa yang lebih gurih.",
           "Pastikan semua bagian ayam terlumuri bumbu."
@@ -552,7 +552,7 @@
         "description": "Haluskan bawang merah, bawang putih, cabai merah, cabai rawit, kemiri, dan kunyit menggunakan blender atau ulekan. Tambahkan sedikit minyak agar lebih mudah dihaluskan.",
         "duration": "10 menit",
         "difficulty": "mudah",
-        "image": "https://images.unsplash.com/photo-1615385549299-a838584a6874",
+        "image": "https://urrecipe.s3.ap-southeast-2.amazonaws.com/ayam-woku/step-3.png",
         "tips": [
           "Sangrai kemiri terlebih dahulu untuk aroma yang lebih kuat."
         ]
@@ -563,7 +563,7 @@
         "description": "Panaskan minyak di wajan, tumis bumbu halus hingga harum. Masukkan serai yang sudah dimemarkan dan daun salam, tumis hingga bumbu matang dan warnanya sedikit lebih gelap.",
         "duration": "10 menit",
         "difficulty": "sedang",
-        "image": "https://images.unsplash.com/photo-1551690348-1343e0a95b99",
+        "image": "https://urrecipe.s3.ap-southeast-2.amazonaws.com/ayam-woku/step-4.png",
         "tips": [
           "Gunakan api sedang agar bumbu tidak gosong.",
           "Pastikan bumbu benar-benar matang agar tidak langu."
@@ -575,7 +575,7 @@
         "description": "Masukkan potongan ayam ke dalam tumisan bumbu. Aduk hingga ayam terbalut rata dengan bumbu. Masak hingga ayam berubah warna.",
         "duration": "10 menit",
         "difficulty": "sedang",
-        "image": "https://images.unsplash.com/photo-1604537466108-7a9fa89a3a32",
+        "image": "https://urrecipe.s3.ap-southeast-2.amazonaws.com/ayam-woku/step-5.png",
         "tips": [
           "Aduk sesekali agar ayam tidak lengket di wajan."
         ]
@@ -586,7 +586,7 @@
         "description": "Tuangkan air, lalu tambahkan penyedap rasa dan garam. Aduk rata, koreksi rasa. Masak dan biarkan hingga bumbu meresap dan kuah sedikit mengental.",
         "duration": "10 menit",
         "difficulty": "sedang",
-        "image": "https://images.unsplash.com/photo-1555939594-58d7cb561ad1",
+        "image": "https://urrecipe.s3.ap-southeast-2.amazonaws.com/ayam-woku/step-6.png",
         "tips": [
           "Masak dengan api kecil-sedang agar bumbu meresap sempurna."
         ]
@@ -597,7 +597,7 @@
         "description": "Setelah kuah mengental dan ayam matang, masukkan daun kemangi. Masak sebentar sekitar 2-3 menit hingga daun kemangi layu. Angkat dan Ayam Woku Manado siap disajikan.",
         "duration": "5 menit",
         "difficulty": "mudah",
-        "image": "https://images.unsplash.com/photo-1604537466528-61a59a5a3fba",
+        "image": "https://urrecipe.s3.ap-southeast-2.amazonaws.com/ayam-woku/step-7.png",
         "tips": [
           "Jangan memasak kemangi terlalu lama agar aromanya tetap segar.",
           "Sajikan selagi hangat dengan nasi putih."
@@ -610,7 +610,7 @@
     "name": "Soto Ayam Lamongan",
     "shortDescription": "Soto ayam bening khas Lamongan dengan kuah kuning gurih dan taburan koya yang khas.",
     "description": "Soto Ayam Lamongan adalah salah satu ikon kuliner dari Jawa Timur. Berbeda dengan soto dari daerah lain, soto ini memiliki kuah bening kekuningan yang gurih dari kaldu ayam kampung dan rempah-rempah. Ciri khas utamanya adalah taburan koya, yaitu bubuk kerupuk udang yang dicampur dengan bawang putih goreng, yang memberikan tekstur dan rasa unik pada soto ini.",
-    "image": "https://images.unsplash.com/photo-1584238334428-e0a762b15afa",
+    "image": "https://urrecipe.s3.ap-southeast-2.amazonaws.com/soto-lamongan/step-1.png",
     "region": "Jawa Timur",
     "difficulty": "Sedang",
     "cookingTimeMinutes": 45,
@@ -719,6 +719,66 @@
               "unit": "cm"
             },
             "notes": "Memarkan"
+          }
+        ],
+        "bumbu": [
+          {
+            "name": "Bawang Merah",
+            "quantity": {
+              "value": 4,
+              "unit": "siung"
+            }
+          },
+          {
+            "name": "Bawang Putih",
+            "quantity": {
+              "value": 2,
+              "unit": "siung"
+            }
+          },
+          {
+            "name": "Kemiri",
+            "quantity": {
+              "value": 2,
+              "unit": "butir"
+            },
+            "notes": "Sangrai"
+          },
+          {
+            "name": "Kunyit",
+            "quantity": {
+              "value": 1,
+              "unit": "cm"
+            },
+            "notes": "Bakar"
+          },
+          {
+            "name": "Jahe",
+            "quantity": {
+              "value": 1,
+              "unit": "cm"
+            }
+          },
+          {
+            "name": "Merica butiran",
+            "quantity": {
+              "value": 1,
+              "unit": "sdt"
+            }
+          },
+          {
+            "name": "Garam",
+            "quantity": {
+              "value": 1,
+              "unit": "sdt"
+            }
+          },
+          {
+            "name": "Gula Pasir",
+            "quantity": {
+              "value": 1,
+              "unit": "sdt"
+            }
           },
           {
             "name": "Soun",
@@ -774,30 +834,12 @@
             }
           },
           {
-            "name": "Kerupuk Udang (untuk koya)",
+            "name": "Kerupuk Udang",
             "quantity": {
               "value": 50,
               "unit": "gram"
             },
-            "notes": "Goreng, haluskan"
-          },
-          {
-            "name": "Bawang Putih (untuk koya)",
-            "quantity": {
-              "value": 2,
-              "unit": "siung"
-            },
-            "notes": "Iris tipis, goreng kering, haluskan"
-          }
-        ],
-        "bumbu": [
-          {
-            "name": "Bawang Merah",
-            "quantity": {
-              "value": 4,
-              "unit": "siung"
-            },
-            "notes": "Haluskan"
+            "notes": "Goreng"
           },
           {
             "name": "Bawang Putih",
@@ -805,53 +847,7 @@
               "value": 2,
               "unit": "siung"
             },
-            "notes": "Haluskan"
-          },
-          {
-            "name": "Kemiri",
-            "quantity": {
-              "value": 2,
-              "unit": "butir"
-            },
-            "notes": "Sangrai, haluskan"
-          },
-          {
-            "name": "Kunyit",
-            "quantity": {
-              "value": 1,
-              "unit": "cm"
-            },
-            "notes": "Bakar, haluskan"
-          },
-          {
-            "name": "Jahe",
-            "quantity": {
-              "value": 1,
-              "unit": "cm"
-            },
-            "notes": "Haluskan"
-          },
-          {
-            "name": "Merica butiran",
-            "quantity": {
-              "value": 1,
-              "unit": "sdt"
-            },
-            "notes": "Haluskan"
-          },
-          {
-            "name": "Garam",
-            "quantity": {
-              "value": 1,
-              "unit": "sdt"
-            }
-          },
-          {
-            "name": "Gula Pasir",
-            "quantity": {
-              "value": 1,
-              "unit": "sdt"
-            }
+            "notes": "Iris tipis, goreng kering"
           }
         ]
       }
@@ -863,7 +859,7 @@
         "description": "Rebus ayam dalam 1 liter air hingga empuk. Angkat ayam, saring kaldunya. Sisihkan.",
         "duration": "25 menit",
         "difficulty": "mudah",
-        "image": "https://images.unsplash.com/photo-1625650523349-3a3b3a3b3a3b",
+        "image": "https://urrecipe.s3.ap-southeast-2.amazonaws.com/soto-lamongan/step-2.png",
         "tips": [
           "Gunakan api kecil saat merebus agar kaldu bening.",
           "Buang buih yang muncul di permukaan kaldu."
@@ -875,7 +871,7 @@
         "description": "Goreng ayam yang sudah direbus hingga kecoklatan, lalu suwir-suwir dagingnya. Untuk koya, haluskan kerupuk udang dan bawang putih goreng hingga menjadi bubuk.",
         "duration": "10 menit",
         "difficulty": "sedang",
-        "image": "https://images.unsplash.com/photo-1625650523349-3a3b3a3b3a3b",
+        "image": "https://urrecipe.s3.ap-southeast-2.amazonaws.com/soto-lamongan/step-3.png",
         "tips": [
           "Jangan menggoreng ayam terlalu kering agar tidak keras.",
           "Gunakan blender atau ulekan untuk menghaluskan koya."
@@ -887,7 +883,7 @@
         "description": "Panaskan sedikit minyak, tumis bumbu halus hingga harum. Masukkan serai, daun jeruk, dan lengkuas, aduk hingga matang.",
         "duration": "5 menit",
         "difficulty": "mudah",
-        "image": "https://images.unsplash.com/photo-1551690348-1343e0a95b99",
+        "image": "https://urrecipe.s3.ap-southeast-2.amazonaws.com/soto-lamongan/step-4.png",
         "tips": [
           "Pastikan bumbu benar-benar matang agar aroma soto lebih keluar."
         ]
@@ -898,7 +894,7 @@
         "description": "Masukkan tumisan bumbu ke dalam panci kaldu. Masak kembali hingga mendidih. Tambahkan garam dan gula, koreksi rasa.",
         "duration": "10 menit",
         "difficulty": "mudah",
-        "image": "https://images.unsplash.com/photo-1555939594-58d7cb561ad1",
+        "image": "https://urrecipe.s3.ap-southeast-2.amazonaws.com/soto-lamongan/step-5.png",
         "tips": [
           "Didihkan kuah beberapa saat agar bumbu meresap."
         ]
@@ -909,24 +905,24 @@
         "description": "Tata soun, tauge, dan suwiran ayam dalam mangkuk. Siram dengan kuah soto panas. Beri pelengkap irisan telur, seledri, bawang goreng, dan perasan jeruk nipis. Terakhir, taburkan koya di atasnya.",
         "duration": "5 menit",
         "difficulty": "mudah",
-        "image": "https://images.unsplash.com/photo-1584238334428-e0a762b15afa",
+        "image": "https://urrecipe.s3.ap-southeast-2.amazonaws.com/soto-lamongan/step-6.png",
         "tips": [
           "Sajikan soto selagi panas dengan sambal rawit."
         ]
       }
     ]
   },
-  {
+    {
     "id": "4",
     "name": "Gulai Ikan Patin",
     "shortDescription": "Gulai ikan patin khas Jambi dengan kuah kuning kental, rasa asam pedas yang segar dari tempoyak.",
     "description": "Gulai Ikan Patin adalah masakan berkuah santan yang populer di Jambi dan daerah Melayu lainnya. Keunikan gulai ini adalah penggunaan tempoyak, yaitu fermentasi durian, yang memberikan rasa asam yang khas dan aroma yang unik. Daging ikan patin yang lembut dan berlemak sangat cocok dipadukan dengan kuah gulai yang pedas, gurih, dan asam, menciptakan harmoni rasa yang kompleks dan menggugah selera.",
-    "image": "https://images.unsplash.com/photo-1579584425555-c3ce17fd4351",
+    "image": "https://urrecipe.s3.ap-southeast-2.amazonaws.com/gulai-patin/step-1.png",
     "region": "Jambi",
     "difficulty": "Sedang",
     "cookingTimeMinutes": 45,
     "servings": 4,
-    "estimatedCost": 40000,
+    "estimatedCost": 39420,
     "isTraditional": true,
     "isNew": false,
     "culturalStory": {
@@ -1035,8 +1031,7 @@
             "quantity": {
               "value": 6,
               "unit": "buah"
-            },
-            "notes": "Haluskan"
+            }
           },
           {
             "name": "Cabai Rawit",
@@ -1044,31 +1039,28 @@
               "value": 4,
               "unit": "buah"
             },
-            "notes": "Haluskan, sesuai selera"
+            "notes": "Sesuai selera"
           },
           {
             "name": "Bawang Merah",
             "quantity": {
               "value": 4,
               "unit": "siung"
-            },
-            "notes": "Haluskan"
+            }
           },
           {
             "name": "Bawang Putih",
             "quantity": {
               "value": 3,
               "unit": "siung"
-            },
-            "notes": "Haluskan"
+            }
           },
           {
             "name": "Kunyit",
             "quantity": {
               "value": 2,
               "unit": "cm"
-            },
-            "notes": "Haluskan"
+            }
           },
           {
             "name": "Garam",
@@ -1094,7 +1086,7 @@
         "description": "Cuci bersih potongan ikan patin, lumuri dengan air perasan jeruk nipis dan sedikit garam untuk menghilangkan bau amis. Diamkan selama 15 menit, lalu bilas.",
         "duration": "10 menit",
         "difficulty": "mudah",
-        "image": "https://images.unsplash.com/photo-1580982327502-37551bae3c99",
+        "image": "https://urrecipe.s3.ap-southeast-2.amazonaws.com/gulai-patin/step-2.png",
         "tips": [
           "Pastikan ikan benar-benar segar untuk hasil terbaik."
         ]
@@ -1105,7 +1097,7 @@
         "description": "Haluskan semua bahan 'bumbu halus'. Tumis bumbu halus di wajan dengan sedikit minyak hingga harum. Masukkan serai dan daun kunyit, aduk hingga matang.",
         "duration": "5 menit",
         "difficulty": "mudah",
-        "image": "https://images.unsplash.com/photo-1551690348-1343e0a95b99",
+        "image": "https://urrecipe.s3.ap-southeast-2.amazonaws.com/gulai-patin/step-3.png",
         "tips": [
           "Menumis bumbu hingga matang akan membuat gulai lebih awet dan tidak langu."
         ]
@@ -1116,7 +1108,7 @@
         "description": "Masukkan santan ke dalam tumisan bumbu, aduk perlahan. Tambahkan tempoyak, aduk hingga larut. Masak hingga kuah mendidih sambil terus diaduk agar santan tidak pecah.",
         "duration": "10 menit",
         "difficulty": "sedang",
-        "image": "https://images.unsplash.com/photo-1555939594-58d7cb561ad1",
+        "image": "https://urrecipe.s3.ap-southeast-2.amazonaws.com/gulai-patin/step-4.png",
         "tips": [
           "Gunakan api sedang dan jangan berhenti mengaduk saat santan mulai panas."
         ]
@@ -1127,7 +1119,7 @@
         "description": "Setelah kuah mendidih, masukkan potongan ikan patin. Tambahkan garam dan gula. Masak dengan api kecil hingga ikan matang dan bumbu meresap. Koreksi rasa.",
         "duration": "15 menit",
         "difficulty": "sedang",
-        "image": "https://images.unsplash.com/photo-1579584425555-c3ce17fd4351",
+        "image": "https://urrecipe.s3.ap-southeast-2.amazonaws.com/gulai-patin/step-5.png",
         "tips": [
           "Jangan terlalu sering mengaduk setelah ikan masuk agar tidak hancur.",
           "Rasa gulai harus seimbang antara pedas, asam, dan gurih."
@@ -1139,7 +1131,7 @@
         "description": "Angkat gulai ikan patin dan sajikan selagi hangat. Hidangan ini sangat nikmat disantap dengan nasi putih.",
         "duration": "5 menit",
         "difficulty": "mudah",
-        "image": "https://images.unsplash.com/photo-1579584425555-c3ce17fd4351",
+        "image": "https://urrecipe.s3.ap-southeast-2.amazonaws.com/gulai-patin/step-6.png",
         "tips": [
           "Taburi dengan bawang goreng jika suka untuk menambah aroma."
         ]
@@ -1151,7 +1143,7 @@
     "name": "Asam Padeh Ikan Tongkol",
     "shortDescription": "Asam padeh (asam pedas) adalah masakan khas Minangkabau yang segar, pedas, dan tanpa santan.",
     "description": "Asam Padeh merupakan salah satu hidangan andalan dari Sumatera Barat. Berbeda dari gulai yang kental dengan santan, asam padeh memiliki kuah merah yang encer namun kaya rasa. Rasa asamnya berasal dari asam kandis, sementara rasa pedasnya dari gilingan cabai merah. Ikan tongkol yang padat dagingnya sangat cocok untuk masakan ini karena tidak mudah hancur saat dimasak.",
-    "image": "https://images.unsplash.com/photo-1598511829644-3c60b73b3374",
+    "image": "https://urrecipe.s3.ap-southeast-2.amazonaws.com/asam-padeh-tongkol/step-1.png",
     "region": "Sumatera Barat",
     "difficulty": "Sedang",
     "cookingTimeMinutes": 35,
@@ -1271,48 +1263,42 @@
             "quantity": {
               "value": 200,
               "unit": "gram"
-            },
-            "notes": "Haluskan"
+            }
           },
           {
             "name": "Bawang Merah",
             "quantity": {
               "value": 10,
               "unit": "siung"
-            },
-            "notes": "Haluskan"
+            }
           },
           {
             "name": "Bawang Putih",
             "quantity": {
               "value": 5,
               "unit": "siung"
-            },
-            "notes": "Haluskan"
+            }
           },
           {
             "name": "Jahe",
             "quantity": {
               "value": 2,
               "unit": "cm"
-            },
-            "notes": "Haluskan"
+            }
           },
           {
             "name": "Kunyit",
             "quantity": {
               "value": 2,
               "unit": "cm"
-            },
-            "notes": "Haluskan"
+            }
           },
           {
             "name": "Lengkuas",
             "quantity": {
               "value": 2,
               "unit": "cm"
-            },
-            "notes": "Haluskan"
+            }
           },
           {
             "name": "Garam",
@@ -1331,7 +1317,7 @@
         "description": "Haluskan bawang merah, bawang putih, jahe, kunyit, dan lengkuas. Campurkan dengan cabai giling.",
         "duration": "5 menit",
         "difficulty": "mudah",
-        "image": "https://images.unsplash.com/photo-1615385549299-a838584a6874",
+        "image": "https://urrecipe.s3.ap-southeast-2.amazonaws.com/asam-padeh-tongkol/step-2.png",
         "tips": [
           "Gunakan cabai giling segar dari pasar untuk rasa otentik."
         ]
@@ -1342,7 +1328,7 @@
         "description": "Masukkan air ke dalam wajan. Tambahkan bumbu halus, daun kunyit, daun jeruk, serai, dan asam kandis. Masak hingga mendidih.",
         "duration": "10 menit",
         "difficulty": "mudah",
-        "image": "https://images.unsplash.com/photo-1555939594-58d7cb561ad1",
+        "image": "https://urrecipe.s3.ap-southeast-2.amazonaws.com/asam-padeh-tongkol/step-3.png",
         "tips": [
           "Memasak bumbu dengan air terlebih dahulu akan mematangkan bumbu tanpa minyak."
         ]
@@ -1353,7 +1339,7 @@
         "description": "Setelah kuah bumbu mendidih dan harum, masukkan potongan ikan tongkol. Pastikan semua ikan terendam kuah.",
         "duration": "5 menit",
         "difficulty": "mudah",
-        "image": "https://images.unsplash.com/photo-1598511829644-3c60b73b3374",
+        "image": "https://urrecipe.s3.ap-southeast-2.amazonaws.com/asam-padeh-tongkol/step-4.png",
         "tips": [
           "Jangan mengaduk terlalu kasar agar ikan tidak hancur."
         ]
@@ -1364,7 +1350,7 @@
         "description": "Tambahkan garam. Masak dengan api sedang hingga ikan matang dan kuah sedikit menyusut serta mengental. Koreksi rasa asam dan pedasnya.",
         "duration": "15 menit",
         "difficulty": "sedang",
-        "image": "https://images.unsplash.com/photo-1598511829644-3c60b73b3374",
+        "image": "https://urrecipe.s3.ap-southeast-2.amazonaws.com/asam-padeh-tongkol/step-5.png",
         "tips": [
           "Rasa asam padeh yang baik adalah yang seimbang antara asam, pedas, dan gurih.",
           "Hidangan ini akan lebih sedap jika dipanaskan kembali keesokan harinya."
@@ -1377,7 +1363,7 @@
     "name": "Tahu Telur Surabaya",
     "shortDescription": "Tahu telur khas Surabaya dengan saus kacang yang gurih dan segar",
     "description": "Tahu Telur Surabaya adalah hidangan ikonik dari kota pahlawan yang menggabungkan kelezatan tahu yang digoreng dengan telur, disiram saus kacang yang khas, dan disajikan dengan tauge segar serta bumbu pelengkap. Hidangan ini terkenal dengan teksturnya yang renyah di luar namun lembut di dalam, dengan paduan rasa gurih, manis, dan sedikit pedas dari sausnya.",
-    "image": "https://images.unsplash.com/photo-1572656934803-d2162b2e76bf",
+    "image": "https://urrecipe.s3.ap-southeast-2.amazonaws.com/tahu-telur-surabaya/step-1.png",
     "region": "Jawa Timur",
     "difficulty": "Mudah",
     "cookingTimeMinutes": 30,
@@ -1392,14 +1378,12 @@
         {
           "region": "Surabaya",
           "description": "Versi asli menggunakan petis udang dalam saus kacangnya",
-          "difference": "Penggunaan petis udang dan tauge yang masih mentah",
-          "province": "Jawa Timur"
+          "difference": "Penggunaan petis udang dan tauge yang masih mentah"
         },
         {
           "region": "Malang",
           "description": "Menggunakan saus kacang tanpa petis",
-          "difference": "Saus lebih manis dan tidak menggunakan petis",
-          "province": "Jawa Timur"
+          "difference": "Saus lebih manis dan tidak menggunakan petis"
         }
       ]
     },
@@ -1407,119 +1391,21 @@
       "offlineStores": [
         {
           "name": "Pasar Wonokromo",
-          "location": {
-            "lat": -7.2575,
-            "lng": 112.7521
-          },
+          "location": "Surabaya",
           "priceRange": {
             "min": 20000,
             "max": 25000
           },
-          "bestTimeToVisit": "Pagi hari, 06.00-10.00",
-          "address": "Pasar Wonokromo, {'lat': -7.2575, 'lng': 112.7521}",
-          "openingHours": "06.00 - 18.00",
-          "estimatedDistance": 2.0,
-          "rincianBahan": [
-            {
-              "name": "Tahu putih",
-              "quantity": {
-                "value": 2,
-                "unit": "potong"
-              },
-              "estimatedPrice": 3000
-            },
-            {
-              "name": "Telur ayam",
-              "quantity": {
-                "value": 2,
-                "unit": "butir"
-              },
-              "estimatedPrice": 6000
-            },
-            {
-              "name": "Tauge",
-              "quantity": {
-                "value": 100,
-                "unit": "gram"
-              },
-              "estimatedPrice": 2000
-            },
-            {
-              "name": "Kacang tanah",
-              "quantity": {
-                "value": 100,
-                "unit": "gram"
-              },
-              "estimatedPrice": 5000
-            },
-            {
-              "name": "Bumbu dan rempah",
-              "quantity": {
-                "value": null,
-                "unit": "secukupnya"
-              },
-              "estimatedPrice": 8000,
-              "note": "Bawang putih, petis udang, cabai rawit, gula merah, kecap manis, garam"
-            }
-          ]
+          "bestTimeToVisit": "Pagi hari, 06.00-10.00"
         },
         {
           "name": "Pasar Keputran",
-          "location": {
-            "lat": -7.2575,
-            "lng": 112.7521
-          },
+          "location": "Surabaya",
           "priceRange": {
             "min": 18000,
             "max": 23000
           },
-          "bestTimeToVisit": "Pagi hari, 05.00-09.00",
-          "address": "Pasar Keputran, {'lat': -7.2575, 'lng': 112.7521}",
-          "openingHours": "06.00 - 18.00",
-          "estimatedDistance": 2.0,
-          "rincianBahan": [
-            {
-              "name": "Tahu putih",
-              "quantity": {
-                "value": 2,
-                "unit": "potong"
-              },
-              "estimatedPrice": 2500
-            },
-            {
-              "name": "Telur ayam",
-              "quantity": {
-                "value": 2,
-                "unit": "butir"
-              },
-              "estimatedPrice": 5500
-            },
-            {
-              "name": "Tauge",
-              "quantity": {
-                "value": 100,
-                "unit": "gram"
-              },
-              "estimatedPrice": 1500
-            },
-            {
-              "name": "Kacang tanah",
-              "quantity": {
-                "value": 100,
-                "unit": "gram"
-              },
-              "estimatedPrice": 4500
-            },
-            {
-              "name": "Bumbu dan rempah",
-              "quantity": {
-                "value": null,
-                "unit": "secukupnya"
-              },
-              "estimatedPrice": 7500,
-              "note": "Bawang putih, petis udang, cabai rawit, gula merah, kecap manis, garam"
-            }
-          ]
+          "bestTimeToVisit": "Pagi hari, 05.00-09.00"
         }
       ]
     },
@@ -1527,85 +1413,65 @@
       {
         "bahan_utama": [
           {
-            "name": "tahu putih",
-            "quantity": {
-              "value": 2,
-              "unit": "potong"
-            },
+            "item": "tahu putih",
+            "amount": 2,
+            "unit": "potong",
             "notes": "Pilih tahu yang padat dan segar"
           },
           {
-            "name": "telur ayam",
-            "quantity": {
-              "value": 2,
-              "unit": "butir"
-            },
+            "item": "telur ayam",
+            "amount": 2,
+            "unit": "butir",
             "notes": "Ukuran sedang"
           },
           {
-            "name": "tauge",
-            "quantity": {
-              "value": 100,
-              "unit": "gram"
-            },
+            "item": "tauge",
+            "amount": 100,
+            "unit": "gram",
             "notes": "Pilih yang segar dan bersih"
           }
         ],
         "bumbu": [
           {
-            "name": "kacang tanah",
-            "quantity": {
-              "value": 100,
-              "unit": "gram"
-            },
+            "item": "kacang tanah",
+            "amount": 100,
+            "unit": "gram",
             "notes": "Goreng hingga matang"
           },
           {
-            "name": "bawang putih",
-            "quantity": {
-              "value": 2,
-              "unit": "siung"
-            },
+            "item": "bawang putih",
+            "amount": 2,
+            "unit": "siung",
             "notes": "Goreng"
           },
           {
-            "name": "petis udang",
-            "quantity": {
-              "value": 1,
-              "unit": "sdm"
-            },
+            "item": "petis udang",
+            "amount": 1,
+            "unit": "sdm",
             "notes": "Khas Surabaya"
           },
           {
-            "name": "cabai rawit",
-            "quantity": {
-              "value": 4,
-              "unit": "buah"
-            },
+            "item": "cabai rawit",
+            "amount": 4,
+            "unit": "buah",
             "notes": "Sesuai selera"
           },
           {
-            "name": "gula merah",
-            "quantity": {
-              "value": 1,
-              "unit": "sdm"
-            },
+            "item": "gula merah",
+            "amount": 1,
+            "unit": "sdm",
             "notes": "Sisir halus"
           },
           {
-            "name": "kecap manis",
-            "quantity": {
-              "value": 2,
-              "unit": "sdm"
-            },
+            "item": "kecap manis",
+            "amount": 2,
+            "unit": "sdm",
             "notes": "Sesuai selera"
           },
           {
-            "name": "garam",
-            "quantity": {
-              "value": 1,
-              "unit": "sdt"
-            },
+            "item": "garam",
+            "amount": 1,
+            "unit": "sdt",
             "notes": "Sesuai selera"
           }
         ]
@@ -1618,7 +1484,7 @@
         "description": "Haluskan kacang tanah goreng, bawang putih goreng, cabai rawit, dan petis udang. Tambahkan gula merah dan garam, aduk rata dengan sedikit air hingga menjadi saus yang tidak terlalu kental.",
         "duration": "10 menit",
         "difficulty": "mudah",
-        "image": "https://example.com/sauce-preparation.jpg",
+        "image": "https://urrecipe.s3.ap-southeast-2.amazonaws.com/tahu-telur-surabaya/step-2.png",
         "tips": [
           "Gunakan food processor untuk hasil yang lebih cepat",
           "Tambahkan air sedikit demi sedikit agar kekentalan pas"
@@ -1630,7 +1496,7 @@
         "description": "Potong tahu kecil-kecil, kocok telur dengan garam, masukkan potongan tahu. Goreng dalam minyak panas hingga kecokelatan dan matang.",
         "duration": "10 menit",
         "difficulty": "mudah",
-        "image": "https://example.com/frying.jpg",
+        "image": "https://urrecipe.s3.ap-southeast-2.amazonaws.com/tahu-telur-surabaya/step-3.png",
         "tips": [
           "Gunakan api sedang agar matang merata",
           "Balik sekali saja agar tidak hancur"
@@ -1642,7 +1508,7 @@
         "description": "Letakkan tahu telur di piring, tambahkan tauge segar di atasnya, siram dengan saus kacang, dan terakhir beri kecap manis. Taburi dengan bawang goreng dan daun seledri.",
         "duration": "5 menit",
         "difficulty": "mudah",
-        "image": "https://example.com/plating.jpg",
+        "image": "https://urrecipe.s3.ap-southeast-2.amazonaws.com/tahu-telur-surabaya/step-4.png",
         "tips": [
           "Sajikan selagi hangat",
           "Tambahkan kerupuk sebagai pelengkap"
@@ -1655,7 +1521,7 @@
     "name": "Tempe Mendoan",
     "shortDescription": "Tempe mendoan yang renyah di luar dan lembut di dalam khas Purwokerto",
     "description": "Tempe Mendoan adalah hidangan khas Purwokerto, Jawa Tengah, berupa tempe yang diiris tipis dan dibalut dengan adonan tepung berbumbu kemudian digoreng setengah matang. Kata 'mendoan' berasal dari bahasa Banyumas 'mendo' yang berarti setengah matang. Hidangan ini terkenal dengan teksturnya yang unik, renyah di luar namun masih lembut dan basah di dalam.",
-    "image": "https://images.unsplash.com/photo-1555507036-ab1f4038808a",
+    "image": "https://urrecipe.s3.ap-southeast-2.amazonaws.com/tempe-mendoan/step-1.png",
     "region": "Jawa Tengah",
     "difficulty": "Mudah",
     "cookingTimeMinutes": 30,
@@ -1670,14 +1536,12 @@
         {
           "region": "Purwokerto",
           "description": "Versi asli yang digoreng setengah matang",
-          "difference": "Tekstur lembut dan basah di dalam",
-          "province": "Jawa Tengah"
+          "difference": "Tekstur lembut dan basah di dalam"
         },
         {
           "region": "Yogyakarta",
           "description": "Digoreng hingga lebih kering",
-          "difference": "Tekstur lebih renyah dan kering",
-          "province": "Jawa Tengah"
+          "difference": "Tekstur lebih renyah dan kering"
         }
       ]
     },
@@ -1685,103 +1549,21 @@
       "offlineStores": [
         {
           "name": "Pasar Wage",
-          "location": {
-            "lat": -7.428,
-            "lng": 109.235
-          },
+          "location": "Purwokerto",
           "priceRange": {
             "min": 15000,
             "max": 20000
           },
-          "bestTimeToVisit": "Pagi hari, 06.00-10.00",
-          "address": "Pasar Wage, {'lat': -7.428, 'lng': 109.235}",
-          "openingHours": "06.00 - 18.00",
-          "estimatedDistance": 2.0,
-          "rincianBahan": [
-            {
-              "name": "Tempe",
-              "quantity": {
-                "value": 2,
-                "unit": "papan"
-              },
-              "estimatedPrice": 8000
-            },
-            {
-              "name": "Tepung terigu",
-              "quantity": {
-                "value": 250,
-                "unit": "gram"
-              },
-              "estimatedPrice": 4000
-            },
-            {
-              "name": "Daun bawang",
-              "quantity": {
-                "value": 2,
-                "unit": "batang"
-              },
-              "estimatedPrice": 2000
-            },
-            {
-              "name": "Bumbu dan rempah",
-              "quantity": {
-                "value": null,
-                "unit": "secukupnya"
-              },
-              "estimatedPrice": 5000,
-              "note": "Ketumbar, bawang putih, garam, minyak goreng"
-            }
-          ]
+          "bestTimeToVisit": "Pagi hari, 06.00-10.00"
         },
         {
           "name": "Pasar Manis",
-          "location": {
-            "lat": -7.428,
-            "lng": 109.235
-          },
+          "location": "Purwokerto",
           "priceRange": {
             "min": 15000,
             "max": 18000
           },
-          "bestTimeToVisit": "Pagi hari, 05.00-09.00",
-          "address": "Pasar Manis, {'lat': -7.428, 'lng': 109.235}",
-          "openingHours": "06.00 - 18.00",
-          "estimatedDistance": 2.0,
-          "rincianBahan": [
-            {
-              "name": "Tempe",
-              "quantity": {
-                "value": 2,
-                "unit": "papan"
-              },
-              "estimatedPrice": 7500
-            },
-            {
-              "name": "Tepung terigu",
-              "quantity": {
-                "value": 250,
-                "unit": "gram"
-              },
-              "estimatedPrice": 3500
-            },
-            {
-              "name": "Daun bawang",
-              "quantity": {
-                "value": 2,
-                "unit": "batang"
-              },
-              "estimatedPrice": 1500
-            },
-            {
-              "name": "Bumbu dan rempah",
-              "quantity": {
-                "value": null,
-                "unit": "secukupnya"
-              },
-              "estimatedPrice": 4500,
-              "note": "Ketumbar, bawang putih, garam, minyak goreng"
-            }
-          ]
+          "bestTimeToVisit": "Pagi hari, 05.00-09.00"
         }
       ]
     },
@@ -1789,61 +1571,47 @@
       {
         "bahan_utama": [
           {
-            "name": "tempe",
-            "quantity": {
-              "value": 2,
-              "unit": "papan"
-            },
+            "item": "tempe",
+            "amount": 2,
+            "unit": "papan",
             "notes": "Iris tipis sekitar 1 cm"
           }
         ],
         "bumbu": [
           {
-            "name": "tepung terigu",
-            "quantity": {
-              "value": 250,
-              "unit": "gram"
-            },
+            "item": "tepung terigu",
+            "amount": 250,
+            "unit": "gram",
             "notes": "Protein sedang"
           },
           {
-            "name": "daun bawang",
-            "quantity": {
-              "value": 2,
-              "unit": "batang"
-            },
+            "item": "daun bawang",
+            "amount": 2,
+            "unit": "batang",
             "notes": "Iris halus"
           },
           {
-            "name": "ketumbar",
-            "quantity": {
-              "value": 1,
-              "unit": "sdt"
-            },
+            "item": "ketumbar",
+            "amount": 1,
+            "unit": "sdt",
             "notes": "Haluskan"
           },
           {
-            "name": "bawang putih",
-            "quantity": {
-              "value": 3,
-              "unit": "siung"
-            },
+            "item": "bawang putih",
+            "amount": 3,
+            "unit": "siung",
             "notes": "Haluskan"
           },
           {
-            "name": "garam",
-            "quantity": {
-              "value": 1,
-              "unit": "sdt"
-            },
+            "item": "garam",
+            "amount": 1,
+            "unit": "sdt",
             "notes": "Sesuai selera"
           },
           {
-            "name": "air",
-            "quantity": {
-              "value": 300,
-              "unit": "ml"
-            },
+            "item": "air",
+            "amount": 300,
+            "unit": "ml",
             "notes": "Secukupnya hingga adonan tepung cukup encer"
           }
         ]
@@ -1856,7 +1624,7 @@
         "description": "Iris tempe dengan ketebalan sekitar 1 cm. Sisihkan.",
         "duration": "5 menit",
         "difficulty": "mudah",
-        "image": "https://example.com/tempe-slicing.jpg",
+        "image": "https://urrecipe.s3.ap-southeast-2.amazonaws.com/tempe-mendoan/step-2.png",
         "tips": [
           "Potong tempe dengan ketebalan yang sama agar matang merata",
           "Pilih tempe yang fresh dan padat"
@@ -1868,7 +1636,7 @@
         "description": "Campurkan tepung terigu, daun bawang, ketumbar, bawang putih halus, dan garam. Tambahkan air secukupnya hingga menjadi adonan yang cukup encer.",
         "duration": "10 menit",
         "difficulty": "mudah",
-        "image": "https://example.com/batter-mixing.jpg",
+        "image": "https://urrecipe.s3.ap-southeast-2.amazonaws.com/tempe-mendoan/step-3.png",
         "tips": [
           "Adonan harus cukup encer agar hasil gorengan tipis",
           "Aduk rata hingga tidak ada tepung yang menggumpal"
@@ -1880,7 +1648,7 @@
         "description": "Celupkan irisan tempe ke dalam adonan tepung, goreng dalam minyak panas dengan api sedang hingga setengah matang (karakteristik mendoan).",
         "duration": "15 menit",
         "difficulty": "sedang",
-        "image": "https://example.com/frying-mendoan.jpg",
+        "image": "https://urrecipe.s3.ap-southeast-2.amazonaws.com/tempe-mendoan/step-4.png",
         "tips": [
           "Goreng dengan api sedang agar tidak cepat gosong",
           "Angkat saat warna mulai keemasan tapi belum terlalu kering"
@@ -1893,7 +1661,7 @@
     "name": "Telur Dadar Padang",
     "shortDescription": "Telur dadar tebal khas Padang dengan bumbu rempah yang kaya",
     "description": "Telur Dadar Padang adalah versi mewah dari telur dadar biasa, dibuat dengan tambahan berbagai bumbu rempah, irisan daun bawang, dan kelapa sangrai yang memberikan tekstur dan rasa yang khas. Berbeda dari telur dadar biasa, versi Padang ini lebih tebal, berwarna oranye kecokelatan, dan memiliki rasa yang lebih kompleks.",
-    "image": "https://images.unsplash.com/photo-1588195538326-c5b1e9f80a1b",
+    "image": "https://urrecipe.s3.ap-southeast-2.amazonaws.com/telur-dadar-padang/step-1.png",
     "region": "Sumatera Barat",
     "difficulty": "Sedang",
     "cookingTimeMinutes": 20,
@@ -1908,14 +1676,12 @@
         {
           "region": "Padang",
           "description": "Versi asli yang tebal dengan kelapa sangrai",
-          "difference": "Menggunakan kelapa sangrai dan rempah lengkap",
-          "province": "Sumatera Barat"
+          "difference": "Menggunakan kelapa sangrai dan rempah lengkap"
         },
         {
           "region": "Bukittinggi",
           "description": "Lebih tipis dengan bumbu yang lebih pedas",
-          "difference": "Lebih pedas dan tidak menggunakan kelapa sangrai",
-          "province": "Sumatera Barat"
+          "difference": "Lebih pedas dan tidak menggunakan kelapa sangrai"
         }
       ]
     },
@@ -1923,87 +1689,21 @@
       "offlineStores": [
         {
           "name": "Pasar Raya Padang",
-          "location": {
-            "lat": -0.9471,
-            "lng": 100.4172
-          },
+          "location": "Padang",
           "priceRange": {
             "min": 12000,
             "max": 15000
           },
-          "bestTimeToVisit": "Pagi hari, 06.00-10.00",
-          "address": "Pasar Raya Padang, {'lat': -0.9471, 'lng': 100.4172}",
-          "openingHours": "06.00 - 18.00",
-          "estimatedDistance": 2.0,
-          "rincianBahan": [
-            {
-              "name": "Telur ayam",
-              "quantity": {
-                "value": 3,
-                "unit": "butir"
-              },
-              "estimatedPrice": 9000
-            },
-            {
-              "name": "Kelapa parut",
-              "quantity": {
-                "value": 4,
-                "unit": "sdm"
-              },
-              "estimatedPrice": 3000
-            },
-            {
-              "name": "Bumbu dan rempah",
-              "quantity": {
-                "value": null,
-                "unit": "secukupnya"
-              },
-              "estimatedPrice": 6000,
-              "note": "Bawang merah, bawang putih, cabai merah, kunyit, daun bawang, tepung beras, garam"
-            }
-          ]
+          "bestTimeToVisit": "Pagi hari, 06.00-10.00"
         },
         {
           "name": "Pasar Pagi Bukittinggi",
-          "location": {
-            "lat": -0.3059,
-            "lng": 100.3692
-          },
+          "location": "Bukittinggi",
           "priceRange": {
             "min": 10000,
             "max": 13000
           },
-          "bestTimeToVisit": "Pagi hari, 05.00-09.00",
-          "address": "Pasar Pagi Bukittinggi, {'lat': -0.3059, 'lng': 100.3692}",
-          "openingHours": "06.00 - 18.00",
-          "estimatedDistance": 2.0,
-          "rincianBahan": [
-            {
-              "name": "Telur ayam",
-              "quantity": {
-                "value": 3,
-                "unit": "butir"
-              },
-              "estimatedPrice": 8500
-            },
-            {
-              "name": "Kelapa parut",
-              "quantity": {
-                "value": 4,
-                "unit": "sdm"
-              },
-              "estimatedPrice": 2500
-            },
-            {
-              "name": "Bumbu dan rempah",
-              "quantity": {
-                "value": null,
-                "unit": "secukupnya"
-              },
-              "estimatedPrice": 5500,
-              "note": "Bawang merah, bawang putih, cabai merah, kunyit, daun bawang, tepung beras, garam"
-            }
-          ]
+          "bestTimeToVisit": "Pagi hari, 05.00-09.00"
         }
       ]
     },
@@ -2011,93 +1711,71 @@
       {
         "bahan_utama": [
           {
-            "name": "telur ayam",
-            "quantity": {
-              "value": 3,
-              "unit": "butir"
-            },
+            "item": "telur ayam",
+            "amount": 3,
+            "unit": "butir",
             "notes": "Ukuran sedang"
           },
           {
-            "name": "kelapa parut",
-            "quantity": {
-              "value": 4,
-              "unit": "sdm"
-            },
+            "item": "kelapa parut",
+            "amount": 4,
+            "unit": "sdm",
             "notes": "Sangrai hingga kecokelatan"
           }
         ],
         "bumbu": [
           {
-            "name": "bawang merah",
-            "quantity": {
-              "value": 5,
-              "unit": "siung"
-            },
+            "item": "bawang merah",
+            "amount": 5,
+            "unit": "siung",
             "notes": "Iris halus"
           },
           {
-            "name": "bawang putih",
-            "quantity": {
-              "value": 3,
-              "unit": "siung"
-            },
+            "item": "bawang putih",
+            "amount": 3,
+            "unit": "siung",
             "notes": "Haluskan"
           },
           {
-            "name": "cabai merah",
-            "quantity": {
-              "value": 3,
-              "unit": "buah"
-            },
+            "item": "cabai merah",
+            "amount": 3,
+            "unit": "buah",
             "notes": "Haluskan"
           },
           {
-            "name": "kunyit",
-            "quantity": {
-              "value": 1,
-              "unit": "ruas"
-            },
+            "item": "kunyit",
+            "amount": 1,
+            "unit": "ruas",
             "notes": "Haluskan"
           },
           {
-            "name": "daun bawang",
-            "quantity": {
-              "value": 2,
-              "unit": "batang"
-            },
+            "item": "daun bawang",
+            "amount": 2,
+            "unit": "batang",
             "notes": "Iris halus"
           },
           {
-            "name": "daun kunyit",
-            "quantity": {
-              "value": 1,
-              "unit": "lembar"
-            },
+            "item": "daun kunyit",
+            "amount": 1,
+            "unit": "lembar",
             "notes": "Iris halus (optional)"
           },
           {
-            "name": "tepung beras",
-            "quantity": {
-              "value": 1,
-              "unit": "sdm"
-            },
+            "item": "tepung beras",
+            "amount": 1,
+            "unit": "sdm",
             "notes": "Larutkan dengan sedikit air"
           },
           {
-            "name": "garam",
-            "quantity": {
-              "value": 1,
-              "unit": "sdt"
-            },
+            "item": "garam",
+            "amount": 1,
+            "unit": "sdt",
             "notes": "Sesuai selera"
           },
           {
-            "name": "kaldu bubuk",
-            "quantity": {
-              "value": 1,
-              "unit": "sdt"
-            },
+            "item": "kaldu bubuk",
+            "amount": 1,
+            "unit": "sdt",
             "notes": "Optional"
           }
         ]
@@ -2110,7 +1788,7 @@
         "description": "Sangrai kelapa parut hingga kecokelatan. Haluskan semua bumbu dan campurkan dengan kelapa sangrai.",
         "duration": "10 menit",
         "difficulty": "mudah",
-        "image": "https://example.com/prep-ingredients.jpg",
+        "image": "https://urrecipe.s3.ap-southeast-2.amazonaws.com/telur-dadar-padang/step-2.png",
         "tips": [
           "Sangrai kelapa dengan api kecil agar tidak gosong",
           "Pastikan bumbu benar-benar halus"
@@ -2122,7 +1800,7 @@
         "description": "Kocok telur sebentar saja, masukkan bumbu halus dan kelapa sangrai. Tambahkan tepung beras yang sudah dilarutkan, daun bawang, dan bumbu lainnya.",
         "duration": "5 menit",
         "difficulty": "mudah",
-        "image": "https://example.com/mixing-batter.jpg",
+        "image": "https://urrecipe.s3.ap-southeast-2.amazonaws.com/telur-dadar-padang/step-3.png",
         "tips": [
           "Jangan mengocok telur terlalu lama agar tidak kempes saat digoreng",
           "Aduk rata semua bahan"
@@ -2134,7 +1812,7 @@
         "description": "Panaskan minyak dalam wajan datar, tuang adonan telur, masak dengan api kecil hingga matang dan berwarna kecokelatan di kedua sisi.",
         "duration": "10 menit",
         "difficulty": "sedang",
-        "image": "https://example.com/frying-egg.jpg",
+        "image": "https://urrecipe.s3.ap-southeast-2.amazonaws.com/telur-dadar-padang/step-4.png",
         "tips": [
           "Gunakan api kecil agar matang merata",
           "Balik telur dengan hati-hati agar tidak hancur"
@@ -2147,12 +1825,12 @@
     "name": "Tahu Gejrot",
     "shortDescription": "Tahu goreng dengan kuah cuka pedas khas Cirebon",
     "description": "Tahu Gejrot adalah hidangan khas Cirebon yang terdiri dari tahu goreng yang dipotong kecil-kecil dan disiram dengan kuah cuka pedas yang segar. Kata 'gejrot' berasal dari cara penyajiannya di mana tahu 'digejrot' atau dihancurkan sebelum disiram kuah. Hidangan ini terkenal dengan kombinasi rasa gurih dari tahu, asam dari cuka, dan pedas dari cabai rawit.",
-    "image": "https://images.unsplash.com/photo-1577859714523-5f0b6c78557f",
+    "image": "https://urrecipe.s3.ap-southeast-2.amazonaws.com/tahu-gejrot/step-1.png",
     "region": "Jawa Barat",
     "difficulty": "Mudah",
     "cookingTimeMinutes": 25,
     "servings": 3,
-    "estimatedCost": 12000,
+    "estimatedCost": 15000,
     "isTraditional": true,
     "isNew": false,
     "culturalStory": {
@@ -2162,14 +1840,12 @@
         {
           "region": "Cirebon",
           "description": "Versi asli dengan kuah cuka bawang merah",
-          "difference": "Menggunakan cuka aren dan bawang merah mentah",
-          "province": "Jawa Barat"
+          "difference": "Menggunakan cuka aren dan bawang merah mentah"
         },
         {
           "region": "Jakarta",
           "description": "Adaptasi dengan kuah yang lebih manis",
-          "difference": "Kuah lebih manis dan tidak terlalu asam",
-          "province": "DKI Jakarta"
+          "difference": "Kuah lebih manis dan tidak terlalu asam"
         }
       ]
     },
@@ -2177,71 +1853,21 @@
       "offlineStores": [
         {
           "name": "Pasar Kanoman",
-          "location": {
-            "lat": -6.7063,
-            "lng": 108.5571
-          },
+          "location": "Cirebon",
           "priceRange": {
             "min": 10000,
             "max": 15000
           },
-          "bestTimeToVisit": "Sore hari, 15.00-18.00",
-          "address": "Pasar Kanoman, {'lat': -6.7063, 'lng': 108.5571}",
-          "openingHours": "06.00 - 18.00",
-          "estimatedDistance": 2.0,
-          "rincianBahan": [
-            {
-              "name": "Tahu putih",
-              "quantity": {
-                "value": 5,
-                "unit": "potong"
-              },
-              "estimatedPrice": 5000
-            },
-            {
-              "name": "Bumbu dan rempah",
-              "quantity": {
-                "value": null,
-                "unit": "secukupnya"
-              },
-              "estimatedPrice": 7000,
-              "note": "Bawang merah, cabai rawit, kecap manis, cuka aren, garam, gula pasir, minyak goreng"
-            }
-          ]
+          "bestTimeToVisit": "Sore hari, 15.00-18.00"
         },
         {
           "name": "Pasar Pagi",
-          "location": {
-            "lat": -6.7063,
-            "lng": 108.5571
-          },
+          "location": "Cirebon",
           "priceRange": {
             "min": 8000,
             "max": 12000
           },
-          "bestTimeToVisit": "Pagi hari, 06.00-10.00",
-          "address": "Pasar Pagi, {'lat': -6.7063, 'lng': 108.5571}",
-          "openingHours": "06.00 - 18.00",
-          "estimatedDistance": 2.0,
-          "rincianBahan": [
-            {
-              "name": "Tahu putih",
-              "quantity": {
-                "value": 5,
-                "unit": "potong"
-              },
-              "estimatedPrice": 4500
-            },
-            {
-              "name": "Bumbu dan rempah",
-              "quantity": {
-                "value": null,
-                "unit": "secukupnya"
-              },
-              "estimatedPrice": 6500,
-              "note": "Bawang merah, cabai rawit, kecap manis, cuka aren, garam, gula pasir, minyak goreng"
-            }
-          ]
+          "bestTimeToVisit": "Pagi hari, 06.00-10.00"
         }
       ]
     },
@@ -2249,61 +1875,47 @@
       {
         "bahan_utama": [
           {
-            "name": "tahu putih",
-            "quantity": {
-              "value": 5,
-              "unit": "potong"
-            },
+            "item": "tahu putih",
+            "amount": 5,
+            "unit": "potong",
             "notes": "Ukuran sedang"
           }
         ],
         "bumbu": [
           {
-            "name": "bawang merah",
-            "quantity": {
-              "value": 5,
-              "unit": "siung"
-            },
+            "item": "bawang merah",
+            "amount": 5,
+            "unit": "siung",
             "notes": "Iris tipis"
           },
           {
-            "name": "cabai rawit",
-            "quantity": {
-              "value": 10,
-              "unit": "buah"
-            },
+            "item": "cabai rawit",
+            "amount": 10,
+            "unit": "buah",
             "notes": "Sesuai selera"
           },
           {
-            "name": "kecap manis",
-            "quantity": {
-              "value": 2,
-              "unit": "sdm"
-            },
+            "item": "kecap manis",
+            "amount": 2,
+            "unit": "sdm",
             "notes": "Sesuai selera"
           },
           {
-            "name": "cuka",
-            "quantity": {
-              "value": 2,
-              "unit": "sdm"
-            },
+            "item": "cuka",
+            "amount": 2,
+            "unit": "sdm",
             "notes": "Cuka aren lebih autentik"
           },
           {
-            "name": "garam",
-            "quantity": {
-              "value": 1,
-              "unit": "sdt"
-            },
+            "item": "garam",
+            "amount": 1,
+            "unit": "sdt",
             "notes": "Sesuai selera"
           },
           {
-            "name": "gula pasir",
-            "quantity": {
-              "value": 1,
-              "unit": "sdm"
-            },
+            "item": "gula pasir",
+            "amount": 1,
+            "unit": "sdm",
             "notes": "Sesuai selera"
           }
         ]
@@ -2316,7 +1928,7 @@
         "description": "Potong tahu menjadi bentuk dadu kecil, goreng hingga kecokelatan dan renyah di luar. Sisihkan.",
         "duration": "10 menit",
         "difficulty": "mudah",
-        "image": "https://example.com/fried-tofu.jpg",
+        "image": "https://urrecipe.s3.ap-southeast-2.amazonaws.com/tahu-gejrot/step-2.png",
         "tips": [
           "Goreng tahu dengan minyak panas agar renyah",
           "Tiriskan dengan baik agar tidak berminyak"
@@ -2328,7 +1940,7 @@
         "description": "Campurkan air, cuka, kecap manis, garam, dan gula. Aduk rata. Tambahkan irisan bawang merah dan cabai rawit.",
         "duration": "5 menit",
         "difficulty": "mudah",
-        "image": "https://example.com/sauce-mixing.jpg",
+        "image": "https://urrecipe.s3.ap-southeast-2.amazonaws.com/tahu-gejrot/step-3.png",
         "tips": [
           "Sesuaikan rasa asam dan pedas sesuai selera",
           "Biarkan bumbu meresap beberapa saat"
@@ -2340,7 +1952,7 @@
         "description": "Tata tahu goreng dalam mangkuk, 'gejrot' atau hancurkan sedikit dengan sendok, kemudian siram dengan kuah. Sajikan segera.",
         "duration": "5 menit",
         "difficulty": "mudah",
-        "image": "https://example.com/serving.jpg",
+        "image": "https://urrecipe.s3.ap-southeast-2.amazonaws.com/tahu-gejrot/step-4.png",
         "tips": [
           "Sajikan selagi kuah masih segar",
           "Bisa tambahkan kecap manis saat penyajian"
@@ -2353,7 +1965,7 @@
     "name": "Botok Tempe Lamtoro",
     "shortDescription": "Botok tempe dengan lamtoro dan teri yang dibungkus daun pisang",
     "description": "Botok Tempe Lamtoro adalah hidangan tradisional Jawa yang terbuat dari tempe, lamtoro, dan teri yang dibumbui dengan kelapa parut dan rempah-rempah, kemudian dibungkus dengan daun pisang dan dikukus. Hidangan ini memiliki cita rasa gurih yang khas dengan aroma daun pisang yang menggugah selera.",
-    "image": "https://images.unsplash.com/photo-1504674900247-0877df9cc836",
+    "image": "https://urrecipe.s3.ap-southeast-2.amazonaws.com/botok-tempe-lamtaro/step-1.png",
     "region": "Jawa Tengah",
     "difficulty": "Sedang",
     "cookingTimeMinutes": 45,
@@ -2368,14 +1980,12 @@
         {
           "region": "Solo",
           "description": "Versi dengan tambahan pete dan udang rebon",
-          "difference": "Menggunakan pete dan lebih banyak udang rebon",
-          "province": "Jawa Tengah"
+          "difference": "Menggunakan pete dan lebih banyak udang rebon"
         },
         {
           "region": "Yogyakarta",
           "description": "Versi dengan tambahan daun melinjo",
-          "difference": "Menggunakan daun melinjo dan lebih pedas",
-          "province": "Jawa Tengah"
+          "difference": "Menggunakan daun melinjo dan lebih pedas"
         }
       ]
     },
@@ -2383,119 +1993,21 @@
       "offlineStores": [
         {
           "name": "Pasar Gede",
-          "location": {
-            "lat": -7.5755,
-            "lng": 110.8243
-          },
+          "location": "Solo",
           "priceRange": {
             "min": 20000,
             "max": 25000
           },
-          "bestTimeToVisit": "Pagi hari, 06.00-10.00",
-          "address": "Pasar Gede, {'lat': -7.5755, 'lng': 110.8243}",
-          "openingHours": "06.00 - 18.00",
-          "estimatedDistance": 2.0,
-          "rincianBahan": [
-            {
-              "name": "Tempe",
-              "quantity": {
-                "value": 2,
-                "unit": "papan"
-              },
-              "estimatedPrice": 8000
-            },
-            {
-              "name": "Lamtoro",
-              "quantity": {
-                "value": 100,
-                "unit": "gram"
-              },
-              "estimatedPrice": 3000
-            },
-            {
-              "name": "Teri",
-              "quantity": {
-                "value": 50,
-                "unit": "gram"
-              },
-              "estimatedPrice": 5000
-            },
-            {
-              "name": "Kelapa parut",
-              "quantity": {
-                "value": 200,
-                "unit": "gram"
-              },
-              "estimatedPrice": 4000
-            },
-            {
-              "name": "Bumbu dan rempah",
-              "quantity": {
-                "value": null,
-                "unit": "secukupnya"
-              },
-              "estimatedPrice": 8000,
-              "note": "Bawang merah, bawang putih, cabai merah, cabai rawit, daun salam, daun jeruk, lengkuas, garam"
-            }
-          ]
+          "bestTimeToVisit": "Pagi hari, 06.00-10.00"
         },
         {
           "name": "Pasar Beringharjo",
-          "location": {
-            "lat": -7.7956,
-            "lng": 110.3695
-          },
+          "location": "Yogyakarta",
           "priceRange": {
             "min": 18000,
             "max": 22000
           },
-          "bestTimeToVisit": "Pagi hari, 05.00-09.00",
-          "address": "Pasar Beringharjo, {'lat': -7.7956, 'lng': 110.3695}",
-          "openingHours": "06.00 - 18.00",
-          "estimatedDistance": 2.0,
-          "rincianBahan": [
-            {
-              "name": "Tempe",
-              "quantity": {
-                "value": 2,
-                "unit": "papan"
-              },
-              "estimatedPrice": 7500
-            },
-            {
-              "name": "Lamtoro",
-              "quantity": {
-                "value": 100,
-                "unit": "gram"
-              },
-              "estimatedPrice": 2500
-            },
-            {
-              "name": "Teri",
-              "quantity": {
-                "value": 50,
-                "unit": "gram"
-              },
-              "estimatedPrice": 4500
-            },
-            {
-              "name": "Kelapa parut",
-              "quantity": {
-                "value": 200,
-                "unit": "gram"
-              },
-              "estimatedPrice": 3500
-            },
-            {
-              "name": "Bumbu dan rempah",
-              "quantity": {
-                "value": null,
-                "unit": "secukupnya"
-              },
-              "estimatedPrice": 7500,
-              "note": "Bawang merah, bawang putih, cabai merah, cabai rawit, daun salam, daun jeruk, lengkuas, garam"
-            }
-          ]
+          "bestTimeToVisit": "Pagi hari, 05.00-09.00"
         }
       ]
     },
@@ -2503,101 +2015,77 @@
       {
         "bahan_utama": [
           {
-            "name": "tempe",
-            "quantity": {
-              "value": 2,
-              "unit": "papan"
-            },
+            "item": "tempe",
+            "amount": 2,
+            "unit": "papan",
             "notes": "Potong dadu kecil"
           },
           {
-            "name": "lamtoro",
-            "quantity": {
-              "value": 100,
-              "unit": "gram"
-            },
+            "item": "lamtoro",
+            "amount": 100,
+            "unit": "gram",
             "notes": "Kupas"
           },
           {
-            "name": "teri",
-            "quantity": {
-              "value": 50,
-              "unit": "gram"
-            },
+            "item": "teri",
+            "amount": 50,
+            "unit": "gram",
             "notes": "Rendam air panas"
           },
           {
-            "name": "kelapa parut",
-            "quantity": {
-              "value": 200,
-              "unit": "gram"
-            },
+            "item": "kelapa parut",
+            "amount": 200,
+            "unit": "gram",
             "notes": "Setengah tua"
           }
         ],
         "bumbu": [
           {
-            "name": "bawang merah",
-            "quantity": {
-              "value": 6,
-              "unit": "siung"
-            },
+            "item": "bawang merah",
+            "amount": 6,
+            "unit": "siung",
             "notes": "Iris halus"
           },
           {
-            "name": "bawang putih",
-            "quantity": {
-              "value": 4,
-              "unit": "siung"
-            },
+            "item": "bawang putih",
+            "amount": 4,
+            "unit": "siung",
             "notes": "Haluskan"
           },
           {
-            "name": "cabai merah",
-            "quantity": {
-              "value": 4,
-              "unit": "buah"
-            },
+            "item": "cabai merah",
+            "amount": 4,
+            "unit": "buah",
             "notes": "Iris serong"
           },
           {
-            "name": "cabai rawit",
-            "quantity": {
-              "value": 5,
-              "unit": "buah"
-            },
+            "item": "cabai rawit",
+            "amount": 5,
+            "unit": "buah",
             "notes": "Sesuai selera"
           },
           {
-            "name": "daun salam",
-            "quantity": {
-              "value": 4,
-              "unit": "lembar"
-            },
+            "item": "daun salam",
+            "amount": 4,
+            "unit": "lembar",
             "notes": "Sobek kasar"
           },
           {
-            "name": "daun jeruk",
-            "quantity": {
-              "value": 3,
-              "unit": "lembar"
-            },
+            "item": "daun jeruk",
+            "amount": 3,
+            "unit": "lembar",
             "notes": "Sobek kasar"
           },
           {
-            "name": "lengkuas",
-            "quantity": {
-              "value": 2,
-              "unit": "ruas"
-            },
+            "item": "lengkuas",
+            "amount": 2,
+            "unit": "ruas",
             "notes": "Geprek"
           },
           {
-            "name": "garam",
-            "quantity": {
-              "value": 1,
-              "unit": "sdt"
-            },
+            "item": "garam",
+            "amount": 1,
+            "unit": "sdt",
             "notes": "Sesuai selera"
           }
         ]
@@ -2610,7 +2098,7 @@
         "description": "Potong tempe kecil-kecil, siapkan lamtoro dan teri. Campur kelapa parut dengan bumbu halus dan irisan bumbu lainnya.",
         "duration": "15 menit",
         "difficulty": "mudah",
-        "image": "https://example.com/prep-ingredients.jpg",
+        "image": "https://urrecipe.s3.ap-southeast-2.amazonaws.com/botok-tempe-lamtaro/step-2.png",
         "tips": [
           "Pilih kelapa yang tidak terlalu tua",
           "Cuci bersih lamtoro untuk menghilangkan rasa pahit"
@@ -2622,7 +2110,7 @@
         "description": "Siapkan daun pisang, tata campuran bahan dan bumbu, bungkus dengan rapi dan semat dengan lidi.",
         "duration": "20 menit",
         "difficulty": "sedang",
-        "image": "https://example.com/wrapping.jpg",
+        "image": "https://urrecipe.s3.ap-southeast-2.amazonaws.com/botok-tempe-lamtaro/step-3.png",
         "tips": [
           "Lap daun pisang hingga bersih",
           "Buat bungkusan tidak terlalu penuh agar matang merata"
@@ -2634,7 +2122,7 @@
         "description": "Kukus botok dalam panci dengan api sedang selama 30-40 menit hingga matang dan aromanya harum.",
         "duration": "40 menit",
         "difficulty": "mudah",
-        "image": "https://example.com/steaming.jpg",
+        "image": "https://urrecipe.s3.ap-southeast-2.amazonaws.com/botok-tempe-lamtaro/step-4.png",
         "tips": [
           "Pastikan air kukusan cukup banyak",
           "Tunggu hingga benar-benar matang agar awet"
@@ -2647,12 +2135,12 @@
     "name": "Telur Balado",
     "shortDescription": "Telur rebus yang digoreng dan disiram sambal balado khas Minang",
     "description": "Telur Balado adalah hidangan populer dari Sumatera Barat yang terdiri dari telur rebus yang digoreng hingga kecokelatan kemudian disiram dengan sambal balado yang pedas dan gurih. Sambal balado yang khas dengan warna merah menggoda dibuat dari cabai merah, bawang, dan bumbu lainnya yang ditumis hingga matang dan berminyak.",
-    "image": "https://images.unsplash.com/photo-1588166524941-3bf61a9c41db",
+    "image": "https://urrecipe.s3.ap-southeast-2.amazonaws.com/telur-balado/step-1.png",
     "region": "Sumatera Barat",
     "difficulty": "Mudah",
     "cookingTimeMinutes": 35,
     "servings": 4,
-    "estimatedCost": 38000,
+    "estimatedCost": 25000,
     "isTraditional": true,
     "isNew": false,
     "culturalStory": {
@@ -2662,14 +2150,12 @@
         {
           "region": "Padang",
           "description": "Versi asli dengan sambal merah pekat",
-          "difference": "Sambal lebih berminyak dan pedas",
-          "province": "Sumatera Barat"
+          "difference": "Sambal lebih berminyak dan pedas"
         },
         {
           "region": "Pariaman",
           "description": "Dengan tambahan pete atau jengkol",
-          "difference": "Ditambah pete atau jengkol untuk aroma khas",
-          "province": "Indonesia"
+          "difference": "Ditambah pete atau jengkol untuk aroma khas"
         }
       ]
     },
@@ -2677,87 +2163,21 @@
       "offlineStores": [
         {
           "name": "Pasar Raya",
-          "location": {
-            "lat": -0.9471,
-            "lng": 100.4172
-          },
+          "location": "Padang",
           "priceRange": {
             "min": 20000,
             "max": 25000
           },
-          "bestTimeToVisit": "Pagi hari, 06.00-10.00",
-          "address": "Pasar Raya, {'lat': -0.9471, 'lng': 100.4172}",
-          "openingHours": "06.00 - 18.00",
-          "estimatedDistance": 2.0,
-          "rincianBahan": [
-            {
-              "name": "Telur ayam",
-              "quantity": {
-                "value": 8,
-                "unit": "butir"
-              },
-              "estimatedPrice": 24000
-            },
-            {
-              "name": "Cabai merah keriting",
-              "quantity": {
-                "value": 15,
-                "unit": "buah"
-              },
-              "estimatedPrice": 6000
-            },
-            {
-              "name": "Bumbu dan rempah",
-              "quantity": {
-                "value": null,
-                "unit": "secukupnya"
-              },
-              "estimatedPrice": 8000,
-              "note": "Cabai rawit, bawang merah, bawang putih, tomat, daun jeruk, serai, garam, gula"
-            }
-          ]
+          "bestTimeToVisit": "Pagi hari, 06.00-10.00"
         },
         {
           "name": "Pasar Pagi",
-          "location": {
-            "lat": -0.3059,
-            "lng": 100.3692
-          },
+          "location": "Bukittinggi",
           "priceRange": {
             "min": 18000,
             "max": 22000
           },
-          "bestTimeToVisit": "Pagi hari, 05.00-09.00",
-          "address": "Pasar Pagi, {'lat': -0.3059, 'lng': 100.3692}",
-          "openingHours": "06.00 - 18.00",
-          "estimatedDistance": 2.0,
-          "rincianBahan": [
-            {
-              "name": "Telur ayam",
-              "quantity": {
-                "value": 8,
-                "unit": "butir"
-              },
-              "estimatedPrice": 22500
-            },
-            {
-              "name": "Cabai merah keriting",
-              "quantity": {
-                "value": 15,
-                "unit": "buah"
-              },
-              "estimatedPrice": 5500
-            },
-            {
-              "name": "Bumbu dan rempah",
-              "quantity": {
-                "value": null,
-                "unit": "secukupnya"
-              },
-              "estimatedPrice": 7500,
-              "note": "Cabai rawit, bawang merah, bawang putih, tomat, daun jeruk, serai, garam, gula"
-            }
-          ]
+          "bestTimeToVisit": "Pagi hari, 05.00-09.00"
         }
       ]
     },
@@ -2765,85 +2185,65 @@
       {
         "bahan_utama": [
           {
-            "name": "telur ayam",
-            "quantity": {
-              "value": 8,
-              "unit": "butir"
-            },
+            "item": "telur ayam",
+            "amount": 8,
+            "unit": "butir",
             "notes": "Rebus hingga matang"
           }
         ],
         "bumbu": [
           {
-            "name": "cabai merah keriting",
-            "quantity": {
-              "value": 15,
-              "unit": "buah"
-            },
+            "item": "cabai merah keriting",
+            "amount": 15,
+            "unit": "buah",
             "notes": "Haluskan"
           },
           {
-            "name": "cabai rawit merah",
-            "quantity": {
-              "value": 5,
-              "unit": "buah"
-            },
+            "item": "cabai rawit merah",
+            "amount": 5,
+            "unit": "buah",
             "notes": "Sesuai selera"
           },
           {
-            "name": "bawang merah",
-            "quantity": {
-              "value": 8,
-              "unit": "siung"
-            },
+            "item": "bawang merah",
+            "amount": 8,
+            "unit": "siung",
             "notes": "Haluskan"
           },
           {
-            "name": "bawang putih",
-            "quantity": {
-              "value": 4,
-              "unit": "siung"
-            },
+            "item": "bawang putih",
+            "amount": 4,
+            "unit": "siung",
             "notes": "Haluskan"
           },
           {
-            "name": "tomat",
-            "quantity": {
-              "value": 2,
-              "unit": "buah"
-            },
+            "item": "tomat",
+            "amount": 2,
+            "unit": "buah",
             "notes": "Potong kasar"
           },
           {
-            "name": "daun jeruk",
-            "quantity": {
-              "value": 3,
-              "unit": "lembar"
-            },
+            "item": "daun jeruk",
+            "amount": 3,
+            "unit": "lembar",
             "notes": "Buang tulang daunnya"
           },
           {
-            "name": "serai",
-            "quantity": {
-              "value": 1,
-              "unit": "batang"
-            },
+            "item": "serai",
+            "amount": 1,
+            "unit": "batang",
             "notes": "Geprek"
           },
           {
-            "name": "garam",
-            "quantity": {
-              "value": 1,
-              "unit": "sdt"
-            },
+            "item": "garam",
+            "amount": 1,
+            "unit": "sdt",
             "notes": "Sesuai selera"
           },
           {
-            "name": "gula",
-            "quantity": {
-              "value": 1,
-              "unit": "sdt"
-            },
+            "item": "gula",
+            "amount": 1,
+            "unit": "sdt",
             "notes": "Sesuai selera"
           }
         ]
@@ -2856,7 +2256,7 @@
         "description": "Rebus telur hingga matang, kupas, lalu goreng sebentar hingga berkulit kecokelatan.",
         "duration": "15 menit",
         "difficulty": "mudah",
-        "image": "https://example.com/egg-prep.jpg",
+        "image": "https://urrecipe.s3.ap-southeast-2.amazonaws.com/telur-balado/step-2.png",
         "tips": [
           "Goreng telur dengan api sedang agar tidak keras",
           "Tiriskan telur goreng di atas tisu untuk mengurangi minyak"
@@ -2868,7 +2268,7 @@
         "description": "Haluskan cabai, bawang, dan tomat. Tumis bumbu halus bersama daun jeruk dan serai hingga matang dan berminyak.",
         "duration": "15 menit",
         "difficulty": "sedang",
-        "image": "https://example.com/sambal-cooking.jpg",
+        "image": "https://urrecipe.s3.ap-southeast-2.amazonaws.com/telur-balado/step-3.png",
         "tips": [
           "Tumis dengan api sedang hingga minyak keluar",
           "Masak hingga aroma langu hilang"
@@ -2880,7 +2280,7 @@
         "description": "Masukkan telur goreng ke dalam sambal, aduk rata hingga telur terbalut sambal dengan sempurna.",
         "duration": "5 menit",
         "difficulty": "mudah",
-        "image": "https://example.com/final-dish.jpg",
+        "image": "https://urrecipe.s3.ap-southeast-2.amazonaws.com/telur-balado/step-4.png",
         "tips": [
           "Aduk perlahan agar telur tidak pecah",
           "Biarkan sebentar agar bumbu meresap"
@@ -2893,7 +2293,7 @@
     "name": "Nasi Goreng Daun Mengkudu",
     "shortDescription": "Nasi goreng legendaris khas Betawi dengan aroma rempah kencur dan kunyit yang kuat, dipadukan dengan irisan daun mengkudu yang unik dan berkhasiat",
     "description": "Sebuah resep warisan Betawi yang jarang ditemui, Nasi Goreng Daun Mengkudu adalah bukti kekayaan kuliner nusantara yang memanfaatkan bahan-bahan dari pekarangan rumah. Perpaduan rasa gurih, pedas, dengan aroma khas dari kencur, kunyit, terasi, dan sentuhan sedikit pahit dari daun mengkudu menciptakan pengalaman rasa yang otentik dan tak terlupakan",
-    "image": "https://api.meatguy.id/admin/image/blogs/6cfa140f-ccbc-4580-a4a0-9261b7af9aa9",
+    "image": "https://urrecipe.s3.ap-southeast-2.amazonaws.com/nasi-goreng-daun-mengkudu/step-1.png",
     "region": "Jakarta",
     "difficulty": "Mudah",
     "cookingTimeMinutes": 30,
@@ -2922,7 +2322,7 @@
           "location": {
             "lat": -6.3985,
             "lng": 106.8123
-          },
+        },
           "rincianBahan": [
             {
               "name": "Nasi Putih Pera",
@@ -2942,97 +2342,97 @@
               "estimatedPrice": 3000,
               "note": "Pilih yang benar-benar muda agar tidak terlalu pahit"
             },
-            {
-              "name": "Telur Ayam",
-              "quantity": {
-                "value": 2,
-                "unit": "butir"
-              },
-              "estimatedPrice": 4000
+            { 
+              "name": "Telur Ayam", 
+              "quantity": { 
+                "value": 2, 
+                "unit": "butir" 
+              }, 
+              "estimatedPrice": 4000 
             },
-            {
-              "name": "Ebi Kering",
-              "quantity": {
-                "value": 1,
+            { 
+              "name": "Ebi Kering", 
+              "quantity": { 
+                "value": 1, 
                 "unit": "sdm"
-              },
-              "estimatedPrice": 3000,
-              "note": "Rendam air panas sebentar lalu tiriskan."
+              }, 
+              "estimatedPrice": 3000, 
+              "note": "Rendam air panas sebentar lalu tiriskan." 
             },
-            {
-              "name": "Bawang Merah",
+            { 
+              "name": "Bawang Merah", 
+              "quantity": { 
+                "value": 5, 
+                "unit": "siung" 
+              }, 
+              "estimatedPrice": 2500 
+            },
+            { 
+              "name": "Bawang Putih", 
               "quantity": {
-                "value": 5,
-                "unit": "siung"
-              },
-              "estimatedPrice": 2500
+                "value": 3, 
+                "unit": "siung" 
+              }, 
+              "estimatedPrice": 1500 
             },
-            {
-              "name": "Bawang Putih",
-              "quantity": {
-                "value": 3,
-                "unit": "siung"
-              },
-              "estimatedPrice": 1500
-            },
-            {
+            { 
               "name": "Cabai Rawit Merah",
-              "quantity": {
-                "value": 5,
-                "unit": "buah"
+              "quantity": { 
+                "value": 5, 
+                "unit": "buah" 
               },
               "estimatedPrice": 2000,
-              "note": "Jumlah sesuai selera pedas."
+              "note": "Jumlah sesuai selera pedas." 
             },
-            {
-              "name": "Kencur",
-              "quantity": {
-                "value": 2,
+            { 
+              "name": "Kencur", 
+              "quantity": { 
+                "value": 2, 
+                "unit": "cm" 
+              }, 
+              "estimatedPrice": 1000
+            },
+            { 
+              "name": "Kunyit Bakar", 
+              "quantity": { 
+                "value": 2, 
                 "unit": "cm"
-              },
-              "estimatedPrice": 1000
+              }, 
+              "estimatedPrice": 1000 
             },
-            {
-              "name": "Kunyit Bakar",
-              "quantity": {
-                "value": 2,
-                "unit": "cm"
-              },
-              "estimatedPrice": 1000
+            { 
+              "name": "Terasi Bakar", 
+              "quantity": { 
+                "value": 0.5, 
+                "unit": "sdt" 
+              }, 
+              "estimatedPrice": 1000 
             },
-            {
-              "name": "Terasi Bakar",
-              "quantity": {
-                "value": 0.5,
-                "unit": "sdt"
-              },
-              "estimatedPrice": 1000
+            { 
+              "name": "Garam, Gula Pasir, Merica Bubuk", 
+              "quantity": { 
+                "value": 1, 
+                "unit": "paket kecil" 
+              }, 
+              "estimatedPrice": 2000, 
+              "note": "Estimasi untuk pemakaian secukupnya" 
             },
-            {
-              "name": "Garam, Gula Pasir, Merica Bubuk",
-              "quantity": {
-                "value": 1,
-                "unit": "paket kecil"
-              },
-              "estimatedPrice": 2000,
-              "note": "Estimasi untuk pemakaian secukupnya"
+            { 
+              "name": "Minyak Goreng", 
+              "quantity": { 
+                "value": 3, 
+                "unit": "sdm" 
+              }, 
+              "estimatedPrice": 2000, 
+              "note": "Estimasi pemakaian" 
             },
-            {
-              "name": "Minyak Goreng",
-              "quantity": {
-                "value": 3,
-                "unit": "sdm"
-              },
-              "estimatedPrice": 2000,
-              "note": "Estimasi pemakaian"
-            },
-            {
-              "name": "Bahan Pelengkap (Bawang Goreng, Acar)",
-              "quantity": {
-                "value": 1,
-                "unit": "paket"
-              },
-              "estimatedPrice": 6000
+            { 
+              "name": "Bahan Pelengkap (Bawang Goreng, Acar)", 
+              "quantity": { 
+                "value": 1, 
+                "unit": "paket" 
+              }, 
+              "estimatedPrice": 6000 
             }
           ]
         }
@@ -3073,22 +2473,104 @@
             "substitutes": [
               "Telur Bebek"
             ]
+          }
+        ],
+        "bumbu": [
+          {
+            "name": "Bawang Merah",
+            "quantity": {
+              "value": 5,
+              "unit": "siung"
+            }
+          },
+          {
+            "name": "Bawang Putih",
+            "quantity": {
+              "value": 3,
+              "unit": "siung"
+            }
+          },
+          {
+            "name": "Cabai Rawit Merah",
+            "quantity": {
+              "value": 5,
+              "unit": "buah"
+            },
+            "notes": "Sesuaikan dengan tingkat kepedasan yang diinginkan."
+          },
+          {
+            "name": "Kencur",
+            "quantity": {
+              "value": 2,
+              "unit": "cm"
+            }
+          },
+          {
+            "name": "Kunyit",
+            "quantity": {
+              "value": 2,
+              "unit": "cm"
+            },
+            "notes": "Bakar sebentar untuk mengeluarkan aroma."
+          },
+          {
+            "name": "Terasi",
+            "quantity": {
+              "value": 0.5,
+              "unit": "sdt"
+            },
+            "notes": "Bakar atau sangrai sebentar."
+          },
+          {
+            "name": "Ebi Kering",
+            "quantity": {
+              "value": 1,
+              "unit": "sdm"
+            },
+            "notes": "Rendam air panas, tiriskan, lalu haluskan bersama bumbu lain."
+          },
+          {
+            "name": "Garam",
+            "quantity": {
+              "value": 1,
+              "unit": "sdt"
+            }
+          },
+          {
+            "name": "Gula Pasir",
+            "quantity": {
+              "value": 0.5,
+              "unit": "sdt"
+            },
+            "notes": "Sebagai penyeimbang rasa."
+          },
+          {
+            "name": "Merica Bubuk",
+            "quantity": {
+              "value": 0.25,
+              "unit": "sdt"
+            }
+          },
+          {
+            "name": "Minyak Goreng",
+            "quantity": {
+              "value": 3,
+              "unit": "sdm"
+            }
           },
           {
             "name": "Bawang Goreng",
             "quantity": {
               "value": 2,
               "unit": "sdm"
-            },
-            "notes": "Untuk taburan"
+            }
           },
           {
             "name": "Timun",
             "quantity": {
               "value": 1,
               "unit": "buah"
-            },
-            "notes": "Potong sesuai selera, untuk pelengkap"
+            }
           },
           {
             "name": "Wortel",
@@ -3111,104 +2593,17 @@
               "unit": "secukupnya"
             }
           }
-        ],
-        "bumbu": [
-          {
-            "name": "Bawang Merah",
-            "quantity": {
-              "value": 5,
-              "unit": "siung"
-            },
-            "notes": "Haluskan"
-          },
-          {
-            "name": "Bawang Putih",
-            "quantity": {
-              "value": 3,
-              "unit": "siung"
-            },
-            "notes": "Haluskan"
-          },
-          {
-            "name": "Cabai Rawit Merah",
-            "quantity": {
-              "value": 5,
-              "unit": "buah"
-            },
-            "notes": "Haluskan, sesuaikan tingkat kepedasan"
-          },
-          {
-            "name": "Kencur",
-            "quantity": {
-              "value": 2,
-              "unit": "cm"
-            },
-            "notes": "Haluskan"
-          },
-          {
-            "name": "Kunyit",
-            "quantity": {
-              "value": 2,
-              "unit": "cm"
-            },
-            "notes": "Bakar, haluskan"
-          },
-          {
-            "name": "Terasi",
-            "quantity": {
-              "value": 0.5,
-              "unit": "sdt"
-            },
-            "notes": "Bakar/sangrai, haluskan"
-          },
-          {
-            "name": "Ebi Kering",
-            "quantity": {
-              "value": 1,
-              "unit": "sdm"
-            },
-            "notes": "Rendam air panas, haluskan"
-          },
-          {
-            "name": "Garam",
-            "quantity": {
-              "value": 1,
-              "unit": "sdt"
-            }
-          },
-          {
-            "name": "Gula Pasir",
-            "quantity": {
-              "value": 0.5,
-              "unit": "sdt"
-            },
-            "notes": "Penyeimbang rasa"
-          },
-          {
-            "name": "Merica Bubuk",
-            "quantity": {
-              "value": 0.25,
-              "unit": "sdt"
-            }
-          },
-          {
-            "name": "Minyak Goreng",
-            "quantity": {
-              "value": 3,
-              "unit": "sdm"
-            }
-          }
         ]
       }
     ],
-    "cookingSteps": [
+      "cookingSteps": [
       {
         "step": 1,
         "title": "Persiapan Bahan dan Bumbu",
         "description": "Siapkan semua bahan. Cuci bersih daun mengkudu, buang tulang daunnya lalu iris tipis. Ulek atau blender semua bahan 'bumbu_halus' hingga benar-benar halus. Pisahkan nasi agar tidak ada yang menggumpal (urai dengan garpu).",
         "duration": "10 menit",
         "difficulty": "mudah",
-        "image": "https://example.com/step1.jpg",
+        "image": "https://urrecipe.s3.ap-southeast-2.amazonaws.com/nasi-goreng-daun-mengkudu/step-2.png",
         "tips": [
           "Menggunakan ulekan akan mengeluarkan aroma bumbu yang lebih kuat dibandingkan blender.",
           "Pastikan nasi benar-benar dingin dan pera agar hasil nasi goreng tidak lengket."
@@ -3220,7 +2615,7 @@
         "description": "Panaskan minyak dalam wajan. Tumis bumbu halus hingga harum dan matang (warnanya sedikit lebih gelap). Sisihkan bumbu ke pinggir wajan, masukkan telur kocok. Buat orak-arik hingga matang.",
         "duration": "5 menit",
         "difficulty": "mudah",
-        "image": "https://example.com/step2.jpg",
+        "image": "https://urrecipe.s3.ap-southeast-2.amazonaws.com/nasi-goreng-daun-mengkudu/step-3.png",
         "tips": [
           "Gunakan api sedang agar bumbu tidak cepat gosong.",
           "Pastikan bumbu benar-benar matang untuk menghilangkan bau langu dari cabai dan bawang."
@@ -3232,7 +2627,7 @@
         "description": "Setelah telur matang, aduk rata kembali dengan bumbu. Masukkan irisan daun mengkudu, masak dan aduk cepat selama sekitar 1-2 menit hingga daun sedikit layu.",
         "duration": "2 menit",
         "difficulty": "mudah",
-        "image": "https://example.com/step3.jpg",
+        "image": "https://urrecipe.s3.ap-southeast-2.amazonaws.com/nasi-goreng-daun-mengkudu/step-4.png",
         "tips": [
           "Jangan memasak daun mengkudu terlalu lama agar warnanya tetap cantik dan teksturnya masih sedikit renyah."
         ]
@@ -3243,7 +2638,7 @@
         "description": "Masukkan nasi putih ke dalam wajan. Besarkan api. Aduk cepat hingga nasi dan bumbu tercampur rata. Tambahkan garam, gula, dan merica bubuk.",
         "duration": "7 menit",
         "difficulty": "sedang",
-        "image": "https://example.com/step4.jpg",
+        "image": "https://urrecipe.s3.ap-southeast-2.amazonaws.com/nasi-goreng-daun-mengkudu/step-5.png",
         "tips": [
           "Menggunakan api besar saat nasi masuk akan memberikan aroma 'wok hei' atau sangit yang khas pada nasi goreng.",
           "Terus aduk agar nasi tidak gosong di bagian bawah."
@@ -3255,7 +2650,7 @@
         "description": "Setelah semua tercampur rata, cicipi rasanya. Tambahkan garam atau gula jika perlu hingga sesuai selera. Masak sebentar lagi hingga semua panas merata, lalu angkat.",
         "duration": "1 menit",
         "difficulty": "mudah",
-        "image": "https://example.com/step5.jpg",
+        "image": "https://urrecipe.s3.ap-southeast-2.amazonaws.com/nasi-goreng-daun-mengkudu/step-6.png",
         "tips": [
           "Selalu cicipi masakan sebelum diangkat untuk memastikan rasanya pas."
         ]
@@ -3266,7 +2661,7 @@
         "description": "Sajikan Nasi Goreng Daun Mengkudu di atas piring. Beri taburan bawang goreng yang melimpah. Hidangkan selagi hangat bersama acar dan kerupuk.",
         "duration": "2 menit",
         "difficulty": "mudah",
-        "image": "https://example.com/step6.jpg",
+        "image": "https://urrecipe.s3.ap-southeast-2.amazonaws.com/nasi-goreng-daun-mengkudu/step-7.png",
         "tips": [
           "Acar timun wortel memberikan rasa segar yang sangat cocok untuk menyeimbangkan rasa gurih dan kaya rempah dari nasi goreng."
         ]
