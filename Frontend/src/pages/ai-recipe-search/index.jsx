@@ -6,6 +6,7 @@ import Icon from '../../components/AppIcon';
 import SearchInterface from './components/SearchInterface';
 import SearchResults from './components/SearchResults';
 import AIInsights from './components/AIInsights';
+import { recipeAPI } from '../../services/api';
 
 const AIRecipeSearchPage = () => {
   const location = useLocation();
@@ -20,102 +21,6 @@ const AIRecipeSearchPage = () => {
   const consumedQueryRef = useRef('');
   const locationStateQuery = location?.state?.searchQuery;
   const locationPathname = location?.pathname;
-
-  // Mock recipe data
-  const mockRecipes = [
-    {
-      id: 1,
-      name: "Rendang Daging Sapi Tradisional",
-      description: "Rendang autentik Minangkabau dengan bumbu rempah lengkap dan santan kental. Dimasak dengan teknik tradisional hingga bumbu meresap sempurna.",
-      image: "https://images.unsplash.com/photo-1565299624946-b28f40a0ca4b?w=400&h=300&fit=crop",
-      rating: 4.8,
-      reviews: 234,
-      cookingTime: "3 jam",
-      difficulty: "hard",
-      estimatedCost: 85000,
-      servings: 6,
-      cultural: "Minang",
-      aiGenerated: false,
-      tags: ["Tradisional", "Pedas", "Protein", "Santan", "Rempah"]
-    },
-    {
-      id: 2,
-      name: "Gado-Gado Jakarta Komplit",
-      description: "Salad sayuran segar khas Betawi dengan bumbu kacang yang gurih dan lontong sebagai pelengkap. Cocok untuk vegetarian.",
-      image: "https://images.unsplash.com/photo-1512058564366-18510be2db19?w=400&h=300&fit=crop",
-      rating: 4.6,
-      reviews: 189,
-      cookingTime: "45 menit",
-      difficulty: "easy",
-      estimatedCost: 35000,
-      servings: 4,
-      cultural: "Betawi",
-      aiGenerated: true,
-      tags: ["Vegetarian", "Sehat", "Segar", "Kacang", "Sayuran"]
-    },
-    {
-      id: 3,
-      name: "Soto Ayam Lamongan",
-      description: "Soto ayam khas Jawa Timur dengan kuah bening yang segar, dilengkapi dengan koya dan sambal yang pedas.",
-      image: "https://images.unsplash.com/photo-1569718212165-3a8278d5f624?w=400&h=300&fit=crop",
-      rating: 4.7,
-      reviews: 156,
-      cookingTime: "1.5 jam",
-      difficulty: "medium",
-      estimatedCost: 45000,
-      servings: 5,
-      cultural: "Jawa Timur",
-      aiGenerated: false,
-      tags: ["Sup", "Ayam", "Kuah", "Tradisional", "Hangat"]
-    },
-    {
-      id: 4,
-      name: "Nasi Goreng Kampung Spesial",
-      description: "Nasi goreng dengan cita rasa kampung yang autentik, menggunakan kecap manis dan cabai rawit untuk rasa yang pas.",
-      image: "https://images.unsplash.com/photo-1512058564366-18510be2db19?w=400&h=300&fit=crop",
-      rating: 4.5,
-      reviews: 298,
-      cookingTime: "30 menit",
-      difficulty: "easy",
-      estimatedCost: 25000,
-      servings: 3,
-      cultural: "Nusantara",
-      aiGenerated: true,
-      tags: ["Nasi", "Cepat", "Praktis", "Pedas", "Ekonomis"]
-    },
-    {
-      id: 5,
-      name: "Gudeg Yogya Khas",
-      description: "Gudeg manis khas Yogyakarta dengan nangka muda yang empuk, disajikan dengan ayam kampung dan sambal krecek.",
-      image: "https://images.unsplash.com/photo-1565299624946-b28f40a0ca4b?w=400&h=300&fit=crop",
-      rating: 4.9,
-      reviews: 167,
-      cookingTime: "4 jam",
-      difficulty: "very-hard",
-      estimatedCost: 65000,
-      servings: 8,
-      cultural: "Yogyakarta",
-      aiGenerated: false,
-      tags: ["Manis", "Tradisional", "Nangka", "Ayam", "Khas"]
-    },
-    {
-      id: 6,
-      name: "Sayur Asem Betawi",
-      description: "Sayur asem segar dengan berbagai macam sayuran dan bumbu asam yang menyegarkan, cocok untuk cuaca panas.",
-      image: "https://images.unsplash.com/photo-1569718212165-3a8278d5f624?w=400&h=300&fit=crop",
-      rating: 4.4,
-      reviews: 123,
-      cookingTime: "40 menit",
-      difficulty: "easy",
-      estimatedCost: 20000,
-      servings: 4,
-      cultural: "Betawi",
-      aiGenerated: true,
-      tags: ["Sayuran", "Asam", "Segar", "Sehat", "Murah"]
-    }
-  ];
-
-  const normalizeText = (value) => value?.toString()?.toLowerCase() ?? '';
 
   const parseBudgetFromQuery = (query) => {
     if (!query) {
@@ -159,178 +64,8 @@ const AIRecipeSearchPage = () => {
       : Math.round(numericValue);
   };
 
-  const getCookingTimeInMinutes = (timeLabel = '') => {
-    const normalized = timeLabel.toLowerCase();
-    const match = normalized.match(/(\d+(?:[.,]\d+)?)\s*(jam|menit)/);
-    if (!match) {
-      return Number.MAX_SAFE_INTEGER;
-    }
-    const numericValue = Number(match[1].replace(',', '.'));
-    if (!Number.isFinite(numericValue)) {
-      return Number.MAX_SAFE_INTEGER;
-    }
-    const unit = match[2];
-    return unit === 'jam'
-      ? Math.round(numericValue * 60)
-      : Math.round(numericValue);
-  };
-
-  const difficultyOrder = ['very-easy', 'easy', 'medium', 'hard', 'very-hard'];
-
-  const runAISearchAgent = (query) => {
-    if (!query) {
-      return [];
-    }
-
-    const normalizedQuery = query.toLowerCase();
-    const tokens = normalizedQuery
-      .replace(/[-_]/g, ' ')
-      .split(/[\s,]+/)
-      .filter(Boolean);
-
-    const synonymsDictionary = {
-      pedas: ['spicy', 'cabai', 'cabe', 'rawit'],
-      spicy: ['pedas', 'cabai', 'rawit'],
-      sehat: ['healthy', 'bergizi', 'diet'],
-      healthy: ['sehat', 'bergizi'],
-      cepat: ['kilat', 'praktis', 'quick', 'simple'],
-      praktis: ['cepat', 'simple', 'kilat'],
-      murah: ['budget', 'hemat', 'ekonomis'],
-      budget: ['murah', 'hemat', 'ekonomis'],
-      tradisional: ['heritage', 'otentik', 'klasik'],
-      vegetarian: ['nabati', 'plant based', 'sayuran'],
-      sayur: ['vegetarian', 'nabati'],
-      rendang: ['padang', 'daging'],
-      gado: ['salad', 'sayur'],
-      soto: ['kuah', 'soup', 'kaldu'],
-      gudeg: ['nangka', 'yogyakarta'],
-      nasi: ['rice'],
-      goreng: ['fried'],
-      ayam: ['chicken', 'poultry'],
-      sup: ['soup', 'kuah'],
-      manis: ['sweet', 'dessert'],
-      sarapan: ['pagi', 'breakfast']
-    };
-
-    const expandedTerms = new Set(tokens);
-    tokens.forEach((token) => {
-      Object.entries(synonymsDictionary).forEach(([key, values]) => {
-        if (token.includes(key) || key.includes(token)) {
-          values.forEach((value) => expandedTerms.add(value));
-        }
-      });
-    });
-
-    const budgetLimit = parseBudgetFromQuery(query);
-    const timeLimit = parseTimeFromQuery(query);
-
-    const scoredResults = mockRecipes.map((recipe) => {
-      const name = normalizeText(recipe?.name);
-      const description = normalizeText(recipe?.description);
-      const cultural = normalizeText(recipe?.cultural);
-      const tags = (recipe?.tags || []).map((tag) => normalizeText(tag));
-      const timeInMinutes = getCookingTimeInMinutes(recipe?.cookingTime);
-      let score = 0;
-
-      if (name.includes(normalizedQuery)) {
-        score += 8;
-      }
-
-      expandedTerms.forEach((term) => {
-        if (!term) {
-          return;
-        }
-        if (name.includes(term)) {
-          score += 6;
-        } else if (tags.some((tag) => tag.includes(term))) {
-          score += 4;
-        } else if (description.includes(term)) {
-          score += 3;
-        } else if (cultural.includes(term)) {
-          score += 2;
-        }
-      });
-
-      if (budgetLimit !== null) {
-        if ((recipe?.estimatedCost || 0) <= budgetLimit) {
-          score += 5;
-        } else {
-          score -= 3;
-        }
-      }
-
-      if (timeLimit !== null) {
-        if (timeInMinutes <= timeLimit) {
-          score += 4;
-        } else {
-          score -= 2;
-        }
-      }
-
-      if (normalizedQuery.includes('ai') && recipe?.aiGenerated) {
-        score += 2;
-      }
-
-      score += recipe?.rating || 0;
-
-      return { recipe, score };
-    });
-
-    const highestScore = Math.max(...scoredResults.map((item) => item.score));
-    const relevantResults =
-      highestScore > 0
-        ? scoredResults.filter((item) => item.score > 0)
-        : scoredResults;
-
-    return relevantResults
-      .sort((a, b) => {
-        if (b.score !== a.score) {
-          return b.score - a.score;
-        }
-        return (b.recipe?.rating || 0) - (a.recipe?.rating || 0);
-      })
-      .map((item) => item.recipe);
-  };
-
-  const applySort = (results = [], sortKey = 'relevance') => {
-    if (!Array.isArray(results)) {
-      return [];
-    }
-
-    const nextResults = [...results];
-
-    switch (sortKey) {
-      case 'rating':
-        nextResults.sort((a, b) => (b?.rating || 0) - (a?.rating || 0));
-        break;
-      case 'time':
-        nextResults.sort(
-          (a, b) =>
-            getCookingTimeInMinutes(a?.cookingTime) - getCookingTimeInMinutes(b?.cookingTime)
-        );
-        break;
-      case 'budget':
-        nextResults.sort(
-          (a, b) => (a?.estimatedCost || 0) - (b?.estimatedCost || 0)
-        );
-        break;
-      case 'difficulty':
-        nextResults.sort(
-          (a, b) =>
-            difficultyOrder.indexOf(a?.difficulty) - difficultyOrder.indexOf(b?.difficulty)
-        );
-        break;
-      case 'recent':
-        nextResults.sort((a, b) => (b?.id || 0) - (a?.id || 0));
-        break;
-      default:
-        break;
-    }
-
-    return nextResults;
-  };
-
-  const handleSearch = (query) => {
+  // API-based search function
+  const handleSearch = async (query) => {
     if (searchMode !== 'search') {
       return;
     }
@@ -349,12 +84,41 @@ const AIRecipeSearchPage = () => {
     setIsLoading(true);
     setHasSearched(true);
 
-    setTimeout(() => {
-      const agentResults = runAISearchAgent(trimmedQuery);
-      const sortedResults = sortBy === 'relevance' ? agentResults : applySort(agentResults, sortBy);
-      setSearchResults(sortedResults);
+    try {
+      // Call the AI search API
+      const results = await recipeAPI.aiSearch({
+        query: trimmedQuery,
+        budget: parseBudgetFromQuery(trimmedQuery),
+        maxTime: parseTimeFromQuery(trimmedQuery),
+        sortBy: sortBy
+      });
+
+      // Transform data to match frontend format
+      const formattedResults = results.map(recipe => ({
+        ...recipe,
+        // Convert cookingTimeMinutes to readable format
+        cookingTime: recipe.cookingTimeMinutes >= 60 
+          ? `${Math.floor(recipe.cookingTimeMinutes / 60)} jam ${recipe.cookingTimeMinutes % 60 > 0 ? `${recipe.cookingTimeMinutes % 60} menit` : ''}`
+          : `${recipe.cookingTimeMinutes} menit`,
+        // Use region as cultural
+        cultural: recipe.region || recipe.cultural,
+        // Default rating if not available
+        rating: recipe.rating || 4.5,
+        reviews: recipe.reviews || 0,
+        // Add aiGenerated flag based on isNew
+        aiGenerated: recipe.isNew || false,
+        // Format description
+        description: recipe.shortDescription || recipe.description
+      }));
+
+      setSearchResults(formattedResults);
+    } catch (error) {
+      console.error('Search failed:', error);
+      // Show error or empty results
+      setSearchResults([]);
+    } finally {
       setIsLoading(false);
-    }, 900);
+    }
   };
 
   const handleModeChange = (nextMode) => {
@@ -368,17 +132,19 @@ const AIRecipeSearchPage = () => {
       setIsLoading(false);
     }
   };
+  
   const handleSortChange = (newSortBy) => {
     setSortBy(newSortBy);
-    if (!hasSearched) {
+    if (!hasSearched || !searchQuery) {
       return;
     }
-    setSearchResults((previousResults) => applySort(previousResults, newSortBy));
+    // Re-search with new sort order
+    handleSearch(searchQuery);
   };
 
   useEffect(() => {
     handleSearchRef.current = handleSearch;
-  }, [handleSearch]);
+  }, [searchMode, sortBy]); // Update when searchMode or sortBy changes
 
   useEffect(() => {
     const normalizedQuery = locationStateQuery?.trim();
