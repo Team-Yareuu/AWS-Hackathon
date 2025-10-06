@@ -5,7 +5,7 @@ class Settings(BaseSettings):
     # AWS Bedrock Configuration
     AWS_ACCESS_KEY_ID: Optional[str] = None
     AWS_SECRET_ACCESS_KEY: Optional[str] = None
-    AWS_REGION: str = "us-east-1"
+    AWS_REGION: str = "ap-southeast-2"
     AWS_SESSION_TOKEN: Optional[str] = None  # For temporary credentials
     
     # Neo4j Database Configuration
