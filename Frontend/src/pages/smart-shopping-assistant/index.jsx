@@ -149,8 +149,6 @@ const SmartShoppingAssistant = () => {
 
   const tabs = [
     { id: 'budget', label: 'Budget Calculator', icon: 'Calculator' },
-    { id: 'recipes', label: 'Resep Rekomendasi', icon: 'ChefHat' },
-    { id: 'comparison', label: 'Perbandingan Harga', icon: 'BarChart3' },
     { id: 'shopping', label: 'Daftar Belanja', icon: 'ShoppingCart' },
     { id: 'tracker', label: 'Pelacak Harga', icon: 'TrendingUp' },
     { id: 'budget-tracker', label: 'Budget Tracker', icon: 'PiggyBank' }
@@ -252,7 +250,7 @@ const SmartShoppingAssistant = () => {
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-8">
               <h1 className="font-heading font-bold text-3xl md:text-4xl text-foreground mb-4">
-                Smart Shopping Assistant
+                Budget Smart Assistant
               </h1>
               <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
                 Belanja cerdas dengan budget terbatas. Temukan resep terbaik, bandingkan harga, 
@@ -261,7 +259,7 @@ const SmartShoppingAssistant = () => {
             </div>
 
             {/* Quick Stats */}
-            <div className="grid grid-cols-1 md:grid-cols-4 gap-4 mb-8">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-8">
               <div className="bg-card rounded-lg p-4 text-center shadow-cultural">
                 <Icon name="Calculator" size={24} className="text-primary mx-auto mb-2" />
                 <p className="font-semibold text-foreground">Budget Smart</p>
@@ -271,11 +269,6 @@ const SmartShoppingAssistant = () => {
                 <Icon name="TrendingDown" size={24} className="text-success mx-auto mb-2" />
                 <p className="font-semibold text-foreground">Hemat 25%</p>
                 <p className="text-sm text-muted-foreground">Rata-rata penghematan</p>
-              </div>
-              <div className="bg-card rounded-lg p-4 text-center shadow-cultural">
-                <Icon name="Store" size={24} className="text-accent mx-auto mb-2" />
-                <p className="font-semibold text-foreground">15+ Marketplace</p>
-                <p className="text-sm text-muted-foreground">Perbandingan harga</p>
               </div>
               <div className="bg-card rounded-lg p-4 text-center shadow-cultural">
                 <Icon name="Users" size={24} className="text-secondary mx-auto mb-2" />
@@ -366,15 +359,6 @@ const SmartShoppingAssistant = () => {
                     </Button>
                   </div>
                 )}
-              </div>
-            )}
-
-            {activeTab === 'comparison' && (
-              <div>
-                <MarketplaceComparison 
-                  ingredients={mockIngredients}
-                  onSelectStore={handleSelectStore}
-                />
               </div>
             )}
 

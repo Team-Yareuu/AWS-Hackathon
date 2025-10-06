@@ -12,7 +12,7 @@ const Header = ({ className = '' }) => {
     { path: '/homepage', label: 'Beranda', icon: 'Home' },
     { path: '/ai-recipe-search', label: 'Cari Resep AI', icon: 'Search' },
     { path: '/cultural-heritage-explorer', label: 'Warisan Budaya', icon: 'BookOpen' },
-    { path: '/smart-shopping-assistant', label: 'Belanja Pintar', icon: 'ShoppingCart' },
+    { path: '/smart-shopping-assistant', label: 'Budget Smart', icon: 'ShoppingCart' },
   ];
 
   const isActivePath = (path) => location?.pathname === path;

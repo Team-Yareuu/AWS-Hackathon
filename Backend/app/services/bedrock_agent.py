@@ -46,3 +46,4 @@ class BedrockAgent:
         response_body = eval(response.get('body').read())
         return response_body["artifacts"][0]["base64"]
 
+

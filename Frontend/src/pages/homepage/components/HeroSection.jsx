@@ -188,9 +188,9 @@ const HeroSection = () => {
                 iconPosition="left"
                 className="bg-white/80 backdrop-blur-sm"
               >
-                Belanja Hemat
+                Bugdet Smart
               </Button>
-              <Button
+              {/* <Button
                 variant="outline"
                 onClick={() => navigate('/personal-kitchen-dashboard')}
                 iconName="ChefHat"
@@ -198,7 +198,7 @@ const HeroSection = () => {
                 className="bg-white/80 backdrop-blur-sm"
               >
                 Dapur Saya
-              </Button>
+              </Button> */}
             </div>
 
             {/* Trust Indicators */}
