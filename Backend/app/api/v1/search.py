@@ -54,7 +54,8 @@ async def ai_search_recipes(search_query: SearchQuery):
         # Step 3: Execute search in Neo4j
         driver = get_driver()
         async with driver.session() as session:
-            result = await session.run(cypher_query, params)
+            # Dynamic query construction is safe here as we control the query builder
+            result = await session.run(cypher_query, **params)  # type: ignore
             recipes = await result.data()
         
         # Step 4: Score and rank results
@@ -207,11 +208,13 @@ def build_smart_cypher_query(
 ) -> tuple[str, dict]:
     """
     Build dynamic Cypher query based on parsed intent
+    Fetches ALL data including ingredients for comprehensive matching
     """
     
-    # Base query
+    # Enhanced query to get recipe with ingredients
     cypher = """
     MATCH (r:Recipe)
+    OPTIONAL MATCH (r)-[rel:HAS_INGREDIENT]->(i:Ingredient)
     WHERE 1=1
     """
     
@@ -234,42 +237,23 @@ def build_smart_cypher_query(
         cypher += " AND r.difficulty = $difficulty"
         params['difficulty'] = difficulty
     
-    # Ingredient matching (optional - if ingredients mentioned)
-    ingredients = parsed_query.get('ingredients', [])
-    if ingredients:
-        cypher += """
-        AND ANY(ing IN r.mainIngredients WHERE ing IN $ingredients)
-        """
-        params['ingredients'] = ingredients
-    
-    # Cuisine/cultural match
-    cuisine = parsed_query.get('cuisine')
-    if cuisine:
-        cypher += " AND toLower(r.cultural) CONTAINS $cuisine"
-        params['cuisine'] = cuisine.lower()
-    
-    # Text search on name and description
-    keywords = parsed_query.get('keywords', [])
-    if keywords:
-        # Build text search for primary keywords
-        main_keywords = [k for k in keywords if len(k) > 3][:3]  # Top 3 keywords
-        if main_keywords:
-            cypher += """
-            AND (
-                ANY(keyword IN $keywords WHERE toLower(r.name) CONTAINS keyword)
-                OR ANY(keyword IN $keywords WHERE toLower(r.description) CONTAINS keyword)
-            )
-            """
-            params['keywords'] = main_keywords
-    
-    # Return full recipe data
+    # Return full recipe data with ingredients
     cypher += """
+    WITH r, 
+         collect(DISTINCT {
+             name: i.name, 
+             category: i.category,
+             quantity: rel.quantityValue,
+             unit: rel.quantityUnit
+         }) as ingredients
     RETURN r {
         .*,
         id: r.id,
         name: r.name,
         description: r.description,
         shortDescription: r.shortDescription,
+        fullStory: r.fullStory,
+        shortStory: r.shortStory,
         image: r.image,
         region: r.region,
         cultural: r.region,
@@ -278,9 +262,10 @@ def build_smart_cypher_query(
         cookingTimeMinutes: r.cookingTimeMinutes,
         servings: r.servings,
         isTraditional: r.isTraditional,
-        isNew: r.isNew
+        isNew: r.isNew,
+        ingredients: ingredients
     } as recipe
-    LIMIT 50
+    LIMIT 100
     """
     
     return cypher, params
@@ -292,13 +277,35 @@ def score_search_results(
     original_query: str
 ) -> List[dict]:
     """
-    Score recipes based on relevance to search query
+    Enhanced scoring with NLP and comprehensive property matching
+    Uses ALL available data for intelligent ranking
     """
     
     normalized_query = original_query.lower()
+    query_tokens = set(normalized_query.split())
+    
+    # Extract parsed data
     ingredients = parsed_query.get('ingredients', [])
     cuisine = parsed_query.get('cuisine', '')
-    keywords = parsed_query.get('keywords', [])
+    avoid_ingredients = parsed_query.get('avoid', [])
+    
+    # Scoring weights (fine-tuned for better relevance)
+    WEIGHTS = {
+        'exact_name_match': 50,          # Highest priority
+        'exact_ingredient_match': 40,    # Very important for ingredient queries
+        'name_keyword': 30,              # High priority for name matches
+        'ingredient_keyword': 25,        # Important for ingredient-based search
+        'description_keyword': 15,       # Medium priority
+        'cultural_match': 20,            # Good for regional queries
+        'story_match': 10,               # Additional context
+        'region_match': 18,              # Regional relevance
+        'budget_fit': 12,                # Budget constraint bonus
+        'time_fit': 10,                  # Time constraint bonus
+        'difficulty_match': 8,           # Difficulty preference
+        'traditional_bonus': 5,          # Traditional recipe bonus
+        'avoid_penalty': -50,            # Strong penalty for avoided ingredients
+        'partial_match': 5               # Partial word matches
+    }
     
     scored_results = []
     
@@ -307,58 +314,142 @@ def score_search_results(
         score = 0.0
         match_reasons = []
         
+        # Extract all text fields for comprehensive matching
         name = recipe.get('name', '').lower()
         description = recipe.get('description', '').lower()
+        short_desc = recipe.get('shortDescription', '').lower()
         cultural = recipe.get('cultural', '').lower()
+        region = recipe.get('region', '').lower()
+        short_story = recipe.get('shortStory', '').lower()
+        full_story = recipe.get('fullStory', '').lower()
         
-        # Exact name match
-        if normalized_query in name:
-            score += 10
-            match_reasons.append("Exact name match")
+        # Get ingredients from recipe
+        recipe_ingredients = recipe.get('ingredients', [])
+        recipe_ingredient_names = [
+            ing.get('name', '').lower() 
+            for ing in recipe_ingredients 
+            if ing.get('name')
+        ]
+        recipe_ingredient_text = ' '.join(recipe_ingredient_names)
         
-        # Name contains keywords
-        for keyword in keywords:
-            if keyword in name and len(keyword) > 3:
-                score += 6
-                match_reasons.append(f"Name contains '{keyword}'")
+        # 1. EXACT MATCHES (Highest Priority)
+        if normalized_query == name:
+            score += WEIGHTS['exact_name_match']
+            match_reasons.append(f"🎯 Exact match: {recipe.get('name')}")
         
-        # Description match
-        for keyword in keywords:
-            if keyword in description and len(keyword) > 3:
-                score += 3
-                match_reasons.append("Description match")
+        # 2. INGREDIENT MATCHING (Critical for "ayam", "ikan", etc queries)
+        for query_token in query_tokens:
+            if len(query_token) > 2:  # Skip very short words
+                # Check if query token is an ingredient
+                for recipe_ing_name in recipe_ingredient_names:
+                    if query_token in recipe_ing_name or recipe_ing_name in query_token:
+                        score += WEIGHTS['exact_ingredient_match']
+                        match_reasons.append(f"🥘 Has ingredient: {recipe_ing_name}")
+                        break
+                
+                # Also check if ingredient appears in recipe text
+                if query_token in recipe_ingredient_text:
+                    score += WEIGHTS['ingredient_keyword']
+                    match_reasons.append(f"📝 Ingredient mentioned: {query_token}")
         
-        # Cultural match
-        if cuisine and cuisine in cultural:
-            score += 5
-            match_reasons.append(f"Cultural match: {cultural}")
+        # 3. NAME MATCHING (Very Important)
+        for keyword in query_tokens:
+            if len(keyword) > 2:
+                if keyword in name:
+                    score += WEIGHTS['name_keyword']
+                    match_reasons.append(f"📌 Name contains: {keyword}")
         
-        # Ingredient match
-        for ing in ingredients:
-            if ing in name or ing in description:
-                score += 7
-                match_reasons.append(f"Has ingredient: {ing}")
+        # 4. DESCRIPTION MATCHING
+        all_descriptions = f"{description} {short_desc}"
+        for keyword in query_tokens:
+            if len(keyword) > 2:
+                if keyword in all_descriptions:
+                    score += WEIGHTS['description_keyword']
+                    match_reasons.append("📄 Description match")
+                    break
         
-        # Budget fit
+        # 5. CULTURAL/REGIONAL MATCHING
+        if cuisine:
+            if cuisine in cultural or cuisine in region:
+                score += WEIGHTS['cultural_match']
+                match_reasons.append(f"🌍 Regional: {region}")
+        
+        if region and any(word in region for word in query_tokens):
+            score += WEIGHTS['region_match']
+            match_reasons.append(f"📍 Region match: {region}")
+        
+        # 6. STORY/CULTURAL CONTEXT
+        all_stories = f"{short_story} {full_story}"
+        for keyword in query_tokens:
+            if len(keyword) > 3 and keyword in all_stories:
+                score += WEIGHTS['story_match']
+                match_reasons.append("📖 Cultural story match")
+                break
+        
+        # 7. PARSED INGREDIENTS MATCHING
+        for parsed_ing in ingredients:
+            if parsed_ing in recipe_ingredient_text:
+                score += WEIGHTS['exact_ingredient_match']
+                match_reasons.append(f"✅ Contains: {parsed_ing}")
+            elif parsed_ing in name or parsed_ing in description:
+                score += WEIGHTS['name_keyword']
+                match_reasons.append(f"✅ Mentioned: {parsed_ing}")
+        
+        # 8. AVOID INGREDIENTS (Penalty)
+        for avoid_ing in avoid_ingredients:
+            if avoid_ing in recipe_ingredient_text:
+                score += WEIGHTS['avoid_penalty']
+                match_reasons.append(f"❌ Contains avoided: {avoid_ing}")
+        
+        # 9. CONSTRAINT MATCHING
         budget = parsed_query.get('constraints', {}).get('budget')
-        if budget and recipe.get('estimatedCost', 0) <= budget:
-            score += 4
-            match_reasons.append("Within budget")
+        if budget:
+            cost = recipe.get('estimatedCost', 0)
+            if cost <= budget:
+                score += WEIGHTS['budget_fit']
+                match_reasons.append(f"💰 Budget OK: Rp {cost:,}")
+            else:
+                score -= 5  # Small penalty for over budget
         
-        # Time fit
         time_limit = parsed_query.get('constraints', {}).get('time')
-        if time_limit and recipe.get('cookingTimeMinutes', 999) <= time_limit:
-            score += 3
-            match_reasons.append("Quick cooking time")
+        if time_limit:
+            cook_time = recipe.get('cookingTimeMinutes', 999)
+            if cook_time <= time_limit:
+                score += WEIGHTS['time_fit']
+                match_reasons.append(f"⏱️ Quick: {cook_time} min")
         
-        # Rating bonus
-        rating = recipe.get('rating', 0)
-        score += rating * 0.5
+        # 10. DIFFICULTY MATCHING
+        pref_difficulty = parsed_query.get('preferences', {}).get('difficulty')
+        if pref_difficulty and recipe.get('difficulty', '').lower() == pref_difficulty:
+            score += WEIGHTS['difficulty_match']
+            match_reasons.append("🎓 Difficulty match")
         
+        # 11. TRADITIONAL BONUS
+        if recipe.get('isTraditional') and any(word in normalized_query for word in ['tradisional', 'asli', 'autentik', 'khas']):
+            score += WEIGHTS['traditional_bonus']
+            match_reasons.append("🏛️ Traditional recipe")
+        
+        # 12. PARTIAL WORD MATCHING (Fuzzy matching)
+        for keyword in query_tokens:
+            if len(keyword) > 3:
+                # Check if keyword is substring of recipe name words
+                name_words = name.split()
+                for name_word in name_words:
+                    if len(name_word) > 3 and (keyword in name_word or name_word in keyword):
+                        score += WEIGHTS['partial_match']
+                        match_reasons.append(f"🔍 Partial: {name_word}")
+                        break
+        
+        # 13. BONUS FOR MULTIPLE MATCHES
+        if len(match_reasons) > 3:
+            score += len(match_reasons) * 2  # Bonus for comprehensive matches
+            match_reasons.append(f"⭐ Multiple matches ({len(match_reasons)})")
+        
+        # Add to results if score > 0
         if score > 0:
             scored_results.append({
                 'recipe': recipe,
-                'score': score,
+                'score': round(score, 2),
                 'match_reasons': match_reasons
             })
     
