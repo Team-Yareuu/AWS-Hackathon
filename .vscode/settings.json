@@ -2,10 +2,7 @@
     "python-envs.defaultEnvManager": "ms-python.python:conda",
     "python-envs.defaultPackageManager": "ms-python.python:conda",
     "python-envs.pythonProjects": [],
-    "python.analysis.extraPaths": [
-        "${workspaceFolder}/Backend"
-    ],
-    "cursorpyright.analysis.extraPaths": [
-        "${workspaceFolder}/Backend"
-    ]
+    "python.analysis.diagnosticSeverityOverrides": {
+        "reportMissingImports": "none"
+    }
 }

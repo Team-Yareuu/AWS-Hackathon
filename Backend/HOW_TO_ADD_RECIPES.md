@@ -1,6 +1,7 @@
 # How to Add More Recipes to Your Database
 
 ## 📍 Current Status
+
 - **Current Recipes:** 1 (Rendang Daging Sapi Padang)
 - **Data File:** `Backend/app/data/sample_recipes.json`
 - **Database:** Neo4j Cloud
@@ -14,6 +15,7 @@
 Open `Backend/app/data/sample_recipes.json` and add new recipe objects to the array.
 
 **Current Structure:**
+
 ```json
 [
   {
@@ -25,6 +27,7 @@ Open `Backend/app/data/sample_recipes.json` and add new recipe objects to the ar
 ```
 
 **After Adding More:**
+
 ```json
 [
   {
@@ -50,6 +53,7 @@ Open `Backend/app/data/sample_recipes.json` and add new recipe objects to the ar
 I've created a template file for you: `Backend/app/data/recipe_template.json`
 
 This shows the complete structure for a new recipe including:
+
 - Basic info (name, description, image, region)
 - Difficulty & timing
 - Cultural story
@@ -63,7 +67,7 @@ After adding recipes, upload them to Neo4j:
 
 ```bash
 # Activate conda environment
-conda activate ai
+conda activate hackathon
 
 # Go to Backend folder
 cd Backend
@@ -73,6 +77,7 @@ python -m app.migration
 ```
 
 **What it does:**
+
 - ✅ Connects to Neo4j
 - ✅ Clears existing data
 - ✅ Uploads ALL recipes from `sample_recipes.json`
@@ -95,6 +100,7 @@ python test_api.py
 ## 📋 Recipe Data Structure
 
 ### Required Fields:
+
 ```json
 {
   "id": "unique_number",           // Must be unique
@@ -113,6 +119,7 @@ python test_api.py
 ```
 
 ### Optional But Recommended:
+
 - `culturalStory` - Adds cultural context
 - `budgetData` - Offline stores and prices
 - `ingredients` - List of ingredients with categories
@@ -123,6 +130,7 @@ python test_api.py
 ## 🎯 Example: Adding a Simple Recipe
 
 ### Minimal Recipe (Just Basic Info):
+
 ```json
 {
   "id": "2",
@@ -213,15 +221,17 @@ After adding recipes, they will show up in:
 ## 🆘 Troubleshooting
 
 **Problem:** Migration fails
+
 - **Solution:** Check JSON syntax at https://jsonlint.com
 
 **Problem:** Recipes not showing
+
 - **Solution:** Restart backend server and clear browser cache
 
 **Problem:** Duplicate ID error
+
 - **Solution:** Make sure each recipe has a unique ID
 
 ---
 
 Happy cooking! 🍳
-

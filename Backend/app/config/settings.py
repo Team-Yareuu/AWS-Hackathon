@@ -1,10 +1,19 @@
 from pydantic_settings import BaseSettings
+from typing import Optional
 
 class Settings(BaseSettings):
-    AWS_REGION : str = "us-east-1"
+    # AWS Bedrock Configuration
+    AWS_ACCESS_KEY_ID: Optional[str] = None
+    AWS_SECRET_ACCESS_KEY: Optional[str] = None
+    AWS_REGION: str = "us-east-1"
+    AWS_SESSION_TOKEN: Optional[str] = None  # For temporary credentials
+    
+    # Neo4j Database Configuration
     NEO4J_URI: str = "neo4j+s://06ad204b.databases.neo4j.io"
     NEO4J_USER: str = "neo4j"
     NEO4J_PASSWORD: str = "oW_2ABAMPHHR4ErTvY8hJT2HM6kMbLGo8fj1wYTtFxQ"
+    
+    # API Security
     SECRET_KEY: str = "a_very_secret_key"
     ALGORITHM: str = "HS256"
     ACCESS_TOKEN_EXPIRE_MINUTES: int = 30
@@ -12,5 +21,6 @@ class Settings(BaseSettings):
 
     class Config:
         env_file = ".env"
+        case_sensitive = True
 
 settings = Settings()

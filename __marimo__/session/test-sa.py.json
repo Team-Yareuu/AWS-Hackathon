@@ -1,7 +1,7 @@
 {
   "version": "1",
   "metadata": {
-    "marimo_version": "0.16.4"
+    "marimo_version": "0.16.5"
   },
   "cells": [
     {
@@ -18,7 +18,7 @@
       "console": []
     },
     {
-      "id": "NOXv",
+      "id": "MJUe",
       "code_hash": "4652a7b4716e2fed424a185f7e14ebfd",
       "outputs": [
         {
@@ -37,228 +37,223 @@
         {
           "type": "stream",
           "name": "stdout",
-          "text": " adalah makanan tradisional yang sangat populer di"
+          "text": " adalah makanan tradisional yang sangat populer"
         },
         {
           "type": "stream",
           "name": "stdout",
-          "text": " Indonesia. Sate terbuat dari daging yang dipotong dadu kecil, dibumbui, dan di"
+          "text": " di Indonesia. Sate terbuat dari daging"
         },
         {
           "type": "stream",
           "name": "stdout",
-          "text": "panggang di atas bamb"
+          "text": " yang dipotong dadu kecil, dibumbui, dipanggang, dan dimasukkan ke dalam"
         },
         {
           "type": "stream",
           "name": "stdout",
-          "text": "u atau batang kayu. Berikut adalah penjelasan lebih lanjut tentang sate:\n\n###"
+          "text": " tandus (batang bambu atau kayu) sebelum dipanggang di atas"
         },
         {
           "type": "stream",
           "name": "stdout",
-          "text": " Bahan U"
+          "text": " bara atau panggangan. Berikut adalah penjelasan lebih detail tentang sate:\n\n### Bahan U"
         },
         {
           "type": "stream",
           "name": "stdout",
-          "text": "tama:\n1. **Daging**: Sate biasanya terbuat dari daging sapi, ayam, kambing, atau "
+          "text": "tama:\n1. **Daging**: Daging yang paling sering digunakan untuk sate adalah daging sapi,"
         },
         {
           "type": "stream",
           "name": "stdout",
-          "text": "ikan. Daging yang digunakan biasanya dipotong dadu kecil untuk memudahkan prose"
+          "text": " kambing, ayam, atau bahkan ikan. Daging sapi yang biasanya digunakan adalah daging "
         },
         {
           "type": "stream",
           "name": "stdout",
-          "text": "s pe"
+          "text": "sapi sapi (biasanya daging sapi sapi yang lembut dan lezat).\n2. **Bumbu**: B"
         },
         {
           "type": "stream",
           "name": "stdout",
-          "text": "masakan dan penggorengan.\n2. **Bumbu**: Bumbu dasar sate biasanya terdiri dari"
+          "text": "umbu dasar sate biasanya terdiri dari bawang putih, bawang merah, ketumbar, kuny"
         },
         {
           "type": "stream",
           "name": "stdout",
-          "text": " ba"
+          "text": "it, serai, lengkuas, garam, dan gula. Bumbu ini dihaluskan menjadi camp"
         },
         {
           "type": "stream",
           "name": "stdout",
-          "text": "wang putih, bawang merah, serai, ketumbar, kunyit, lengkuas, garam"
+          "text": "uran yang disebut \"bumbu sate\".\n\n### Proses Pembuatan:\n1. **Pengerusan Daging**: Daging dipot"
         },
         {
           "type": "stream",
           "name": "stdout",
-          "text": ", dan gula. Bumbu ini dihaluskan menjadi campuran yang ditambahkan"
+          "text": "ong dadu kecil, kemudian dicampur dengan bumbu sate yang telah"
         },
         {
           "type": "stream",
           "name": "stdout",
-          "text": " pada daging.\n"
+          "text": " dihaluskan. Daging di"
         },
         {
           "type": "stream",
           "name": "stdout",
-          "text": "3. **Bawang Pucuk**: Seringkali ditambahkan sebagai pelengkap rasa"
+          "text": "campur hingga rata dengan bumbu.\n2. **Pemasukan ke Tandus**: Campuran daging dan bumbu di"
         },
         {
           "type": "stream",
           "name": "stdout",
-          "text": ".\n\n### Proses Pembuatan"
+          "text": "masukkan ke dalam tandus (batang bambu atau kayu yang dipotong). Biasanya sate dimasukkan"
         },
         {
           "type": "stream",
           "name": "stdout",
-          "text": ":\n1. **Bumbui Daging**: Daging dicampur dengan bumbu yang telah dihaluskan, dibungkus, dan dibiarkan"
+          "text": " dalam bentuk segi empat atau segi lima.\n3. **Panggang**: Setelah"
         },
         {
           "type": "stream",
           "name": "stdout",
-          "text": " lama (biasanya beberapa jam) agar bumbu diabsorpsi dengan baik.\n2. **Mengika"
+          "text": " dimasukkan ke dalam tandus, sate diikat dengan benang daun kelapa atau benang"
         },
         {
           "type": "stream",
           "name": "stdout",
-          "text": "tan**: Daging yang sudah dibumbui diikat pada tanduk atau bambu men"
+          "text": " khusus. Sate kemudian dipanggang"
         },
         {
           "type": "stream",
           "name": "stdout",
-          "text": "ggunakan"
+          "text": " di atas bara atau panggangan sampai matang"
         },
         {
           "type": "stream",
           "name": "stdout",
-          "text": " benang tahi sapi atau benang nilon. Ikatan ini memban"
+          "text": " dan berwarna cokelat keemasan.\n\n### Jenis-Jenis Sate:\n1. **Sate Sapi**: Daging"
         },
         {
           "type": "stream",
           "name": "stdout",
-          "text": "tu da"
+          "text": " sapi yang biasanya digunakan adalah daging sapi sapi, terutama daging sapi sapi yang "
         },
         {
           "type": "stream",
           "name": "stdout",
-          "text": "ging tetap utuh saat dipanggang.\n3. **Panggang**: Sate dipanggang di atas "
+          "text": "lembut dan lezat.\n2. **Sate Kambing**: Daging kambing juga sering digunakan untuk"
         },
         {
           "type": "stream",
           "name": "stdout",
-          "text": "bara atau api yang panas. Proses ini membuat daging menjadi renyah"
+          "text": " sate, terutama di da"
         },
         {
           "type": "stream",
           "name": "stdout",
-          "text": " dan memiliki aroma yang "
+          "text": "erah-daerah tertentu di Indonesia.\n3. **S"
         },
         {
           "type": "stream",
           "name": "stdout",
-          "text": "khas.\n\n### Jenis-Jenis Sate:\n1. **Sate Sapi**: Daging sapi yang biasanya digunakan"
+          "text": "ate Ayam**: Daging ayam adalah pilihan populer untuk sat"
         },
         {
           "type": "stream",
           "name": "stdout",
-          "text": " adalah da"
+          "text": "e, terutama di daerah-daerah yang lebih sehat dan sehat.\n4. **Sate Ikan"
         },
         {
           "type": "stream",
           "name": "stdout",
-          "text": "ging sapi sapi lembu atau sapi potong. Daging ini dikenal karena"
+          "text": "**: Daging ikan seperti cumi-cumi juga digunakan untuk membuat sate, yang"
         },
         {
           "type": "stream",
           "name": "stdout",
-          "text": " tekstur yang lembut dan rasa yang kaya.\n2. **Sate Ayam**: Daging ayam yang digun"
+          "text": " dise"
         },
         {
           "type": "stream",
           "name": "stdout",
-          "text": "akan biasanya adalah daging ayam pedaging. Sate ayam sering dikenal dengan tekstur yang"
+          "text": "but sate cumi.\n\n### Cara Pembakukan:\n1. **Di atas Bara**: Sate biasanya dipanggang di at"
         },
         {
           "type": "stream",
           "name": "stdout",
-          "text": " lebih renyah dan rasa yang lebih ringan.\n3. **Sate Kambing**: Daging kambing dikenal dengan rasa yang lebih ku"
+          "text": "as bara yang telah dihangatkan. Proses ini membuat sate berbau aroma"
         },
         {
           "type": "stream",
           "name": "stdout",
-          "text": "at dan kaya, sering dinikmati oleh pencinta daging yang lebih pedas.\n4. **Sate I"
+          "text": "tik dan"
         },
         {
           "type": "stream",
           "name": "stdout",
-          "text": "kan**: Daging ikan seperti ikan mas atau ikan bandeng digunakan untuk membu"
+          "text": " menghasilkan kerak yang renyah.\n2. **Di atas Panggangan**: Beberapa orang lebih suka me"
         },
         {
           "type": "stream",
           "name": "stdout",
-          "text": "at"
+          "text": "masak sate di atas panggangan listrik atau gas untuk mendapatkan tek"
         },
         {
           "type": "stream",
           "name": "stdout",
-          "text": " sate yang khas dan lezat.\n\n### Cara Pembakukan:\nSate biasanya disajikan dengan ke"
+          "text": "stur"
         },
         {
           "type": "stream",
           "name": "stdout",
-          "text": "cap, sambal, atau saus ketimbang. Kecap merupakan saus manis yang um"
+          "text": " yang lebih seragam.\n\n### Samananya:\nSate biasanya disajikan dengan sambal (saus cabai"
         },
         {
           "type": "stream",
           "name": "stdout",
-          "text": "um"
+          "text": "), kecap, atau ketimun. Sambal yang biasa di"
         },
         {
           "type": "stream",
           "name": "stdout",
-          "text": " digunakan untuk menambah rasa nikmat dari sate.\n\n"
+          "text": "gunakan adalah sambal terasi a"
         },
         {
           "type": "stream",
           "name": "stdout",
-          "text": "### Budaya dan Tradisi:\nSate mer"
+          "text": "tau sambal cabai rawit. Selain"
         },
         {
           "type": "stream",
           "name": "stdout",
-          "text": "upakan bagian penting dari budaya masakan Indonesia. Sate sering dinikmati di a"
+          "text": " itu, sate sering disajikan dengan ketupat, nas"
         },
         {
           "type": "stream",
           "name": "stdout",
-          "text": "cara-"
+          "text": "i, atau mie.\n\nSate adalah makanan yang lezat dan sangat populer di Indonesia, sering d"
         },
         {
           "type": "stream",
           "name": "stdout",
-          "text": "acara sosial, perayaan, dan acara khusus. Sate biasanya disajikan be"
+          "text": "itemukan di warung-warung kecil, pasar, atau bahkan di acara-a"
         },
         {
           "type": "stream",
           "name": "stdout",
-          "text": "rsama nasi, tumpang, atau lauk-pauk lainnya.\n\nSate adalah makanan yang"
-        },
-        {
-          "type": "stream",
-          "name": "stdout",
-          "text": " lezat dan sangat populer di Indonesia, serta menjadi simbol budaya masakan yang unik dan kaya."
+          "text": "cara besar."
         }
       ]
     },
     {
-      "id": "pUjB",
+      "id": "vblA",
       "code_hash": "15d9b154b0ba49064ab485dc5cc3b95c",
       "outputs": [
         {
           "type": "data",
           "data": {
-            "text/html": "<span class=\"markdown prose dark:prose-invert\"><span class=\"paragraph\">Sate adalah makanan tradisional yang sangat populer di Indonesia. Sate terbuat dari daging yang dipotong dadu kecil, dibumbui, dan dipanggang di atas bambu atau batang kayu. Berikut adalah penjelasan lebih lanjut tentang sate:</span>\n<h3 id=\"bahan-utama\">Bahan Utama:</h3>\n<ol>\n<li><strong>Daging</strong>: Sate biasanya terbuat dari daging sapi, ayam, kambing, atau ikan. Daging yang digunakan biasanya dipotong dadu kecil untuk memudahkan proses pemasakan dan penggorengan.</li>\n<li><strong>Bumbu</strong>: Bumbu dasar sate biasanya terdiri dari bawang putih, bawang merah, serai, ketumbar, kunyit, lengkuas, garam, dan gula. Bumbu ini dihaluskan menjadi campuran yang ditambahkan pada daging.</li>\n<li><strong>Bawang Pucuk</strong>: Seringkali ditambahkan sebagai pelengkap rasa.</li>\n</ol>\n<h3 id=\"proses-pembuatan\">Proses Pembuatan:</h3>\n<ol>\n<li><strong>Bumbui Daging</strong>: Daging dicampur dengan bumbu yang telah dihaluskan, dibungkus, dan dibiarkan lama (biasanya beberapa jam) agar bumbu diabsorpsi dengan baik.</li>\n<li><strong>Mengikatan</strong>: Daging yang sudah dibumbui diikat pada tanduk atau bambu menggunakan benang tahi sapi atau benang nilon. Ikatan ini membantu daging tetap utuh saat dipanggang.</li>\n<li><strong>Panggang</strong>: Sate dipanggang di atas bara atau api yang panas. Proses ini membuat daging menjadi renyah dan memiliki aroma yang khas.</li>\n</ol>\n<h3 id=\"jenis-jenis-sate\">Jenis-Jenis Sate:</h3>\n<ol>\n<li><strong>Sate Sapi</strong>: Daging sapi yang biasanya digunakan adalah daging sapi sapi lembu atau sapi potong. Daging ini dikenal karena tekstur yang lembut dan rasa yang kaya.</li>\n<li><strong>Sate Ayam</strong>: Daging ayam yang digunakan biasanya adalah daging ayam pedaging. Sate ayam sering dikenal dengan tekstur yang lebih renyah dan rasa yang lebih ringan.</li>\n<li><strong>Sate Kambing</strong>: Daging kambing dikenal dengan rasa yang lebih kuat dan kaya, sering dinikmati oleh pencinta daging yang lebih pedas.</li>\n<li><strong>Sate Ikan</strong>: Daging ikan seperti ikan mas atau ikan bandeng digunakan untuk membuat sate yang khas dan lezat.</li>\n</ol>\n<h3 id=\"cara-pembakukan\">Cara Pembakukan:</h3>\n<span class=\"paragraph\">Sate biasanya disajikan dengan kecap, sambal, atau saus ketimbang. Kecap merupakan saus manis yang umum digunakan untuk menambah rasa nikmat dari sate.</span>\n<h3 id=\"budaya-dan-tradisi\">Budaya dan Tradisi:</h3>\n<span class=\"paragraph\">Sate merupakan bagian penting dari budaya masakan Indonesia. Sate sering dinikmati di acara-acara sosial, perayaan, dan acara khusus. Sate biasanya disajikan bersama nasi, tumpang, atau lauk-pauk lainnya.</span>\n<span class=\"paragraph\">Sate adalah makanan yang lezat dan sangat populer di Indonesia, serta menjadi simbol budaya masakan yang unik dan kaya.</span></span>"
+            "text/html": "<span class=\"markdown prose dark:prose-invert\"><span class=\"paragraph\">Sate adalah makanan tradisional yang sangat populer di Indonesia. Sate terbuat dari daging yang dipotong dadu kecil, dibumbui, dipanggang, dan dimasukkan ke dalam tandus (batang bambu atau kayu) sebelum dipanggang di atas bara atau panggangan. Berikut adalah penjelasan lebih detail tentang sate:</span>\n<h3 id=\"bahan-utama\">Bahan Utama:</h3>\n<ol>\n<li><strong>Daging</strong>: Daging yang paling sering digunakan untuk sate adalah daging sapi, kambing, ayam, atau bahkan ikan. Daging sapi yang biasanya digunakan adalah daging sapi sapi (biasanya daging sapi sapi yang lembut dan lezat).</li>\n<li><strong>Bumbu</strong>: Bumbu dasar sate biasanya terdiri dari bawang putih, bawang merah, ketumbar, kunyit, serai, lengkuas, garam, dan gula. Bumbu ini dihaluskan menjadi campuran yang disebut \"bumbu sate\".</li>\n</ol>\n<h3 id=\"proses-pembuatan\">Proses Pembuatan:</h3>\n<ol>\n<li><strong>Pengerusan Daging</strong>: Daging dipotong dadu kecil, kemudian dicampur dengan bumbu sate yang telah dihaluskan. Daging dicampur hingga rata dengan bumbu.</li>\n<li><strong>Pemasukan ke Tandus</strong>: Campuran daging dan bumbu dimasukkan ke dalam tandus (batang bambu atau kayu yang dipotong). Biasanya sate dimasukkan dalam bentuk segi empat atau segi lima.</li>\n<li><strong>Panggang</strong>: Setelah dimasukkan ke dalam tandus, sate diikat dengan benang daun kelapa atau benang khusus. Sate kemudian dipanggang di atas bara atau panggangan sampai matang dan berwarna cokelat keemasan.</li>\n</ol>\n<h3 id=\"jenis-jenis-sate\">Jenis-Jenis Sate:</h3>\n<ol>\n<li><strong>Sate Sapi</strong>: Daging sapi yang biasanya digunakan adalah daging sapi sapi, terutama daging sapi sapi yang lembut dan lezat.</li>\n<li><strong>Sate Kambing</strong>: Daging kambing juga sering digunakan untuk sate, terutama di daerah-daerah tertentu di Indonesia.</li>\n<li><strong>Sate Ayam</strong>: Daging ayam adalah pilihan populer untuk sate, terutama di daerah-daerah yang lebih sehat dan sehat.</li>\n<li><strong>Sate Ikan</strong>: Daging ikan seperti cumi-cumi juga digunakan untuk membuat sate, yang disebut sate cumi.</li>\n</ol>\n<h3 id=\"cara-pembakukan\">Cara Pembakukan:</h3>\n<ol>\n<li><strong>Di atas Bara</strong>: Sate biasanya dipanggang di atas bara yang telah dihangatkan. Proses ini membuat sate berbau aromatik dan menghasilkan kerak yang renyah.</li>\n<li><strong>Di atas Panggangan</strong>: Beberapa orang lebih suka memasak sate di atas panggangan listrik atau gas untuk mendapatkan tekstur yang lebih seragam.</li>\n</ol>\n<h3 id=\"samananya\">Samananya:</h3>\n<span class=\"paragraph\">Sate biasanya disajikan dengan sambal (saus cabai), kecap, atau ketimun. Sambal yang biasa digunakan adalah sambal terasi atau sambal cabai rawit. Selain itu, sate sering disajikan dengan ketupat, nasi, atau mie.</span>\n<span class=\"paragraph\">Sate adalah makanan yang lezat dan sangat populer di Indonesia, sering ditemukan di warung-warung kecil, pasar, atau bahkan di acara-acara besar.</span></span>"
           }
         }
       ],

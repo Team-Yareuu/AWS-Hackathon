@@ -1,0 +1,35 @@
+{
+  "include": [
+    "Backend/app"
+  ],
+  "exclude": [
+    "**/node_modules",
+    "**/__pycache__",
+    "**/.venv",
+    "**/venv",
+    "**/Frontend"
+  ],
+  "executionEnvironments": [
+    {
+      "root": "Backend",
+      "pythonVersion": "3.12",
+      "pythonPlatform": "Windows",
+      "extraPaths": []
+    }
+  ],
+  "pythonVersion": "3.12",
+  "pythonPlatform": "Windows",
+  "typeCheckingMode": "basic",
+  "reportMissingImports": "none",
+  "reportMissingTypeStubs": "none",
+  "reportGeneralTypeIssues": "none",
+  "reportOptionalMemberAccess": "none",
+  "reportOptionalSubscript": "none",
+  "reportPrivateImportUsage": "none",
+  "reportUnboundVariable": "warning",
+  "reportIncompatibleMethodOverride": "none",
+  "reportIncompatibleVariableOverride": "none",
+  "reportInconsistentConstructor": "none",
+  "reportOverlappingOverload": "none",
+  "reportUndefinedVariable": "warning"
+}
